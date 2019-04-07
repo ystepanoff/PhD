@@ -1,0 +1,1665 @@
+\chapter{Groups of type $\EE_6$}
+\ifpdf
+    \graphicspath{{Chapter2/Chapter2Figs/PNG/}{Chapter2/Chapter2Figs/PDF/}{Chapter2/Chapter2Figs/}}
+\else
+    \graphicspath{{Chapter2/Chapter2Figs/EPS/}{Chapter2/Chapter2Figs/}}
+\fi
+% leave these commands here
+
+\label{chapter2}
+
+\section{Albert vectors}
+
+\subsection{Albert space $\J$}
+
+For the further discussion we consider $\O = \O_F$ to be an arbitrary 
+octonion algebra over the field $F$. In the results which require $\O$ to be split,
+we specify this explicitly. 
+
+Define the \textit{Albert space} $\J=\J_F$ to be 
+the $27$-dimensional vector space spanned by the elements of the form
+\begin{equation}
+	(a,b,c\mid A,B,C) = \begin{bmatrix}
+		a & C & \ovB \\
+		\ovC & b & A \\
+		B & \ovA & c
+	\end{bmatrix},
+\end{equation}
+where $a,b,c,A,B,C \in \O$ and furthermore $a,b,c \in \langle 1_{\O} \rangle$. 
+Now, an \textit{Albert vector} is an element of $\J$. To denote
+certain subspaces of $\J$ we use the following intuitive notation. The $10$-dimensional
+subspace spanned by the Albert vectors of the form \mbox{$(a,b,0\mid 0,0,C)$} is denoted
+$\J_{10}^{abC}$, while the $8$-space spanned by the vectors \mbox{$(0,0,0\mid A,0,0)$} 
+is denoted $\J_{8}^{A}$ and so on. That is, the subscript determines the dimension
+and the superscript shows which of the six `co{\"o}rdinates' we use to span the
+corresponding subspace. Of course, this notation is by no means complete as it does not
+allow us to denote any possible subspace of $\J$. If this is the case, we specify 
+the spanning vectors and denote the corresponding space in some other manner.
+
+Suppose $X = (a,b,c \mid A,B,C) \in \J$ is an arbitrary Albert vector. We define
+the quadratic form $\QQ$ on $\J$ via
+\begin{equation}
+	\label{eq:qform_on_J}
+	\QQ(X) = A\ovA + B\ovB + C\ovC - ab - ac - bc.
+\end{equation}
+As usual, this can be polarised to obtain the inner product
+\begin{multline}
+	\label{eq:inner_product_in_J}
+	\BB(X,Y) = \Tr( A_1 \ovA_2 + B_1 \ovB_2 + C_1 \ovC_2 ) \\
+		- (a_1 b_2 + a_2 b_1) - (a_1 c_2 + a_2 c_1) - (b_1 c_2 + b_2 c_1),
+\end{multline}
+where $X = (a_1, b_1, c_1 \mid A_1, B_1, C_1)$ and $Y = (a_2, b_2, c_2 \mid A_2, B_2, C_2 )$.
+
+
+\subsection{Dickson--Freudenthal determinant and $\SE_6(F)$}
+
+Lacking the associativity in $\O$ we also need to be slightly careful when we calculate
+the determinant of $X$. For these purposes we define the Dickson--Freudenthal determinant
+as
+\begin{equation}
+	\fdet(X) = abc - aA\ovA - bB\ovB - cC\ovC + \Tr(ABC).
+\end{equation}
+This is a cubic form on $\J$ and it can be shown that it is equivalent to the 
+original Dickson's cubic form \cite{Dickson1} used to construct the group of type $\E_6$. 
+
+We define the group $\SE_6(F)$ or $\SE_6(F,\O)$ if we want to specify the octonion 
+algebra, to be the group of all $F$-linear maps on $\J$ preserving
+ the Dickson--Freudenthal determinant. If $F = \Fq$, then we denote this by $\SE_6(q)$.
+  The group $\EE_6(F)$ is defined as the quotient
+ of $\SE_6(F)$ by its centre.
+Suppose $M$ is a $3\times 3$ matrix written over $\O$. If $M$ is written over any 
+sociable subalgebra of $\O$, then for an element $X \in \J$ the mapping 
+$X \mapsto \ovM^{\T} X M$ makes sense. Indeed, every entry in the matrix $\ovM^{\T} X M$
+is a sum of the terms of the form $m_1 x m_2$, where $m_1$ and $m_2$ belong to the same
+sociable subalgebra, and so $(m_1 x) m_2 = m_1 (x m_2)$. Furthermore, the map
+$X \mapsto \ovM^{\T} X M$ is obviously $F$-linear:
+\begin{equation*}
+	\ovM^{\T} (\lambda X + \mu Y) M = \lambda (  M^{\T} X M ) + \mu ( M^{\T} Y M ).
+\end{equation*}
+
+\section{Some elements of $\SE_6(F)$}
+\label{section:elts_E6}
+
+Througout this section, let $X = (a,b,c\mid A,B,C)$ to be an arbitrary element of 
+$\J = \J_F$.\ We encode some of the elements of $\SE_6(F)$ by the $3\times 3$
+ matrices written over
+social subalgebras of $\O=\O_{F}$. As we mentioned before, if such a matrix $M$ is written
+over any sociable subalgebra of $\O$, then the expression $\ovM^{\T} X M$ makes sense.
+If two matrices $M$ and $N$ are written over the same sociable subalgebra, then we have 
+enough associativity to see that the action by the product $MN$ is the same as the product
+of the actions, that is
+\begin{equation}
+	(\ovN \ovM)^{\T} X (MN) = \ovN^{\T} (\ovM^{\T} X M) N.
+\end{equation} 
+In general, the action by the product of two matrices is not defined whereas the product 
+of the actions still is. Note that also $-\II_3$ acts trivially on $\J$. 
+
+We first notice that the elements 
+\begin{equation}
+	\delta = \begin{bmatrix}
+		0 & 1 & 0 \\
+		1 & 0 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix},\quad 
+	\tau = \begin{bmatrix}
+		0 & 1 & 0 \\
+		0 & 0 & 1 \\
+		1 & 0 & 0
+	\end{bmatrix}
+\end{equation}
+preserve the Dickson--Freudenthal determinant. Their actions are given by
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		\delta: (a,b,c\mid A,B,C) & \mapsto & (b,a,c\mid \ovB, \ovA, \ovC), \\
+		\tau: (a,b,c\mid A,B,C) & \mapsto & (c,a,b\mid C,A,B). 
+	\end{array}
+\end{equation}
+
+Now let $x$ be any octonion and consider the matrices
+\begin{equation}
+	M_x = \begin{bmatrix}
+		1 & x & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1 
+	\end{bmatrix},\quad 
+	M_x' = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & x \\
+		0 & 0 & 1
+	\end{bmatrix},\quad 
+	M_x'' = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		x & 0 & 1
+	\end{bmatrix}.
+\end{equation}
+Note that the elements $M_x'$, $M_x''$ can be obtained from $M_x$ by applying 
+the triality element $\tau$, so to show that all three families described above preserve
+the Dickson--Freudenthal determinant, we only need to consider one of them. 
+
+\begin{lemma}
+	\label{lemma:Mx_det}
+	The elements $M_x$, where $x \in \O$ is any octonion, preserve the Dickson--Freudenthal
+	determinant, and hence they encode the elements of $\SE_6(F)$. 
+\end{lemma} 
+
+\begin{proof}
+	The action of $M_x$ on $\J$ is given by
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+		M_x: (a,b,c\mid A,B,C) & \mapsto & (a,b+a\NN(x)+\Tr(\ovx C),c \mid 
+										A+\ovx\ovB, B, C+ax).
+		\end{array}
+	\end{equation*}
+	The individual terms in the Dickson--Freudenthal determinant are being mapped in
+	the following way:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			abc & \mapsto & abc + a^2c\NN(x) + ac\Tr(\ovx C), \\
+			-aA\ovA & \mapsto & -aA\ovA - a\Tr(ABx) - a\NN(x)\NN(B), \\
+			-bB\ovB & \mapsto & -bB\ovB - a\NN(x)\NN(B) - \Tr(\ovx C)B\ovB, \\
+			-cC\ovC & \mapsto & -cC\ovC - ac\Tr(\ovx C) - a^2c\NN(x), \\
+			\Tr(ABC) & \mapsto & \Tr(ABC) + B\ovB\Tr(\ovx C) + 2a\NN(x)\NN(B) + a\Tr(ABx). 
+		\end{array}
+	\end{equation*}
+	It is visibly obvious now that all the necessary terms on the right-hand side cancel out,
+	so the result follows.
+\end{proof}
+
+It is obvious enough that we can also consider the transposes 
+\begin{equation}
+	L_x = \begin{bmatrix}
+		1 & 0 & 0 \\
+		x & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix},\quad 
+	L_x' = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & x & 1 
+	\end{bmatrix},\quad 
+	L_x'' = \begin{bmatrix}
+		1 & 0 & x \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix}
+\end{equation}
+for an arbitrary $x \in \O$. 
+A similar straightforward calculation as in Lemma \ref{lemma:Mx_det} can be performed
+to show that these are also the elements of $\SE_6(F)$. 
+Further in this thesis we will be able to show that the actions of the elements
+$M_x$, $M_x',M_x'',L_x,L_x'$ and $L_x''$ generate the whole group $\SE_6(F)$.
+
+Finally, we consider the elements of the form 
+\begin{equation}
+	P_u = \begin{bmatrix}
+		u & 0 & 0 \\
+		0 & \ovu & 0 \\
+		0 & 0 & 1
+	\end{bmatrix},\quad 
+	P_u' = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & u & 0 \\
+		0 & 0 & \ovu
+	\end{bmatrix},\quad 
+	P_u'' = \begin{bmatrix}
+		\ovu & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & u
+	\end{bmatrix},
+\end{equation}
+where $u$ is an octonion of norm one. The action of the element $P_u$ on $\J$ is given by
+\begin{equation}
+    \begin{array}{r@{\;}c@{\;}l}
+	P_u: (a,b,c\mid A, B, C) & \mapsto & (a,b,c\mid uA, Bu, \ovu  C \ovu ).
+    \end{array}
+\end{equation}
+It is a matter of straightforward computation to show that the elements $P_u$ preserve
+the Dickson--Freudenthal determinant. Indeed, we have
+\begin{equation}
+    \begin{array}{r@{\;}c@{\;}l}
+	abc & \mapsto & abc, \\
+	a A \ovA  & \mapsto & a(uA)(\ovA \ovu ) = aN(uA) = a\NN(A).\NN(u) = a A\ovA , \\
+	b B \ovB  & \mapsto & b(B u)(\ovu  \ovB ) = b\NN(B u) = b B \ovB , \\
+	c C \ovC  & \mapsto & c(\ovu  C \ovu )(u \ovC  u) =
+	    c\NN(\ovu  C \ovu  ) = c \NN(C).\NN(u)^2 = c C \ovC ,
+    \end{array}
+\end{equation}
+and for the last term we get
+\begin{multline}
+    \Tr((uA)(Bu)(\ovu  C\ovu  )) = \Tr((\ovu  C\ovu  )(uA)(Bu)) =
+    \Tr((\ovu  (C(\ovu  (uA))))(Bu)) \\
+    = \Tr((\ovu  (CA))(Bu)) = \Tr((Bu)(\ovu  (CA))) = \Tr(B(u(\ovu  (CA)))) = \Tr(B(CA))  \\
+    = \Tr((BC)A) = \Tr(ABC).
+\end{multline}
+On the other hand, it is not difficult to see that $P_u = M_{u-1} \cdot L_1 \cdot M_{u^{-1}-1} \cdot L_{-u}$,
+so the fact that the matrices $P_u$ preserve the determinant follows from the calculations already done for
+the elements $M_x$ and $L_x$. We also notice that the elements $P_u$ preserve
+the quadratic form $\QQ_8^C$ defined on $\J_8^C$ via
+\begin{equation}
+	\QQ_8^C( (0,0,0\mid 0,0,C) ) = C\ovC.
+\end{equation}
+
+We finish this section by showing that the action of the elements $P_u$ on $\J_{10}^{abC}$, 
+as $u$ ranges
+through all the octonions of norm one, is that of $\Omega_8(F,\QQ_8^C)$ when $\O$ is split.
+
+\begin{lemma}
+	\label{lemma:1_spin8plus}
+	If $\O$ is split, the actions of the elements $P_u$ on 
+	$\J_8^C$, as $u$ ranges through	all the octonions of norm one, 
+	generate a group of type 
+	$\Omega_8^+(F)$. The action on $\J_{10}^{abC}$ is also that 
+	of $\Omega_8^+(F)$.
+\end{lemma}
+
+\begin{proof}
+Consider the action on the last octonionic `co\"{o}rdinate', i.e.
+$C \mapsto \ovu   C \ovu  $. We will show now that this map can be represented as a
+product of two reflections. To avoid any predicaments in characteristic $2$, we notice that
+since $\langle x,y \rangle = \Tr(x\ovy )$, we get
+\begin{equation}
+\frac{2 \langle x, y \rangle}{\langle y,y \rangle} =
+\frac{\langle x, y \rangle}{\NN(y)}.
+\end{equation}
+Now, the reflection in the hyperplane orthogonal to an arbitrary element $v\in \O$ is the map
+\begin{equation}
+    r_v : x \mapsto     x - \frac{\Tr(x \ovu  )}{\NN(u)} \cdot u =
+	 x - \frac{ x\ovu  + u\ovx  }{\NN(u)} \cdot u =
+    x - \frac{(x\ovu  )u - u\ovx u}{\NN(u)} = - \frac{u\ovx u}{\NN(u)},
+\end{equation}
+It is easy to see now that the given
+action of $P_u$ on $\J_8^C$ is the composition $r_u \circ r_1$. As $u$ ranges through all 
+octonions of norm one, we get the action of $\Omega_8(F,\QQ_8^C)$ on $\J_8^C$. Since we
+assume that $\O$ is split, the form $\QQ_8$ is of plus type, so we may denote this
+group as $\Omega_8^+(F)$. When acting on $\J_{10}^{abC}$, the form $ab-C\ovC$ is
+preserved, so we again get the action of $\Omega_8^+(F)$. 
+
+\end{proof}
+
+\section{The white points}
+\subsection{The mixed form and the white vectors}
+Suppose $X = (a,b,c \mid A,B,C)$ and $Y = (d,e,f\mid D,E,F)$ are the arbitrary elements
+of $\J$. Define the mixed form
+$M(Y,X)$ as
+\begin{multline}
+	M(Y,X) = bcd + ace + abf - d A\ovA  -e B \ovB - f C\ovC \\
+	- a(D\ovA + A\ovD) - b(E\ovB + B\ovE) - c(F\ovC + C\ovF) \\
+	+ \Tr(DBC + ECA + FAB). 
+\end{multline}
+Note that if $F \neq \mathbb{F}_2$, then $M(X,Y)$ can be obtained from the 
+Dickson--Freudenthal
+determinant, for we have
+\begin{multline}
+	M(X,Y) = \frac{1}{\alpha (\alpha - 1)} \fdet(X + \alpha Y) \\
+	- \frac{1}{\alpha - 1} \fdet(X+Y) + \frac{1}{\alpha} \fdet(X) - (\alpha+1)\fdet(Y),
+\end{multline}
+for any $\alpha \not\in \{0,1\}$.
+
+We colour the non-zero Albert vectors in $\J$ according to the following rules. 
+\begin{definition}
+	A non-zero Albert vector $X \in \J$ is called
+	\begin{enumerate}[(i)]
+		\item \textit{white} if $M(Y,X) = 0$ for all $Y \in \J$;
+		\item \textit{grey} if $\Delta(X) = 0$ and there exists $Y \in \J$ such that 
+			$M(Y,X) \neq 0$;
+		\item \textit{black} if $\Delta(X) \neq 0$ and $X$ is not white.  
+	\end{enumerate}
+	A \textit{white/grey/black} point is a $1$-dimensional subspace of $\J$ spanned by a 
+	white/grey/black vector. 
+\end{definition}
+
+For example, the vector $(0,0,1\mid 0,0,0)$ is white, because if $Y$
+is an arbitrary Albert vector, then $M(Y,X) = 0$. Similarly, $(\lambda,1,1\mid 0,0,0)$,
+where $\lambda \neq 0$, is black, since in this case $\Delta(X) = \lambda \neq 0$,
+and it is certainly not white as there exists $Y = (a,b,c\mid A,B,C)$ such that 
+$M(Y,X)\neq 0$:
+\begin{equation}
+	M(Y,X) = \lambda (bc - A\ovA) + (ac - B\ovB) + (ab - C\ovC). 
+\end{equation}
+Taking, for instance, $Y = (0,1,1\mid 0,0,0)$, we get $M(Y,X) = \lambda \neq 0$. Finally, 
+$(0,1,1\mid 0,0,0)$ is grey as $\Delta(X) = 0$ and for $Y = (a,b,c\mid A,B,C)$ the
+value of $M$ is given by
+\begin{equation}
+	M(Y,X) = (ac - B\ovB) + (ab - C\ovC),
+\end{equation}
+so we may take $Y = (1,1,0\mid 0,0,0)$ to get $M(Y,X) = 1 \neq 0$. 
+The terms white, grey and black were introduced by Cohen and Cooperstein 
+\cite{CC}. In the paper by Aschbacher \cite{Asch1} they are called
+'singular', 'brilliant non-singular' and 'dark' respectively. 
+Jacobson \cite{Jac2} uses the terms 'rank $1$', 'rank $2$' and 'rank $3$'. 
+
+It is clear that the action of $\SE_6(F)$ preserves the colour, except possibly in case
+$F = \mathbb{F}_2$, when white and grey vectors may be intermixed. 
+Later we shall see that $\SE_6(\mathbb{F}_2)$ is also colour-preserving.
+
+Let $X = (a,b,c\mid A,B,C)$ be an arbitrary white vector. 
+A white vector $W$ determines the quadratic form $\fdet(X+W) - \fdet(X) = M(W,X)$ on $\J$. 
+Its radical is $17$-dimensional and for any non-zero $\lambda \in F$ 
+we have $\fdet(X+\lambda W) - \fdet(X) = \lambda( \fdet(X+W) - \fdet(X) )$, so 
+the form determined by $\lambda W$ has the same radical. Thus, the $17$-dimensional
+space is determined by the white point $\langle W \rangle$. 
+
+For example, for the white vector $(0,0,1\mid 0,0,0)$ the quadratic form is 
+$ab - C\ovC$, whose radical is $\J_{17}^{cAB}$. For the vector
+$(0,0,0\mid 0,0,D)$ with $D \neq 0 \neq D\ovD$ the form is 
+$\hat{Q}(X) = \Tr( D (AB - c\ovC) )$ with
+\mbox{$\hat{B}(X,Y) = \Tr( D ( AB' + A'B - c\ovC' - c'\ovC) )$} being its polar form,
+where
+$Y = (a',b',c'\mid A',B',C')$. Now $X$ is in the radical of $\hat{Q}$ if 
+and only if $\hat{Q}(X) = 0$ and $\hat{B}(X,Y) = 0$ for all $Y$. 
+Taking \mbox{$Y = (a',b',1\mid 0,0,0)$} gives us $\Tr(D\ovC) = 0$ and taking 
+$Y = (a',b',0\mid 0,B',0)$ gives us \mbox{$\Tr(DAB' ) = \Tr((DA)B' ) = 0$}
+for all $B'$, so $DA = 0$. If $Y = (a',b',0\mid A',0,0)$ then \mbox{$\Tr(D(A'B)) = \Tr((BD)A') = 0$} for all $A'$, so we get $BD = 0$. Finally, setting
+$Y = (a',b',0\mid 0,0,C')$ gives us $\Tr(cD\ovC') = 0$ for all $\ovC'$, so
+$cD = 0$, and thus $c = 0$. Therefore the radical is
+\begin{equation}
+	\left\{ (a,b,0 \mid A,B,C)\ \big|\ DA = BD = \Tr(D\ovC) = 0 \right\}.
+\end{equation}
+To obtain $17$-spaces determined by other ``co\"{o}rdinate'' white vectors we apply 
+a suitable power of $\tau$ to these two. 
+
+Next, we derive 
+a system of conditions for an arbitrary vector $X \in \J$ to be white. 
+
+\begin{lemma}
+	An Albert vector $X = (a,b,c\mid A,B,C)$ is white if and only if the following 
+	conditions hold:
+	\begin{equation}
+		\left.\begin{array}{r@{\;}c@{\;}l}
+			A \ovA & = & bc, \\
+			B \ovB & = & ca, \\
+			C \ovC & = & ab, \\
+			AB & = & c\ovC, \\
+			BC & = & a\ovA, \\
+			CA & = & b\ovB.
+		\end{array}
+		\right\}.
+	\end{equation}
+	If $X$ is white, then $\fdet(X) = 0$. 
+\end{lemma}
+
+\begin{proof}
+	Let $Y = (d,e,f\mid D,E,F)$. We rewrite $M(Y,X)$ in the form
+	\begin{multline*}
+		M(Y,X) = (bc - A \ovA)d + (ac - B \ovB) e + (ab - C \ovC) f \\
+			+ \Tr(D(BC-a\ovA) + Q(CA - b\ovB) + R(AB - c\ovC)).
+	\end{multline*}
+It is visibly clear now that if all the conditions in the statement are satisfied,
+then $M(Y,X) = 0$. Now, taking $Y = (1,0,0\mid 0,0,0)$ forces
+$bc-A\ovA = 0$. Similarly, we may take $Y = (0,1,0\mid 0,0,0)$ to get 
+$ac - B\ovB = 0$ and, say, $Y = (0,0,0\mid D,0,0)$ to obtain
+$\Tr(D(BC - a\ovA)) = 0$ which forces $BC - a\ovA = 0$ as $D \in \O$ can
+be arbitrary. The other conditions are proved similarly.
+
+Finally, if $X$ is white, then we get $\Tr(ABC) = \Tr(a A\ovA) = \Tr(abc) = 2abc$. 
+Also $b B\ovB = bca$, and so on. Overall we get 
+\begin{equation*}
+	\fdet(X) = abc - abc - bca - cab + 2abc = 0
+\end{equation*}
+as required. This completes the proof.
+\end{proof}
+
+\subsection{Action of $\SE_6(F)$ on white points}
+
+In this thesis we will be mostly interested in the action of $\SE_6(F)$ on the 
+white points. 
+
+Consider $X = (a,b,c\mid A,B,C)$ and $Y = (0,0,1\mid 0,0,0)$. Then we find 
+\mbox{$\Delta(X+Y) - \Delta(X) = ab - C\ovC$}, which is a quadratic form with 
+\mbox{$17$-dimensional} radical in $\J$. In case when $Y = (0,1,1\mid 0,0,0)$ we get
+$\Delta(X+Y) - \Delta(X) = a+ab+ac-B\ovB-C\ovC$. If $F = \mathbb{F}_2$, 
+we have $a^2 = a$, so the latter form is quadratic with $9$-dimensional radical. This
+shows that $(0,0,1\mid 0,0,0)$ and $(0,1,1\mid 0,0,0)$ are in different orbits 
+of the isometry group for any field.
+
+Finally, we investigate the orbits of $\SE_6(F)$ on Albert vectors. One of our main
+goals is to show that $\SE_6(F)$ acts transitively on white points. 
+
+\begin{lemma}
+	Suppose $X$ is an arbitrary Albert vector. Then $X$ can be mapped under the action
+	of $\SE_6(F)$ to a vector of the form $(a,b,c\mid 0,0,0)$ with $(a,b,c) \neq 
+	(0,0,0)$. In case when $\O$ is split, $X$ can be mapped to precisely one of the
+	 following:
+	\begin{enumerate}[(i)]
+		\item $(0,0,1\mid 0,0,0)$, a white vector;
+		\item $(0,1,1\mid 0,0,0)$, a grey vector; or
+		\item $(\lambda,1,1\mid 0,0,0)$ where $\lambda \neq 0$, a black vector.
+	\end{enumerate}
+	In the last case there is one orbit for each non-zero value of $\lambda$. 
+\end{lemma}
+
+\begin{proof}
+	These vectors are indeed in the different orbits, except possibly for the white 
+	and grey vectors, since they have different values of $\fdet$. We have already
+	shown that these particular 
+	white and grey vectors are in different orbits in case of any field. 
+	
+	First, we show that each orbit of $\SE_6(F)$ contains an Albert vector of the form
+	$(a,b,c\mid 0,0,0)$. Suppose that $X = (a,b,c\mid A,B,C)$ is non-zero. If
+	\mbox{$(a,b,c) = (0,0,0)$}, then after applying the triality element $\tau$ a suitable number
+	of times we may assume $C \neq 0$. Consider the action of the element $L_x$ on
+	the Albert vector $(0,0,0\mid A,B,C)$: 
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			L_x: (0,0,0\mid A,B,C) & \mapsto & (\Tr(Cx),0,0\mid A,B+\ovA x, C),
+		\end{array}
+	\end{equation*}
+	so we are allowed to choose orbit representatives with $(a,b,c) \neq (0,0,0)$. 
+	
+	As before, using a suitable power of $\tau$, we may assume $c \neq 0$. Now we apply 
+	the element $M_x$ with $x = -c^{-1}B$ to $X$, which gives us the vector of the form
+	$(a,b,c\mid A,0,C)$, where the `co\"{o}rdinate' $c$ stays the same, while 
+	$a,b,A,C$ are possibly different. Next, the vector $(a,b,c\mid A,0,C)$ is being mapped
+	to the vector of the form $(a,b,c\mid 0,0,C)$ under the action of $L_x$ with
+	$x = -c^{-1}A$, where the value of $c$ stays the same while the values of 
+	$a,b,C$ may be adjusted. 
+	
+	If $a=b=0$, $C \neq 0$, then we apply the element $L_x$ with $x$ such that 
+	\mbox{$\Tr(Cx)\neq 0$} to get the vector of the form $(\Tr(Cx),0,c\mid 0,0,C)$, i.e.
+	we may assume that \mbox{$a \neq 0$}. With the latter assumption we apply the element
+	$M_x$ with $x = -a^{-1} C$ to \mbox{$(a,b,c\mid 0,0,C)$} to get the vector of the form
+	$(a,b,c\mid 0,0,0)$ with the value of $b$ being adjusted. 
+	
+	Finally, we use the elements $\tau$, $P_u$ and $P_v''$ to standardise the vector
+	of the form $(a,b,c\mid 0,0,0)$ to one the forms in the statement. 
+\end{proof}
+
+Note that the last part of the proof of this lemma used the fact that the map
+$\NN : \O \rightarrow F$ is onto, which is the case when $\O$ is split. 
+However, this is not true in any octonion algebra, which possibly leads 
+to a bigger number of orbits. A vector of the form $(a,b,c\mid 0,0,0)$ is 
+white if and only if precisely one of the $a,b,c$ is non-zero, so we get 
+the transitive action of $\SE_6(F)$ on white points regardless of the 
+chosen octonion algebra. 
+
+Furthermore, we used the fact that $\NN$ is a non-singular
+quadratic form on $\O$, i.e. provided $C \neq 0$, the map $x \mapsto \Tr(Cx)$ is 
+surjective. This should be true for any octonion algebra.
+
+Later we will use the transitivity on white points to calculate the group order
+in case $F = \Fq$ by finding the stabiliser of a white point and calculating the
+number of white points in case of a finite field. 
+
+\begin{lemma}
+	Let $\O$ be an arbitrary octonion algebra over $F$.
+	Let $X \in \J$ be white and let $\J_{17}$ be the 
+	$17$-dimensional subspace of $\J$ determined by $X$. The stabiliser in
+	$\SE_6(F)$ of $\langle X \rangle$, and even of $X$, is transitive on the white points 
+	spanned by the vectors in $\J_{17} \setminus \langle X \rangle$ (there are no such
+	white points when $\O$ is non-split). It is also
+	transitive on the white points spanned by the vectors in $\J \setminus
+	\J_{17}$. 
+\end{lemma}
+
+\begin{proof}
+	Without loss of generality assume $X = (0,0,1\mid 0,0,0)$. As we know, the white 
+	point $\langle X \rangle$ determines the $17$-space $\J_{17}^{cAB}$. We also note that
+	$X$ is stabilised by the actions of the elements $M_x$, $L_x$, $M_x'$ and $L_x''$. Those
+	act on the elements in $\J_{17}^{cAB}$ in the following way:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			M_x : (0,0,c\mid A,B,0) & \mapsto & (0,0,c\mid A+\ovx \ovB,B,0), \\
+			L_x : (0,0,c\mid A,B,0) & \mapsto & (0,0,c\mid A,B+\ovA x,0), \\
+			M_x' : (0,0,c\mid A,B,0) & \mapsto & (0,0,c+\Tr(\ovx A) \mid A,B,0), \\
+			L_x'' : (0,0,c\mid A,B,0) & \mapsto & (0,0,c+\Tr(B x) \mid A,B,0).
+		\end{array}
+	\end{equation*}
+	It follows that a general white vector $(0,0,c\mid A,B,0) \in \J_{17}^{cAB}\setminus
+	 \langle X
+	\rangle$ can easily be mapped to $(0,0,0\mid A,B,0)$ using the action of $M_x'$ or 
+	$L_x''$ for some suitable $x \in \O$. A vector $(0,0,0\mid A,B,0)$ is white if
+	$(A,B) \neq (0,0)$ and $A\ovA = B\ovB = AB = 0$. It is obvious enough that 
+	$\J_{17}^{cAB} \setminus \langle X \rangle$ is empty if $\O$ is not split,
+	so we only need to show transitivity on the corresponding white points in case
+	when $\O$ is split.
+	
+	If $B = 0$ then evidently $A \neq 0$ and so we can apply the duality element $\delta$
+	to obtain a white vector of the form $(0,0,0\mid A,B,0)$ with $B \neq 0$. 
+	If now $A \neq 0$, we act by $M_x$ to obtain $(0,0,0\mid A+\ovx \ovB,B,0)$. Our 
+	aim is to show that there exists such $x \in \O$ that $A+\ovx \ovB = 0$. 
+	Denote $U = \left\{ y \in \O\ \big|\ \ovy B = 0\right\}$. Since for all
+	$x \in \O$ we have $(\ovx \ovB) B = \ovx (\ovB B) = 0$, we conclude
+	that $\O \ovB \leqslant U$. Furthermore, we know that both
+	subspaces are four-dimensional, so $\O\ovB = U$. As $AB = 0$, we have $A \in U$, and
+	therefore there exists $y = \ovx\ovB \in U$ such that $A+y = 0$.
+	
+	Now, the elements $P_u''$ with $\NN(u)=1$ act on the Albert vectors of the form 
+	$(0,0,0\mid 0,B,0)$ as
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			(0,0,0\mid 0,B,0) & \mapsto & (0,0,0\mid 0,\ovu B \ovu,0),
+		\end{array}
+	\end{equation*}
+	and as $u$ ranges through all the octonions of norm $1$ the action generated is that
+	of $\Omega_8^+(F)$ which in case when $\O$ is split is transitive on isotropic vectors,
+	 i.e. those with $B\ovB = 0$.
+	 It follows that $\SE_6(F)$ is indeed transitive on the white
+	 points spanned by the vectors in $\J_{17}^{cAB} \setminus \langle X \rangle$.
+	 
+	 To show the transitivity on white points spanned by the vectors in 
+	 $\J\setminus \J_{17}^{cAB}$ we prove that every white point 
+	 spanned by a white vector $(a,b,c\mid A,B,C)\in \J\setminus \J_{17}^{cAB}$ 
+	 can be mapped to the white point spanned by $(1,0,0\mid 0,0,0)$. Note that
+	 we require $(a,b,C) \neq (0,0,0)$. 
+	 
+	 In case $(a,b) = (0,0)$ we choose $x\in \O$ such that $\Tr(Cx) \neq 0$ and
+	 apply the element $L_x$, which maps our vector $(0,0,c\mid A,B,C)$ to
+	 $(\Tr(Cx),0,c\mid A,B+\ovA x,C)$. If, on the other hand, $a = 0$ and 
+	 $b \neq 0$, we apply $\delta$. Hence, we may assume that we deal with a vector
+	 $(a,b,c\mid A,B,C)$ with $a \neq 0$. Take $x = -a^{-1}C$ and act by the element
+	 $M_x$: 
+	 \begin{equation*}
+	 	\begin{array}{r@{\;}c@{\;}l}
+	 		M_x : (a,b,c\mid A,B,C) & \mapsto & 
+	 				(a,b+ aa^{-2} C\ovC - \Tr(a^{-1}\ovC C),c \mid 
+	 						A - a^{-1}\ovC \ovB, B, 0).
+	 	\end{array}
+	 \end{equation*}
+	 The whiteness conditions imply $C\ovC = ab$ and $BC = a\ovA$, so additionally we get 
+	 $b+ aa^{-2} C\ovC - \Tr(a^{-1}\ovC C) = b+b-\Tr(b) = 0$ and 
+	 $A - a^{-1}\ovC \ovB = A - A = 0$. This means that the given $M_x$ acts on the elements
+	 of $\J\setminus \J_{17}^{cAB}$ in the following way:
+	 \begin{equation*}
+	 	\begin{array}{r@{\;}c@{\;}l}
+	 		M_x : (a,b,c\mid A,B,C) & \mapsto & 
+	 				(a,0,c \mid 
+	 						0, B, 0),
+	 	\end{array}
+	 \end{equation*}
+	 where $a\neq 0$. It is still white, so $B\ovB = ca$.
+	 Finally, we act by $L_y''$ with $y = -a^{-1}\ovB$:
+	 \begin{equation*}
+	 	\begin{array}{r@{\;}c@{\;}l}
+	 		L_y'': (a,0,c\mid 0,B,0) & \mapsto & 
+	 			(a,0,0 \mid 0,0,0), 
+	 	\end{array}
+	 \end{equation*}
+	 where $a \neq 0$. In other words, any white point spanned by an element
+	 in $\J\setminus\J_{17}^{cAB}$ can be mapped by the action of the stabiliser
+	 of $\langle X\rangle$ to the white point spanned by $(1,0,0\mid 0,0,0)$. 
+\end{proof}
+
+\begin{lemma}
+	\label{lemma:1_white_primitive}
+	The action of $\SE_6(F)$ on white points is primitive.
+\end{lemma}
+
+\begin{proof}
+	From the previous Lemma it follows that if $\O$ is non-split, then the action of 
+	$\SE_6(F)$ on white points in $2$-transitive and hence primitive. It remains to prove
+	the statement in case when $\O$ is split.
+
+	Suppose $X,Y \in \J$ are white vectors such that $\langle X \rangle \neq
+	\langle Y \rangle$. Define $\sim$ to be an $\SE_6(F)$-congruence on white points and
+	let $\langle X\rangle \sim \langle Y\rangle$. Our aim is to show that this generates 
+	the universal congruence. 
+	Since for $\O$ split the action on the white vectors is transitive, we may assume
+	$X = (0,0,1 \mid 0,0,0)$. As mentioned in the beginning of this section, 
+	$\langle X\rangle$ 
+	determines the $17$-dimensional space $\J_{17}^{cAB}$. We now distinguish
+	two cases.
+	
+	If $Y \in \J_{17}^{cAB}$, then acting by the stabiliser of $\langle X\rangle$ 
+	we get $\langle X\rangle \sim \langle \hat{Y}\rangle $ for all white 
+	$\hat{Y} \in \J_{17}^{cAB}$. Take
+	$\hat{Y} = (0,0,0\mid e_0,0,0) \in \J_{17}^{cAB}$ and 
+	\mbox{$\hat{X} = (0,1,0\mid 0,0,0)
+	\not\in \J_{17}^{cAB}$}. As we see from the earlier calculations, both
+	$X$ and $\hat{X}$ are in the $17$-space determined by $\langle \hat{Y} \rangle$. 
+	Acting by the
+	stabiliser of $\langle \hat{Y}\rangle$ 
+	we map $\langle X\rangle $ to $\langle \hat{X} \rangle $,
+	and so ensure $\langle \hat{Y} \rangle \sim \langle \hat{X} \rangle$,
+	and so we have the chain $\langle X\rangle \sim \langle\hat{Y}\rangle \sim 
+	\langle\hat{X}\rangle$. To get $\langle X\rangle \sim \langle\hat{X}\rangle$ for 
+	all white $\hat{X}$ outside $\J_{17}^{cAB}$, we again act by the stabiliser of $\langle
+	X\rangle$.
+	It follows that $\langle X \rangle$ is congruent to any white point generated by a 
+	vector in $\J$, and so we get the universal congruence in this case.
+	
+	On the other hand, if $Y$ lies outside of $\J_{17}^{cAB}$, then we get $\langle X
+	\rangle\sim \langle\hat{Y}\rangle$
+	for all white $\hat{Y} \in \J\setminus \J_{17}^{cAB}$ since the stabiliser of 
+	$\langle X\rangle$ is transitive on the white points spanned by those. 
+	In particular, we may take $\hat{Y} = (1,0,0\mid 0,0,0)$.
+	Acting by the stabiliser of $\langle\hat{Y}\rangle$ on both sides in 
+	$\langle X\rangle \sim \langle\hat{Y}\rangle$, we map 
+	$\langle X\rangle$ to $\langle \hat{X}\rangle$ with $\hat{X} = (0,0,0\mid e_0,0,0)$.
+	Note that both $X$ and $\hat{X}$ are not 
+	in $\J_{17}^{aBC}$ which is the $17$-space determined by $\hat{Y}$, But 
+	$\hat{X} \in \J_{17}^{cAB}$ and by transitivity we get $\langle X\rangle 
+	\sim \langle \hat{X} \rangle$. Again,
+	we act by the stabiliser of $\langle X\rangle $ to ensure $\langle X\rangle  \sim
+	\langle \hat{X} \rangle$ for all white points $\langle \hat{X} \rangle$ spanned by 
+	$\hat{X} \in \J_{17}^{cAB}$, i.e. our $\SE_6(F)$-congruence is trivial in this case 
+	as well.
+\end{proof}
+
+\subsection{The stabiliser of a white point}
+\label{section:stabiliser}
+
+In this section we assume that $\O$ is a split octonion algebra. 
+It is our aim now to obtain the stabiliser in $\SE_6(F)$ of a white point. 
+In particular, we prove the following result.
+
+\begin{theorem}
+    \label{theorem:1_white_stab}
+    If $\O$ is split, then the stabiliser of a white vector in $\SE_6(F)$ is isomorphic to the group
+    generated by the actions of the elements 
+    $M_x$, $L_x$, $M_x'$ and $L_x''$ on $\J$ 
+    as $x$ ranges over $\O$ and this is a group of shape
+    \begin{equation}
+        F^{16}\cn\Spin_{10}^+(F).
+    \end{equation}
+    The stabiliser of a white point is isomorphic to
+    
+    \begin{equation}
+    	F^{16}\cn\Spin_{10}^+(F).F^{\times},
+    \end{equation}
+    where $F^{\times}$ is the multiplicative group of the field $F$. 
+\end{theorem}
+
+This whole section is devoted to proving this result. Some of this proof is in the running text,
+and some of it is contained in a series of technical lemmata. First, we prove that no 
+invertible $F$-linear maps on $\O$ can change the order of the octonion product.
+
+\begin{lemma}
+    \label{lemma:1_white_phipsi1}
+    There are no invertible $F$-linear maps $\phi,\psi : \O \rightarrow \O$ such that for all
+    $A,B \in \O$ it is true that $AB = (B\psi) (A\phi)$.
+\end{lemma}
+
+\begin{proof}
+    For the sake of finding a contradiction, suppose that $\phi,\psi : \O \rightarrow \O$ are
+    invertible $F$-linear maps such that the identity $AB = (B\psi)(A\phi)$ holds for all \mbox{$A,B\in \O$}.
+    In particilar, substituting $A = 1_{\O}$, we get $B = (B\psi) u$ for all $B \in \O$, where $u = 1 \phi$,
+    so $B \psi = B u^{-1}$ for all $B \in \O$, which means that the map $\psi$ is right
+    multiplication by $u^{-1}$. Note that the existence of $u^{-1}$ follows from the
+    invertibility of the map $\psi$. Thus, our identity has the form $AB = (B u^{-1}) (A\phi)$
+    for all $A,B \in \O$. We can substitute $B = u$ which immediately gives us $A\phi = Au$ for
+    all $A \in \O$, so the map $\phi$ is right multiplication by $u$. Finally, we get
+    $AB = (B u^{-1}) (A u)$ for all $A,B \in \O$ and specifically for $B = 1_{\O}$ we get
+    $A = u^{-1} (A u)$, or likewise $u A = A u$ for all $A \in \O$. Therefore $u$ is a
+    scalar multiple of $1_{\O}$, i.e. $u = \mu \cdot 1_{\O}$ for some $\mu \in F$.
+    Since the linear maps $\phi$ and $\psi$ are invertible, $\mu$ is non-zero, and we get
+    $AB = (Bu^{-1})(Au) = (\mu^{-1} \mu \cdot 1_{\O}) BA = BA$ for all $A,B \in \O$, which is definitely
+    not true as $\O$ is not commutative.
+\end{proof}
+
+Second, we show that if two invertible linear maps commute with the octonion product, then
+these are mutually invertible scalar multiplication maps.
+
+\begin{lemma}
+    \label{lemma:1_white_phipsi2}
+    Suppose $\phi,\psi: \O \rightarrow \O$ are two invertible $F$-linear maps such that
+    \mbox{$AB = (A\phi) (B\psi)$} for all $A,B \in \O$. Then $\psi : x \mapsto \mu x$
+    for some non-zero $\mu \in F$ and $\phi = \psi^{-1}$, i.e. $\phi : x \mapsto \mu^{-1} x$.
+\end{lemma}
+
+\begin{proof}
+    Suppose $\phi, \psi: \O \rightarrow \O$ are $F$-linear maps such that
+    $AB = (A\phi) (B\psi)$ for all $A,B \in \O$. When $A=1_{\O}$ we get $B\psi = uB$ for all
+    $B \in \O$ where $u = (1_{\O}\phi)^{-1}$, so
+    the map $\psi$ is left multiplication by $u$.
+    Substituting $B = 1_{\O}$ on the other hand gives
+    us $A = (A\phi) (1_{\O}\psi)$ for all $A$ and so $A\phi = A v$ where $v =
+    (1_{\O}\psi)^{-1}$, so $\phi$ is the right multiplication by $v$.
+    Therefore the condition in this case becomes $AB = (Av)(uB)$
+    for all $A,B \in \O$. Substituting $B = u^{-1}$, we get $Au^{-1} = Av$ for all
+    $A \in \O$, and therefore $v = u^{-1}$, and our identity turns out to be
+    $AB = (Au^{-1})(uB)$ for
+    all $A,B\in \O$. Now since $u$ is invertible, we can write $u^{-1} = N(u)^{-1} \ovu$.
+    Finally, by Corollary \ref{cor:1_auub}, $u$ must be a scalar multiple of $1_{\O}$,
+    i.e. $u = \mu \cdot 1_{\O}$.
+\end{proof}
+
+The statements in Lemmas \ref{lemma:1_white_phipsi1} and \ref{lemma:1_white_phipsi2} are
+true even when $\O$ is not split. Everything is ready now for the investigation of the white vector stabiliser. Since it was shown
+that the group $\SE_6(F)$ acts transitively on the set of white points, it is sufficient to
+study the stabiliser of a specific white vector.  For instance, it is convenient to take
+$v = (0,0,1\mid 0,0,0)$. First thing to notice is that $v$ is invariant under the action of the
+elements of the form
+\begin{equation}
+    L_x'' = \begin{bmatrix}
+        1&0&x \\
+        0&1&0 \\
+        0&0&1
+    \end{bmatrix},\quad 
+    M_y' = \begin{bmatrix}
+        1&0&0\\
+        0&1&y\\
+        0&0&1
+    \end{bmatrix},
+\end{equation}
+where $x,y \in \O$.
+
+\begin{lemma}$ $
+	\label{lemma:1_q16}
+	\begin{enumerate}[(a)]
+		\item Let $Q$ be any of the $\{L,L',L'',M,M',M''\}$. 
+		Then the actions on $\J$ of the 
+		elements $Q_x$ where $x$ ranges over $\O$ generate an elementary abelian group 
+		isomorphic to $F^8$. 
+		
+		\item Let $(R, S)$ be any pair from the set 
+		$\{(L,M''), (L',M), (L'',M')\}$ or any of the 
+		$\{(L,M'), (L',M''), (L'',M)\}$. Then
+		the actions of $R_x$ and $S_x$, as $x$ ranges through $\O$, 
+		generate an elementary abelian 
+		group isomorphic to $F^{16}$. 
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	To show part (a) for the elements $L_x,L_x',L_x''$ it is enough to consider just, say, 
+	$L_x''$ as to obtain the result for the rest of them we can apply the action of the 
+	triality element
+	\begin{equation*}
+		\tau = \begin{bmatrix}
+			0 & 1 & 0 \\
+			0 & 0 & 1 \\
+			1 & 0 & 0
+		\end{bmatrix}.
+	\end{equation*}
+	Similarly, out of $M_x,M_x',M_x''$ we only need to consider, for instance, $M_x'$.
+	The actions of $L_x''$ and $M_y'$ on $\J$ are given by
+    \begin{equation}
+    	\label{eq:1_q16_action}
+        \begin{array}{r@{\;\;}c@{\;\;}l}
+            L_x'': (a,b,c\mid A, B, C) & \mapsto &
+            (a,b,c+a x \ovx  + \Tr(Bx) \mid A+\ovC x, B+A \ovx , C), \\
+            M_y': (a,b,c\mid A,B,C) & \mapsto &
+            (a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + By, B+\ovy \ovC , C).
+        \end{array}
+    \end{equation}
+    We notice that the action is nontrivial whenever $x$ and $y$ are non-zero. 
+    The element $M_y'$ sends $(a,b,c+a x \ovx  + \Tr(Bx) \mid A+\ovC x, B+a
+    \ovx , C)$ to
+    \begin{equation*}
+        (a,b,c+ax\ovx +\Tr(Bx)+by\ovy  + \Tr(\ovy A) \mid
+            A+\ovC x + by, B+a\ovx  + \ovy \ovC , C ),
+    \end{equation*}
+    and the element $L_x''$ sends $(a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + By, B+\ovy 
+    \ovC , C)$ to
+    \begin{equation*}
+        (a,b,c+by\ovy  + \Tr(\ovy A) +ax\ovx  +\Tr(Bx) \mid A+by+\ovC x, B+\ovy \ovC 
+        +a \ovx , C).
+    \end{equation*}
+    Hence, the actions of these elements commute. Similarly, it is straightforward to verify that
+    the actions of $L_x''$ and $L_y''$ commute as well as the actions of $M_x'$ and $M_y'$.
+    Moreover, the element $L_y''$ sends $(a,b,c+a x \ovx  + \Tr(Bx) \mid A+\ovC x, B+a
+     \ovx , C)$ to
+    \begin{equation*}
+        (a,b,c+ax\ovx  + \Tr(Bx) + ay\ovy  + \Tr(By) + a\Tr(\ovx y) \mid
+            A+\ovC x + \ovC y, B + a\ovx  + a\ovy , C),
+    \end{equation*}
+    and $L_{x+y}''$ sends $(a,b,c\mid A,B,C)$ to
+    \begin{equation*}
+        (a,b,c+ax\ovx  + a\Tr(x\ovy ) + ay\ovy  + \Tr(B(x+y)) \mid
+        A + \ovC (x+y), B+a(\ovx  + \ovy ), C),
+    \end{equation*}
+    so the action of $L_{x+y}''$ is the same as the product of the actions of $L_x''$ and
+    $L_y''$. A similar calculation shows that the action of $M_{x+y}'$ is the same
+    as the product of the actions of $M_x'$ and $M_y'$. It follows that the action of 
+    $L_x''$ on $\J$, $x\in \O$ generates an abelian group $(F^8,+)$ as well as the action
+    of the element $M_y'$, $y \in \O$. We simply denote the abelian group $(F^n,+)$ as $F^n$ in
+    our further discussion. 
+    
+    To prove part (b) we need to verify that the intersection of the corresponding abelian groups, isomorphic to $F^8$ and generated by the actions of $L_x''$ and $M_x'$ is trivial. Suppose that the
+    actions of $L_x''$ and $M_y'$ are equal. Then, according to (\ref{eq:1_q16_action}), 
+    in the fourth ``co{\"o}rdinate'' we have
+    \begin{equation*}
+    	 A+\ovC x = A + B y
+    \end{equation*}
+    for arbitrary $A,B,C \in \O$. In other words, we get $\ovC x = B y$ for arbitrary octonions
+    $B$ and $C$. In particular, if $B = 1_{\O}$ and $C = 0$, we get $y = 0$ and if
+    $B = 0$ and $C = 1_{\O}$ we obtain $x = 0$. So, the intersection of two copies of
+    $F^8$ consists of the identity element, as needed, and the result follows. 
+    Again, to get (b) for the rest of the pairs in the first set we apply the 
+    triality element. The calculations for the second set of pairs are essentially
+    of the same nature. 
+\end{proof}
+
+The next observation is that our white vector $v$ is also invariant under the action of the
+elements
+    \begin{equation}
+        M_x = \begin{bmatrix}
+            1&x&0\\
+            0&1&0\\
+            0&0&1
+        \end{bmatrix},\quad 
+        L_y = \begin{bmatrix}
+            1&0&0\\
+            y&1&0\\
+            0&0&1
+        \end{bmatrix}.
+    \end{equation}
+First, we show that the actions of these on $\J_{10}^{abC}$ generate a group 
+of type $\Omega_{10}^+(F)$. As we will see further, instead of arbitrary octonions
+it is enough for $x$ to range through the scalar multiples of the basis elements $e_i$.
+Define the quadratic form $\QQ_{10}$ on $\J$ via
+\begin{equation}
+	\QQ_{10}((a,b,c\mid A,B,C)) = ab - C\ovC. 
+\end{equation}
+We notice that $\QQ_{10}$ is of \textit{plus} type, so for convenience we
+denote the group $\Omega_{10}(F,\QQ_{10})$ as $\Omega_{10}^+(F)$. 
+
+To construct $\Omega_{10}^+(F)$ we follow the series of steps. First, we consider the
+$4$-space $V_4$ spanned by the Albert vectors of the form 
+\mbox{$(a,b,0\mid 0,0,C_{-1}e_{-1} + C_1 e_1)$}. 
+
+\begin{lemma}
+	The actions of the elements $M_{\lambda e_{\pm 1}}$ and $L_{\lambda e_{\pm 1}}$
+	on $V_4$, where $\lambda \in F$, generate a group of type $\Omega_4^+(F)$.
+\end{lemma}
+
+\begin{proof}
+	Consider the vectors $v_1$, $v_2$, $v_3$ and $v_4$ defined as
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			v_1 & = & (1,0,0 \mid 0,0,0), \\
+			v_2 & = & (0,1,0 \mid 0,0,0), \\
+			v_3 & = & (0,0,0 \mid 0,0,e_{-1}), \\
+			v_4 & = & (0,0,0 \mid 0,0,e_1).
+		\end{array}
+	\end{equation*}
+	It is clear that these span $V_4$, so define $\mathcal{B} = \{v_1, v_4, v_3, v_2\}$
+	to be the basis of our $4$-space. The element $M_{\lambda e_{-1}}$ acts on the 
+	basis elements in the following way:
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}l}
+			v_1 & \mapsto & (1,0,0 \mid 0,0,\lambda e_{-1}) & = & v_1 + \lambda v_3, \\
+			v_4 & \mapsto & (0,\lambda,0 \mid 0,0,e_1) & = & v_4 + \lambda v_2, \\
+			v_3 & \mapsto & (0,0,0 \mid 0,0,e_{-1}) & = & v_3, \\
+			v_2 & \mapsto & (0,1,0 \mid 0,0,0) & = & v_2.
+		\end{array}
+	\end{equation*}
+	As we can see, with respect to the basis $\mathcal{B}$ the action can be written
+	as a $4\times 4$ matrix
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & 0 & \lambda & 0 \\
+			0 & 1 & 0 & \lambda \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix},
+	\end{equation*}
+	where $\otimes$ is the Kronecker product. Similarly, the action of $M_{\lambda e_1}$ 
+	on $\mathcal{B}$ is given by
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}l}
+			v_1 & \mapsto & (1,0,0 \mid 0,0,\lambda e_{1}) & = & v_1 + \lambda v_4, \\
+			v_4 & \mapsto & (0,0,0 \mid 0,0,e_1) & = & v_4, \\
+			v_3 & \mapsto & (0,\lambda,0 \mid 0,0,e_{-1}) & = & v_3 + \lambda v_2, \\
+			v_2 & \mapsto & (0,1,0 \mid 0,0,0) & = & v_2,
+		\end{array}
+	\end{equation*}
+	so the corresponding $4\times 4$ matrix has the form
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & \lambda & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & \lambda \\
+			0 & 0 & 0 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1 
+		\end{bmatrix}. 
+	\end{equation*}
+	Now, for convenience, we do the same calculations for 
+	$L_{ -\lambda e_{-1}}$: it acts on the elements
+	of $\mathcal{B}$ as
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}l}
+			v_1 & \mapsto & (1,0,0 \mid 0,0,0) & = & v_1, \\
+			v_4 & \mapsto & (\lambda,0,0 \mid 0,0,e_{-1}) & = & \lambda v_1 + v_4, \\
+			v_3 & \mapsto & (0,0,0 \mid 0,0,e_{-1}) & = & v_3, \\
+			v_2 & \mapsto & (0,1,0 \mid 0,0,\lambda e_{-1}) & = & \lambda v_3 + v_2,
+		\end{array}
+	\end{equation*}
+	and it can be written in the matrix form as
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\lambda & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & \lambda & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix}.
+	\end{equation*}
+	Finally, the action on $\mathcal{B}$ of $L_{-\lambda e_1}$ is given by
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}l}
+			v_1 & \mapsto & (1,0,0 \mid 0,0,0) & = & v_1, \\
+			v_4 & \mapsto & (0,0,0 \mid 0,0,e_1) & = & v_4, \\
+			v_3 & \mapsto & (\lambda,0,0 \mid 0,0,e_{-1}) & = & \lambda v_1 + v_3, \\
+			v_2 & \mapsto & (0,1,0 \mid 0,0,\lambda e_1) & = & \lambda v_4 + v_2,
+		\end{array}
+	\end{equation*}
+	and in the matrix form we get
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			\lambda & 0 & 1 & 0 \\
+			0 & \lambda & 0 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}.
+	\end{equation*}	
+	As we know, 
+	\begin{equation*}
+		\left\langle
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F).
+	\end{equation*}
+	It follows that
+	\begin{multline*}
+		\left\langle
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \\
+		\cong 
+		\left\langle
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F),
+	\end{multline*}
+	and since 
+	\begin{equation*}
+		\begin{bmatrix}
+				-1 & 0 \\
+				0 & -1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+				-1 & 0 \\
+				0 & -1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix},
+	\end{equation*}
+	we finally get
+	\begin{multline*}
+		\left\langle
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes 
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}, \right. \\
+			\left. \begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix} \otimes 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F) \circ \SL_2(F).
+	\end{multline*}
+	Now, $\SL_2(F) \circ \SL_2(F) \cong \Omega_4^+(F)$ and this finishes the proof. 
+\end{proof}
+
+In our construction we use the results of section \ref{section:orthogonal}. Consider the \mbox{$6$-space} $V_6$ spanned by the Albert vectors
+$(a,b,0\mid 0,0,C)$, where $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{-\bar{\omega}}, 
+e_1 \rangle$. Our copy of $\Omega_4^+(F)$ preserves two isotropic Albert vectors in
+ $V_6$:
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_{\bar{\omega}} & = & (0,0,0\mid 0,0,e_{\bar{\omega}}), \\
+		u_{-\bar{\omega}} & = & (0,0,0\mid 0,0,e_{-\bar{\omega}}). \\
+	\end{array} 
+\end{equation}
+The element $M_{e_{\bar{\omega}}}$ preserves $u_{\bar{\omega}}$ but not $u_{-\bar{\omega}}$.
+Therefore, adjoining $M_{e_{\bar{\omega}}}$ to $\Omega_4^+(F)$, 
+we obtain a subgroup
+of $V_4\cn\Omega_4^+(F)$ (Lemma \ref{lemma:1_stabiliser_omega}), and since 
+$\Omega_4^+(F)$
+is maximal in the latter (Theorem \ref{theorem:1_omega_maximal}), we conclude that the action of $M_{\lambda e_{\pm 1}}$, 
+$L_{\lambda e_{\pm 1}}$ and $M_{e_{\bar{\omega}}}$ on $V_6$ is that of 
+$V_4\cn\Omega_4^+(F)$. That is, we have constructed the group 
+$V_4\cn\Omega_4^+(F)$
+as the stabiliser of $u_{\bar{\omega}}$ in $\Omega_6^+(F)$. 
+Now we use the result of Theorem \ref{theorem:1_space_stab}. The element
+ $M_{e_{-\bar{\omega}}}$ preserves $V_6$ but it does not preserve
+$u_{\bar{\omega}}$, and as a consequence it does not preserve the $1$-space $\langle
+u_{\bar{\omega}} \rangle$. Therefore, if we adjoin $M_{e_{-\bar{\omega}}}$ to our copy of 
+$V_4\cn\Omega_4^+(F)$, we get the action of the group $\Omega_6^+(F)$ on $V_6$. 
+
+Similarly, we consider the $8$-space $V_8$ spanned by the vectors 
+$(a,b,0\mid 0,0,C)$ with $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, 
+e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$. Consider two isotropic Albert vectors
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_{\omega} & = & (0,0,0 \mid 0,0,e_{\omega}), \\
+		u_{-\omega} & = & (0,0,0 \mid 0,0,e_{-\omega}),
+	\end{array}
+\end{equation}
+which are fixed by our copy of $\Omega_6^+(F)$. The action of the element
+ $M_{e_{\omega}}$
+on $V_6$ preserves $u_{\omega}$ but not $u_{-\omega}$ and therefore adjoining this element
+to $\Omega_6^+(F)$ we get the action of the group $V_6\cn\Omega_6^+(F)$. Next, 
+the element $M_{e_{-\omega}}$ does not preserve the $1$-space $\langle u_{\omega} \rangle$,
+so appending it to $V_6\cn\Omega_6^+(F)$ we get the action of the group
+$\Omega_8^+(F)$ on $V_8$. 
+
+Finally, we consider the $10$-space $\J_{10}^{abC}$ with two isotropic Albert vectors
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_0 & = & (0,0,0\mid 0,0,e_0), \\
+		u_{-0} & = & (0,0,0\mid 0,0,e_{-0}).
+	\end{array}
+\end{equation}
+Following the same procedure, we adjoin the element $M_{e_0}$ which fixes $u_0$ but not 
+$u_{-0}$ to get the action of the group of shape $V_8\cn\Omega_8^+(F)$. 
+Appending the action of $M_{e_{-0}}$, which does not preserve $\langle e_0 \rangle$, to
+this yields the action of $\Omega_{10}^+(F)$ on $\J_{10}^{abC}$. 
+Lemma \ref{lemma:1_q16} allows us to conclude that we have shown the following result.
+
+\begin{lemma}
+	\label{lemma:1_omega10plus}
+	The actions of $M_x$ and $L_x$ on $\J_{10}^{abC}$ generate the 
+	group $\Omega_{10}^+(F)$ as $x$ ranges through $\O$. 
+\end{lemma}
+
+Now we need to understand the action of the elements $M_x$ and $L_x$ on the whole 
+$27$-space $\J$.  
+
+\begin{lemma}
+	\label{lemma:1_2_actions}
+	Suppose an element of the stabiliser in $\SE_6(F)$ of $v$ preserves 
+	the decomposition of the Albert space into
+	the direct sum of the form $\J = \J_{1}^c \oplus \J_{16}^{AB} \oplus \J_{10}^{abC}$.
+	
+	\begin{enumerate}[(a)]
+	\item If the action of this element on the $10$-space $\J_{10}^{abC}$ 
+	is given by
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}l}
+			(1,0,0\mid 0,0,0) & \mapsto & (\lambda,0,0\mid 0,0,0), \\
+			(0,1,0\mid 0,0,0) & \mapsto & (0,\lambda^{-1},0\mid 0,0,0), \\
+			(0,0,0\mid 0,0,C) & \mapsto & (0,0,0 \mid 0,0,C),
+		\end{array}
+	\end{equation*}
+	then $\lambda$ is a square in $F$. 
+	
+	\item On the other hand, an action of the type 
+	\begin{equation*}
+		\begin{array}{r@{\;\;}c@{\;\;}l}
+			(1,0,0\mid 0,0,0) & \mapsto & (0,\lambda,0\mid 0,0,0), \\
+			(0,1,0\mid 0,0,0) & \mapsto & (\lambda^{-1},0,0\mid 0,0,0), \\
+			(0,0,0\mid 0,0,C) & \mapsto & (0,0,0 \mid 0,0,C)
+		\end{array}
+	\end{equation*}
+	is impossible. 
+	
+	\item Finally, if the action on the $10$-space is 
+	trivial, then the action on the corresponding $16$-space is that of $\pm \mathrm{I}_{16}$ 
+	(hence, the action on $\J$ is that of $P_{\pm 1}$). 
+	
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	We are considering the elements that fix $\J_{8}^C$ pointwise
+    and either fix or swap the $1$-dimensional spaces $\J_1^a$ and $\J_1^b$. 
+    So we may assume that these elements respectively fix or swap the corresponding
+    $17$-spaces $\J_{17}^{aBC}$ and $\J_{17}^{bAC}$.
+    In particular, their intersection, i.e. the space $\J_{8}^C$ is fixed. If the action of the
+     stabiliser
+    swaps $\J_1^a$ and $\J_1^b$ while leaving the $1$-space $\J_1^c$ in its
+    place, then it also swaps the $8$-spaces $\J_8^A$ and
+    $\J_8^B$ as these subspaces are the intersections of the $17$-space
+    $\J_{17}^{cAB}$ with $\J_{17}^{bAC}$ and $\J_{17}^{aBC}$ respectively.
+    
+   	Suppose now that an element in the stabiliser acts in the following manner:
+    \begin{equation*}
+            (a,b,c\mid A,B,C) \mapsto (\lambda a, \lambda^{-1} b, c \mid
+                A \phi, B\psi, C),
+    \end{equation*}
+    where $\phi, \psi : \O \rightarrow \O$ are invertible $F$-linear maps.
+    As this action is supposed to  preserve the determinant, it has to preserve the cubic term
+    $\Tr(ABC)$ in particular, i.e. we must have $\Tr(ABC) = \Tr((A\phi) (B\psi) C)$ for all 
+    $A,B,C \in \O$. This
+    is equivalent to the condition $AB = (A\phi) (B\psi)$ for all $A,B \in \O$, since the 
+    original identity is equivalent to
+    $\langle AB, \ovC  \rangle = \langle (A\phi)(B\psi) , \ovC  \rangle$.
+    By Lemma \ref{lemma:1_white_phipsi2} we find that $A \phi = \mu^{-1} A$ and
+    $B \psi = \mu B$ for all $A,B \in \O$ and some non-zero $\mu \in F$. The individual terms in
+     the determinant are being
+    changed in the following way:
+    \begin{equation*}
+        \begin{array}{r@{\;\;}c@{\;\;}l}
+        abc & \mapsto & abc, \\
+        a A \ovA  & \mapsto & \lambda \mu^{-2} a A \ovA , \\
+        b B \ovB  & \mapsto & \lambda^{-1} \mu^2 b B \ovB , \\
+        c C \ovC  & \mapsto & c C \ovC ,\\
+        \Tr(ABC) & \mapsto & \Tr(ABC).
+    \end{array}
+    \end{equation*}
+    It follows that in order to preserve the determinant we must have $\lambda^{-1} \mu^2 = 1$,
+    i.e. $\lambda = \mu^2$.
+    
+    In case when our element acts as
+    \begin{equation*}
+   		(a,b,c\mid A,B,C) \mapsto (\lambda^{-1} b, \lambda a, c \mid B\psi, A\phi, C),
+   	\end{equation*}
+    we get $\Tr(ABC) = \Tr((B\psi) (A\phi) C)$
+    for all $A,B,C \in \O$. This holds if and only if $AB = (B\psi) (A\phi)$ for
+    all $A,B \in \O$. Lemma
+    \ref{lemma:1_white_phipsi1} asserts that there are no such maps $\phi$ and $\psi$,
+    and so this rules out the latter case.
+    
+    Finally, if we assume the trivial action on $\J_{10}^{abC}$, then we get $\lambda = 1$,
+     i.e. 
+    $\mu^2 = 1$, so the action on $\J$ is indeed that of $P_{\pm 1}$. 
+\end{proof}
+
+Now let $X = (a,b,c\mid A,B,C)$
+and let $Y = (a',b',c' \mid A', B', C')$. An isometry which maps $X$ to
+    $Y$ and $v$ to $\lambda v$ must send $\fdet(X+v)-\fdet(X) = ab-C\ovC $ to
+    $\fdet(Y+\lambda v) - \fdet(Y) = \lambda (a'b' - C'\ovC ')$. The \mbox{$17$-dimensional}
+     radical
+    of both of these forms is fixed, and the quadratic form $ab-C\ovC$ is being scaled by
+    a factor of $\lambda$. In particular, when $\lambda = 1$, the quadratic
+    form is being preserved. So, the action of the vector stabiliser on the $10$-dimensional
+    quotient is that of a subgroup of $\GO_{10}^+(F)$. 
+
+    Consider the white vectors of the form $(a,0,c\mid A,B,0)$ and $(0,b,c\mid A,B,0)$ with
+    $a,b \neq 0$. In the first case the conditions for being white are
+    \begin{equation*}
+        \left.
+            \begin{array}{r@{\;}c@{\;}l}
+                A\ovA  & = & 0,\\
+                B\ovB  & = & ac, \\
+                a\ovA  & = & 0, \\
+                AB & = & 0.
+            \end{array}
+        \right\}
+    \end{equation*}
+    In other words, we have a white vector of the form
+    $(a,0,B\ovB /a\mid 0,B,0)$. For the second vector we get
+    \begin{equation*}
+        \left.
+            \begin{array}{r@{\;}c@{\;}l}
+                bc & = & A\ovA , \\
+                B\ovB  & = & 0, \\
+                b\ovB  & = & 0,
+            \end{array}
+        \right\}
+    \end{equation*}
+    so the vector has the form $(0,b,A\ovA /b\mid A,0,0)$. The elements $M_x'$ and $L_x''$
+    transform these in the following way:
+    \begin{equation*}
+        \begin{array}{r@{\;\;}c@{\;\;}l}
+            M_x': (a,0,B\ovB /a\mid 0,B,0) & \mapsto &
+            (a,0,B\ovB /a\mid 0,B,0), \\
+            M_x': (0,b,A\ovA /b\mid A,0,0) & \mapsto &
+            (0,b,A\ovA /b+bx\ovx  + \Tr(\ovx A) \mid A+bx,0,0), \\
+            L_x'': (a,0,B\ovB /a\mid 0,B,0) & \mapsto &
+            (a,0,B\ovB /a+ax\ovx +\Tr(Bx)\mid 0,B+a\ovx , 0), \\
+            L_x'': (0,b,A\ovA /b\mid A,0,0) & \mapsto &
+            (0,b,A\ovA /b\mid A,0,0).
+        \end{array}
+    \end{equation*}
+    Note that we already have an elementary abelian group $F^{16}$ acting
+    on the $17$-space \mbox{$\J_{17}^{cAB}$}. We can now 
+    invoke Lemma \ref{lemma:1_2_actions} to conclude that the action of the stabiliser
+    on the remaining $10$-space $\J_{10}^{abC}$ is that of $\Omega_{10}^+(F)$ and the 
+    kernel of the action on $\J$ has order no more than two. 
+
+\begin{theorem}
+	\label{theorem:1_splin10plus}
+	The actions of the elements $M_x$ and $L_x$ on $\J$ where $x$ ranges through a 
+	split octonion algebra $\O$
+	generate a group of type $\Spin_{10}^+(F)$ understood as $\Omega_{10}^+(F)$
+	in case of characteristic $2$. 
+\end{theorem}
+
+With the result of Lemma \ref{lemma:1_q16} we conclude that the stabiliser of a white
+vector is indeed a group of shape
+$F^{16}\cn\Spin_{10}^+(F)$ as usual understood as $F^{16}\cn\Omega_{10}^+(F)$ in case of
+characteristic $2$. 
+
+Now we have enough ingredients to produce the vector stabiliser. As before, we consider the stabiliser of the white
+    vector $v = (0,0,1\mid 0,0,0)$.
+As we know from Theorem \ref{theorem:1_splin10plus} and Lemma \ref{lemma:1_2_actions}, 
+the actions of the elements $M_x$ and $L_x$ on $\J$ generate a group of type 
+$\Spin_{10}^+(F)$. It is easy to check
+ that this copy of $\Spin_{10}^+(F)$ normalises the elementary abelian
+group $F^{16}$ from Lemma \ref{lemma:1_q16}. A straighforward computation
+illustrates the following result:
+
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		(M_x')^{L_y} & \text{ acts as } & M_x', \\
+		(M_x')^{M_y} & \text{ acts as } &  L_{-yx}'' \cdot M_x', \\
+		(L_x'')^{L_y} & \text{ acts as } & M_{-yx}' \cdot L_x'', \\
+		(L_x'')^{M_y} & \text{ acts as } & L_x'', \\
+	\end{array}
+\end{equation}
+where the products in the right-hand side are understood as the products of the actions rather
+than as the matrix products. Furthermore, the intersection
+of the groups $\Spin_{10}^+(F)$ and $F^{16}$ is trivial: the action of $\Spin_{10}^+(F)$
+preserves the decomposition $\J = \J_{1}^c \oplus \J_{16}^{AB} \oplus \J_{10}^{abC}$,
+while any non-trivial action of the elementary abelian group $F^{16}$ fails to do so.
+Indeed, a general element in $F^{16}$ has the form $M_x' \cdot L_y''$ for some $x,y \in 
+\O$ and it sends an Albert vector $(a,b,c\mid A,B,C)$ to 
+\begin{equation*}
+	(a,b,c+a\NN(y)+b\NN(x) + \Tr(By) + \Tr(\ovx A) + \Tr(\ovx \ovC y) \mid
+			A+\ovC y + bx, B+a\ovy + \ovx \ovC, C ).
+\end{equation*}
+So, we have shown that the actions of the elements $M_x', L_x'', M_x, L_x$ on $\J$ generate
+a group of shape $F^{16}\cn\Spin_{10}^+(F)$, as $x$ ranges through a split algebra $\O$.
+
+
+Next, we consider the white point $\langle v \rangle$ spanned by our white vector. The stabiliser
+in $\SE_6(F)$ of $\langle v \rangle$, where $v = (0,0,1\mid 0,0,0)$, maps 
+$v$ to $\lambda v$ for some non-zero 
+$\lambda \in F$. For instance, this can be achieved by the elements 
+\begin{equation}
+	\label{eq:puprime}
+	P_{u^{-1}}' = \diag(1_{\O},u^{-1},u) = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & u^{-1} & 0 \\
+		0 & 0 & u
+	\end{bmatrix}	 
+\end{equation}
+with 
+$u$ being an invertible octonion of arbitrary norm. 
+Indeed, any such element $P_{u^{-1}}'$ sends
+$(0,0,1\mid 0,0,0)$ to $(0,0,\NN(u)\mid 0,0,0)$ and since $\NN(u)$ can be any non-zero 
+field element, we get an abelian group $F^{\times}$ on top of the vector stabiliser. This finishes
+the proof of the main theorem in this section. 
+
+Now, since the vector stabiliser is generated by the actions of $M_x$, $L_x$, $M_x'$,
+$L_x''$ on $\J$, and the subgroup of $\SE_6(F)$ generated by 
+$M_x,M_x',M_x'',L_x,L_x',L_x''$ acts transitively on the white points, 
+we make the following conclusion. 
+
+\begin{theorem}
+The group $\SE_6(F)$ is generated by the actions
+of $M_x,M_x',M_x''$ and $L_x,L_x',L_x''$ on $\J$ as $x$ ranges through $\O$. 
+\end{theorem}
+
+\section{Simplicity of $\EE_6(F)$}
+
+The construction we have obtained also allows us to show that the group $\EE_6(F)$ is indeed
+simple without any references to Lie theory. The classical way of showing the simplicity of 
+certain groups is the following lemma.
+
+\begin{lemma}[Iwasawa]
+    If $G$ is a perfect group acting faithfully and primitively 
+    on a set $\Omega$, and the point stabilizer $H$ has a normal
+    abelian subgroup $A$ whose conjugates generate $G$, then
+    $G$ is simple.
+\end{lemma}
+
+First, we show that the subgroup of $\SE_6(F)$ stabilising 
+all the white points simultaneously acts on $\J$ by scalar multiplications, and hence
+the action of $\E_6(F)$ on the set of white points is faithful.
+
+\begin{lemma}
+	The subgroup in $\SE_6(F)$ stabilising simultaneously all white points
+	is the group of scalars.  
+\end{lemma}
+
+\begin{proof}
+ Consider the action of
+this stabiliser on $\J_{10}^{abC}$ and pick the basis
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		v_1 & = & (1,0,0\mid 0,0,0), \\
+		v_2 & = & (0,1,0\mid 0,0,0), \\
+		v_{i+2} & = & (a_i, b_i,0\mid 0,0,C_i),
+	\end{array}
+\end{equation} 
+where $1 \leqslant i \leqslant 8$ and $C_i \ovC_i = a_i b_i$. Since in particular we stabilise
+$\langle v_1 \rangle,...,\langle v_{10}\rangle$, the action on $\J_{10}^{cAB}$ is that of a 
+$10 \times 10$ diagonal matrix $\diag(\lambda_1, ..., \lambda_{10})$ 
+with respect to the basis $\{v_1, ..., v_{10}\}$. Consider 
+an Albert vector $v = (a,b,0\mid 0,0,C)$, where $C = C_1 + \cdots + C_8$ and 
+$a,b$ are such that $v$ is white, i.e. $C\ovC = ab$. Now, if $F\neq \mathbb{F}_2$, we can choose
+$a,b \in F$ in such a way that $v$ can be written as a linear combination 
+$v = \alpha v_1 + \beta v_2 + v_3 + \cdots + v_{10}$ with $\alpha \neq 0$. The stabiliser of 
+all white point maps $v$ to $\lambda v$ for some non-zero $\lambda \in F$, so this ensures
+that $\lambda = \lambda_1 = \lambda_3 = \cdots = \lambda_{10}$. We now adjust the chosen values
+of $a$ and $b$ to obtain a linear combination with $\beta \neq 0$, and so $\lambda = 
+\lambda_2 = \lambda_3 = \cdots \lambda_{10}$. It follows that the action on $\J_{10}^{abC}$ 
+is just the multiplication by $\lambda$. 
+
+When $F = \mathbb{F}_2$, we take $\O$ to be the split octonion algebra with 
+our favourite basis $\{ e_i\ \mid\ i \in \pm \{0,1,\omega,\bar{\omega}\}\}$. For the 
+$10$-space $\J_{10}^{abC}$ we choose the basis 
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		v_1 & = & (1,0,0\mid 0,0,0), \\
+		v_2 & = & (0,1,0\mid 0,0,0), \\
+		v_{i+2} & = & (0,0,0\mid 0,0,e_i),
+	\end{array}
+\end{equation} 
+and then proceed in the same manner. The vector $v = v_1 + \cdots + v_{10}$ is white and since 
+there is a single choice for a non-zero scalar in $\mathbb{F}_2$, it is being fixed and 
+the action on the whole $10$-space in this case is that of $\diag(1,..., 1)$. 
+
+Now, by using the triality element, we map $\J_{10}^{abC}$ to $\J_{10}^{bcA}$ and further
+to $\J_{10}^{caB}$ and so we obtain that the stabiliser of all white points
+acts on $\J$ by scalar multiplications. That is, the stabiliser of all the white points
+is trivial in $\EE_6(F)$. 
+
+\end{proof}
+
+From Lemma \ref{lemma:1_white_primitive} we know that the action of $\EE_6(F)$ 
+on the white points is primitive. We need to show that the group is perfect.
+
+\begin{lemma}
+	The group $\SE_6(F)$ is perfect.
+\end{lemma}
+
+\begin{proof}
+	This does not present great difficulties. A very straightforward computation 
+	shows that 
+	\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+		(L_{-1}'')^{-1} \cdot L_x' \cdot L_{-1}'' \cdot (L_x')^{-1} & 
+								\text{ acts as } & M_x, \\
+		(L_{-1})^{-1} \cdot L_x'' \cdot L_{-1} \cdot (L_x'')^{-1} & 
+								\text{ acts as } & M_x', \\
+		(L_{-1}')^{-1} \cdot L_x \cdot L_{-1}' \cdot (L_x)^{-1} & 
+								\text{ acts as } & M_x'', \\
+								
+		(M_{-1}')^{-1} \cdot M_x'' \cdot M_{-1}' \cdot (M_x'')^{-1} & 
+								\text{ acts as } & L_x, \\
+		(M_{-1}'')^{-1} \cdot M_x \cdot M_{-1}'' \cdot (M_x)^{-1} & 
+								\text{ acts as } & L_x', \\
+		(M_{-1})^{-1} \cdot M_x' \cdot M_{-1} \cdot (M_x')^{-1} & 
+								\text{ acts as } & L_x'', \\
+	\end{array}
+	\end{equation*}
+	where as before $A \cdot B$ is understood as the product of the actions 
+	by the matrices $A$ and $B$. Hence, every generator is in fact a commutator.
+\end{proof}
+
+Finally, using the Iwasawa's Lemma we obtain the following theorem.
+
+\begin{theorem}
+	The group $\EE_6(F)$ is simple. 
+\end{theorem}
+
+\section{Case of a finite field}
+
+In this section $F$ is a finite field of $q$ elements, that is, $F = \Fq$. 
+Our aim is to count the white points in this case, and hence find the group order. 
+
+\begin{theorem}
+	\label{theorem:white_points_count}
+	If $F = \Fq$, then there are precisely
+	\begin{equation}
+		\frac{(q^{12}-1) (q^9-1)}{(q^4-1)} 
+	\end{equation}
+	white vectors in $\J$. 
+\end{theorem}
+
+\begin{proof}
+	In the proof we study the series of subspaces
+	\begin{equation*}
+		0 < \J_{10}^{abC} < \J_{26}^{abABC} < \J.
+	\end{equation*}
+	
+	First, $(a,b,0\mid 0,0,C) \in \J_{10}^{abC}$ is white if and only if 
+	$ab - C\ovC = 0$. We notice that $ab - C\ovC$ is a quadratic form of 
+	\textit{plus} type defined on $\J_{10}^{abC}$, so there are
+	$(q^5-1)(q^4+1)$ white vectors in this subspace. 
+	
+	Next, suppose $(a,b,c\mid A,B,C) \in \J\setminus \J_{26}^{abABC}$ is white. 
+	Then $C = \ovB \ovA c^{-1}$, $b = A\ovA c^{-1}$ and $a = B\ovB c^{-1}$.
+	We may choose $A,B,c$ to be arbitrary (with $c \neq 0$), so there are 
+	$q^{16}(q-1)$ white vectors in $\J\setminus\J_{26}^{abABC}$.
+	
+	Finally, we investigate the white vectors $(a,b,0\mid A,B,C) \in 
+	 \J_{26}^{abABC}\setminus\J_{10}^{abC}$. The conditions for such a vector 
+	 to be white take the following form:
+	 \begin{equation}
+		\left.\begin{array}{r@{\;}c@{\;}l}
+			A \ovA=B\ovB = AB & = & 0, \\
+			C \ovC & = & ab, \\
+			BC & = & a\ovA, \\
+			CA & = & b\ovB.
+		\end{array}
+		\right\}.
+	\end{equation}
+	Note that we also require $(A,B) \neq (0,0)$. In case $A = 0$, $B\neq 0$ we apply
+	$\delta$ followed by $\tau$ to $(a,b,0\mid A,B,C)$ in order to obtain a 
+	vector of the form $(a,b,0\mid A,B,C)$ with $A \neq 0$. Note that the values
+	of $a,b,A,B,C$ are not the same as in the initial Albert vector. So, assuming 
+	$A \neq 0$, we have $AB = 0$ exactly when $B$ is in a particular $4$-dimensional
+	subspace of $\O$ and any such $B$ satisfies $B\ovB = 0$. For any octonion $x$, the
+	action by the element $L_x$ establishes a bijection between the white vectors of
+	the form $(*,*,0\mid A,B,*)$ and those of the form \mbox{$(*,*,0\mid A,B+\ovA x,*)$}.
+	Left-multiplication by $\ovA$ annihilates a $4$-dimensional subspace of $\O$
+	(see Lemma \ref{lemma:1_octonion_annihilator}), so by
+	the rank-nullity theorem we conclude that the image 
+	$\mathcal{A} = \{ \ovA x\ \mid\ x \in \O \}$ is also $4$-dimensional. Note that
+	$A (\ovA x) = (A\ovA)x = 0$, for any $x \in \O$, so $\mathcal{A}$ is the $4$-space
+	of all octonions left-annihilated by $A$, and therefore it contains $-B$. 
+	Now we pick an octonion $x$ such that $\ovA x = -B$ to obtain the bijection between
+	the white vectors of the form $(*,*,0\mid A,B,*)$ with $A\neq 0$ and those of the form 
+	$(*,*,0\mid A,0,*)$. An Albert vector $(a,b,0\mid A,0,C)$ is white if and only if
+	$A\ovA = C\ovC = CA = 0$ and $a = 0$, with no dependence on $b$. As before, $C$ lies in a
+	particular $4$-dimensional subspace of $\O$, hence $(0,b,0\mid 0,0,C)$ lies in a
+	particular $5$-dimensional subspace of $\J_{10}^{abC}$, so for any choice of the 
+	pair $(A,B)$ there are $q^5$ white vectors. If $A \neq 0$, then there are
+	$(q^4-1)(q^3+1)$ choices for $A$, and for each of these $q^4$ choices for $B$.
+	If $A = 0$, we have $(q^4-1)(q^3+1)$ choices for $B$. It follows that in total there
+	are
+	\begin{equation*}
+		q^5 ( q^4(q^4-1)(q^3+1) + (q^4-1)(q^3+1) ) = q^5(q^8-1)(q^3+1)
+	\end{equation*}
+	white vectors in $\J_{26}^{abABC}\setminus\J_{10}^{abC}$.
+	
+	The calculations above give the numbers of white vectors in certain subsets of $\J$ as
+	shown in the following table.
+	
+	\begin{table}[h!]
+	\begin{tabular}{r|c|c|c}
+		subset & $\J_{10}^{abC}$ & $\J_{26}^{abABC}\setminus\J_{10}^{abC}$ & 
+										$\J\setminus \J_{26}^{abABC}$ \\ \hline
+		\rule{0pt}{10pt}number of white vectors & $(q^5-1)(q^4+1)$ & $q^5(q^8-1)(q^3+1)$ & 
+										$q^{16}(q-1)$
+	\end{tabular}
+	\end{table}
+	\noindent Adding these numbers gives the result. 
+\end{proof}
+
+\begin{corollary}
+	There are precisely
+	\begin{equation}
+		\frac{(q^{12}-1) (q^9-1)}{(q^4-1)(q-1)} 
+	\end{equation}
+	white points in the case $F = \Fq$. 
+\end{corollary}
+
+Theorem \ref{theorem:1_white_stab} allows us to find the stabiliser of a white point which in our
+case is a group of shape $q^{16}\cn\Spin_{10}^+(q)$. As a
+ consequence, we now have:
+\begin{equation}
+	|\SE_6(q)| = q^{36}(q^{12}-1)(q^9-1)(q^8-1)(q^6-1)(q^5-1)(q^2-1).
+\end{equation}
+
+We obtain $\EE_6(q)$ as the quotient of $\SE_6(q)$ by any scalars it contains.
+Note that $\SE_6(q)$ contains non-trivial scalars if and only if $q \equiv 1 \Mod{3}$, so
+\begin{equation}
+	|\EE_6(q)| = \frac{1}{\gcd(3,q-1)} 
+				q^{36}(q^{12}-1)(q^9-1)(q^8-1)(q^6-1)(q^5-1)(q^2-1).
+\end{equation}
+
+\section{Arbitrary octonion algebras} 
+
+Now that we have constructed the group of type $\EE_6$ over 
+an arbitrary field, it is to be emphasised that our construction depends on the fact that
+$\O$ has to be split. Namely, it is a vital requirement in the proof of Theorem 
+\ref{theorem:1_white_stab}. This completely covers the possibilities in case $F = \Fq$, but 
+while it was possible to prove many results independently of the choice of $\O$, there are still
+some questions to answer when $\O$ happens to be non-split. Note that a split octonion algebra
+exists over any field, so our construction is safe. 
+
+The main problem is to be able to tell whether the actions of the matrices $M_x$ and $L_x$ on
+$\J_{10}^{abC}$ generate $\Omega( \J_{10}^{abC}, \QQ_{10} )$. At this stage it is possible to 
+prove the following proposition.
+
+\begin{proposition}
+	The actions of the elements $M_x$ and $L_x$ on $\J_{10}^{abC}$ where $x$ ranges through
+	a non-split octonion algebra $\O$, generate at most a group of type $\Omega( \J_{10}^{abC},
+	 \QQ_{10} )$.
+\end{proposition}
+
+\begin{proof}
+	To verify this we show that the elements encoded by $M_x$ and $L_x$ have the correct spinor
+	norm. Recall that $M_x$ acts on $\J_{10}^{abC}$ in the following way:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+		M_x: (a,b,0\mid 0,0,C) & \mapsto & (a,b+a\NN(x)+\Tr(\ovx C),0 \mid 
+										0, 0, C+ax).
+		\end{array}
+	\end{equation*}
+	Consider two Albert vectors $v = (0,0,0\mid 0,0,x)$ and $w = (0,x \ovx, 0 \mid 0,0, x)$. 
+	Reflexion in $v$ sends a vector $(a,b,0\mid 0,0,C)$ to
+	\begin{equation*}
+		(a,b,0\mid 0,0,C) - \frac{\Tr(C\ovx)}{\NN(x)} \cdot (0,0,0\mid 0,0,x) =
+			\left(a,b,0\mid 0,0, C - \frac{\Tr(C\ovx)}{\NN(x)} x\right).
+	\end{equation*}
+	We then reflect the result in $w$ to get
+	\begin{multline*}
+		\left(a,b,0\mid 0,0, C - \frac{\Tr(C\ovx)}{\NN(x)} x\right) - 
+			\frac{-\Tr(C\ovx) - a x \ovx}{\NN(x)} \cdot (0,x\ovx,0\mid 0,0,x) \\
+		= \left(a, b+ax\ovx + \Tr(C\ovx), 0 \mid 0,0, C - \frac{\Tr(C\ovx)}{\NN(x)}x + 
+		\frac{\Tr(C\ovx)}{\NN(x)} x + a \frac{ x\ovx }{\NN(x)} x \right) \\
+		= (a, b+a\NN(x)+\Tr(C\ovx), 0 \mid 0,0, C + ax).
+	\end{multline*}
+	Note that the action of $M_x$ on $\J_{10}^{abC}$ is the same as the composition
+	of reflexions in $v$ and $w$. We find $\QQ_{10}(v) = \QQ_{10}(w) = \NN(x)$ and conclude that 
+	$M_x$ acts as an element of $\Omega(\J_{10}^{abC}, \QQ_{10})$. 
+	
+	For the elements $L_x$ we consider the reflexions in vectors $(0,0,0\mid 0,0,\ovx)$ and
+	$(x\ovx,0,0\mid 0,0,\ovx)$ to obtain the same conclusion. 
+\end{proof}
+
+Next, suppose that $V$ is a vector space over $F$ with a quadratic form $Q$, 
+such that $V = \langle e,f \rangle  \oplus W$, where $(e, f)$ is a hyperbolic pair and 
+$W = \langle e, f \rangle^{\perp}$. Consider an element $g$ in $\CGO(V,Q)$ which scales of $Q$ 
+by some $\lambda \neq 0$. Then
+$V = \langle e^g, f^g \rangle \oplus W^g$ and $\langle e^g, f^g \rangle$ is
+isometric to $\langle e, f \rangle$. Therefore, $W^g$ is isometric to 
+$W$, and so there exists an isometry $h$ in $\GO(V,Q)$ such that 
+$\langle e^g, f^g \rangle^h = \langle e, f \rangle$. It follows that 
+$(W^g)^h = W$, and $gh$ is a $\lambda$-scaling of $Q$ which fixes
+$\langle e, f \rangle$ and $W$. Hence, $gh$ is a $\lambda$-scaling of $Q_W$. 
+
+Consider a $\lambda$-similarity on $\O = \O_F$ that sends $1_{\O}$ to some $u \in \O$. 
+Then it gives rise to an element in the stabiliser of a white point which scales $\QQ_8$ by
+$\NN(u)$. In other words, we have shown the following.
+
+\begin{proposition}
+	If $\O$ is an arbitrary octonion algebra over $F$, then the elements in the stabiliser
+	of a white point can only scale a white vector by $\lambda$, where $\lambda \in F$ is
+	such that there exists $u \in \O$ with $\NN(u) = \lambda$.  
+\end{proposition}
+
+It is easy to check that all such scalings are possible. For example, the elements 
+$P_{u^{-1}}'$, defined in (\ref{eq:puprime}), do the job. 

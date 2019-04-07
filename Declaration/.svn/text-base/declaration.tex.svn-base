@@ -1,0 +1,49 @@
+% Thesis Declaration ---------------------------------------------------
+
+\begin{declaration} %this creates the heading for the dedication page
+
+I, Eleanor Nalson, confirm that the research included within this thesis is my own work or that where it has been carried 
+out in collaboration with, or supported by others, that this is duly acknowledged below and my contribution indicated. 
+Previously published material is also acknowledged below.
+
+I attest that I have exercised reasonable care to ensure that the work is original, 
+and does not to the best of my knowledge break any UK law, infringe any third party’s 
+copyright or other Intellectual Property Right, or contain any confidential material.
+
+I accept that the College has the right to use plagiarism detection software to check the electronic version of the thesis.
+
+I confirm that this thesis has not been previously submitted for the award of a degree by this or any other university.
+
+The copyright of this thesis rests with the author and no quotation from it or information derived from it may be 
+published without the prior written consent of the author.
+
+Signature: Eleanor Nalson \quad
+Date: 11/08/14
+
+Details of collaboration and publications:
+parts of this work have been completed in collaboration with Karim A. Malik, Adam J. Christopherson and Ian Huston, and are published in the
+following papers:
+\begin{itemize}
+ \item  E. Nalson, A. J. Christopherson, I. Huston, K. A. Malik:\\
+ Class. Quantum Grav. $\mathbf{30}$ (2013) 065008 \cite{Nalson:2011gc}	
+ \item E. Nalson, A. J. Christopherson, I. Huston, K. A. Malik: \\
+13th Marcel Grossmann Proceedings (2013) arXiv:1312.6504 \cite{Nalson:2013tm}
+ \item	E. Nalson, A. J. Christopherson, K. A. Malik: \\
+ arXiv:1312.6504 (2013)\cite{Nalson:2013jya}
+\end{itemize}
+
+
+
+
+
+
+
+
+\end{declaration}
+
+% ----------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

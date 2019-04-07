@@ -1,0 +1,637 @@
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+
+\chapter{Cosmological Perturbation Theory}
+\ifpdf
+    \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
+\else
+    \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
+\fi
+
+\label{CPT}
+
+In this chapter we will be introducing Cosmological Perturbation Theory (CPT) and briefly outlining some key results.
+For more details see the review, Ref.~\cite{Malik:2008im} and references therein.
+
+
+\section{{Perturbing Spacetime}} 
+
+As mentioned in the previous chapter, we live in a universe that on large scales is very homogeneous and isotropic, which
+ is why the geometry of our spacetime can be approximated by the FLRW metric. 
+However, we know that on small scales the universe contains structure. This structure can be seen in the CMB, large scale structure surveys 
+and large scale structure simulations.
+Therefore we need a way to mathematically describe this additional structure. 
+We do this by considering FLRW as a background and then studying perturbations on top of this background,
+this is known as cosmological perturbation theory (CPT).
+ 
+
+\subsection{{Defining perturbed quantities}}
+
+In general, in FLRW cosmologies\footnote{
+For a non-FLRW example with a background which is both time and spatial dependent, see Leithes \& Malik, Ref.~\cite{Leithes:2014uda}. 
+}
+all tensor quantities can be decomposed into a time dependent background part and a time and spatially 
+dependent perturbation, where the background part is homogeneous and isotropic. 
+\be
+\mathbf{T}(t,\mathbf{x}) = {\mathbf{T}}(t) +  \epsilon\delta \mathbf{T}(t,\mathbf{x}) \,.
+\label{Texpand}
+\ee
+
+We know that in our universe the perturbations are much smaller than the background values.
+This is represented by the small parameter $\epsilon$ above.
+Expanding the perturbed part as a Taylor series in powers of $\epsilon$
+\be
+\mathbf{T}(t,\mathbf{x}) = \mathbf{T}_0(t) +  \epsilon\delta \mathbf{T}_1(t,\mathbf{x}) +  \frac{1}{2} \epsilon^2 \delta \mathbf{T}_2(t,\mathbf{x}) + ....
+\label{Texpand1}
+\ee
+In this thesis we will follow the literature and not include the $\epsilon$'s in our equations. We use subscripts to indicate the order
+of a particular quantity. First order, or linear, perturbation theory will only consider terms that are first order in $\epsilon$, i.e.~terms proportional to
+$\epsilon$, where as second order perturbation theory
+considers terms that are second order in $\epsilon$ i.e.~terms that are proportional to $\epsilon^2$, (including both pure second order terms and terms which are the product
+of two first order parts). Higher order perturbation theory is defined similarly. 
+Following the example in Eq.~(\ref{Texpand1}) above we can expand the density of a perfect fluid $\rho$ as
+\be
+\label{expand}
+\rho = \rho_0 (t) + \delta\rho_1 (t, \mathbf{x}) + \frac{1}{2} \delta \rho_2 (t, \mathbf{x}) + ...
+\ee
+and similarly for the other quantities introduced in the introduction, such as pressure of a perfect fluid ($P$) and 
+the inflaton scalar field ($\varphi$).
+
+
+\subsection{{Decomposing perturbations into scalars, vectors and tensors}}
+\label{ScVeTe}
+
+We split the spacetime into a one-parameter family of spatial hypersurfaces of constant time; this is known as a (3+1) split.
+Once quantities have been split into temporal and spatial parts they can be further decomposed into scalar, vector and tensor
+parts depending on their transformation behaviour \cite{Bardeen:1980kt}.
+This is useful because at linear order the governing equations for these three types of perturbations decouple and
+can be solved separately. This is no longer true at higher orders where the equations have source terms mixing the different types.
+The scalar perturbations are constructed from a scalar, its derivatives and/or background quantities, where any 3-vector constructed from a scalar 
+will be curl free. Vector perturbations are divergence free and tensor perturbations are perturbations which can not be constructed from scalar 
+or vector perturbations alone.
+
+For example, starting with 4-vectors, we can decompose any 4-vector into a temporal and spatial part, where the temporal part is necessarily a scalar i.e.
+\be
+u_{\mu} = \left( u_0, u_i \right) \,.
+\ee
+The spatial part can be further decomposed into the gradient of a scalar and a divergence-free vector part,
+\be
+u_i = u_{,i} + u_i^{\rm{vec}} \,.
+\ee
+Note that due to the isotropic nature of the background (FLRW) there will be no vector spatial parts at zeroth order.
+ \\
+Tensors can also be split into temporal and spatial parts but in this case we will also obtain some mixed temporal-spatial parts and again we
+can then go on to split these parts into scalar, vector and tensor parts due to their transformation properties.
+For instance, if we consider the metric tensor $g_{\mu \nu}$, which in the background we will take to be the FLRW metric,
+\be
+ds^2 = a^2 \left[ -d\eta^2 + \delta_{ij} dx^i dx^j \right] \,,
+\ee
+then the perturbed metric can be written as 
+\be
+g_{00} = -a^2 (1 + 2\phi) \,, \quad g_{0i} = a^2 B_{i} \,, \quad g_{ij} = a^2 (\delta_{ij} + 2C_{ij}) \,. \label{metricgen}
+\ee
+We then further split the mixed temporal-spatial and the spatial components into scalar, vector and tensor parts,
+\bea
+B_i &=& B_{,i} - S_i \,, \\
+C_{ij} &=& - \psi \delta_{ij} + E_{,ij} + F_{(i,j)} + \frac{1}{2}h_{ij} \,.
+\eea
+The scalar perturbations are given by, $\phi$ (the lapse function), $\psi$ (the curvature perturbation) and $B$ and $E$ (the scalar parts of the shear), 
+the vector perturbations are given by $S_i$ and $F_i$ (the vector parts of the shear) and $h_{ij}$ is a tensor perturbation which describes gravitational waves.
+Note that at present we have not yet expanded these metric perturbations as a power series of $\epsilon$ and the above quantities should be considered to contain all orders. 
+
+As mentioned above the perturbations will satisfy certain constraints, namely, $B_{,i}$ will be curl free i.e.~$B_{,[ij]} = 0$ 
+and the vector perturbations will be divergence free i.e.~$S_{i,}\,^{i} = 0$ and $F_{i,}\,^{i} = 0$. 
+The symmetric tensor contribution will be both transverse (divergence free) $h_{ij,}\,^j = 0 $ and trace-free $h_i^i = 0$.
+These constraints result in the trace of the perturbed spatial metric being given by
+ \be
+ C^i_i = -3\psi + \nabla^2 E \,.
+ \ee
+Taking all these constraints into account we can see that the 4 scalars contribute 1 degree of freedom each, the 2 divergent-free vectors contribute 2
+degrees of freedom each and the tensor also contributes 2 degrees of freedom. 
+This gives us 10 degrees of freedom i.e.~the same number as the independent components of the perturbed spatial metric. 
+
+Expanding out the perturbations as described we have the complete metric tensor up to second-order, 
+\bea
+g_{00} &=& -a^2 \left[1 + 2\phi_{1} + \phi_{2}\right] \,,\\
+g_{0i} &=& a^2 \left[B_{1i} + \frac{1}{2} B_{2i}\right] \,,\\
+g_{ij} &=& a^2 \left[\delta_{ij} + 2C_{1ij} + C_{2ij}\right] \,,
+\eea
+where the perturbations $B_{1i}$, $B_{2i}$, $C_{1ij}$ and $C_{2ij}$ can be split into scalar, vector and tensor parts as above.
+The contravariant metric tensor up to second-order is given by,
+\bea
+g^{00} &=& -a^{-2} \left[1 -2\phi_1 -\phi_2 +4\phi_1^2 -B_{1k}B_1^k\right] \,,\\
+g^{0i} &=& a^{-2} \left[B_1^i + \frac{1}{2}B_2^i -2\phi_1 B_1^i -2B_{1k}C_1^{ki}\right] \,,\\
+g^{ij} &=& a^{-2} \left[\delta^{ij} -2C_1^{ij} -C_2^{ij} +4C_1^{ik}C_{1k}^j -B_1^i B_1^j\right] \,.
+\eea
+
+
+\section{{Gauge transformations}}
+\label{gauge}
+
+GR is a theory which is covariant under coordinate transformations i.e.~it has no preferred coordinate system.
+When we split a quantity into a background and perturbed part we are considering two objects which live on different 4-dimensional spacetimes (4-manifolds) 
+ i.e.~a background spacetime, $\M_0$, and a physical spacetime $\M_{\epsilon}$, both embedded in a  higher dimensional manifold ($\N$).
+We can introduce a mapping or correspondence between these two spacetimes, which is often referred to as a gauge.  
+\be
+p_{\epsilon}: M_0 \rightarrow M_{\epsilon} \,.
+\ee
+This mapping is generated by a vector field $X$ on $\N$ 
+which identifies points on the same integral curve of $X$ as the same physical point as depicted in Fig.~\ref{gauge}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[trim=4.3cm 18.4cm 3cm 4cm, width=130mm, clip]{gauge.pdf} 
+\caption[Gauges and generating vectors]{This diagram shows a background manifold, $\M_{0}$ and a physical manifold, $\M_{\epsilon}$, 
+both embedded in a higher dimensional mainfold, $\N$.
+The mapping between the manifolds is called a gauge and is generated by a vector field ($X$).}
+\label{gauge}
+\end{figure}
+
+The choice we make here for both the mapping and the vector field, $X$ is not unique and this specification of a mapping is called a choice of gauge.
+A gauge transformation describes how we move from one gauge choice to another.
+%In making this choice we specify both how spacetime is foliated (slicing) and how coordinates in one spatial hypersurface are related
+%to those in another (threading). %The gauge transformations relate physical results in one gauge to another. 
+
+
+\subsection{{Active and Passive approach}}
+\label{activepassive}
+
+Splitting variables into a background and perturbed part is not a covariant process and therefore this introduces a coordinate dependence
+which effects the perturbed part.  
+To study this further we need to calculate how perturbations will vary under a small coordinate transformation.
+There are two approaches to this, the active and passive approaches. 
+
+%In the passive approach we pick the same physical point in the background spacetime ($q$) but use two different generating vectors ($X$ and $\tilde{X}$) which
+%leads to a mapping to two different points  ($y$ and $\tilde{y}$) and so leads to a gauge transformation on the perturbed spacetime as shown in Fig.~\ref{passive}
+
+In the passive approach we pick the same physical point in the background spacetime ($q$) 
+then we make a small change to the coordinate system on $\M_{\epsilon}$. As, by construction, we require that the background part remains unchanged, this
+will necessarily mean that the perturbed quantity on $\M_{\epsilon}$ will have to go through a gauge transformation, see Fig.~\ref{passive}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[trim=4.3cm 18.4cm 3cm 4cm, width=130mm, clip]{passive.pdf} 
+\caption[Passive Approach]{Passive Approach: The transformation of the perturbed quantities is evaluated at the same physical point}
+\label{passive}
+\end{figure}
+
+%In the active approach we pick the same coordinate point in the perturbed spacetime ($z$) and consider which two points ($p$ and $\tilde{p}$) would map to
+%$z$ when using the generating vectors $X$ and $\tilde{X}$ respectively. This leads to a gauge transformation on the background spacetime, see Fig.~\ref{active}. 
+
+In the active approach we pick the same coordinate point in the perturbed spacetime ($z$)
+and this time look at a the transformation of the perturbed quantity directly induced by a mapping. 
+This leads to a gauge transformation on the background spacetime, see Fig.~\ref{active}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[trim=4.3cm 18.4cm 3cm 4cm, width=130mm, clip]{active.pdf} 
+\caption[Active Approach]{Active Approach: The transformation of the perturbed quantities is evaluated at the same coordinate point}
+\label{active}
+\end{figure}
+
+
+As the two approaches are equivalent for simplicity we will only consider the active approach here.
+We need to find out how a tensor would transform under a change of coordinates. In other words we would like to find
+an expression for $\tilde{T}$, an arbitrary tensor evaluated at the physical point $\tilde{p}$ in terms of $T$, 
+the same tensor evaluated at the physical point $p$,
+where the points $\tilde{p}$ and $p$ have the same coordinate value.  
+To proceed we need to define our gauge transformation vector, which at first order is   
+%% How are gauge transformation vectors, generating vectors and the vector field related??
+\be
+\xi_1\,^{\mu} = (\xi_1\,^0, \xi_1\,^i) = (\alpha_1, \beta_{1,}\,^i + \gamma_1\,^i) \,. 
+\ee
+% So the time and spatial coordinates transform under a small change in coordinates as
+% \be
+% \tilde{\eta} = \eta + \xi^0 \,,  \quad   \tilde{x}^i = x^i + \xi^i \,.
+% \ee
+
+Under such a coordinate transform our arbitrary tensor will transform via the exponential map \cite{Mukhanov:1996ak}
+\be
+\widetilde{\mathbf{T}} = e^{ \gbp_{\xi}} \mathbf{T} \,.
+\ee
+Where $\gbp_{\xi}$ is the Lie derivative with respect to the generating vector and we use a tilde to denote a transformed quantity.
+Expanding out the exponential map as a series we have 
+\be
+\widetilde{\mathbf{T}}=  \left( 1 + \epsilon \gbp_{\xi_1} + \frac{1}{2} \epsilon^2 \gbp^2_{\xi_1} + \frac{1}{2} \epsilon^2 \gbp_{\xi_2} + .... \right) \mathbf{T}  \,,
+\ee
+and then in addition, expanding our tensor order by order leads to the following transformations up to second order,
+\bea
+\widetilde{\mathbf{T}_0} &=& \mathbf{T_0} \,, \\
+\widetilde{\delta \mathbf{T}_1} &=& \delta \mathbf{T_1} + \gbp_{\xi_1}\mathbf{T_0}  \,,\\
+\widetilde{\delta \mathbf{T}_2} &=& \delta \mathbf{T_2}  + \gbp_{\xi_2}\mathbf{T_0}  + \gbp^2_{\xi_1}\mathbf{T_0} + 2 \gbp_{\xi_i} \delta \mathbf{T_1}  \,.
+\eea
+
+The Lie derivatives on scalars, vectors and tensors are given by
+\bea 
+\gbp_{\xi} X &=& \xi^{\rho} X_{,\rho} \,, \\
+\gbp_{\xi} Y_{\mu } &=& \xi^{\rho} Y_{\mu , \rho} + \xi^{\rho}\,_{,\mu} Y_{\rho} \,, \\
+\gbp_{\xi} Z_{ \mu \nu} &=& \xi^{\rho} Z_{\mu \nu, \rho} + \xi^{\rho}\,_{,\mu} Z_{\rho \nu} + \xi^{\rho}\,_{,\nu} Z_{\mu \rho} \,.
+\eea
+
+
+If we apply the transform above and recall that the background quantities are only time dependent then we find that at first order a perturbed four-scalar transforms as,
+\be
+\widetilde{\delta X_1} = \delta X_1 + X_0' \alpha_1 \,.
+\label{4scalar}
+\ee 
+In the same way at first order a four-vector transforms as,
+\be
+\widetilde{\delta U_{1 \mu}} = \delta U_{1 \mu} + U_{\mu}'\alpha_1 + U_{\lambda} \xi^{\lambda}_{1,\mu} \,,
+\ee
+and at first order a tensor transforms as,
+\be
+\label{tensortransform}
+\widetilde{\delta T_{1 \mu \nu}} = \delta T_{1 \mu \nu} + T_{\mu \nu}'\alpha_1 + T_{\lambda \nu} \xi^{\lambda}_{1,\mu} + T_{\mu \lambda} \xi^{\lambda}_{1,\nu} \,.
+\ee
+
+By applying the above expression to the FLRW metric and comparing the original and transformed quantities
+we can write down the transformations of the first order metric perturbations.
+Firstly, the scalars,
+\bea
+\widetilde{\phi_1} &=& \phi_1 + \H\alpha_1 + \alpha_1' \,, \\
+\widetilde{\psi_1} &=& \psi_1 - \H\alpha_1 \,, \\
+\widetilde{B_1} &=&  B_1 - \alpha_1 + \beta_1' \,, \\
+\widetilde{E_1} &=& E_1 + \beta_1 \,,
+\eea
+and now the vectors,
+\bea
+\widetilde{S_1^i} &=& S_1^i - {\gamma_1^i}' \,, \\
+\widetilde{F_1^i} &=& F_1^i + \gamma_1^i \,.
+\eea
+The first order tensor perturbation is gauge-invariant.
+
+
+\subsection{{Gauge-invariant quantities and choosing a gauge}}
+
+As we have seen above the process of splitting our spacetime into a background part and a perturbed part is 
+not a covariant process. Carrying out a coordinate transformation on our perturbed quantities, as we did above, introduced extra
+gauge modes, therefore leaving us with variables dependent on our coordinate choice. 
+In order to get physical results which do not depend on coordinate choices we will remove these
+extra gauge modes. This must be done in a consistent way by specifying the threading and slicing and is also known as making a choice of gauge.   
+
+To make this gauge choice we introduce gauge-invariant variables following the method of Bardeen, Ref.~\cite{Bardeen:1980kt}. 
+We choose coordinates such that two of the scalar metric perturbations and one of the vector metric perturbations is zero.
+This removes the additional gauge dependencies introduced by $\alpha$, $\beta$ and $\gamma^{i}$ in the previous section. The remaining scalar, vector
+and tensor perturbations will all be gauge-invariant. 
+
+There are many ways to specify the mapping between the background and perturbed spacetimes and therefore many different
+gauge choices you can make. We will go through two such gauge choices below, uniform curvature gauge and Newtonian gauge. For a 
+in depth look at different gauges and the resulting equations we refer to Ref.~\cite{Malik:2008im}.
+
+
+\subsubsection{{Uniform curvature gauge}}
+\label{flat}
+In the uniform curvature gauge (or flat gauge) the spatial metric is unperturbed at linear order and therefore spatial hypersurfaces are flat.
+At first order this means
+\be
+\widetilde{E}_1 = \widetilde{\psi}_1 = 0 \,, \quad \widetilde{F}_{1 i} = 0 \,,
+\ee
+giving the following expressions for the components of the generating vector,
+\bea
+{{\alpha}}_{1 \, \rm{flat}} &=& \frac{\psi_1}{\H} \,,\\
+{{\beta}}_{1 \, \rm{flat}} &=& - E_1 \,, \\
+{{\gamma}}_{1 \, \rm{flat}}^i &=& - F_1^i \,.
+\eea
+We then have two gauge-invariant scalars,
+\bea
+\widetilde{{{\phi}}_{1 \, \rm{flat}}} &=& \phi_1 + \psi_1 + \left(\frac{\psi_1}{\H}\right)' \,, \\
+\widetilde{{{{B}}}_{1 \, \rm{flat}}} &=& B_1 - \frac{\psi_1}{\H} - E_1' \,,
+\eea
+and one gauge-invariant vector,
+\be
+\widetilde{{{{S}}}_{1 \, \rm{flat}}^i} = S_1^i + F_1^i \,,
+\ee
+in addition to the original gauge-invariant tensor perturbation. 
+
+This also allows us to evaluate how the density perturbation and scalar field perturbation transform in the flat gauge, using Eq.~\ref{4scalar}, as
+\bea
+\widetilde{ \delta \rho_{1 \rm{flat}} } &=& \delta \rho_{1} + \rho_0' \frac{\psi_1}{\H}  \,, \label{denspertflat} \\
+\widetilde{ \delta \varphi_{1 \rm{flat}} } &=& \delta \varphi_{1} + \varphi_0' \frac{\psi_1}{\H} \,.
+\eea 
+When working in flat gauge in the following chapters we will drop the tilde for convenience.
+Note that in flat gauge the scalar field fluctuation is also known as the Sasaki-Mukhanov variable \cite{Sasaki:1986hm, Mukhanov:1988jd}.
+
+
+\subsubsection{{Conformal Newtonain Gauge}}
+\label{Newt}
+In the conformal Newtonian gauge the shear, $\sigma$ is zero. This gauge is also referred to as the Longitudinal or Poisson gauge.
+In order that $\tilde{\sigma}_1 = 0$ we have
+\be
+\tilde{E}_1 = \tilde{B}_1 = 0 \,, \quad \tilde{S}_{1 i} = 0 \,,
+\ee
+giving the following expressions for the components of the generating vector,
+\bea
+\alpha_{1 \, \rm{newt}} &=&  - \sigma_1  = -(E_1' - B_1) \,,\\
+\beta_{1 \, \rm{newt}} &=&  - E_1 \,, \\
+\gamma_{1 \, \rm{newt}}^i &=&  \int S_1^i d\eta + \F_1^i (x^j)  \,,
+\eea
+where $\F_1^i $ is an arbitrary constant three-vector.
+The two gauge-invariant scalars are then equivalent to the variables introduced by Bardeen, 
+\bea
+\widetilde{{\phi}_{1 \, \rm{newt}}} &=& \phi_1 - \H (E_1' - B_1) - (E_1' - B_1)' \,, \\
+\widetilde{{\psi}_{1 \, \rm{newt}}} &=&  \psi_1 + \H( E_1' - B_1)  \,,
+\eea
+and the gauge-invariant vector is given by
+\be
+\widetilde{{F}_{1 \, \rm{newt}}^i} = F_1^i + \int S_1^i d\eta + \F_1^i (x^j) \,.
+\ee
+
+Finally, the transformation of the density perturbation and scalar field perturbation in Newtonian gauge are given by,
+\bea
+\widetilde{ \delta \rho_{1 \rm{newt}} } &=& \delta \rho_{1} - \rho_0' \sigma_1  \,, \\
+\widetilde{ \delta \varphi_{1 \rm{newt}} } &=& \delta \varphi_{1} - \varphi_0' \sigma_1 \,.
+\eea
+\\
+
+
+\section{Energy-Momentum Tensor}
+
+We now wish to extend our discussion of the matter content of the universe up to linear order in CPT.
+In Section~\ref{StressEnergy} we introduced the energy-momentum tensor, which was a function of the
+fluid's 4-velocity, density and pressure. In order to extend this description to perturbed quantities 
+we will need to look at the 4-velocity in more detail. 
+
+The 4-velocity is defined as
+\be
+\label{4Veldef}
+u^{\mu} = \frac{d x^{\mu}}{d \tau} \,,
+\ee
+where $\tau$ is the proper time, i.e.~the time between two events as measured by an observer travelling between the events, and is given by $d\tau^2 = d s^2$.
+%, for timelike paths. %An affine parameter...
+As with the pressure and density the 4-velocity can be written as a series expansion,
+\be
+u^{\mu} = u_0^{\mu} + \delta u_1^{\mu} + ...
+\ee
+As mentioned in Section~\ref{StressEnergy} the 4-velocity must satisfy the constraint $u^{\mu}u_{\mu} = g_{\mu \nu}u^{\mu}u^{\nu} = -1$. 
+Using the expression for the metric we are able to write down the full 4-velocity up to first order,
+\bea
+u_0 &=& -a ( 1 + \phi_1 ) \,, \quad u_i = a ( v_{1i} + B_{1i} ) \,, \\
+u^0 &=& a^{-1} ( 1 - \phi_1 ) \,, \quad u^i = a^{-1}v_1^i \,.
+\label{4Vel}
+\eea
+
+
+\subsection{Perfect fluids}
+\label{perfect}
+
+To extend the stress-energy tensor for perfect fluids given in Eq.~(\ref{stressenergyPerfect}) to general
+fluids we include an anisotropic stress term $\pi^{\mu \nu}$ \cite{Malik:2008im},
+\be
+T^{\mu}_{\nu} = (\rho + P)u^{\mu}u_{\nu} + P \delta^{\mu}\,_{\nu} + \pi^{\mu}\,_{\nu} \,. %%% Check what about the q??
+\ee 
+The above stress-energy tensor is written in a generic inertial frame and $u^{\mu}$ is the fluid 4-velocity.
+%\be
+%T^{\mu}_{\nu} = (\rho + P)u^{\mu}u_{\nu} + P \delta^{\mu}\,_{\nu} + 2 q^{(\mu} u_{\nu)} + \pi^{\mu}\,_{\nu} \,. 
+%\ee
+The spatial part of the anisotropic stress can be decomposed into scalar ($\Pi$), vector ($\pi^{i}$) and tensor (${\pi}^{i}\,_{j}$) parts,
+\be
+\pi^{i}\,_{j} = {\Pi_,}^i\,_j - \frac{1}{3} \nabla^2 \Pi \delta^i\,_j + \pi^{(i}\,_{,j)} + {\pi}^i\,_j  \,.
+\ee
+
+We can now expand all matter quantities order by order as we did for the density in Eq.~(\ref{expand}).
+Substituting in the metric, Eq.~(\ref{metricgen}), and 4-velocity, Eq.~(\ref{4Vel}), we have the following expressions up to first order, 
+\bea
+\label{StressEnergyFluid}
+T^{0}\,_{0} &=& -(\rho_0 + \delta \rho_1 ) \,, \\
+T^{0}\,_{i} &=& (\rho_0 + P_0) (B_{1i} + v_{1i}) \,,\\
+T^{i}\,_{0} &=&  -(\rho_0 + P_0) v_1^i \,,\\
+T^{i}\,_{j} &=& (P_0 + \delta P_1 ) \delta^i\,_j + \pi^i\,_j \,.
+\eea
+
+
+\subsection{Scalar fields}
+
+In Eq.~(\ref{Tscalar}) we wrote down the energy-momentum tensor for a canonical single scalar field as
+\be
+T^{\mu}_{\nu} = g^{\mu \lambda} \varphi_{, \mu} \varphi_{,\lambda} 
+- \delta^{\mu}_{\nu} \left( U(\varphi) + \frac{1}{2} g^{\alpha \beta} \varphi_{, \alpha} \varphi_{,\beta}  \right) \,. \nonumber 
+\ee
+Once again expanding the scalar field order by order and substituting in the metric, Eq.~(\ref{metricgen}), we have the following expressions up to first order,
+\bea
+\label{StressEnergyInf}
+T^0\,_0 &=& -\frac{{\varphi_0'}^2}{2 a^2} \left( 1 - 2 \phi_1 + \frac{2 \delta \varphi_1'}{\varphi_0'} \right) - U(\varphi_0) - U_{,\varphi} \delta \varphi_1 \,,\\
+T^0\,_i &=& -\frac{{\varphi_0'}^2}{a^2} \delta \varphi_{1,i} \,,\\
+T^i\,_0 &=&  \frac{{\varphi_0'}^2}{ a^2} \left( B_1^i + \frac{\delta \varphi_,\,^i}{\varphi_0'} \right) \,,\\
+T^i\,_j &=& -\delta^i\,_j \left[ U(\varphi_0) + U_{,\varphi} \delta \varphi_1 -\frac{{\varphi_0'}^2}{2 a^2} \left(1 - 2\phi_1 + \frac{2 \delta \varphi_1'}{\varphi_0'} \right) \right]\,.
+\eea
+It is worth noting that the scalar field has no anisotropic stress at first order.
+By comparing the components for the energy-momentum tensor for the scalar field with the energy-momentum tensor for a fluid 
+we can write down effective first order densities and pressures for the scalar field as we did for the background
+quantities in Eq.~(\ref{PressDensInfl}),
+\bea
+\label{PressDensInfl1st}
+\delta \rho_1 &=& \frac{1}{a^2} \left( \delta\varphi_1' \varphi_0' - \phi_1 {\varphi_0'}^2 \right) + U_{,\varphi} \delta\varphi_1 \,, \\
+\delta P_1 &=& \frac{1}{a^2}  \left( \delta\varphi_1' \varphi_0' - \phi_1 {\varphi_0'}^2 \right) - U_{,\varphi} \delta\varphi_1 \,.
+\eea
+As mentioned above, at linear order $\pi^i_j = 0$ for single scalar fields. 
+\\
+
+\section{{Dynamical equations at first order}}
+\label{dynamical}
+
+We now wish to extend our description of the dynamics of the universe to linear order in CPT.
+
+\subsection{{Einstein Equations}}
+\label{Einstein1}
+
+As we saw in Section~\ref{GR}, Einstein's equations are given by $G_{\mu \nu} = 8 \pi G T_{\mu \nu} $. We follow through as
+we did in that section, evaluating the connection coefficients, Ricci tensor and then Einstein tensor for the 
+ perturbed metric and then equating this with the perturbed energy-momentum tensor to get first-order equations. 
+In this section we present the first order Einstein equations for both a fluid and a scalar field. initially we will 
+not specify a particular gauge. 
+We include the full connection coefficients up to second order in Appendix B.
+
+
+\subsubsection{{Fluids}}
+\label{Einfluid}
+
+The following equations are obtained from the Einstein equations, using the stress-energy tensor for a fluid.
+The $00$ component is given by
+ \be
+\label{Ein00} - \H  \nabla^2 B_1 - 3 \H \psi_1' + \H \nabla^2 E_1'  +   \nabla ^2 \psi_1 - 3 \H^2 \phi_1 = 4 \pi G a^2 \delta \rho_1     \,, 
+\ee
+the $0i$ component is given by,
+\be
+ \label{Ein0i} \frac{1}{4} \nabla^2 ({{S_1}_{i}}  +  F_{1i} ') +  \H {\phi_{1,i}} + \psi_{1,i}' = - 4 \pi G a^2 ( \rho + P )(B_{1,i} - S_{1i} + v_{1i})  \,, 
+\ee
+and finally the $ij$ component is given by,
+\bea
+&& \Big( \nabla^2 ( {{B_1}}'  + 2  {{B_1}} \H  - \psi_1 + {\phi_{1}}  - 2\H  E_1' -   E_1 '' )   +  4  \phi_1 \H'  + 2\psi_1''   + (\psi_{1} - {\phi_{1}})_{,ij}  \,, \nonumber \\
+&& + 2 \H ( 2 \psi_1'  +  {\phi_1}' +  \phi_1 \H ) \Big) \delta_{ij} -  ( 2\H + \partial_{\eta}) (B_{1,ij}  - {{S_1}_{(j,i)}} ) - \frac{1}{2}\nabla^2 h_{ij} \,,\nonumber \\
+&&  + (2 \H \partial_{\eta} + \partial^2_{\eta}) (E_{1,ij} + F_{1(i,j)} + \frac{1}{2} h_{1ij})   = 8 \pi G a^2 (\delta P_1 \delta_{ij} + \pi_{ij} ) \,.
+\label{Einij}
+ \eea
+
+
+Recall that at first order the scalar, vector and tensor equations decouple. Eq.~(\ref{Ein00}) is already a scalar equation but to see that the other two
+equations can be separated we act with $\partial^i$ on Eq.~(\ref{Ein0i}) which gives a scalar equation
+which we then subtract from Eq.~(\ref{Ein0i}) to leave a vector equation.
+In a similar way we can find two scalar equations from the $ij$ equation; firstly,
+by acting with $\partial^{ij}$ on Eq.~(\ref{Einij}) and then by multiplying Eq.~(\ref{Einij}) by $\delta^{ij}$.
+Again by subtracting the two scalar equations from the original $ij$ equation, Eq.~(\ref{Einij}), we arrive at an equation containing only vectors and tensors
+which can be separated to give a vector and tensor equation.
+
+In summary we have four scalar equations. Firstly, the energy and momentum constraint equations,
+  \bea
+  & & - \H  \nabla^2 B_1 - 3 \H \psi_1' + \H \nabla^2 E_1'  +   \nabla ^2 \psi_1 - 3 \H^2 \phi_1 = 4 \pi G a^2 \delta \rho_1    \,,  \label{Eins1}\\
+  & & \H {\phi_{1}} + \psi_{1}' = - 4 \pi G a^2 ( \rho + P )(B_{1} + v_{1})  \,,  \label{Eins2} 
+\eea
+and secondly two evolution equations,
+\bea
+  & &   2 \phi_1 \H'   + \psi_1''    +  2\H \psi_1'  +  \H{\phi_1}' + \phi_1 \H^2     =  4 \pi G a^2 (\delta P_1 + \frac{2}{3}\nabla^2 \Pi ) \,, \label{Eins3} \\
+  & & {{B_1}}'  + 2  {{B_1}} \H  - \psi_1 + {\phi_{1}}  - 2\H  E_1' -   E_1 ''     =  8 \pi G a^2 \Pi  \,, \label{Eins4}
+  \eea
+We also have two vector equations, 
+  \bea
+   & &  \nabla^2 ({{S_1}_{i}}  +  F_{1i} ')  =  16 \pi G a^2 ( \rho + P )( S_{1i} - v_{1i})  \,, \label{Einv1} \\
+   & &  S_{1i}' + F_{1i}'' + 2\H S_{1i} + 2\H F_{1i}' = 4  \pi G a^3 \pi_{(i,j)} \,,\label{Einv2} 
+   \eea
+and one tensor equation,
+ \be
+  h_{ij}'' + 2\H h_{ij}' - \nabla^2 h_{ij} = 16 \pi G a^2 \pi_{ij} \,. \label{Eint}
+ \ee
+
+
+\subsubsection{Scalar fields}
+
+For completeness, we consider here the stress-energy tensor for a scalar field and metric expanded out to first order.
+As above we can use the Einstein field equations to get four scalar, two vector and one tensor equation.
+
+The scalar equations are:
+ \bea
+ & & - \H  \nabla^2 B_1 - 3 \H \psi_1' + \H \nabla^2 E_1'  +   \nabla ^2 \psi_1 - 3 \H^2 \phi_1 
+= 4 \pi G \left( \delta\varphi_1' \varphi_0' - \phi_1 {\varphi_0'}^2 + a^2 U_{,\varphi} \delta\varphi_1 \right)    \,,  \nonumber  \\
+ & & \H {\phi_{1}} + \psi_{1}' = - 4 \pi G (B_{1} + v_{1}) {\vp_0'}^2  \,, \nonumber \\
+ & &   2 \phi_1 \H'   + \psi_1''    +  2\H \psi_1'  +  \H{\phi_1}' + \phi_1 \H^2     
+=  4 \pi G  \left( \delta\varphi_1' \varphi_0' - \phi_1 {\varphi_0'}^2  - a^2 U_{,\varphi} \delta\varphi_1 \right) \,, \nonumber \\
+ & & {{B_1}}'  + 2  {{B_1}} \H  - \psi_1 + {\phi_{1}}  - 2\H  E_1' -   E_1 ''     =  0 \,,
+ \eea
+the vector equations are,
+  \bea
+  & &  \nabla^2 ({{S_1}_{i}}  +  F_{1i} ')  =  16 \pi G  ( S_{1i} - v_{1i})  {\vp_0'}^2  \,, \\
+  & &  S_{1i}' + F_{1i}'' + 2\H S_{1i} + 2\H F_{1i}' = 0 \,,
+  \eea
+and the tensor equation is,
+\be
+ h_{ij}'' + 2\H h_{ij}' - \nabla^2 h_{ij} = 0 \,.
+\ee
+
+
+
+\subsection{{Conservation Equations}}
+\label{Cons1}
+
+In Section~\ref{StressEnergy} we saw that by either using the Bianchi identities or by varying the action we arrive at a continuity equation,
+given in Eq.~(\ref{Cont}). Now that we have expressions for the stress-energy tensor up to first order
+we can use these in combination with the continuity equations to find first-order conservation equations. 
+
+\subsubsection{{Fluids}}
+\label{consfluid}
+
+Using the stress-energy tensor for a fluid given in Eq.~(\ref{StressEnergyFluid}) and expanding the 0 component of the 
+continuity equation gives us the following energy conservation equation at first-order,
+\begin{equation}
+\label{ConsFl}
+ \delta \rho_1 ' + 3\H (\delta\rho_1 + \delta P_1) = (\rho + P)(3\psi_1' - \nabla^2 ( E_1' + {v_1}) ) \,. 
+\end{equation}
+Now expanding the $i$ component of the continuity equation we arrive at the following momentum conservation equation at first-order,
+\begin{equation}
+ \left[ (\rho + P)(v_{1i} + B_{1i})\right]' + (\rho + P)\left[ 4\H(v_{1i} + B_{1i}) + \phi_{1,i} \right] + \delta P_{1,i} 
++ \frac{2}{3} \nabla^2 \Pi_{1,i} + \frac{1}{2} \nabla^2 \pi_{1i} = 0\,.
+\end{equation}
+This equation, as for the Einstein equations, can be separated into a scalar and vector equation. 
+The scalar equation is,
+\begin{equation}
+\label{ConsMons}
+ \left[ (\rho + P)(v_{1} + B_{1})\right]' + (\rho + P)\left[ 4\H(v_{1} + B_{1}) + \phi_{1} \right] + \delta P_{1} + \frac{2}{3}\nabla^2 \Pi = 0 \,,
+\end{equation}
+and the vector equation is,
+\begin{equation}
+\label{ConsMonv}
+ \left[ (\rho + P)(v_{1i} - S_{1i})\right]' + 4\H(\rho + P)(v_{1i} - S_{1i})  + \frac{1}{2} \nabla^2 \pi_{1i} = 0 \,.
+\end{equation}
+
+\subsubsection{Scalar fields}
+
+\label{consscalar}
+
+Either using the stress-energy tensor for a scalar field given in Eq.~(\ref{StressEnergyInf}) and expanding the 
+continuity equation, or by substituting the expressions for pressure and density in terms of the scalar field into Eq.~(\ref{ConsFl}), or indeed by
+varying the full first order action for a scalar field we arrive at the Klein-Gordon equation at first-order,
+\be
+\label{KGeq1st}
+{\delta \vp_1}'' + 2\H {\delta \vp_1}' 
+- \nabla^2 \delta \vp_1 + a^2 U_{,\vp \vp} \delta \vp_1 + 2 a^2 U_{, \vp} \phi_1 
+- \phi_0' \phi_1 - \phi_0' ( 3 \psi_1' + \nabla^2 (B_1 - E_1')) = 0 \,.
+\ee
+% What about the other ith component equation?? Can I find it anywhere??
+%\be
+%{\vp'}^2 \dealt \vp_' + ( a^2 U_{,\vp} - 3\H{\vp'}^2 - 2 \vp' a^2 U_{,\vp} - \frac{1}{2} \vp' + \H\vp' ) \delta\vp = 0
+%\ee
+% where there is no vector part to the equation this time... (all vector parts cancel!)
+This equation describes the evolution of the scalar field, in terms of the metric perturbations and the scalar field potential. 
+
+\section{Solving for the density perturbation}
+\label{denssolve}
+
+Under certain conditions
+we can solve the equations given in Sections~\ref{Einfluid} and \ref{consfluid} to find out how the density perturbation would evolve in the early universe.
+In this section we will solve the equations to find the large scale density perturbation for a perfect fluid in the radiation era. 
+Starting with the assumption that the universe is filled with a perfect fluid with equation of state
+$P = \omega \rho$, we write Eq.~(\ref{ConsFl}) and Eq.~(\ref{ConsMons}) in flat gauge,
+\be
+ \delta \rho_1 ' + 3\H (\delta\rho_1 + \delta P_1) = - \rho(1 + \omega)\nabla^2 {v_1}  \,,
+\label{consflat}
+\ee
+\be
+\rho(1 + \omega)V_1 ' - 3 \H \rho (1 + \omega)^2 V_1  +  \rho \omega' V_1 + \frac{1}{2} \H \rho(1 + \omega)\left( 8 - 3(1 + \omega)\right) V_1 + \delta P_{1} = 0 \,,
+\label{consmomflat}
+\ee
+where we have written $V_1 = v_1 + B_1$ and used Eq.~(\ref{Eins2}) and Eq.~(\ref{consback}), to substitute for $\phi_1$ and $\rho'$.
+We can then use Eq.~(\ref{consflat}) and Eq.~(\ref{Eins1}), to get an expression for $V_1$,
+\be
+ \rho(1 + \omega)\nabla^2 {V_1}  =  \frac{9 \H^2}{2} (1+\omega)^2 \rho V_1 - \frac{3 \H}{2}(\omega +1) \delta \rho_1  - \delta \rho_1 ' - 3\H (\delta\rho_1 + \delta P_1) \,,
+\ee
+which if we switch to Fourier space and rearrange becomes
+\be
+{V_1}  =   \frac{3 \H (\omega +3) \delta \rho_1  + 2 \delta \rho_1 '  + 6\H \delta P_1}{ 2 \rho (1+\omega) \left(\frac{9}{2} \H^2 (1+\omega)  +  k^2 \right)} \,.
+\label{Vsimple}
+\ee
+Now differentiating Eq.~(\ref{consflat}) and using Eq.~(\ref{consmomflat}) and Eq.~(\ref{Vsimple}) we arrive at the following second order differential equation
+for the density perturbation \cite{Christopherson:2010ek},  %%Adam
+\bea
+& &\delta \rho'' + \left(7\H - \frac{\mathcal{I}'}{\mathcal{I}} \right) \delta \rho' 
++ \frac{3}{2} \H (3 + \omega) \left[ \frac{\H'}{\H} + \frac{\omega'}{3+\omega} - \frac{\mathcal{I}'}{\mathcal{I}} + \frac{1}{2} \H (5 - 3\omega) \right] \delta \rho \nonumber \\
+& &+ 3\H \delta P' + \left[ 3\H \left( \frac{\H'}{\H} - \frac{\mathcal{I}'}{\mathcal{I}} \right) + \frac{3}{2}\H^2 (5 - 3\omega) + \mathcal{I} \right] \delta P = 0 \,,
+\label{deltarholong}
+\eea
+where $\mathcal{I} = k^2 + \frac{9}{2} \H^2 (1 + \omega) $.
+Assuming that we are in radiation domination and the pressure perturbation can be described by $\delta P = c_s^2 \delta \rho $, that is, there is
+no non-adiabatic pressure perturbation, Eq.~(\ref{deltarholong}) becomes,
+\be
+\delta \rho'' + 4\H \left( 2 + \frac{3 \H^2}{k^2 + 6\H^2} \right) \delta \rho' + \left(6 \H^2 + \frac{1}{3} (k^2 + 6\H^2) + \frac{72\H^4}{k^2 + 6\H^2} \right) \delta\rho = 0 \,.
+\ee
+Finally if we are interested in the large scale result, where $k^2 \ll 6 \H^2$ then our second order equation becomes
+\be
+\delta \rho'' + \frac{10}{\eta}\delta \rho' + \frac{20}{\eta^2} \delta\rho = 0 \,,
+\ee
+which can be solved exactly to give,
+\be
+\delta \rho (\eta, \mathbf{k})  = A(\mathbf{k}) \eta^{-4} + B(\mathbf{k}) \eta^{-5} \,,
+\label{deltarhoSolution}
+\ee
+where the functions $A(k)$ and $b(k)$ are set by initial conditions. 
+
+
+
+
+% ------------------------------------------------------------------------
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

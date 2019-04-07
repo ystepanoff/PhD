@@ -1,0 +1,150 @@
+\newcommand{\PdfPsText}[2]{
+  \ifpdf
+     #1
+  \else
+     #2
+  \fi
+}
+
+\newcommand{\IncludeGraphicsH}[3]{
+  \PdfPsText{\includegraphics[height=#2]{#1}}{\includegraphics[bb = #3, height=#2]{#1}}
+}
+
+\newcommand{\IncludeGraphicsW}[3]{
+  \PdfPsText{\includegraphics[width=#2]{#1}}{\includegraphics[bb = #3, width=#2]{#1}}
+}
+
+\newcommand{\InsertFig}[3]{
+  \begin{figure}[!htbp]
+    \begin{center}
+      \leavevmode
+      #1
+      \caption{#2}
+      \label{#3}
+    \end{center}
+  \end{figure}
+}
+
+
+\def\FF{{\mathbb F}}
+\def\squareforqed{\hbox{\rlap{$\sqcap$}$\sqcup$}}
+\def\qed{\ifmmode\squareforqed\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil\squareforqed
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi\medskip}
+
+\newcommand{\Fq}{\mathbb{F}_q}
+\newcommand{\Fqs}{\mathbb{F}_{q^2}}
+\newcommand{\tr}{\operatorname{tr}}
+\renewcommand{\bar}{\overline}
+\newcommand{\omg}{\overline{\omega}}
+\newcommand{\xone}{$e_{-1}$}
+\newcommand{\xtwo}{$e_{\omg}$}
+\newcommand{\xthree}{$e_{\omega}$}
+\newcommand{\xfour}{$e_{0}$}
+\newcommand{\xfive}{$e_{-0}$}
+\newcommand{\xsix}{$e_{-\omega}$}
+\newcommand{\xseven}{$e_{-\omg}$}
+\newcommand{\xeight}{$e_{1}$}
+\newcommand{\m}{$-$}
+\newcommand{\im}{\mathrm{Im}\,}
+\newcommand{\udot}{{}^{\textstyle .}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\GO}{\mathrm{GO}}
+\newcommand{\CGO}{\mathrm{CGO}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SE}{\mathrm{SE}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\ombar}{\bar{\omega}}
+\newcommand{\POmega}{\mathrm{P\Omega}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\Tr}{\operatorname{T}}
+\newcommand{\ftr}{\operatorname{Tr}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\rad}{\mathrm{rad}}
+\renewcommand{\O}{\mathbb{O}}
+\renewcommand{\bar}{\overline}
+\renewcommand{\hat}{\widehat}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\H}{\mathrm{H}}
+\newcommand{\s}{\sigma}
+\renewcommand{\ker}{\operatorname{ker}}
+%\newcommand{\T}{\mathsf{T}}
+\newcommand{\T}{\top}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\fdet}{\Delta}
+\newcommand{\spin}{\operatorname{sp}}
+
+%\newcommand{\omg}{\overline{\omega}}
+%\newcommand{\xone}{$e_{-1}$}
+%\newcommand{\xtwo}{$e_{\omg}$}
+%\newcommand{\xthree}{$e_{\omega}$}
+%\newcommand{\xfour}{$e_{0}$}
+%\newcommand{\xfive}{$e_{-0}$}
+%\newcommand{\xsix}{$e_{-\omega}$}
+%\newcommand{\xseven}{$e_{-\omg}$}
+%\newcommand{\xeight}{$e_{1}$}
+%\newcommand{\m}{$-$}
+
+\def\ovphantom{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!\phantom{x}\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovA{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!A\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovB{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!B\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovC{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!C\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovD{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!D\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovE{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!E\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovF{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!F\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovM{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!M\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovN{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!N\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovP{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!P\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovQ{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!Q\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovR{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!R\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+
+\def\ova{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!a\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovb{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!b\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovc{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!c\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovd{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!d\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ove{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!e\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovf{\mathord{\mbox{\hspace*{0pt}}\:\!\overline{\!\!\;f}}\mbox{\hspace*{0pt}}}
+\def\ovt{\mathord{\mbox{\hspace*{0pt}}\:\!\overline{\!\!\;t}}\mbox{\hspace*{0pt}}}
+\def\ovu{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!u\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovv{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!v\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovw{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!w\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovx{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!x\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovy{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!y\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovz{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!z\!\!\;}\!\:}\mbox{\hspace*{0pt}}}
+\def\ovxy{\mathord{\overline{xy}}}
+\def\ovyx{\mathord{\overline{yx}}}
+\def\omb{\mathord{\mbox{\hspace*{0pt}}\,\overline{\!\omega\!}\,}\mbox{\hspace*{0pt}}}
+\def\ombb{\mathord{\mbox{\hspace*{0pt}}\;\!\overline{\!\!\:\omega\!\!\:}\;\!}\mbox{\hspace*{0pt}}}
+\def\ovxphi{\mathord{\overline{x\phi}}}
+
+\def\cn{\mathord{{\;\!{:}\;\!}}}
+\def\EE{\mathord{\mathrm{E}}}
+\def\CC{\mathord{\mathrm{C}}}
+\def\NN{\mathord{\mathrm{N}}}
+\def\II{\mathord{\mathrm{I}}}
+\def\QQ{\mathord{\mathrm{Q}}}
+\def\BB{\mathord{\mathrm{B}}}
+\def\ZZ{\mathord{\mathrm{Z}}}
+
+\def\Orb{\operatorname{\mathcal{O}}}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
+
+\newtheorem{theorem}{Theorem}
+\numberwithin{theorem}{section}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "~/Documents/LaTeX/CUEDThesisPSnPDF/thesis"
+%%% End: 

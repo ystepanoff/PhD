@@ -1,0 +1,31 @@
+% Thesis Acknowledgements ------------------------------------------------
+
+
+%\begin{acknowledgementslong} %uncommenting this line, gives a different acknowledgements heading
+\begin{acknowledgements}      %this creates the heading for the acknowlegments
+
+Firstly, I would like to thank Karim Malik for all his help and guidance in the past four years. 
+I am also grateful to my collaborators Adam Christopherson and Ian Huston. I would like
+to thank the rest of the QMUL cosmology group for their support and guidance and for being there
+when a pint is what's needed, in particular David Mulryne and Tim Clifton. I would like to also thank
+all my office mates and fellow students at Queen Mary, especially Alex Leithes and Joe Elliston, for
+making QMUL such a fun place to study. 
+ 
+I would like to thank my flat mates in London, Becs, Pip and Garnet who have been there for me outside of
+work and made living in London so enjoyable. I am also very grateful to my parents, my other siblings, Alex and Will,
+and the rest of my family for their encouragement and support over the last few years.
+Finally, I owe so many thanks to Andrew, I would not have made it through the last four years, especially the last
+month or two, without the support, love and belief you constantly provide me. Thank you so much!
+
+
+
+
+\end{acknowledgements}
+%\end{acknowledgmentslong}
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

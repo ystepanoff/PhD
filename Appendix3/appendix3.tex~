@@ -1,0 +1,92 @@
+\chapter{C: Maxwell Equations}
+
+\label{MaxwellEquProj}
+
+In this appendix we present the details of the projection of the Maxwell equations.
+Starting from the Maxwell's equations themselves,
+\be
+F_{[\mu\nu ; \lambda]} = 0  ,\quad { F^{\mu\nu}}_{;\nu} = \mu_0 j^{\mu} \,,
+\ee
+\noindent where $j^{\mu} = a^{-1}(\hat{\rho}, \mathbf{j}) $ is the four-current that sources the electromagnetic field, $\hat{\rho}$ is the comoving charge density,
+$\mathbf{j}$ is the comoving charge current density and $\mu_0$ is the magnetic constant and the four-current can be decomposed as follows
+\be
+{\hat{\rho}} = -j^{\mu}u_{\mu}, \quad  \J^{\mu} = {h^{\mu}}_{\nu} j^{\nu} \,. 
+\ee
+where $\J^{\mu}$ is the projected four-current, orthogonal to the 4-velocity.
+We project the Maxwell equations along and orthogonal to the 4-velocity vector, multiplying by $u_{\mu}$ and $h^{\mu}_{\nu}$ respectively, 
+to decompose Maxwell's equations with respect to $u_{\mu}$. 
+This will give us the following four equations,
+\bea
+&& u_{\mu}{F^{\mu\nu}}_{;\nu} =  \mu_0 u_{\mu}j^{\mu} \,, \label{MEdec1} \\
+&& u_{\mu}F_{[\mu\nu ; \lambda]} = 0 \label{MEdec2} \,, \\
+&& h^{\lambda}_{\mu}{F^{\mu\nu}}_{;\nu} = h^{\lambda}_{\mu} \mu_0 j^{\mu} \label{MEdec3} \,, \\
+&& h^{\lambda}_{\mu}F_{[\mu\nu ; \lambda]} = 0 \,.\label{MEdec4}
+\eea
+
+We study each equation in turn and expand out both sides using the expressions we wrote down in Section~\ref{geometric}.
+Firstly we consider the projection along the 4-velocity vector of the equation ${F^{\mu\nu}}_{;\nu} = j^{\mu}$ by
+multiplying by $u_{\mu}$, i.e.~Eq.~(\ref{MEdec1}) above. We work through this calculation below, using the decomposition of the 4-velocity, Eq.~(\ref{decu}), and the definition of 
+the electric and magnetic field, Eq.~(\ref{EMdef}), given above.
+\bea
+u_{\mu}{F^{\mu\nu}}_{;\nu} &=& \mu_0 u_{\mu}j^{\mu} \,, \nonumber \\
+(u_{\mu}F^{\mu\nu})_{;\nu} - F^{\mu\nu}u_{\mu;\nu} &=& \mu_0 u_{\mu}j^{\mu}  \,, \nonumber \\
+-{\Et^{\mu}}_{;\mu} - F^{\mu\nu} (\sigma_{\mu\nu} + \frac{1}{3}\theta h_{\mu\nu} + \omega_{\mu\nu} - \dot{u_\mu}u_{\nu}) &=& - \mu_0 \hat{\rho} \,, \nonumber \\
+{\Et^{\mu}}_{;\mu} + F^{\mu\nu} (\omega_{\mu\nu} - \dot{u_\mu}u_{\nu}) &=& \mu_0\hat{\rho}\,,  \nonumber \\
+{\Et^{\mu}}_{;\mu} + F^{\mu\nu}\epsilon_{\mu\nu\lambda\delta}\omega^{\lambda}u^{\delta} - \Et^{\mu}\dot{u_\mu} &=& \mu_0\hat{\rho} \,, \nonumber \\
+{\Et^{\mu}}_{;\mu} + 2\omega^{\lambda}\Mt_{\lambda} - \Et^{\mu}\dot{u_\mu} &=& \mu_0 \hat{\rho} \,, \nonumber \\
+{\Et^{\mu}}_{;\mu} - \Et^{\mu}\dot{u_\mu} &=& \mu_0 \hat{\rho} - 2\omega^{\lambda}\Mt_{\lambda} \,.
+\eea
+%{{\color{blue} Each term has units $s^{-2} kg C^{-1} = T s^{-1}$}} \\
+
+In the same way we can obtain the projection along the 4-velocity of the equation $F_{[\mu\nu ; \lambda]} = 0$ i.e.~by expanding out Eq.~(\ref{MEdec2}).
+\bea
+u_{\mu}\epsilon^{\mu\nu\lambda\delta}F_{\nu\lambda ;\delta} &=& 0 \,, \nonumber \\
+(u_{\mu}\epsilon^{\mu\nu\lambda\delta}F_{\nu\lambda})_{;\delta} - \epsilon^{\mu\nu\lambda\delta}F_{\nu\lambda}u_{\mu ; \delta} &=& 0 \,, \nonumber \\
+2 {\Mt^{\delta}}_{;\delta} - \epsilon^{\mu\nu\lambda\delta} F_{\nu\lambda}(\sigma_{\mu\delta} + \frac{1}{3}\theta h_{\mu\delta} + \omega_{\mu\delta} 
+-  \dot{u_\mu}u_{\delta}) &=& 0 \,, \nonumber \\
+2 {\Mt^{\mu}}_{;\mu} - 2\dot{u_{\mu}}\Mt^{\mu} - \omega_{\mu\delta}\epsilon^{\mu\nu\lambda\delta}F_{\nu\lambda} &=& 0 \,, \nonumber \\
+{\Mt^{\mu}}_{;\mu} - \dot{u_{\mu}}\Mt^{\mu} - \omega^{\mu}\Et_{\mu} &=& 0 \,.
+\eea
+%{{\color{blue} Each term has units $s^{-2} kg C^{-1} = T s^{-1}$}} \\
+
+Now we repeat the process above to find the projection of the Maxwell equations orthogonal to the 4-velocity by multiplying the equations by the projection
+tensor ${h^{\lambda}}_{\mu}$, i.e.~we expand out Eq.~(\ref{MEdec3}) and Eq.~(\ref{MEdec4}).
+This give us two further decomposed Maxwell equations.
+\bea
+{h^{\lambda}}_{\mu}{F^{\mu\nu}}_{;\nu} &=& \mu_0 {h^{\lambda}}_{\mu}j^{\mu} \,, \nonumber \\
+{h^{\lambda}}_{\mu}\dot{\Et^{\mu}} &=& ({\omega^{\lambda}}_{\nu} + {\sigma^{\lambda}}_{\nu} - \frac{2}{3} \theta {h^{\lambda}}_{\nu})\Et^{\nu} + 
+\epsilon^{\lambda\mu\nu\alpha} u_{\mu} \dot{u_{\nu}} \Mt_{\alpha} - \epsilon^{\lambda\mu\nu\alpha} u_{\mu} \Mt_{\nu ; \alpha} - \mu_0 \J^{\lambda} \,, \nonumber \\
+& &
+\eea
+and
+\bea
+{h^{\lambda}}_{\mu}\epsilon^{\mu\nu\delta\beta}F_{\nu\delta ;\beta} &=& 0 \,, \nonumber \\
+{h^{\lambda}}_{\mu}\dot{\Mt^{\mu}} &=& ({\omega^{\lambda}}_{\nu} + {\sigma^{\lambda}}_{\nu} - \frac{2}{3} \theta {h^{\lambda}}_{\nu})\Mt^{\nu} - 
+\epsilon^{\lambda\mu\nu\alpha} u_{\mu} \dot{u_{\nu}} \Et_{\alpha} + \epsilon^{\lambda\mu\nu\alpha} u_{\mu} \Et_{\nu ; \alpha} \,. \nonumber \\
+& &
+\eea
+
+Recalling that the covariant derivative of a vector quantity is given by ${\Et^{\mu}}_{;\nu} = {\Et^{\mu}}_{,\nu} + \Gamma^{\mu}_{k\nu} \Et^k$ 
+
+we have the following set of four covariant Maxwell equations, 
+\bea
+{\Et^{\mu}}_{,\mu} + \Gamma^{\mu}_{k\mu} \Et^k - \dot{u_{\mu}}\Et^{\mu} &=& \hat{\rho} - 2\omega^{\mu} \Mt_{\mu} \,, \nonumber \\
+{\Mt^{\mu}}_{,\mu} + \Gamma^{\mu}_{k\mu} \Mt^k - \dot{u_{\mu}}\Mt^{\mu} &=& - \omega^{\mu} \Et_{\mu} \,,
+\eea
+and
+\bea
+\dot{\Et}^{\lambda\perp} &=& (\omega^{\lambda}_{\nu} + \sigma^{\lambda}_{\nu} - \frac{2}{3} \theta h^{\lambda}_{\nu})\Et^{\nu} + \epsilon^{\lambda\nu\mu}\dot{u}_{\nu}\Mt_{\mu}
+- \epsilon^{\lambda\nu\mu}(\Mt_{\nu,\mu}-\Gamma^k_{\nu\mu}\Mt_k) - \J^{\lambda} \,, \nonumber \\
+\dot{\Mt}^{\lambda\perp} &=& (\omega^{\lambda}_{\nu} + \sigma^{\lambda}_{\nu} - \frac{2}{3} \theta h^{\lambda}_{\nu})\Mt^{\nu} - \epsilon^{\lambda\nu\mu}\dot{u}_{\nu}\Et_{\mu}
++ \epsilon^{\lambda\nu\mu}(\Et_{\nu,\mu}-\Gamma^k_{\nu\mu}\Et_k) \,,
+\eea
+where ${\Et}^{\lambda\perp}$ and ${\Mt}^{\lambda\perp}$ are the projected electric and magnetic field respectively, both orthogonal to the 4-velocity.
+
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

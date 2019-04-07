@@ -1,0 +1,45 @@
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+
+\chapter{Octonions}
+\ifpdf
+    \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
+\else
+    \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
+\fi
+%Leave these commands in they will fetch the figures for you.
+
+\label{chapter1}
+
+
+\section{{Composition algebras}}
+
+\subsection{{Quadratic forms and inner products}}
+
+Let $V$ be a vector space over a field $F$. We define a quadratic form
+$Q$ on $V$ as a mapping $Q : V \rightarrow F$ such that
+\begin{equation}
+  \item
+\end{equation}
+
+\section{{Conjugation and inverses}}
+
+\section{{Alternative laws and Moufang identities}}
+
+\section{{Other useful properties}}
+
+\section{{Split octonion algebras}}
+
+\section{{A basis for split octonions}}
+
+
+% ------------------------------------------------------------------------
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

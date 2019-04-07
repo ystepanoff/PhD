@@ -1,0 +1,702 @@
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+% \hspace*{1cm}
+% \pagebreak[4]
+
+\chapter{Octonions}
+\ifpdf
+    \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
+\else
+    \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
+\fi
+%Leave these commands in they will fetch the figures for you.
+
+\label{chapter1}
+
+
+\section{Composition algebras}
+
+\subsection{Quadratic and Bilinear Forms}
+
+Let $V$ be a vector space over a field $F$. We define a \textit{quadratic form}
+$Q$ on $V$ to be a map $Q : V \rightarrow F$ such that
+\begin{enumerate}[(i)]
+\item $Q(\lambda v) = \lambda^2 Q(v)$ for all $v \in V$ and
+  $\lambda \in F$;
+
+\item the form $\inner{\cdot}{\cdot}: V\times V \rightarrow K$,
+  defined by
+  \begin{equation}
+  	\label{eq:polar_form}
+    \inner{u}{v} = Q(u+v) - Q(u) - Q(v),
+  \end{equation}
+  is bilinear. We usually refer to $\inner{\cdot}{\cdot}$ as 
+  \textit{the polar form of\ $Q$}. 
+\end{enumerate}
+From (\ref{eq:polar_form}) we readily see that the form $\inner{\cdot}{\cdot}$ is symmetric,
+i.e. $\inner{u}{v} = \inner{v}{u}$ for all $u,v \in V$. We also observe that for all 
+$v \in V$ we have
+\begin{equation}
+	\inner{v}{v} = 2Q(v),
+\end{equation}
+It follows that in case $\mathrm{char}(F) = 2$ we get $\inner{v}{v} = 0$ for all $v$, and 
+the quadratic form
+carries strictly more information than the associated bilinear form. In all other characteristics,
+hovewer, we get $Q(v) = \frac12 \inner{v}{v}$. 
+
+We say that two non-zero vectors $u,v \in V$ are \textit{orthogonal}, if $\inner{u}{v} = 0$. As
+already mentioned, this relation is symmetric. Now if $U$ is any subspace of $V$ (and even if 
+it is just a subset), we define its \textit{orthogonal complement} $U^{\perp}$ to be
+\begin{equation}
+	U^{\perp} = \left\{\, v \in V\, \big|\ \inner{u}{v} = 0\ \mbox{for all}\  u \in U\,\right\}.
+\end{equation}
+A vector $v\in V$ is called \textit{isotropic} if $Q(v) = 0$, otherwise
+$v$ is \textit{anisotropic}. Sometimes we also say that $Q(v)$ is the \textit{norm} of
+$v$. Now, the quadratic form $Q$ is isotropic if there exists a non-zero isotropic vector in $V$. 
+The \textit{radical} of $\inner{\cdot}{\cdot}$ is $V^{\perp}$, and $\inner{\cdot}{\cdot}$ is 
+\textit{non-degenerate} if the radical is trivial, or, otherwise speaking, if
+\begin{equation}
+	\inner{v}{u} = 0\ \mbox{for all}\ u \in V \mbox{ implies that } v = 0.
+\end{equation}
+Similarly, the \textit{radical} of $Q$ is 
+the subset of the radical of $\inner{\cdot}{\cdot}$, consisting of isotropic vectors, i.e.
+\begin{equation}
+	\label{eq:quadratic_form_radical}
+	\mathrm{rad}_V(Q) = \{\, v \in V\, \big|\, \inner{v}{u} = 0\ \mbox{for all}\ u \in V,\ 
+		Q(v) = 0\,\}.
+\end{equation}
+If the radical of the form $Q$ is trivial, then $Q$ is said to be
+\textit{non-singular}. Throughout this thesis we will be mostly 
+interested in non-singular quadratic and non-degenerate bilinear forms.
+If $U$ is a subspace of $V$ and the restriction of $\inner{\cdot}{\cdot}$ on $U$ 
+is non-degenerate, then $V = U \oplus U^{\perp}$, and the restriction of $\inner{\cdot}{\cdot}$
+on $U^{\perp}$ is also non-degenerate. A subspace $U$ of $V$ consisting entirely of isotropic vectors is called \textit{totally isotropic}.
+
+\subsection{Isometries and Witt's Lemma}
+
+Let $V_1,\ V_2$ be vector spaces over fields $F_1$ and $F_2$ respectively, with non-singular
+quardatic forms $Q_1$ and $Q_2$. Denote by $\inner{\cdot}{\cdot}_i$ the polar form of 
+$Q_i$ ($i = 1,2$). Suppose $\s : F_1 \rightarrow F_2$ is a field isomorphism. A map
+$s : V_1 \rightarrow V_2$, satisfying
+\begin{equation}
+	\label{eq:similarity}
+	Q_2( v^s ) = \lambda_s Q_1(v)^{\s}\ \ (v \in V_1),
+\end{equation}
+where $\lambda_s \in F_2^{\times}$, is called a \textit{$\s$-similarity}. The scalar
+$\lambda_s$ is known as the \textit{multiplier} of $s$. Using the definition of polar form, 
+we obtain $\inner{u^s}{v^s}_2 = \lambda_s \inner{u}{v}_1^{\s}$, so $s$ is a bijection. 
+If $\lambda_s = 1$, then
+$s$ is called a \textit{$\s$-isometry}. In the case
+when a $\s$-similarity (or $\s$-isometry) between two spaces $V_1$ and $V_2$ exists, 
+we say that $V_1$ and $V_2$ are $\s$-similar (or $\s$-isometric). 
+If $\s$ is the identity map, then $\s$-similarity (or $\s$-isometry) is simply called 
+ \textit{similarity} (or \textit{isometry}).
+
+A key result about isometries, which also plays an important r\^{o}le in the study of the geometry
+of spaces with quadratic forms, is Witt's Lemma (also known as Witt's Theorem). 
+
+\begin{theorem}[Witt's Lemma]
+	If $V_1,\ V_2$ are two $\s$-isometric 
+	vector spaces of finite dimension with non-singular
+	quadratic forms $Q_1$ on $V_1$ and $Q_2$ on $V_2$, then every $\s$-isometry between a 
+	subspace of $V_1$ and a subspace of $V_2$ extends to a \mbox{$\s$-isometry}
+	between $V_1$ and $V_2$. 
+\end{theorem}
+
+If $V$ is a vector space over $F$ 
+with a non-singular quadratic form $Q$, then an isometry from $V$ onto
+itself is called an \textit{orthogonal transformation} of $V$ with respect to $Q$. These 
+orthogonal transformations form the \textit{(general) orthogonal group} $\GO(V,Q)$. Now suppose 
+$s : V \rightarrow V$ is an invertible linear transformation such that $Q(v^s) = Q(v)$ for
+all $v \in V$ (and thus $\inner{u^s}{v^s} = \inner{u}{v}$ for all $u,v \in V$).
+Denote $n = \dim_F(V)$ and pick a basis $\mathcal{B} = \{\,v_1,...,v_n\,\}$. 
+Then with respect to $\mathcal{B}$, $s$ can be represented by an $n\times n$ matrix
+$[s]_{\mathcal{B}}$. The determinant of the resulting matrix is independent of 
+the choice of basis, so there is a group homomorphism 
+$\det: \GO(V,Q) \rightarrow F^{\times}$. Orthogonal transformations have determinant $\pm 1$.
+In case of characteristic $2$ we define the \textit{quasideterminant}
+$\mathrm{qdet}:\GO(V,Q) \rightarrow \mathbb{F}_2$ to be the map
+\begin{equation}
+	\label{eq:qdet}
+    \mathrm{qdet}: g \mapsto \dim_F ( \im(\mathrm{id} - g) )\ \operatorname{mod}\ 2.
+\end{equation}
+The subgroup $\SO(V,Q)$ of $\GO(V,Q)$ is the kernel of the (quasi-)determinant map. The group
+$\SO(V,Q)$ is referred to as \textit{special orthogonal group} or \textit{rotation} group
+of $V$ with respect to $Q$. 
+
+Note that not every element of $\GO(V,Q)$ arises as a rotation. For an anisotropic
+vector $v \in V$ define $r_v$ to be 
+\begin{equation}
+	\label{eq:reflection}
+	r_v: u \mapsto u - \frac{\inner{u}{v}}{Q(v)} v\ \ (u \in V).
+\end{equation}
+If the characteristic is not $2$, then $r_v$ is the \textit{reflexion} in 
+(the hyperplane orthogonal to) $v$. If $\mathrm{char}(K) = 2$, then $r_v$ is the 
+\textit{orthogonal transvection} with centre
+$v$. For simplicity we use the word `reflexion' in all cases. 
+
+We define the \textit{spinor norm} to be a homomorphism 
+\mbox{$\GO(V,Q) \rightarrow F^{\times} / (F^{\times})^2$}, where $F^{\times} / (F^{\times})^2$
+is the \textit{multiplicative group modulo squares} of $F$. The aforementioned homomorphism
+is defined as follows. Any element of $\GO(V,Q)$ arising as a reflexion in
+$v$ is sent to the value $Q(v)$ modulo $(F^{\times})^2$. This extends to a well-defined
+homomorphism. The subgroup $\Omega(V,Q)$ of $\SO(V,Q)$ is obtained as the kernel of spinor norm. 
+
+Witt's Lemma implies that all maximal totally isotropic subspaces of $V$ (with respect 
+to $Q$) have the same dimension, which is called the \textit{Witt index} of $Q$. When $Q$ is
+non-singular and $V$ is finite-dimensional, Witt index of $Q$ can be at most $\frac12 \dim_F(V)$. 
+Moreover, the isometry group $\GO(V,Q)$ acts transitively on the set of maximal totally isotropic
+subspaces. 
+
+\subsection{Definition of a composition algebra}
+
+\begin{definition}
+	\label{def:composition_algebra}
+	A \textit{composition algebra} $C=C_F$ over a field $F$ is a (not necessarily associative) 
+	unital algebra over $F$ which admits a non-singular quadratic form $N:C \rightarrow F$
+	such that the polar form of\/ $N$ is non-degenerate and 
+	\begin{equation}
+		N(xy) = N(x) N(y)\ \ \mbox{for all}\ x,y \in C.
+	\end{equation}
+\end{definition}
+
+The quadratic form $N$ on $C$ is usually called the \textit{norm} of $C$, and its polar form
+is referred to as the \textit{inner product}. We also denote the identity element as $1_C$. 
+
+Let $D$ be a linear subspace of $C$ such that the restriction of $\inner{\cdot}{\cdot}$ on $D$ 
+is non-degenerate. If $D$ is closed under multiplication and contains $1_C$, then it is called
+the \textit{subalgebra} of $C$. 
+
+Let $C_1,\ C_2$ be two composition algebras over fields $F_1,\ F_2$ respectively and 
+suppose $\s: F_1 \rightarrow F_2$ is a field isomorphism. A bijective $\s$-linear transformation
+$s : C_1 \rightarrow C_2$ is called a \textit{$\s$-isomorphism}, if 
+\begin{equation}
+	(xy)^s = x^s y^s\ \ \mbox{for all } x,y \in C_1. 
+\end{equation}
+For simplicity, if $F_1 = F_2$ and $\s = \mathrm{id}$, then $s$ is called an \textit{isomorphism}.
+
+Definition \ref{def:composition_algebra} allows us to derive a number of useful equations. 
+First of all, we find that
+\begin{equation*}
+	N( x ) = N( 1_C \cdot x ) = N(1_C) N(x)
+\end{equation*}
+for all $x \in C$, so it follows that
+\begin{equation}
+	N(1_C) = 1.
+\end{equation}
+Next, for any $x_1,x_2,y \in C$ we have
+\begin{align*}
+	N(x_1 y + x_2 y) = N((x_1+x_2) y) = N(x_1+x_2) N(y) \\
+		= (N(x_1) + N(x_2) + \inner{x_1}{x_2}) N(y).
+\end{align*}
+On the other hand,
+\begin{align*}
+	N(x_1 y + x_2 y) = N(x_1 y) + N(x_2 y) + \inner{x_1 y}{x_2 y} \\
+		= N(x_1)N(y) + N(x_2)N(y) + \inner{x_1 y}{x_2 y},
+\end{align*}
+and so
+\begin{equation}
+	\label{eq:inner_right_cancellation}
+	\inner{x_1 y}{x_2 y} = \inner{x_1}{x_2} N(y)
+\end{equation}
+for all $x_1, x_2,y \in C$. Similarly, we obtain
+\begin{equation}
+	\inner{x y_1}{x y_2} = N(x)\inner{y_1}{y_2}
+\end{equation}
+for all $x,y_1,y_2 \in C$. Replacing $y$ by $y_1+y_2$ in 
+(\ref{eq:inner_right_cancellation}), we obtain
+\begin{equation}
+	\inner{x_1 y_1}{x_2 y_2} + \inner{x_1 y_2}{x_2 y_1} = \inner{x_1}{x_2} \inner{y_1}{y_2}
+\end{equation}
+for all $x_1,x_2,y_1,y_2 \in C$. 
+
+Any composition algebra is quadratic, that is, every element satisfies a certain quadratic
+equation. 
+
+\begin{proposition}
+	\label{prop:comp_algebra_quadratic}
+	Every element $x$ of a composition algebra $C$ satisfies the following equation:
+	\begin{equation}
+		x^2 - \inner{x}{1_C} x + N(x)\cdot 1_C = 0.
+	\end{equation}
+	In the case when $x$ is not a scalar multiple of $1_C$, this is the minimal equation for $x$.
+	For all $x,y \in C$ we have
+	\begin{equation}
+		xy + yx - \inner{x}{1_C} y - \inner{y}{1_C} x + \inner{x}{y}\cdot 1_C = 0.
+	\end{equation}
+\end{proposition}
+
+For example, if $x,y$ are orthogonal to $1_C$ and $\inner{x}{y} = 0$, then $xy = -yx$,
+but most importantly we have the following corollary.
+
+\begin{corollary}
+	\label{cor:comp_algebra_norm_defined_by_structure}
+	The norm $N$ in a composition algebra $C$ is uniquely determined by the algebra structure. 
+	Any $\s$-isomorphism of composition algebras is always a $\s$-isometry.
+\end{corollary}
+
+Any composition algebra is \textit{power associative}, i.e. for all $x \in C$ and $i,j\geqslant 1$,
+we have
+\begin{equation}
+	x^i x^j = x^{i+j}.
+\end{equation}
+
+\section{Conjugation and inverses}
+
+We define \textit{conjugation} in a composition algebra $C$ to be the mapping
+$\ovphantom : C \rightarrow C$ defined by
+\begin{equation}
+	\label{eq:conjugation}
+	\ovx = \inner{x}{1_C}\cdot 1_C - x\ \ (x \in C).
+\end{equation}
+Note that geometrically speaking, the map $x \mapsto \ovx$ is $-r_{1_C}$, 
+where $r_{1_C}$ is the reflexion in $1_C$. We call $\ovx$ the \textit{conjugate} of $x$. The
+ following lemma summarises the properties of $\O$ related to conjugation. 
+
+\begin{lemma}
+	\label{lemma:conj_props}
+	For all $x,y \in C$ the following identities hold:
+	\begin{enumerate}[(i)]
+		\item $x \ovx = \ovx x = N(x)\cdot 1_C$,
+		\item $\bar{xy} = \ovy \ovx$, 
+		\item $\bar{\ovx} = x$, 
+		\item $\bar{x+y} = \ovx + \ovy$,
+		\item $N(x) = N(\ovx)$,
+		\item $\langle x,y \rangle = \inner{\ovx}{\ovy}$. 
+	\end{enumerate}
+\end{lemma}
+
+Furthermore, we have the following important properties. 
+
+\begin{lemma}
+	For all $x,y,z \in C$ the following identities hold: 
+	\begin{enumerate}[(i)]
+		\item $x(\ovx y) = N(x) y$,
+		\item $(x\ovy) y = N(y) x$,
+		\item $x (\ovy z) + y (\ovx z) = \inner{x}{y} \cdot z$,
+		\item $(x \ovy) z + (x \ovz) y = x\cdot \inner{y}{z}$. 
+	\end{enumerate}	 
+\end{lemma}
+
+If for an element $x \in C$ we have $N(x)\neq 0$, then $x$ is said to be \textit{invertible}.
+If this is the case, then the \textit{inverse} of $x$ is
+\begin{equation}
+	\label{eq:inverse}
+	x^{-1} = N(x)^{-1} \ovx. 
+\end{equation}
+
+\begin{lemma}
+	If $x,y \in C$ are invertible, then
+	\begin{equation}
+		(x y)^{-1} = y^{-1} x^{-1}.
+	\end{equation}
+\end{lemma}
+
+\section{Alternative laws and Moufang identities}
+
+Composition algebras are not necessarily associative, but there are certain results which 
+can help us with the bracketing.
+
+\begin{lemma}[Moufang Identities]
+	For all $x,y,z\in C$, the following identities hold:
+	\begin{equation}
+		\begin{array}{r@{\;}c@{\;}l}
+			x(yz)x & = & (xy)(zx), \\
+			x(yzy) & = & ((xy)z)y, \\
+			(xyx)z & = & x(y(xz)).
+		\end{array}
+	\end{equation}
+\end{lemma}
+
+This helps us to conclude that any composition algebra $C$ is \textit{alternative}.
+That is, for every element $x \in C$ the left-multiplication by $x$ commutes with 
+right-multiplication by $x$. 
+
+\begin{lemma}[Alternative Laws]
+	For all $x,y \in C$ the following are true:\\
+	\begin{equation}
+		\begin{array}{r@{\;}c@{\;}l}
+			(xx)y & = & x(xy), \\
+			(yx)x & = & y(xx), \\
+			(xy)x & = & x(yx).
+		\end{array}
+	\end{equation}
+\end{lemma}
+
+\begin{theorem}[Artin]
+	The subalgebra generated by any two elements of an alternative algebra is always associative.
+\end{theorem}
+
+\section{Octonion algebras}
+
+The most important structural result about composition algebras is the following theorem.
+
+\begin{theorem}
+	The possible dimensions of a composition algebra are $1$, $2$, $4$, and $8$. Composition 
+	algebras of dimension $1$ only occur if the characreristic of the field is not $2$. 
+	Composition algebras of dimension $1$ and $2$ are associative and commutative. Those
+	of dimension $4$ are associtaive but not commutative, and those of dimension $8$ are
+	neither associative nor commutative. 
+\end{theorem}
+
+In this thesis we will be mostly interested in the $8$-dimensional composition algebras. 
+To emphasise their importance in our work, we use a separate name for them. 
+
+\begin{definition}
+	Let $F$ be any field. An octonion algebra $\O = \O_F$ is an $8$-dimensional composition
+	algebra, i.e. it admits a norm defined as a quadratic form $\NN : \O \rightarrow F$
+	such that the polar form of\/ $\NN$ is non-degenerate and $\NN(xy) = \NN(x) \NN(y)$ for 
+	all $x,y \in \O$.  
+\end{definition}
+
+The elements of $\O$ are called the \textit{octonions}. 
+The multiplicative identity in $\O$ is denoted $1_{\O}$, and for simplicity we sometimes omit the subscript. The polar form of $\NN$ is denoted by $\inner{\cdot}{\cdot}$ as usual. Define the 
+\textit{trace} of an octonion to be the inner product
+\begin{equation}
+	\Tr(x) = \inner{x}{1_{\O}}.
+\end{equation}
+It is easy to see that
+\begin{equation}
+	\Tr(x)\cdot 1_{\O} = x + \ovx. 
+\end{equation}
+Although we define trace through the inner product, using Lemma \ref{lemma:conj_props} we can
+derive the following important relation.
+\begin{lemma}
+	For all $x,y \in \O$, the following identity holds:
+	\begin{equation}
+		\inner{x}{y} = \Tr(x\ovy).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Lemma \ref{lemma:conj_props} tells us that for all $x \in \O$, $\NN(x)\cdot 1_{\O} = x \ovx$.
+	Polarising $\NN$ as usual, we obtain
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			\inner{x}{y}\cdot 1_{\O} & = & \NN(x+y)\cdot 1_{\O} - \NN(x)\cdot 1_{\O} - 
+												\NN(y)\cdot 1_{\O} \\
+												
+					& = & (x + y)(\ovx + \ovy) - x\ovx - y\ovy = x\ovy + y\ovx = \Tr(x\ovy). 
+		\end{array}
+	\end{equation*}
+\end{proof}
+Proposition \ref{prop:comp_algebra_quadratic} tells us that an arbitrary element $x \in \O$
+satisfies the equation
+\begin{equation}
+	x^2 - \Tr(x)\cdot x + \NN(x)\cdot 1_{\O} = 0.
+\end{equation}
+Finally, as we know, any octonion algebra $\O$ is neither associative nor commutative. However,
+we do have the following.
+\begin{lemma}
+	If $x,y,z \in \O$, then $\Tr(xy) = \Tr(yx)$ and $\Tr(x(yz)) = \Tr((xy) z)$. 
+\end{lemma}
+Note that although trace is $3$-associative, it is not possible in this case to derive
+generalised associativity for the trace. 
+
+\begin{lemma}
+	For all non-zero $C \in \O$ the map $\O \rightarrow F$, $x \mapsto \Tr(Cx)$ is onto.
+\end{lemma}
+
+\begin{proof}
+	This is an $F$-linear map, so if it is not surjective, then it is a zero map. But if 
+	$\T(Cx) = \inner{C}{\ovx} = 0$ for all $x \in \O$, then $C = 0$ (a contradiction), since the
+	map $x \mapsto \ovx$ is surjective. 
+\end{proof}
+
+\section{Split octonion algebras}
+
+There is an important dichotomy with respect to the structure of an octonion algebra: 
+either $\O$ is a division algebra or there exists a non-zero isotropic octonion.
+In the latter case $\O$ is called a \textit{split octonion algebra}. 
+
+If $\O$ is split, then the Witt index of $\NN$ is $4$ (section 1.8 in \cite{SpringerVeldkamp}).
+Moreover, we have the following result.
+\begin{theorem}
+	\label{theorem:unique_split_algebra}
+	Over any given field $F$ there is a unique split octonion algebra, up to isomorphism.
+\end{theorem}
+It turns out that any isotropic octonion left- and right-annihilates a $4$-dimensional subspace
+of a split octonion algebra $\O$. 
+
+\begin{proposition}
+	\label{prop:octonion_annihilator}
+	Let $\O$ be a split octonion algebra. Then for any isotropic $x \in \O$, the 
+	following is true:
+	\begin{equation}
+		\dim_F(\O x) = \dim_F(x\O) = 4. 
+	\end{equation}
+	Moreover, $\O x$ is the set of octonions that are right-annihilated by $\ovx$, and
+	$x \O$ is the set of octonions that are left-annihilated by $\ovx$.
+\end{proposition}
+
+\begin{proof}
+	We prove the statement for right multiplication by $x$. The proof
+	for left multiplication is essentially the same. The map
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			R_x : \O & \rightarrow & \O \\
+			y & \mapsto & yx
+		\end{array}
+	\end{equation*}
+	is an $F$-linear map with $\im(R_x) = \O x$, which is a totally isotropic
+	subspace of $\O$. Indeed, $(yx)(\ovx \ovy) = y(x\ovx)\ovy = 0$ for any
+	$y \in \O$. Since $\NN$ is non-singular and its polar form is non-degenerate,
+	we conclude that $\dim_F(\O x) \leqslant 4$.
+	
+	If $x \neq 0$ and $yx = 0$, then $y$ is isotropic for if that were not 
+	the case, we would get $x = y^{-1}(yx) = y^{-1}\cdot 0 = 0$,
+	a contradiction. It follows that \mbox{$\dim_F(\ker(R_x)) \leqslant 4$}.
+	The Rank--Nullity theorem implies that \mbox{$\dim_F(\O x) = \dim_F(\ker(R_x)) = 4$}. 
+\end{proof}
+
+\section{A basis for the split octonions}
+
+In this section we assume that $\O$ is a split octonion algebra. 
+Theorem \ref{theorem:unique_split_algebra} 
+allows us to choose a basis for $\O$ and to use it in our further constructuions.
+Otherwise speaking, we can `redefine' split octonion algebras in the following way. 
+
+\begin{definition}
+	\label{def:split_octonions}
+	If $F$ is any field, then the split octonion algebra over $F$ is defined as an
+	$8$-dimensional vector space $\O = \O_F$ with basis $\{\,e_i \mid i \in \pm I\,\}$,
+	where $I = \{\,0,1,\omega,\bar{\omega}\,\}$, $\pm I = \{\,\pm 0, \pm 1, \pm \omega,
+	\pm \bar{\omega}\,\}$ and bilinear multiplication given by the following table.
+\end{definition}
+
+    \begin{center}
+        \begin{tabular}{ c || c | c | c | c | c | c | c | c | }
+ & \xone & \xtwo & \xthree & \xfour & \xfive & \xsix & \xseven & \xeight \\ \hline \hline
+ \xone & $0$ & $0$ & $0$ & $0$ & \xone & \xtwo & \m\xthree & \m\xfour \\ \hline
+ \xtwo & $0$ & $0$ & \m\xone & \xtwo & $0$ & $0$ & \m\xfive & \xsix \\ \hline
+ \xthree & $0$ & \xone & $0$ & \xthree & $0$ & \m\xfive & $0$ & \m\xseven \\ \hline
+ \xfour & \xone & $0$ & $0$ & \xfour & $0$ & \xsix & \xseven & $0$\\ \hline
+ \xfive & $0$ & \xtwo & \xthree & $0$ & \xfive & $0$ & $0$ & \xeight\\ \hline
+ \xsix & \m\xtwo & $0$ & \m\xfour & $0$ & \xsix & $0$ & \xeight & $0$ \\ \hline
+ \xseven & \xthree & \m\xfour & $0$ & $0$ & \xseven & \m\xeight & $0$ & $0$ \\ \hline
+ \xeight & \m\xfive & \m\xsix & \xseven & \xeight & $0$ & $0$ & $0$ & $0$\\ \hline
+        \end{tabular}
+    \end{center}
+In other words, we get
+    \begin{enumerate}[(i)]
+    	\item $e_1 e_{\omega} = -e_{\omega} e_1 = e_{-\omega}$;
+    	\item $e_1 e_0 = -e_0 e_1 = e_1$; 
+    	\item $e_{-1} e_1 = - e_0$ and $e_0 e_0 = e_0$;
+    \end{enumerate}
+and images under negating all subscripts (including $0$), and multiplying all subscripts
+by $\omega$, where $\omega^2 = \bar{\omega}$ and $\omega \bar{\omega} = 1$. All other
+products of basis vectors are $0$. Thus, $e_0$ and $e_{-0}$ are orthogonal idempotents
+with $e_0 + e_{-0} = 1_{\O}$. Now, if $x = \sum_{i \in \pm I} \lambda_i e_i$, 
+then the norm of $x$ can be defined in the following way:
+\begin{equation}
+	\label{eq:trace_norm}
+	\begin{array}{r@{\;}c@{\;}l}
+		%\Tr(x) & = & \lambda_0 + \lambda_{-0}, \\
+		\NN(x) & = & \lambda_{-1} \lambda_1 + \lambda_{\omg} \lambda_{-\omg} + 
+			\lambda_{\omega}\lambda_{-\omega} + \lambda_0 \lambda_{-0}.
+	\end{array}
+\end{equation}
+
+\begin{lemma}
+	\label{lemma:norm_multiplicative}
+	The norm $\NN$ defined in (\ref{eq:trace_norm}) is multiplicative.
+\end{lemma}
+
+\begin{proof}
+	Let $x = \sum_{i \in \pm I} \lambda_i e_i$ and
+	$y = \sum_{i \in \pm I} \mu_i e_i$ be two arbitrary elements of $\O$. Their product is
+	given by
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			x \cdot y & = & (\lambda_0 \mu_{-0} - \lambda_{\bar{\omega}} \mu_{\omega}
+				+ \lambda_{\omega} \mu_{\bar{\omega}} + \lambda_0 \mu_{-1}) \cdot e_{-1} \\
+							
+				&+ &   (\lambda_{-1} \mu_{-\omega} + \lambda_{\bar{\omega}} \mu_0 + 
+			\lambda_{-0} \mu_{\omega} - \lambda_{-\omega} \mu_{-1}) \cdot e_{\bar{\omega}}  \\
+					
+				&+ &   (\lambda_{-\bar{\omega}} \mu_{-1} + \lambda_{-1} \mu_{\omega} - 
+						\lambda_{-1} \mu_{-\bar{\omega}} + \lambda_{\omega} \mu_0) \cdot e_{\omega} \\
+					
+				&+ &   (\lambda_0 \mu_0 - \lambda_{-\omega} \mu_{\omega} - 
+				\lambda_{-\bar{\omega}} \mu_{\bar{\omega}} - \lambda_{-1} \mu_1) \cdot e_0 \\
+						
+				&+ &   (\lambda_{-0} \mu_{-0} - \lambda_1 \mu_{-1} - 
+	\lambda_{\bar{\omega}} \mu_{-\bar{\omega}}-\lambda_{\omega}\mu_{-\omega}) \cdot e_{-0} \\
+				
+				&+ &   (\lambda_0 \mu_{-\omega} - \lambda_1 \mu_{\bar{\omega}} + \lambda_{-\omega}
+			\mu_{-0} + \lambda_{\bar{\omega}} \mu_1) \cdot e_{-\omega} \\
+				
+				&+ &   (\lambda_{-\bar{\omega}} \mu_{-0} + \lambda_1 \mu_{\omega} - 
+				\lambda_{\omega} \mu_1 + 
+				\lambda_0 \mu_{-\bar{\omega}}) \cdot e_{-\bar{\omega}} \\
+			
+				&+ &   (\lambda_{-0} \mu_1 + \lambda_{-\omega} \mu_{-\bar{\omega}} - 
+			\lambda_{-\bar{\omega}} \mu_{-\omega} + \lambda_1 \mu_0) \cdot e_1 .
+		\end{array}
+	\end{equation*}
+	From this it is straightforward to derive
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			\NN(x\cdot y) & = &
+						(\lambda_0 \mu_{-0} - \lambda_{\bar{\omega}} \mu_{\omega}
+				+ \lambda_{\omega} \mu_{\bar{\omega}} + \lambda_0 \mu_{-1})\cdot
+					(\lambda_{-0} \mu_1 + \lambda_{-\omega} \mu_{-\bar{\omega}} - 
+			\lambda_{-\bar{\omega}} \mu_{-\omega} + \lambda_1 \mu_0) \\
+			
+			&+& \  (\lambda_{-1} \mu_{-\omega} + \lambda_{\bar{\omega}} \mu_0 + 
+			\lambda_{-0} \mu_{\omega} - \lambda_{-\omega} \mu_{-1}) \cdot
+			(\lambda_{-\bar{\omega}} \mu_{-0} + \lambda_1 \mu_{\omega} - 
+				\lambda_{\omega} \mu_1 + 
+				\lambda_0 \mu_{-\bar{\omega}})  \\
+				
+			&+  &  (\lambda_{-\bar{\omega}} \mu_{-1} + \lambda_{-1} \mu_{\omega} - 
+						\lambda_{-1} \mu_{-\bar{\omega}} + \lambda_{\omega} \mu_0)\cdot
+					(\lambda_0 \mu_{-\omega} - \lambda_1 \mu_{\bar{\omega}} + \lambda_{-\omega}
+			\mu_{-0} + \lambda_{\bar{\omega}} \mu_1) \\
+			
+			& + &  (\lambda_0 \mu_0 - \lambda_{-\omega} \mu_{\omega} - 
+				\lambda_{-\bar{\omega}} \mu_{\bar{\omega}} - \lambda_{-1} \mu_1)\cdot
+				(\lambda_{-0} \mu_{-0} - \lambda_1 \mu_{-1} - 
+	\lambda_{\bar{\omega}} \mu_{-\bar{\omega}}-\lambda_{\omega}\mu_{-\omega}) \\ 
+
+			& = & \lambda_{-1} \lambda_1 \cdot (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} 
+			\mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega} + \mu_{0} \mu_{-0}) \\
+			
+			& + &  \lambda_{\bar{\omega}} \lambda_{\bar{\omega}} \cdot
+			(\mu_{-0} \mu_0 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega}
+		+ \mu_{0} \mu_{-0}) \\
+		
+			& + &  \lambda_{\omega} \lambda_{-\omega} \cdot (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} 
+			\mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega} + \mu_{0} \mu_{-0}) \\
+			
+			& + &  \lambda_{0} \lambda_{-0} \cdot (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} 
+			\mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega} + \mu_{0} \mu_{-0}) \\
+			
+			& = & (\lambda_{-0} \lambda_0 + \lambda_{\bar{\omega}} \lambda_{-\bar{\omega}} +
+			 \lambda_{\omega} \lambda_{-\omega} + \lambda_{0} \lambda_{-0})\cdot
+			 (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega}
+			 + \mu_{0} \mu_{-0}) \\
+			 
+			& = & \NN(x) \cdot \NN(y).
+		\end{array} 
+	\end{equation*}
+\end{proof}
+It follows that $\O$ is indeed a composition algebra. Let $x$ and $y$ be the same as in Lemma
+\ref{lemma:norm_multiplicative}. We find
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		\inner{x}{y} & = & \NN(x+y) - \NN(x) - \NN(y) \\
+		
+		    & = & (\lambda_{-1} + \mu_{-1}) \cdot ( \lambda_1 + \mu_1 )
+		
+			 +  (\lambda_{\bar{\omega}} + \mu_{\bar{\omega}}) \cdot
+					(\lambda_{- \bar{\omega}} + \mu_{-\bar{\omega}}) \\
+					
+			& + & (\lambda_{\omega} + \mu_{\omega}) \cdot	
+					( \lambda_{-\omega} + \mu_{-\omega} ) 
+					
+			 +  (\lambda_0 + \mu_0) \cdot (\lambda_{-0} + \mu_{-0}) \\
+			
+			& - & ( \lambda_{-1} \lambda_1 + \lambda_{\bar{\omega}} \lambda_{-\bar{\omega}}
+					+ \lambda_{\omega} \lambda_{-\omega} + \lambda_0 \lambda_{-0} ) \\
+			
+			& - & ( \mu_{-1} \mu_1 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}}
+					+ \mu_{\omega} \mu_{-\omega} + \mu_0 \mu_{-0} ) \\
+					
+			& = & ( \lambda_{-1} \mu_{1} + \lambda_{1} \mu_{-1} )
+			
+			+ ( \lambda_{\bar{\omega}} \mu_{-\bar{\omega}} + 
+					\lambda_{-\bar{\omega}} \mu_{\bar{\omega}} ) \\
+					
+			& + & ( \lambda_{\omega} \mu_{-\omega} + \lambda_{-\omega} \mu_{\omega} )
+			
+			+ ( \lambda_{0} \mu_{-0} + \lambda_{-0} \mu_{0} ).
+	\end{array}
+\end{equation}
+Thus, the trace of $x$ becomes
+\begin{equation}
+	\Tr(x) = \inner{x}{1_{\O}} = \lambda_0 + \lambda_{-0}.
+\end{equation}
+
+Note that $\NN(e_i) = 0$ for $i \neq \pm 0$, so $\O$ is indeed a split octonion algebra.
+Finally, the involution $x \mapsto \ovx$ is the extension by linearity of
+\begin{equation}
+	e_i \mapsto - e_i\ (i \neq \pm 0),\ e_0 \leftrightarrow e_{-0}.
+\end{equation}
+
+\section{Centre of an octonion algebra}
+
+We define the centre of an octonion algebra $\O$ as
+\begin{equation}
+	\label{eq:octonion_centre}
+	\ZZ(\O) = \{\,c \in \O\,\big|\, cx = xc\ \mbox{for all}\ x \in \O\,\}.
+\end{equation}
+In the literature, for example, in \cite{Schafer}, it is sometimes required that central 
+elements also ``associate'' with all other elements. We do not require this in our definition,
+however, it will be obvious that we have this property free of charge. 
+
+\begin{proposition}
+	\label{prop:octonion_centre}
+	The centre of an octonion algebra $\O=\O_F$ is $F\cdot 1_{\O}$.  
+\end{proposition}
+
+This is essentially Proposition 1.9.1 in \cite{SpringerVeldkamp}, however, we need to emphasise
+that in the proof of this proposition the following result is used without mentioning.
+
+\begin{lemma}
+	Let $K$ be an extension field of $F$ and let $A$ be an $F$-algebra with centre $\ZZ(A)$.
+	Then $\ZZ(A\otimes_F K) = \ZZ(A)\otimes_F K$. 
+\end{lemma}
+
+\begin{proof}
+	The proof is straightforward. Pick an arbitrary element $z = \sum_i (a_i \otimes e_i)$ in
+	$\ZZ(A\otimes_F K)$. Here we may assume that the elements $e_i \in K$ are linearly 
+	independent, i.e. they form a (part of) basis for $K$. Since $z$ is central, in particular it 
+	must commute with the elements of the form $a \otimes 1$. This means
+	\begin{align*}
+		0 = z (a \otimes 1) - (a\otimes 1) z = \sum_i ( (a_i a) \otimes e_i )
+			- \sum_i( (a a_i) \otimes e_i ) \\
+		= \sum_i ( (a_i a - a a_i) \otimes e_i ). 
+	\end{align*}
+	This holds if and only if $a_i a = a a_i$, i.e. $a_i \in \ZZ(A)$. 
+\end{proof}
+
+Therefore, any octonion algebra is central, and it follows from Proposition 
+\ref{prop:octonion_centre} that central elements
+``associate'' with all other elements.
+
+\begin{proposition}
+	\label{prop:associating_elements}
+	If an octonion $u \in \O$ satisfies
+	\begin{equation}
+		\label{eq:associating_octonions}
+		(xy)u = x(yu)
+	\end{equation}
+	for all $x,y \in \O$, then $u \in F\cdot 1_{\O}$. Condition (\ref{eq:associating_octonions})
+	is equivalent to the condition $(xu)y = x(uy)$ for all $x,y \in \O$, and also to
+	$(ux)y = u(xy)$ for all $x,y \in \O$. 
+\end{proposition}
+
+\begin{corollary}
+	Suppose that $u\in \O$ is an invertible octonion. Then
+	\begin{equation}
+		(A\ovu)(u B) = N(u) AB
+	\end{equation}
+	holds for all $A,B \in \O$ if and only if $u \in F \cdot 1_{\O}$. 
+\end{corollary}
+
+\begin{proof}
+	Proposition \ref{prop:associating_elements} tells us that if $(xu) y = x(uy)$ for all
+	$x,y \in \O$, then $u \in \O$. Now put $x = A\ovu$ and $y = B$; using this together with
+	the alternative laws, we get the result. 
+	
+	Conversely, if $u \in F\cdot 1_{\O}$, then obviously the statement holds. 
+\end{proof}
+
+% ------------------------------------------------------------------------
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

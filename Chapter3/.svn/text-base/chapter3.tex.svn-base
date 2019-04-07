@@ -1,0 +1,957 @@
+\chapter{Multi-fluid perturbation theory}
+\ifpdf
+    \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
+\else
+    \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
+\fi
+
+
+% ------------------------------------------------------------------------
+In the first part of this thesis we have been concentrating on single fluid linear perturbation theory.
+In this chapter we will be looking in detail at the 
+more realistic scenario where we have more than one type of matter in the universe,
+whilst still working at linear order. After setting up the formalism needed we will be
+looking at a three fluid system of protons, electron and photons, moving in a background electromagnetic fields
+in the radiation era. We will be solving the system of equations to find an approximation for the electric
+field strength we can expect in such a scenario. 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 
+
+
+\label{multifluid}
+
+
+\section{Multi-species equations}
+\label{multiequ}
+
+
+
+We start by repeating the derivation of the conservation equations from Section~\ref{Cons1} but this time with multiple matter species present,
+in addition to the terms we had before we will now have some interaction terms between the species. 
+We treat each species as a fluid and each fluid ($\alpha$) has stress-energy tensor \cite{Malik:2004tf},
+\begin{equation}
+ T_{(\alpha)\mu \nu} = (\rho_{(\alpha)} + P_{(\alpha)}) u_{(\alpha) \mu} u_{(\alpha) \nu} + P_{(\alpha)} g_{\mu \nu} + \pi_{(\alpha) \mu \nu} \,,
+\label{stressenergyalpha}
+\end{equation}
+where the anisotropic stress tensor, $\pi_{(\alpha) \mu \nu}$, has again no time component and can be separated into scalar, vector and tensor parts as follows \cite{Malik:2004tf},
+\begin{equation}
+ \pi^{i}_{j} = {\Pi_{,}\,^{i}}\,_{j} - \frac{1}{3} \nabla^2 \Pi \delta^i_j + \frac{1}{2} (\pi^i\,_{,j} + \pi_{j,}\,^i ) + \pi^i\,_j \,.
+\end{equation}
+Note that the total energy density, pressure and anisotropic stress of the system are given by the sum of the relative quantities for the individual species, i.e.
+\be
+\rho = \sum_{\alpha} \rho_{\alpha} \,, \quad P = \sum_{\alpha} P_{\alpha} \,, \quad \pi_{\mu \nu} = \sum_{\alpha} \pi_{ (\alpha) \mu \nu} \,,
+\ee
+and the overall velocity is given by,
+\be
+(\rho + P) V_{1i} = \sum_{\alpha} (\rho_{(\alpha)} + P_{(\alpha)}) V_{1i (\alpha)} \,.
+\ee
+Here and for the rest of this chapter, to simplify our equations, we have dropped the subscript 0 for background quantities,
+from this point on any quantity without a subscript should be considered a background quantity.
+Although the energy and momentum for the system as a whole is conserved this is no longer true for the individual species,
+which can exchange energy and momentum with one another.
+We therefore equate the covariant derivative of the stress-energy tensor of the individual fluids to the stress-energy transfer vector,
+\begin{equation}
+\label{ConsMulti}
+ {T_{(\alpha)}}^{\mu}\,_{\nu ; \mu} = Q_{(\alpha) \nu} \,,
+\end{equation}
+where the sum of the stress-energy transfer vector over all species in the system is zero,
+\be
+\sum_{\alpha} Q_{(\alpha) \nu} = 0 \,,
+\ee
+and the individual stress-energy transfer vector for each species is given by,
+\begin{eqnarray}
+Q_{(\alpha) 0} &=& -a Q_{(\alpha)} (1 + \phi_1) - a \delta Q_{1 (\alpha)} \,,\\
+Q_{(\alpha) i} &=& a f_{1 (\alpha) i} + a Q_{(\alpha)} (v_{1i} + B_{1i} ) \,.
+\end{eqnarray}
+$Q_{(\alpha)} + \delta Q_{1 (\alpha)}$ represents the energy transfer to species $\alpha$ and $f_{1 (\alpha) i}$ represents
+the momentum transfer to the species $\alpha$. 
+The energy transfer to species $\alpha$, i.e.~$Q_{(\alpha)}$, can be split up into a sum of the energy transfer to species $\alpha$ from each other species in the system,
+\be
+Q_{1 (\alpha)} = \sum\limits_{(\gamma)} Q_{1 (\alpha r)} \,,
+\ee 
+where $Q_{1 (\alpha r)}$ is the energy transfer from species $r$ to species $\alpha$. In the same way the momentum transfer to species $\alpha$ can also be split into a sum
+over the momentum transfer to species $\alpha$ from each other species in the system,
+\be
+f_{1 (\alpha) i} = \sum\limits_{(\gamma)} f_{1 (\alpha r) i} \,,
+\ee
+where $f_{1 (\alpha r) i} $ is the momentum transfer from species $r$ to species $\alpha$.
+
+
+Substituting the stress-energy tensor into Eq.~(\ref{ConsMulti}) and expanding order by order gives the background
+continuity equation for the individual species, $\alpha$,
+\begin{equation}
+ \rho_{(\alpha)}' + 3\H (\rho_{(\alpha)} + P_{(\alpha)}) = a Q_{(\alpha)} \,.
+\end{equation}
+
+As we saw in Section~\ref{Cons1} the first order energy-momentum conservation equations lead us to two scalar equations,
+\begin{equation}
+\label{consmultidelta}
+ \delta \rho_{1 (\alpha)} ' + 3\H (\delta\rho_{1 (\alpha)} + \delta P_{1 (\alpha)}) = (\rho_{ (\alpha)} + P_{ (\alpha)})(3\psi_1' - \nabla^2 ( E_1' + {v_{1 (\alpha)}}) ) 
++ a\phi_1 Q_{ (\alpha)} + a \delta Q_{1 (\alpha)} \,,
+\end{equation}
+ \begin{eqnarray}
+\label{MomEqu}
+  & & (v_{1 (\alpha)} + B_1 )' + \left[ \frac{a Q_{(\alpha)}}{\rho_{(\alpha)} + P_{(\alpha)}} (1 + c_s^2) + \H (1 - 3 c_s^2 ) \right] ((v_{1 (\alpha)} + B_1 ) + \phi_1 \nonumber \\
+&+& \frac{1}{\rho_{(\alpha)} + P_{(\alpha)}} \left[ \delta P_{1 (\alpha)} + \frac{2}{3} \nabla^2 \Pi_{1 (\alpha)} - a Q_{(\alpha)}(v_1 + B_1) - a f_{1 (\alpha)} \right] = 0 \,,
+\end{eqnarray}
+where $c_s^2 = P'/\rho'$, and one vector equation,
+ \begin{eqnarray}
+ & & (v_{1 (\alpha) i} - S_{1i} )' + \left[ \frac{a Q_{(\alpha)}}{\rho_{(\alpha)} + P_{(\alpha)}} (1 + c_s^2) + \H (1 - 3 c_s^2 ) \right](v_{1 (\alpha) i} - S_{1i} )  \nonumber \\
+ &+& \frac{1}{\rho_{(\alpha)} + P_{(\alpha)}} \left[  \frac{1}{2} \nabla^2 \pi_{1 (\alpha) i} - a Q_{(\alpha)}(v_{1i} - S_{1i} ) - a f_{1 (\alpha) i} \right] = 0 \,.
+\end{eqnarray}
+
+For full details of the perturbative equations in the multi-field case see Malik \& Wands, Ref.~\cite{Malik:2004tf}, and references therein. 
+
+The overall conservation equations can be found by summing the equations above.
+We find, as expected, that the energy and momentum conservation equations given in Section~\ref{Cons1} still hold, but now the pressure and densities refer to
+the total pressure and density of the system, defined above.
+For convenience, we will give the overall conservation equations again here,
+\begin{equation}
+ \rho' + 3\H (\rho + P) = 0 \,,
+\end{equation}
+\begin{equation}
+ \delta \rho_1 ' + 3\H (\delta\rho_1 + \delta P_1) = (\rho + P)(3\psi_1' - \nabla^2 ( E_1' + {v_1}) )  \,,
+\end{equation}
+ \begin{equation}
+   (v_{1} + B_1 )' +  \H (1 - 3 c_s^2 ) ((v_{1} + B_1 ) + \phi_1 + \frac{1}{\rho + P} \left[ \delta P_{1} + \frac{2}{3} \nabla^2 \Pi_{1 } \right] =0 \,,
+\end{equation}
+ \begin{equation}
+   (v_{1 i} - S_{1i} )' +  \H (1 - 3 c_s^2 ) (v_{1 i} - S_{1i} )  + \frac{1}{2(\rho + P)}  \nabla^2 \pi_{1 i}  = 0 \,.
+\end{equation}
+
+Note that the Einstein equations in the multi fluid case are now given by,
+\be
+G^{\mu \nu} = 8 \pi G \sum_{\alpha} T_{(\alpha)}\,^{\mu \nu } \,.
+\ee
+This leads to the same Einstein equations we had in Section~\ref{Einstein1} but as above, 
+the densities and pressures will now refer to the total densities and pressures of the whole system.
+
+
+
+% \section{Moving into the 4-velocity frame}  
+% \label{frames}
+% 
+% We saw in Eq.~(\ref{stressenergyalpha}) that in a generic inertial frame the stress-energy tensor for a fluid ($\alpha$) can be written as
+% \be
+%  T_{(\alpha)\mu \nu} = (\rho_{(\alpha)} + P_{(\alpha)}) u_{(\alpha) \mu} u_{(\alpha) \nu} + P_{(\alpha)} g_{\mu \nu} + \pi_{(\alpha) \mu \nu} \,, \nonumber %%% Check what about the q??
+% \ee 
+% where $u_{(\alpha)}^{\mu}$ is the fluids 4-velocity.
+% In writing the stress-energy tensor in this form we have assumed we are in the inertial frame such that the 
+% energy flux of the fluid $\alpha$ is zero. 
+% However when considering multi-species we would like to consider our equations in the same fundamental frame so that
+% we can compare velocities more easily. Therefore
+% we would like to work in a frame measured by $u^{\mu}$ observers, which we will refer to as the fundamental frame,
+% in this frame each species will have a velocity $\bar{u}_{(\alpha)}^{\mu}$, relative to the fundamental observers 4-velocity,
+% \be
+% \bar{u}_{(\alpha)}^{\mu} = u_{(\alpha)}^{\mu} - u^{\mu} \,,
+% \ee
+% %As $u_{(\alpha)}^{\mu}$ and $u^{\mu}$ are identical at background level, this automatically means $\hat{u}_{(\alpha)}^{\mu}$ is a first order quantity.
+% It will no longer be the case that the energy flux of the fluid $\alpha$ is zero.
+% In a frame measured by $u^{\mu}$ observers the stress-energy tensor for species $\alpha$ is given by 
+% \be
+% T_{(\alpha)}^{\mu \nu} = (\bar{\rho}_{(\alpha)} + \bar{P}_{(\alpha)}) \bar{u}_{(\alpha)}^{\mu}  \bar{u}_{(\alpha)}^{\nu} 
+% + \bar{P}_{(\alpha)} g^{\mu \nu} + 2 \bar{q}_{(\alpha)}^{(\mu} \bar{u}_{(\alpha)}^{\nu)} + \bar{\pi}_{(\alpha)}^{\mu \nu} \,,
+% \label{Tgeneralframe}
+% \ee 
+% By working through the formalities of the change of frame, see Ref~\cite{Maartens:1998xg} for details, we find 
+% that the density, pressure, energy flux and anisotropic stress in this frame to linear order are given by,
+% \bea
+% \hat{\rho}_{(\alpha)} &=& {\rho}_{(\alpha)} \,, \\
+% \hat{P}_{(\alpha)} &=& {P}_{(\alpha)} \,, \\
+% \hat{q}_{(\alpha)}^{\mu} &=& (\rho_{(\alpha)} + P_{(\alpha)}) \hat{u}_{(\alpha)}\,^{\mu} \,, \\ 
+% \hat{\pi}_{(\alpha)}^{\mu \nu} &=& {\pi}_{(\alpha)}^{\mu \nu}  \,. 
+% \eea
+% Substituting these values back into Eq.~(\ref{Tgeneralframe}), %recalling that $\hat{u}_{(\alpha)}^{\mu}$ is a first order quantity we find,
+% \bea
+% T_{(\alpha)}^{\mu \nu} &=& ({\rho}_{(\alpha)} + {P}_{(\alpha)}) \bar{u}_{(\alpha)}^{\mu}  \bar{u}_{(\alpha)}^{\nu} 
+% + {P}_{(\alpha)} g^{\mu \nu} + 2 (\rho_{(\alpha)} + P_{(\alpha)}) \bar{u}_{(\alpha)}\,^{(\mu} \bar{u}_{(\alpha)}^{\nu)} + {\pi}_{(\alpha)}^{\mu \nu} \,,\\
+% &=& 2({\rho}_{(\alpha)} + {P}_{(\alpha)}) \bar{u}_{(\alpha)}^{\mu}  \bar{u}_{(\alpha)}^{\nu}+ {P}_{(\alpha)} g^{\mu \nu}  + {\pi}_{(\alpha)}^{\mu \nu} \,,
+% \eea
+% Therefore, at first order, the change of frame makes no difference and we can still treat the electrons and protons as pressure-free 
+% matter, with no anisotropic stress.  %%% Is this true!!!! 
+%%% What about radiation??? 
+%In a similar way at first order the radiation stress-energy tensor does not change and thus in what follows
+%we may use the equations that were derived using the rest frame of each fluid.  
+
+%\section{Interaction of matter and radiation}
+%Put a section where we include padmanaban stuff???
+
+\section{Interactions of charged species}
+\label{interactions}
+
+Now that we have outlined the general theory in dealing with multi-fluid systems we move on to a particularly relevant example.
+In the early universe cold dark matter and neutrinos are decoupled leaving just baryonic matter and radiation to interact.
+Considering the positively and negatively charged baryonic matter separately we have three interacting species: negatively charged electrons ($e$), 
+positively charged ions and protons ($p$), and photons ($\gamma$) and a background electromagnetic field.
+%% Add a sentence about why is it OK to neglect the neutrons?? 
+We assume these three species can be regarded as fluids and will satisfy the individual conservation equations above. 
+To write down a system of equations for the proton, electron and photon fluids we need to determine the momentum and energy transfer rates.
+To this end we look in more detail at the interactions between these three species and their energy and momentum transfer rates. 
+
+\subsection{Proton-Electron collisions}
+\label{pecoll}
+
+When we have two charged species they interact through Coulomb collisions.
+Here we look at the case of electrons interacting with positively charged ions.
+In order to arrive at an expression for the energy and momentum transfer from one of the charged species 
+by the other we consider a Maxwellian distribution of electrons moving through a background distribution of ions.
+We will not go through the full derivation here, but will only highlight the results of considering such interactions.
+For further details see Ref.~\cite{PlasmaBook}.
+
+The net momentum loss on the distribution of electrons is
+\be
+m_e n_e \frac{dV_e}{dt} = - m_e n_e \nu_e (V_e - V_i) \,,
+\ee
+where $\nu_e$ is the collision frequency defined by \cite{PlasmaBook} %%% Reference the plasma stuff
+\be
+\nu_e = \frac{4 \sqrt{2\pi} n_i Z_i^2 e^4 k_B^{3/2} \ln \Lambda }{3 (4\pi\epsilon_0)^2 \sqrt{m_e} T_e^{3/2}} \,,  
+\ee
+$\ln \Lambda$ is the Coulomb logarithm and is typically between ten and twenty\cite{Mulser:2014}.  %%% Reference NRL Formulary
+ $n_i$ and $Z_i$ are the number density and atomic number of the ions and
+the factors $(4\pi\epsilon_0)^2$ and $k_B^{3/2}$ are included as we are working in SI units. 
+%%% Note this temperature is in electron volts for temperature in Kelvin we need to put in a k_B^{3/2} term
+Assuming the ions in question are protons, and the electrons have a temperature equal to the photon temperature, the momentum
+transfer, defined in section~\ref{multiequ}, is given by,
+\bea
+\label{fpe}
+f_{pe} &=& - n_e n_p e^2 \frac{4 \sqrt{2\pi} \sqrt{m_e} e^2 k_B^{3/2} \ln \Lambda }{3 (4\pi\epsilon_0)^2 T^{3/2}} (V_p - V_e ) \nonumber \\
+&=&  - n_e n_p e^2 \eta_{e} (V_p - V_e ) \,,% \\
+%&=& \alpha_{p e} (V_p - V_e) \,,
+\eea
+where $\eta_e = \frac{4 \sqrt{2\pi} \sqrt{m_e} e^2 k_B^{3/2} \ln \Lambda }{3 (4\pi\epsilon_0)^2 T^{3/2}}$ is the plasma resistivity.
+ %and we have introduced the variable $\alpha_{ep}$. 
+%%% Differs from Fenu et al check assumptions made in plasma stuff... %%Check whether we need the 4\pi\epsilon... units!
+The plasma resistivity is not constant but inherits time dependence from the temperature of the photon fluid on which it depends. 
+This temperature satisfies the constraint $T = T_b a^{-1}$, where $T_b$ is the temperature of the CMB radiation today.
+This allows us to write the plasma resistivity in terms of the scale factor as,
+\be
+\eta_e = \hat{\eta}_{e} a^{3/2} =  \frac{4 \sqrt{2\pi} \sqrt{m_e} e^2 k_B^{3/2} \ln \Lambda }{3 (4\pi\epsilon_0)^2 T_b^{3/2}} a^{3/2} \,.
+\ee
+
+The energy transfer of the same distribution of electrons is given by \cite{PlasmaBook}
+\be
+Q_{pe} = 3 \beta \nu_e n_e (T_e - T_p) \,.
+\ee
+As expected, if the protons and electrons are in thermal equilibrium there is no net energy transfer.
+In the background, this can be assumed to be true and therefore we will be assuming $Q_{pe} = 0$ below.
+
+
+\subsection{Radiation-matter collisions}
+\label{sgcoll}
+
+Radiation interacts with charged particles via Thomson interactions. 
+%(which is itself an approximation to a Compton interaction and is valid when the photon energy is much less than the mass energy....)
+The momentum transfer is given by \cite{Liddle:2000cg}, %% (from the Boltzmann equation see Peacock advanced Cosmo notes)  Also check Liddle and Lyth chapter 11... 
+\be
+f_{s \gamma} = \frac{4 \rho_{\gamma}}{3 } n_s \sigma_{Ts} ( v_s - v_{\gamma}) \,,% + 3 i \Theta_1 )  \,,
+\ee
+where $\sigma_{Ts}$ is the Thompson cross section for species $s$. 
+%where $\Theta_1$ is the dipole of the moment of the temperature. 
+In this expression we have neglected any contribution from polarization,
+this is a higher order effect and only contributes a few percent to the
+overall result \cite{Liddle:2000cg}.  %%%Reference
+%and $\tau' = n_s \sigma_{Ts}$ is the derivative of the optical depth of the interaction. 
+We also note that the Thompson cross section for protons and electrons are related by, $\sigma_{Tp} = \beta^2 \sigma_{Te}$ and have the form,
+\be
+\sigma_{Ts} = \frac{8 \pi}{3} \left( \frac{e^2}{m_s c^2} \right)^2 \,.
+\ee
+Combining all these results gives us the following expressions for the momentum transfer between photons and charged particles,
+\bea
+\label{fpg}
+f_{p \gamma} &=& - \frac{4 }{3} \rho_{\gamma} n_p \beta^2 \sigma_{Te}   ( v_p - v_{\gamma}) = - \frac{4 }{3} \rho_{\gamma} n_p \beta^2 \sigma_{Te}   ( V_p - V_{\gamma}) \,, \\ %= \alpha_{p r} (V_p - V_{\gamma} ) \,, \\  %%% Check signs here!! 
+f_{e \gamma} &=& - \frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te} (v_e - v_{\gamma}) = - \frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te} (V_e - V_{\gamma})\,,%  = \alpha_{e r} (V_e - V_{\gamma} ) \,.
+\eea
+Hence, as in the case above the momentum transfer is proportional to the velocity difference between the two species. 
+Note that in the final step above we have substituted $v_s$ for $V_s$, since when considering a velocity 
+difference the two are the same. 
+Thomson scattering doesn't alter the photon energy and so the energy transfer at the background level will again be zero, i.e.~$Q_{s \gamma} = 0$\cite{Lyth:2009zz}.
+
+\subsection{Interactions with the electromagnetic sector}
+
+We can also allow for a background electromagnetic field which interacts with both the charged ions and the electrons.
+The momentum transfer from a charged species ($s$) into the electromagnetic field ($F$) is given by,
+%%% Can we combine this with section above?? Get one equation which incorporates both?? 
+\be
+f_{s F}^{\mu} = q_s n_s ( \E^{\mu} + \epsilon_{\mu \nu \tau} v_s^{\nu} \M^{\tau} )  \,.
+\ee
+where $q_s$, $n_s$ and $v_s$ are the charge, number density and velocity of species $s$, $\E$ is the electric field strength and $\M$ is the magnetic field strength.
+We will discuss the equations that govern the magnetic and electric fields in more
+detail in Chapter~\ref{Magneto}.
+
+As we know that both the velocity and magnetic field are at least first order quantities (see Chapter~\ref{MagPS}),
+at linear order this momentum transfer rate is given by,
+\be
+f_{s F}^{\mu} = q_s n_s \E^{\mu} \,.
+\ee
+
+\section{Governing Equations for a three fluid system}
+\label{velande}
+
+As mentioned above our aim in this chapter is to study 
+the species that are present in the early universe,
+in the time after the first protons and electrons form until matter-radiation equality. 
+During this time we are considering a system of three fluids: radiation, electrons and protons, moving
+within a background electromagnetic field. In this section we will derive a system of equations for the velocities and electric field strength
+which we will then go on to solve.
+Hence, starting from the momentum conservation equation, Eq.~(\ref{MomEqu}), 
+and substituting $P_{(\gamma)} = \frac{1}{3} \rho_{(\gamma)}$ and $P_{(e)} = P_{(p)} = 0$ we have momentum equations for each species, 
+\bea
+  V_{1 (p)}' + \left[ \frac{a Q_{(p)}}{\rho_{(p)}}  + \H  \right] V_{1 (p)} + \phi_1 
+ + \frac{1}{\rho_{(p)}} \left[ \frac{2}{3} \nabla^2 \Pi_{1 (p)} - a Q_{(p)}V_1 - a f_{1 (p)} \right] &=& 0 \,, \nonumber \\
+  V_{1 (e)}' + \left[ \frac{a Q_{(e)}}{\rho_{(e)}}  + \H  \right] V_{1 (e)} + \phi_1 
+ + \frac{1}{\rho_{(e)}} \left[ \frac{2}{3} \nabla^2 \Pi_{1 (e)} - a Q_{(e)}V_1 - a f_{1 (e)} \right] &=& 0 \,, \nonumber \\
+  V_{1 (\gamma)}' + \left[ \frac{ a Q_{(\gamma)}}{ \rho_{(\gamma)}} \right] V_{1 (\gamma)} + \phi_1 
+ + \frac{3}{4\rho_{(\gamma)}} \left[ \delta P_{1 (\gamma)} + \frac{2}{3} \nabla^2 \Pi_{1 (\gamma)} - a Q_{(\gamma)}V_1 - a f_{1 (\gamma)} \right] &=& 0 \,. \nonumber 
+\eea
+For simplicity, we will assume that the anisotropic stress is zero at first order, we will also assume that 
+the energy transfer is zero in the background, see Section~\ref{pecoll} and Section~\ref{sgcoll} for
+comments on why this is reasonable.
+%%% Give justification here!!
+We use the Einstein equation, 
+\be
+\phi_1 = -\frac{3\H}{2\rho} (\rho + P) V_1 \,,
+\ee
+to substitute for $\phi_1$, where $\rho$ and $P$ are the overall density and pressure respectively, for example $\rho = \rho_{(p)} + \rho_{(e)} +\rho_{(\gamma)} $.
+
+This leads us to the following expressions, where we have written the summation of the different momentum transfer rates out explicitly, 
+   \be
+   V_{1 (p)}' +  \H V_{1 (p)} -\frac{3\H}{2\rho} \left( \rho_{(p)} V_{1(p)} + \rho_{(e)} V_{1(e)} + \frac{4}{3} \rho_{(\gamma)} V_{1(\gamma)} \right) 
+ - \frac{a} {\rho_{(p)}} (f_{1 (pe)} + f_{1 (p\gamma)} + f_{1 (pF)}) = 0 \,,
+ \ee
+ \be
+   V_{1 (e)}' +  \H V_{1 (e)} -\frac{3\H}{2\rho} \left( \rho_{(p)} V_{1(p)} + \rho_{(e)} V_{1(e)} + \frac{4}{3} \rho_{(\gamma)} V_{1(\gamma)} \right) 
+ -  \frac{a }{\rho_{(e)}}(f_{1 (ep)} + f_{1 (e\gamma)} + f_{1 (eF)})   = 0 \,,
+ \ee
+ \be
+   V_{1 (\gamma)}'  -\frac{3\H}{2\rho} \left( \rho_{(p)} V_{1(p)} + \rho_{(e)} V_{1(e)} 
++ \frac{4}{3} \rho_{(\gamma)} V_{1(\gamma)} \right)  + \frac{1}{4\rho_{(\gamma)}} \delta \rho_{1 (\gamma)}  
+ - \frac{3 a}{4\rho_{(\gamma)}}(f_{1 (\gamma p)} + f_{1 (\gamma e)} )   = 0 \,.
+ \ee
+\\
+Writing the momentum transfer rates in terms of velocity differences, see Eqs.~(\ref{fpe}) and (\ref{fpg}), and re-arranging  gives the following equations \\
+   \bea
+   V_{1 (p)}' 
+ &+& ( \H  -\frac{3\H}{2\rho} \rho_{(p)}  + \frac{a} {\rho_{(p)}} n_e n_p e^2 \eta_{e} + \frac{a} {\rho_{(p)}}\frac{4 }{3} \rho_{\gamma} n_p \beta^2 \sigma_{Te}  ) V_{1 (p)}
+ \nonumber \\
+ &+&  ( - \frac{a} {\rho_{(p)}} n_e n_p e^2 \eta_{e} - \frac{3\H}{2\rho} \rho_{(e)} ) V_{1(e)}  \nonumber \\
+&+&  (- \frac{a} {\rho_{(p)}}\frac{4 }{3} \rho_{\gamma} n_p \beta^2 \sigma_{Te}  -\frac{2\H}{\rho} \rho_{(\gamma)} ) V_{1(\gamma)}   
+ =  \frac{a} {\rho_{(p)}} e n_p \EI \,, \\
+   V_{1 (e)}' 
+  &+& (- \frac{a }{\rho_{(e)}}n_e n_p e^2 \eta_{e} - \frac{3\H}{2\rho} \rho_{(p)} ) V_{1(p)} \nonumber \\
+ &+&  ( \H   -\frac{3\H}{2\rho}  \rho_{(e)} + \frac{a }{\rho_{(e)}} n_e n_p e^2 \eta_{e} +  \frac{a }{\rho_{(e)}}\frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te} ) V_{1(e)} \nonumber \\
+  &+& ( -\frac{a }{\rho_{(e)}}\frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te}    -\frac{2\H}{\rho}\rho_{(\gamma)} ) V_{1(\gamma)}
+ =  - \frac{a }{\rho_{(e)}} e n_e \EI \,, \\
+   V_{1 (\gamma)}'  
+ &+& ( -\frac{3 a}{4\rho_{(\gamma)}}\frac{4 }{3} \rho_{\gamma} n_p \beta^2 \sigma_{Te}  -\frac{3\H}{2\rho} \rho_{(p)}) V_{1(p)} 
+ + ( -\frac{3 a}{4\rho_{(\gamma)}}\frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te}   -\frac{3\H}{2\rho} \rho_{(e)} ) V_{1(e)} \nonumber \\
+  &-& ( \frac{2\H}{\rho} \rho_{(\gamma)} -\frac{3 a}{4\rho_{(\gamma)}}\frac{4 }{3}\rho_{\gamma} n_p \beta^2 \sigma_{Te} 
+-\frac{3 a}{4\rho_{(\gamma)}}\frac{4 }{3} \rho_{\gamma} n_e \sigma_{Te}) V_{1(\gamma)} 
+  = - \frac{1}{4\rho_{(\gamma)}}   \delta \rho_{1 (\gamma)}   \,. \nonumber \\
+& &
+ \eea
+
+
+We do not yet restrict ourselves to the radiation era, therefore the densities will
+be written in terms of $R_b$, the baryon to photon ratio, rather than in terms of $\eta$ directly.
+\bea
+\rho_{e} &=& m_e n_e = \beta m_p n_b \,, \\
+\rho_{p} &=& m_p n_p = m_p n_b \,, \\
+\rho_{\gamma} &=& \frac{3 n_b (1 + \beta) m_p}{4 R_b} \,, %\\            
+\eea
+where we have assumed charge neutrality, i.e.~$n_p = n_e = n_b$.
+We know the total number density of nucleons
+is given by 
+\be
+n_{\rm{nuc}} = n_p + n_e + n_n = \frac{15}{7} n_b \,, 
+\ee
+were we have used both charge neutrality and the fact that the number density of neutrons is approximately seven times smaller than 
+the number density of protons \cite{Lyth:2009zz}.
+We also know the number densities will decay with the spacial volume allowing us to 
+write the proton and electron number density in terms of the number density of nucleons today,
+\be
+n_b = \frac{7}{15} n_{\rm{nuc}0} a^{-3} \equiv \hat{n}_b a^{-3} \,,  
+\label{nb}  
+\ee 
+where we have defined a new constant $\hat{n}_b$, to simplify our expressions,
+Substituting in the latest value for $n_{\rm{nuc}0}$, given in Appendix A,
+we find $\hat{n}_b = 0.117$.
+
+We can also write the baryon to photon ratio in terms of the scale factor, 
+\bea
+R_b = \frac{3 \rho_b}{4 \rho_{\gamma}} = \frac{3 \Omega_{b0}}{4 \Omega_{\gamma 0}} \equiv \hat{R}_b a \,,
+\label{Rb}
+\eea
+where once again we have defined the constant $\hat{R}_b$, in order to simplify our equations.
+Substituting in the latest observational values for $\Omega_{b0}$ and $\Omega_{\gamma 0}$
+we find that $\hat{R}_b = 757.7 $.
+
+Rewriting our equations in terms of the baryon to photon ration and
+ reintroducing the speed of light parameter, $c$, in order to switch from natural to SI units,
+we arrive at the following,
+\bea
+V_{1 (p)}' 
+&+&  \left( \H  - \frac{6\H R_b}{(3 + 4 R_b)(1 + \beta)}  + \frac{a n_b e^2 \eta_{e}}{ m_p}  +  \frac{a n_b (1 + \beta)\beta^2 \sigma_{Te} c}{R_b}   \right) V_{1 (p)} \nonumber \\
+ &-&  \left(  \frac{a n_b e^2 \eta_{e} } {m_p}  + \frac{6\H \beta R_b}{(3 + 4 R_b)(1 + \beta) } \right) V_{1(e)} \nonumber \\
+&-& \left( a \frac{ (1 + \beta) n_b \beta^2 \sigma_{Te} c}{ R_b}  + \frac{6\H}{(3 + 4 R_b)} \right) V_{1 ( \gamma ) }   
+=  \frac{a e \EI} {c m_p}  \,,
+\label{Vpgen}
+\eea
+\bea
+V_{1 (e)}' 
+ &-& \left(\frac{a n_b e^2 \eta_{e} }{m_p \beta }  + \frac{6\H R_b}{(3 + 4 R_b)(1 + \beta) }  \right) V_{1(p)}  \nonumber \\
+&+&  \left( \H   - \frac{6\H R_b \beta}{(3 + 4 R_b)(1 + \beta)} + \frac{a n_b e^2 \eta_{e}}{m_p \beta }  + \frac{a n_b (1 + \beta)\sigma_{Te} c }{\beta R_b}  \right) V_{1(e)} \nonumber \\
+ &-& \left(  \frac{a n_b (1 + \beta)\sigma_{Te} c}{\beta R_b}      + \frac{6\H}{(3 + 4 R_b) } \right) V_{1(\gamma)}
+=  - \frac{a e \EI}{c m_p \beta }  \,,
+\label{Vegen}
+\eea
+\bea
+  V_{1 (\gamma)}'  
+&-& \left( a n_p \beta^2 \sigma_{Te} c  + \frac{6\H R_b}{(3 + 4 R_b)(1 + \beta)} \right) V_{1(p)} 
+- \left( a n_e \sigma_{Te} c   + \frac{6\H R_b \beta }{(3 + 4 R_b)(1 + \beta) }\right) V_{1(e)} \nonumber \\
+ &-& \left( \frac{6\H}{(3 + 4 R_b) }  -a n_p (1 + \beta^2) \sigma_{Te} c \right) V_{1(\gamma)} 
+ = - \frac{R_b c}{3 n_b (1 + \beta) m_p}  \delta \rho_{1 (\gamma)}   \,.
+\label{Vrgen}
+\eea
+As mentioned at the start our aim in this chapter is not only to determine the scale and time dependence of the
+velocity of each species but also the electric field strength. With this in mind
+we subtract Eq.~(\ref{Vegen}) from Eq.~(\ref{Vpgen}) and find an expression for the electric field in terms of velocity differences,
+\bea
+\EI
+\label{electricVel}
+&=& \frac{\beta m_p c}{(1+\beta) a e} (V_{1 (p)} - V_{1 (e)})' 
++  \left( \frac{\H \beta m_p c }{(1+\beta) a e}  + n_b e \eta_{e} c \right) (V_{1 (p)} - V_{1 (e)}) \nonumber \\
+& &  +  \frac{n_b \sigma_{Te} c^2 m_p}{R_b e}   \left( \beta^3(V_{1 (p)} - V_{1 (\gamma)}) - (V_{1(e)} - V_{1 (\gamma)}) \right)   \,,
+\eea
+In the next section we will solve this system of equations to find expressions for the velocity of each species and the electric field strength
+generated. We will be solving the equations in two different scenarios firstly assuming the tight coupling approximation between protons
+and electrons holds and secondly neglecting this approximation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Tight Coupling approximation}
+\label{TCexp}
+
+We start by solving the system of equations above assuming the tight coupling approximation holds.
+We note that tight coupling can refer to both a tight coupling between baryons and photons and a 
+tight coupling between protons and electrons. 
+In the first case, it is clear that no magnetic fields could be generated \cite{Kobayashi:2007wd}, so we only consider the second case
+here, tight coupling between electrons and protons. 
+When no other factors are at play it is natural that the electrons being lighter 
+will follow the motion of the protons, due to electrostatic attraction. Therefore
+the two charged components will move as one, i.e.~$V_p = V_e = V_b$. This
+approximation is known as the tight coupling approximation and is often applied to plasmas.% \cite{}. %REF!!!
+The tight coupling approximation only holds well before recombination, so while we use tight coupling
+ we may also assume we have radiation domination. 
+If we assume that we are in radiation domination and tight coupling holds on our system of fluids, then we
+can rewrite the three differential equations above as,
+\bea
+ \EI &=&  \frac{ n_b m_p (\beta^3 - 1)(1+\beta) \sigma_{Te} c^2}{2 e R_b} (V_{1(b)} - V_{1 ( \gamma ) } )  \,, \\
+V_{1 (b)}'  
+&+& \left(\H - 2\H R_b + \frac{ a n_b (\beta^3 + 1)(1 + \beta) \sigma_{Te} c}{2 \beta R_b} \right) V_{1(b)} \nonumber \\
+&-& \left(  2\H  + \frac{ a n_b  (\beta^3 + 1)(1+\beta) \sigma_{Te} c}{ 2 \beta R_b} \right) V_{1(\gamma)}  = 0 \,, \\
+  V_{1 (\gamma)}'  
+&-& \left(  a n_b (\beta^2 + 1) \sigma_{Te} c  + 2\H R_b  \right) V_{1(b)} - \left( 2\H -a n_p (1 + \beta^2) \sigma_{Te} c \right) V_{1(\gamma)}  \nonumber \\
+ &=& - \frac{R_b c}{3 n_b (1 + \beta) m_p}  \delta \rho_{1 (\gamma)}   \,.
+\eea
+Therefore under this approximation the electric field strength will be proportional to the velocity
+difference between the photon and baryon fluids.
+
+During radiation domination the Hubble parameter is given by $\H = \frac{1}{\eta_0 a}$.
+Substituting in this expression and the scale factor dependence for $R_b$ and $n_b$ given in Eq.~(\ref{nb}) and Eq.~(\ref{Rb}) we arrive at,
+\bea
+ \EI &=&  - \frac{ \hat{n}_b m_p (\beta^3 - 1)(1+\beta)\sigma_{Te} c^2}{2 e \hat{R}_b a^4} (V_{1(b)} - V_{1 ( \gamma ) } )  \,, \\ %%%Units = m^2 s^{-2} CORRECT!
+V_{1 (b)}'&+& \left(\frac{1}{\eta_0 a}  + \frac{ \hat{n}_b (\beta^3 + 1)(1 + \beta) \sigma_{Te} c}{2 \beta \hat{R}_b a^3} \right) V_{1(b)}     \nonumber \\ %%%Units = m^2 s^{-2} CORRECT!
+&-& \left(\frac{2}{\eta_0 a} + \frac{ \hat{n}_b (\beta^3 + 1)(1 + \beta) \sigma_{Te} c}{2 \beta \hat{R}_b a^3} \right) V_{1(\gamma)}  = 0 \,,\\
+V_{1 (\gamma)}'&-& \left( \hat{n}_b (\beta^2 + 1) \sigma_{Te} c a^{-2} + \frac{2 \hat{R}_b}{\eta_0 }   \right) V_{1(b)}     %%%Units = m^2 s^{-2}  CORRECT!
+- \left(\frac{2}{\eta_0 a}   -  \hat{n}_p (\beta^2 + 1) \sigma_{Te} c a^{-2} \right) V_{1(\gamma)}  \nonumber \\
+& & = - \frac{\hat{R}_b c}{3 \hat{n}_b m_p} a^4 \delta \rho_{1 (\gamma)} \,. 
+\label{Vg}
+\eea
+In order to find solutions in terms of the overall density perturbation rather than the density perturbation of the radiation fluid we need an expression
+for $\delta \rho_{1 (\gamma)}$. Using the conservation equation, Eq.~(\ref{consmultidelta}), and the Einstein equation, Eq.~(\ref{Eins1}) to
+eliminate $B_1$ we have, 
+\be
+\label{drhog}
+(a^4 \delta \rho_{1 (\gamma)} )' = -\frac{4}{3} a^4 \rho_{\gamma}     %%%%% Units kg m^{-3} s^{-1} Correct!!
+\left(c \nabla^2 V_{1 (\gamma)} - \frac{9 \H^2}{2\rho c}(\rho_p V_p + \rho_e V_e + \frac{4}{3} \rho_{\gamma} V_{\gamma})  + \frac{3 \H}{2 \rho} \delta \rho_1 \right) \,.
+\ee
+Using the fact we are working in the radiation era and under the tight coupling approximation this equation becomes,
+\bea
+(a^4 \delta \rho_{1 (\gamma)} )' = & & 6 a^{-1}\eta_0^{-2} c^{-1} \hat{n}_b m_p (1+\beta) V_{1 (b)}   \nonumber \\ %%%%% Units kg m^{-3} s^{-1} Correct!!
+& & + \frac{(1 + \beta)\hat{n}_b m_p}{\hat{R}_b} (6 c^{-1} \eta_0^{-2} a^{-2}  - c \nabla^2 ) V_{1 (\gamma)} 
+- 2 \H a^4 \delta \rho_1  \,.
+\eea
+
+By differentiating Eq.~(\ref{Vg}) and eliminating $(a^4 \delta \rho_{1 (\gamma)} )'$ we arrive at a second order differential
+equation for the evolution of the velocity of the photon fluid in terms of the overall density
+perturbation.
+% {\small{
+% \bea
+% & & V_{1 (\gamma)}''- \left( \hat{n}_b \sigma_{Te} (\beta^2 + 1) c a^{-2} + \frac{2 \hat{R}_b}{\eta_0 }   \right) V_{1(b)}'    %%%Units = m^2 s^{-3}  CORRECT!
+% + \frac{2 }{\eta_0^2 a^3} ( c \eta_0 \hat{n}_b(\beta^2 + 1)  \sigma_{Te}  +  \hat{R}_b  a^2 (1+\beta)) V_{1 (b)} \nonumber \\
+% & & 
+%  - \left(- \frac{2}{\eta_0^2 a^2}   + 2\eta_0^{-1}  \hat{n}_p(\beta^2 + 1)  \sigma_{Te} c a^{-3} 
+% - \frac{1}{3 }(1 + \beta) (6 \eta_0^{-2} a^{-2}  - c^2 \nabla^2 ) \right) V_{1(\gamma)} \nonumber \\
+% & & - \left(\frac{2}{\eta_0 a}   -  \hat{n}_p (\beta^2 + 1) \sigma_{Te} c a^{-2} \right) V_{1(\gamma)}' =  \frac{\hat{R}_b c}{3 \hat{n}_b m_p}2 \H a^4 \delta \rho_1  \,.
+% \eea
+% }}
+Finally we present this second order equation, now with $\delta \rho_{1 \gamma}$, along with the evolution equation for the velocity of the baryon fluid and
+the equation for the electric field strength,
+\be
+ \EI =  - \frac{ \hat{n}_b m_p (\beta^3 - 1)(1+\beta)\sigma_{Te} c}{2 e \hat{R}_b a^4} (V_{1(b)} - V_{1 ( \gamma ) } )  \,,
+\label{electric}
+\ee
+\bea
+\label{vbTC}
+\frac{\partial }{\partial a} V_{1 (b)} & &+ \left(\frac{1}{a}  + \frac{\eta_0 \hat{n}_b (\beta^3 + 1)(1+\beta)\sigma_{Te} c}{2 \beta \hat{R}_b a^3} \right) V_{1(b)} \nonumber \\
+& &- \left(\frac{2}{a} + \frac{\eta_ 0\hat{n}_b (\beta^3 + 1)(1+\beta)\sigma_{Te} c}{2 \beta \hat{R}_b a^3} \right) V_{1(\gamma)}  = 0 \,,
+\eea
+\bea
+& &\frac{\partial^2}{\partial a^2} V_{1 (\gamma)} - \left( \hat{n}_b \eta_0 (\beta^2 + 1) \sigma_{Te} c a^{-2} + 2 \hat{R}_b \right) \frac{\partial}{\partial a} V_{1(b)} \nonumber\\
+& &+ \frac{2 }{ a^3} ( c \eta_0 \hat{n}_b(\beta^2 + 1)  \sigma_{Te}  +  \hat{R}_b  a^2 (1+\beta)) V_{1 (b)} \nonumber \\
+& &
+- \left(- \frac{2}{a^2}   + 2\eta_0  \hat{n}_p (\beta^2 + 1) \sigma_{Te} c a^{-3} - \frac{1}{3 }(1 + \beta) (6  a^{-2}  - \eta_0^{2} c^2 \nabla^2 ) \right) V_{1(\gamma)} \nonumber \\
+& &- \left(\frac{2}{ a}   -  \hat{n}_p (\beta^2 + 1) \sigma_{Te} \eta_0 c a^{-2} \right) \frac{\partial}{\partial a} V_{1(\gamma)}  
+=  \frac{\hat{R}_b c \eta_0^2 }{3 \hat{n}_b m_p}2 \H a^4 \delta \rho_1  \,. \label{vgTC}
+\eea
+where our derivatives are now with respect to the scale factor.
+
+\subsubsection{Analytical Solution}
+\label{TCanalytic}
+
+In this section we would like to better understand which of the effects described in Section~\ref{interactions} causes the velocities of the species to 
+evolve and which has the greatest impact on the electric field strength, this would allow us to give predictions for how the velocities might evolve with time. 
+To this end we would like to find an analytic solution and to do so we assume that at leading order in $a$, for the time period we are interested in the velocities
+can be described by a power law,
+\bea
+V_{1 (b)} = V_{1 (b)} (\mathbf{x}) a^{b} \,, \\
+V_{1 {\gamma}} =   V_{1 {\gamma}} (\mathbf{x}) a^{g} \,.
+\eea
+Using these expressions will simplify Eq.~(\ref{vbTC}) and Eq.~(\ref{vgTC}) to give us a set of simultaneous equations to solve,
+\be
+ \left(2 \beta (1 + b)\hat{R}_b a^2  + \eta_0 \hat{n}_b \sigma_{Te} c \right) V_{1(b)}    %%% Units m^2 s^{-1} CORRECT
+ = \left(4 \beta \hat{R}_b a^2 + \eta_0 \hat{n}_b \sigma_{Te} c \right) V_{1(\gamma)} \,,
+\ee
+\bea   %%% Units m^2 s^{-1} CORRECT
+& & \left( (1 - g - g^2 - \beta) a^{-2}  +  ( g + 2) \hat{n}_b \sigma_{Te} \eta_0 c a^{-3} - c^2 (1 + \beta)\frac{1}{3}\eta_0^{2} \nabla^2 \right) V_{1(\gamma)}
+\nonumber \\
+& & +  \left( ( 2 - b) \hat{n}_b \eta_0 \sigma_{Te} c a^{-3} +  2 \hat{R}_b a^{-1} (\beta - 1)  \right) V_{1 (b)} 
+ =  \frac{2 \hat{R}_b c \eta_0}{3 \hat{n}_b m_p } a^3 \delta \rho_1  \,,
+\eea
+where we have also neglected any $\beta$ contribution which will not have an effect on our final result.
+On switching to Fourier space, these equations can be solved directly to find the two velocities in terms of $\delta \rho_{1} $. 
+Firstly eliminating $V_{1 (b)}$ to arrive at an expression for $V_{1(\gamma)}$, we get,
+ \be   %%% Units m^2 s^{-1} CORRECT
+V_{1(\gamma)} =  \frac{ (2\beta(1 + b)\hat{R}_b a^2  + \eta_0 \hat{n}_b \sigma_{Te} c) }
+{ 3\mathcal{Q}(a)   + \left( 2\beta(1 + b) \hat{R}_b a^2  +  c \eta_0 \hat{n}_b \sigma_{Te} \right) k^2 \eta_0^2 c^2} 
+\frac{2 \hat{R}_b c \eta_0}{ \hat{n}_b m_p } a^3 \delta \rho_1  \,,
+ \label{gammavel}
+ \ee
+where $\mathcal{Q}(a)$ is defined as  
+\bea
+\mathcal{Q}(a) \equiv & &
+  2 \beta (1 + b)(1 - g - g^2)\hat{R}_b   + 2(\beta g(1+b) - 1)\hat{R}_b  \hat{n}_b \sigma_{Te} \eta_0 c a^{-1} 
+ - 8\beta \hat{R}_b^2 a  \nonumber \\
+& &+ (1 - g - g^2)\eta_0 \hat{n}_b \sigma_{Te} c a^{-2}  +  ( g-b+4)\eta_0^2 \hat{n}_b^2 \sigma_{Te}^2 c^2 a^{-3} \,.
+\eea
+Similarly for $V_{1 (b)}$ we arrive at,
+\be   %%% Units m^2 s^{-1} CORRECT
+V_{1(b)} 
+ =  \frac{ (4 \beta \hat{R}_b a^2  + \eta_0 \hat{n}_b \sigma_{Te} c) }
+{ 3\mathcal{Q}(a)   + \left( 2\beta(1 + b) \hat{R}_b a^2  +  c \eta_0 \hat{n}_b \sigma_{Te} \right) k^2 \eta_0^2 c^2 } 
+\frac{2 \hat{R}_b }{ \sigma_{Te} \hat{n}_b^2 m_p } a^3 \delta \rho_1 \,.
+\label{bvel}
+\ee
+As mentioned above, we are only considering the radiation era in this section of the chapter. 
+This puts a constraint on the size of $a$. Using this to consider the magnitude of the terms
+that appear in Eq.~(\ref{gammavel}) and Eq.~(\ref{bvel}) above, in particular the terms that make up $\mathcal{Q}(a)$, 
+we can choose to keep only those terms which have the largest contribution. 
+This gives the following simplified expressions for the two velocities,
+\bea   %%% Units m^2 s^{-1} CORRECT
+V_{1(\gamma)} 
+ &=&  \frac{2 \beta (1 + b)\hat{R}_b a^2  + \eta_0 \hat{n}_b \sigma_{Te} c }{(1 - g - g^2) a^{-2}  + 4\eta_0 \hat{n}_b \sigma_{Te} c a^{-3} +  c^2 \frac{1}{3}\eta_0^2  k^2 }
+\frac{2 \hat{R}_b }{3 \sigma_{Te} \hat{n}_b^2 m_p } a^3 \delta \rho_1 \,, \label{VgTClong} \\ %%% Units m^2 s^{-1} CORRECT
+V_{1(b)} 
+ &=&  \frac{ 4 \beta \hat{R}_b a^2  + \eta_0 \hat{n}_b \sigma_{Te} c }{(1 - g - g^2) a^{-2}  + 4\eta_0 \hat{n}_b \sigma_{Te} c a^{-3} +  c^2 \frac{1}{3}\eta_0^2  k^2 }
+\frac{2 \hat{R}_b }{3 \sigma_{Te} \hat{n}_b^2 m_p } a^3 \delta \rho_1 \,. \label{VbTClong}
+\eea
+We can now use Eq.~(\ref{electric}) and the velocities above to find an expression for the electric field strength,
+\be
+ \EI =  -  \frac{2 c (1 - b)\beta \hat{R}_b  }{3 e \hat{n}_b ((1 - g - g^2) a^{-2}  + 4\eta_0 \hat{n}_b \sigma_{Te} c a^{-3} +  c^2 \frac{1}{3}\eta_0^2  k^2) } a \delta \rho_1  \,.
+\ee
+
+The velocities and electric strength in the equations above will have different scale and time dependencies when calculated on small scales
+compared to large scales. In order to be able to say more about their behaviour we therefore proceed by considering those two cases independently.
+Firstly, taking a small scale limit ($k^2 c^2 \eta_0^2 a^2 \gg 3  $), we see that at leading order in $a$ the baryon fluid and photon fluids have the same velocity, 
+\be   %%% Units m^2 s^{-1} CORRECT
+V_{1(\gamma)} = V_{1 (b)} =  \frac{2 (1-b)\hat{R}_b}{c\hat{n}_b m_p \eta_0  } k^{-2} a^{3} \delta \rho_1  \,,
+\ee
+and the electric field strength at leading order in $a$ is given by,
+\be
+ \EI =  \frac{4  \hat{R}_b}{e \eta_0^2 \hat{n}_b} k^{-2} a \delta \rho_1   \,,
+\ee
+
+Now we consider taking a large scale limit ($k^2 c^2 \eta_0^2 a^2 \ll 3  $). We saw in Section~\ref{denssolve} that on large scales the density perturbation
+to leading order in $a$, is proportional to $a^{-4}$. We also know from observational data (see Section~\ref{denspert}) that it is approximately scale invariant
+and therefore the density perturbation is given by Eq.~(\ref{densityin}). Combining this expression for $\delta\rho_1$ 
+with Eq.~(\ref{VgTClong}) and Eq.~(\ref{VbTClong}) and taking the large scale limit we see once again that at leading order in $a$ 
+the baryon and photon fluids have the same velocity,
+\be
+V_{1(\gamma)} = V_{1 (b)} =   \frac{ A \hat{R}_b }{6 \hat{n}_b^2 \sigma_{Te} m_p } a^2  \,.
+\ee 
+Finally, to find an expression for the electric field we keep both the leading order term in $a$ and the next to leading order term and
+arrive at,
+\bea
+\EI &=& \frac{A c \beta \hat{R}_b}{6 e \eta_0  \sigma_{Te} \hat{n}_b^2  } \left( 1  - \frac{5 a}{4\eta_0 \hat{n}_b \sigma_{Te} c}  \right)^{-1}  \,, \nonumber \\
+&=&  \frac{A c \beta \hat{R}_b}{6 e \eta_0  \sigma_{Te} \hat{n}_b^2  } \left( 1  + \frac{5 a}{4\eta_0 \hat{n}_b \sigma_{Te} c}  \right) \,. \label{electricTCfull}
+\eea
+
+\subsection{Breaking the Tight Coupling Approximation}
+
+Now we move on to the second scenario, that in which the tight coupling approximation is broken. 
+As mentioned above the tight coupling approximation is a natural one to assume while we are in the radiation era, however it is not always valid. 
+For instance as we approach recombination in the early universe the turbulent effects mean that we can no longer necessarily
+assume tight coupling holds, in fact we expect tight coupling to break down as we approach radiation-matter equality. 
+In this next section we will be working out an approximation for the electric field and the velocities in this scenario,
+i.e.~no longer assuming $V_{1 (e)} = V_{1(p)}$ and also no longer assuming radiation domination. 
+As we no longer assume $V_{1(p)} = V_{1 (e)}$ we will need a further piece of information about the electric field in order to solve this system, and
+we will therefore use the Maxwell equation, Eq.~(\ref{EJ}),
+\be
+(a^2 \E)' = - c^2 a^3 \mu_0 \J \,.
+\ee
+combined with the definition of current given by, %(see Section~\ref{})
+\be
+\J = c a e n_b (V_p - V_e) \,.
+\ee
+This allows us to eliminate the electric field in terms of velocities.
+Finally to close the system, as above, we need the expression for $\delta \rho_{1 (\gamma)} $, 
+given in Eq.~(\ref{drhog}). We can write down the evolution equation for density perturbation of the photon fluid 
+in terms of baryon to photon ration, 
+ \bea
+ & & (a^4 \delta \rho_{1 (\gamma)} )' =     %%%%% Units kg m^{-3} s^{-1} Correct!!
+ a^4 \frac{6 n_b m_p}{\eta_0^2 a^2 c}V_{1 (p)} + a^4 \frac{6 n_b m_p}{\eta_0^2 a^2 c}\beta V_{1 (e)} \nonumber \\
+ &+& a^4 \frac{n_b(1 + \beta) m_p}{R_b } (\frac{6}{\eta_0^2 a^2 c}  - c \nabla^2 ) V_{1 (\gamma)} 
+ - \frac{2 \sqrt{3}} {(3 + 4 R_b)^{1/2} \eta_0 a}  a^4 \delta \rho_1  \,.
+ \eea
+
+As mentioned above in this section we are considering time approaching recombination, therefore rather than assuming we are in radiation domination we
+consider a mixed baryon and photon fluid, with the following Hubble parameter,
+\be
+\H = \frac{ (3 + 4 R_b)^{1/2} }{\sqrt{3} \eta_0 a}  \,.
+\ee
+Whilst we do not want to assume we are in the radiation domination here, %($a << 10^{-4}$) 
+as we did in the previous section, we are still only interested in the time up to
+recombination, beyond which other astrophysical effects come into play. 
+Therefore we are still restricting ourselves to $a \leq 10^{-3} $. 
+During this time the factor $(1  + (4/3)\hat{R}_b a)$ which appears in many of our equations is of order 1,
+it has the range of values
+\be
+1 < (1  + (4/3)\hat{R}_b a) < 2 \,.
+\ee 
+In the analytic calculation that follows if we
+restrict ourselves to obtaining an order of magnitude estimate for our final answers, we can approximate the expression above as a constant,
+thereby assuming that the leading contribution to the time dependence of the velocities and electric field strength does not come from this factor.
+We will set the factor $(1  + (4/3)\hat{R}_b a)$ equal to 1 below, as  
+for most of the period we are interested in $a < 10^{-4}$, and therefore $(1  + (4/3)\hat{R}_b a)$ is within 10\% of 1. 
+Making this approximation is equivalent to assuming the Hubble parameter is still behaving as it were in the radiation era. 
+As we have outlined above it is valid approximation to make in this case because firstly, 
+we are not extending the time we are interested in to much beyond matter-radiation equality
+ and secondly, we are only looking for order of magnitude estimate for our final answer. 
+In the rest of this section, to make our equations clearer, we will also be neglecting some $\beta$ terms, in expressions such
+as $(1+\beta)$, these are not needed to work out an order of magnitude approximation for the velocities and electric field strength.
+In all cases it has been checked that this does not induce a cancellation of terms where it should not.  
+
+Starting from Eqs.~(\ref{Vpgen}), (\ref{Vegen}) and (\ref{Vrgen}) above we
+ eliminate $E$ and $\delta \rho_{\gamma}$ by differentiating all three equations. Then we apply the condition $(1  + (4/3)\hat{R}_b a) \approx 1$,
+arriving at a system of three differential equations describing the evolution of the velocity of the proton, electron and photon fluid. 
+{\small{
+\bea
+& &a \frac{1}{\eta_0^2} \frac{\partial^2} {\partial a^2}V_{1 (p)}
++  \Big(2  - 2 \hat{R}_b a
++ \frac{ \hat{n}_b e^2 \hat{\eta}_{e} a^{1/2}}{ m_p} +  \frac{ \hat{n}_b \beta^2 \sigma_{Te} c}{\hat{R}_b a^2}   \Big) \frac{1}{\eta_0} \frac{\partial}{\partial a}V_{1 (p)} \nonumber \\
+&+&  \Big(
+- \frac{4  \hat{R}_b }{3\eta_0^2 } + \frac{4  \hat{R}_b^2 a}{3 \eta_0^2 } 
+-\frac{5 \hat{n}_b e^2 \hat{\eta}_{e} }{2 a^{1/2} \eta_0 m_p}
+-  \frac{ 2 \hat{n}_b \beta^2 \sigma_{Te} c  }{\hat{R}_b \eta_0a^3} + \frac{ e c^2} {m_p} a \mu_0 e \hat{n}_b \Big) V_{1 (p)} \nonumber \\
+ & &  - \left(  \frac{ \hat{n}_b e^2 \hat{\eta}_{e} a^{1/2}} {m_p }  
++ \frac{2 \beta \hat{R}_b a}{\eta_0 } \right)\frac{1}{\eta_0} \frac{\partial}{\partial a} V_{1(e)} \nonumber \\
+ &-&  \left(  -\frac{ 5\hat{n}_b e^2 \hat{\eta}_{e} } {2 \eta_0  m_p a^{1/2}} 
++ \frac{2  \beta \hat{R}_b }{\eta_0^2 } - \frac{4 \beta \hat{R}_b^2 a}{3\eta_0^2 } - \frac{ e c^2} {m_p} a \mu_0 e \hat{n}_b \right) V_{1(e)} \nonumber \\
+&-& \left(  \frac{ \hat{n}_b \beta^2 \sigma_{Te} c}{ \hat{R}_b a^2}  
++ \frac{2 }{\eta_0 }  \right) \frac{1}{\eta_0} \frac{\partial}{\partial a} V_{1 ( \gamma ) } 
+- \left(  -\frac{2 \hat{n}_b \beta^2 \sigma_{Te} c }{ \hat{R}_b a^3\eta_0 }
+- \frac{4 \hat{R}_b}{3 \eta_0^2 }\right) V_{1 ( \gamma ) } 
+=  0 \,,
+\label{Vpfull}
+\eea
+\bea
+& &a \frac{1}{\eta_0^2} \frac{\partial^2}{\partial a^2}V_{1 (e)}
+ - \left(\frac{ \hat{n}_b e^2 \hat{\eta}_{e}a^{1/2} }{m_p \beta } 
+ + \frac{2 \hat{R}_b a}{\eta_0 }  \right) \frac{1}{\eta_0} \frac{\partial}{\partial a} V_{1(p)}  \nonumber \\
+ &-& \left(-\frac{5 \hat{n}_b e^2 \hat{\eta}_{e}}{2 \eta_0  m_p \beta a^{1/2}} 
++ \frac{2 \hat{R}_b }{ \eta_0^2 }  - \frac{ 4\hat{R}_b^2 a}{3\eta_0^2 }  - \frac{e c^2}{m_p \beta } a \mu_0 e \hat{n}_b \right) V_{1(p)}  \nonumber \\
+&+&  \left( \frac{2}{\eta_0 } - \frac{2  \hat{R}_b \beta a}{ \eta_0 }
+ + \frac{ \hat{n}_b e^2 \hat{\eta}_{e} a^{1/2}}{m_p \beta  }  
++ \frac{ \hat{n}_b \sigma_{Te} c }{\beta \hat{R}_b a^2}  \right)\frac{1}{\eta_0} \frac{\partial}{\partial a}  V_{1(e)} \nonumber \\
+&+&  \Big( - \frac{4 \hat{R}_b \beta }{3 \eta_0^2 } - \frac{4\hat{R}_b^2 \beta a}{3 \eta_0^2 }
+ - \frac{5 \hat{n}_b e^2 \hat{\eta}_{e}}{2m_p \beta  \eta_0 a^{1/2} } 
+- \frac{2 \hat{n}_b \sigma_{Te} c }{\beta \eta_0 \hat{R}_b a^3}  + \frac{e c^2}{m_p \beta } a \mu_0 e \hat{n}_b \Big) V_{1(e)}\nonumber \\
+ & &  - \left(  \frac{ \hat{n}_b \sigma_{Te} c}{\beta \hat{R}_b a^2}  
++ \frac{2 }{ \eta_0 } \right) \frac{1}{\eta_0} \frac{\partial}{\partial a} V_{1(\gamma)} 
+- \left(  -\frac{ 2\hat{n}_b \sigma_{Te} c}{\beta  \eta_0\hat{R}_b a^3}  + \frac{4  \hat{R}_b}{3\eta_0^2 } \right) V_{1(\gamma)}
+= 0 \,,
+\label{Vefull}
+\eea
+\bea
+& &  \frac{1}{\eta_0^2} \frac{\partial^2}{\partial a^2}V_{1 (\gamma)} 
+- \left(  \hat{n}_p \beta^2 \sigma_{Te} c a^{-2}  
++ \frac{2 \hat{R}_b}{ \eta_0 } \right) \frac{1}{\eta_0} \frac{\partial}{\partial a} V_{1(p)} \nonumber \\
+&-& \left(  - \frac{2 }{\eta_0} \hat{n}_p \beta^2 \sigma_{Te} c a^{-3}  
+- \frac{4 \hat{R}_b^2 }{3 \eta_0^2 } - \frac{2\hat{R}_b }{\eta_0^2 a } \right) V_{1(p)} 
+- \left(  \hat{n}_p \sigma_{Te} c a^{-2}   + \frac{2  \hat{R}_b \beta }{ \eta_0 } \right)\frac{1}{\eta_0} \frac{\partial}{\partial a}  V_{1(e)} \nonumber \\
+&-& \left(  -\frac{2}{ \eta_0}  \hat{n}_p \sigma_{Te} c a^{-3}   
+- \frac{4 \hat{R}_b^2 \beta}{3 \eta_0^2 a} - \frac{2\hat{R}_b }{\eta_0^2 a }\beta  \right) V_{1(e)} 
+-\left( \frac{2 }{ \eta_0 a }   - \hat{n}_p \sigma_{Te} c a^{-2} \right)\frac{1}{\eta_0} \frac{\partial}{\partial a}  V_{1(\gamma)} \nonumber \\
+ &-& \left( -  \frac{2 }{ \eta_0^2 a^2} - \frac{4 \hat{R}_b }{3 \eta_0^2 a } 
++  \frac{2}{\eta_0 }   \hat{n}_p \sigma_{Te} c a^{-3} - (1 + \beta) c^2 (\frac{2}{\eta_0^2 a^2 c^2}  + \frac{1}{3}k^2 ) \right) V_{1(\gamma)} 
+\nonumber \\
+& & =   \frac{2\hat{R}_b c} {3 \hat{n}_b m_p\eta_0 a}  a^4 \delta \rho_1  \,.
+\label{Vgfull}
+\eea
+}}
+where once more we have changed the time variable from $\eta$ to $a$.
+
+
+\subsubsection{Analytically Calculation}
+
+
+As we did in the case of the tight-coupling approximation result above,
+to solve this system analytically, we assume that the three velocities can be described by a power law in $a$, 
+\bea
+V_{\gamma} &=& \hat{V}_{\gamma} a^g \,, \\
+V_{p} &=& \hat{V}_{p} a^{p} \,, \\
+V_{e} &=& \hat{V}_{e} a^{\epsilon} \,.
+\eea
+Following the method we used above we can use the above expressions to eliminate the derivatives in Eqs.~(\ref{Vpfull}), (\ref{Vefull}) and (\ref{Vgfull})
+\bea
+\label{NTCp}
+& &\left(\frac{p(p+1)}{a } +\frac{(p-2) \hat{n}_b \beta^2 \sigma_{Te} \eta_0 c}{\hat{R}_b a^3 } + \frac{c^2 e^2 a \mu_0 \hat{n}_b \eta_0^2} {m_p}\right) V_{1 (p)} 
++\frac{ c^2 e^2 a \mu_0 \eta_0^2\hat{n}_b } {m_p} V_{1(e)} \nonumber \\
+& &
+- \left( \frac{ \hat{n}_b \beta^2 \sigma_{Te} c (g-2) \eta_0}{ \hat{R}_b a^3}  + \frac{2 g }{ a } - \frac{4 \hat{R}_b}{3} \right) V_{1 ( \gamma ) } 
+=  0 \,,
+\eea
+\bea
+\label{NTCe}
+ & & \frac{ c^2 e^2 a \mu_0  \hat{n}_b \eta_0^2 }{m_p \beta }  V_{1(p)}  
++ \left( \frac{\epsilon(\epsilon +1)}{a}  + \frac{ \hat{n}_b \sigma_{Te} c (\epsilon - 2) \eta_0}{\beta \hat{R}_b a^3} + \frac{c^2 e^2 a \mu_0 \hat{n}_b \eta_0^2}{m_p \beta } \right) V_{1(e)} \nonumber \\
+%%
+ & &- \left( \frac{ \hat{n}_b \sigma_{Te} c (g-2)\eta_0}{\beta \hat{R}_b a^3 } + \frac{2 g}{ a }  + \frac{4} {3 }  \hat{R}_b\right) V_{1(\gamma)}
+= 0 \,,
+\eea
+\bea
+\label{NTCg}
+& &- \left( 3 (p-2) \hat{n}_b \beta^2 \sigma_{Te} \eta_0 c a^{-3}  + 6 \hat{R}_b (p-1) a^{-1} \right) V_{1(p)}
+- 3(\epsilon -2) \hat{n}_p \sigma_{Te}\eta_0 c a^{-3}  V_{1(e)} \nonumber \\
+%%
+& & - \left( -  \frac{3(g-2)\hat{n}_p\eta_0\sigma_{Te}c}{a^3}   - (1 + \beta) c^2 \eta_0^2 k^2 \right) V_{1(\gamma)} 
+=   \frac{2 \hat{R}_b \eta_0 c} { \hat{n}_b m_p  }  a^3 \delta \rho_1  \,.
+\eea
+where, following the method we used above, in each bracket in the equations above we have evaluated the magnitude of all terms during the radiation era and around recombination, and have only kept those 
+terms that make the largest contribution. 
+We can now write this system of three linear equations in matrix form and invert the 
+Eqs.~(\ref{NTCp}), (\ref{NTCe}) and (\ref{NTCg}) to find expressions for the three velocities.
+{\small{
+\bea
+V_{1(p)} &=& \Big[
+-\frac{2 c^2(\beta - 1) e^2 \mu_0 \eta_0^2 \hat{n}_b g}{m_p \beta} - \frac{4 c^2 (\beta + 1) e^2 \mu_0 \eta_0^2 \hat{n}_b \hat{R}_b a}{3 m_p \beta}
+ + \frac{2g \epsilon (\epsilon + 1)}{a^2}\nonumber \\
+& &- \frac{e^2 \mu_0 \eta_0^3 \hat{n}_b^2 \sigma_{Te} c^3 (g-2)(1 - \beta^2)}{m_p \beta \hat{R}_b a^2} 
++ \frac{\hat{n}_b \beta^2 \sigma_{Te} c (g-2) \eta_0 \epsilon (\epsilon +1)}{\hat{R}_b a^4} 
+- \frac{4 \hat{R}_b \epsilon (\epsilon + 1)}{3 a} \nonumber \\
+& & + \frac{\hat{n}_b^2 \beta \sigma_{Te}^2 c^2 (g-2) \eta_0^2 (\epsilon - 2 )}{\hat{R}_b^2 a^6} + \frac{2 \hat{n}_b \sigma_{Te} c \eta_0 g (\epsilon - 2)}{\beta \hat{R}_b a^4}
+- \frac{4 \hat{n}_b \sigma_{Te} c (\epsilon - 2) \eta_0}{3 a^3} \Big] \nonumber \\
+& & \frac{2 \hat{R}_b \eta_0 c} { \hat{n}_b m_p  |M| }  a^3 \delta \rho_1 \,,
+\eea
+\bea
+V_{1(e)} &=& \Big[
+ \frac{2 c^2 (\beta - 1) e^2 \mu_0 \eta_0^2 \hat{n}_b g}{m_p \beta} + \frac{4 c^2 (\beta + 1) e^2 \mu_0 \eta_0^2 \hat{n}_b \hat{R}_b a}{3 m_p \beta}
++ \frac{2g p (p + 1)}{a^2}\nonumber \\
+& &+ \frac{e^2 \mu_0 \eta_0^3 \hat{n}_b^2 \sigma_{Te} c^3 (g-2)(1 - \beta^2)}{m_p \beta \hat{R}_b a^2} + \frac{\hat{n}_b \sigma_{Te} c (g-2) \eta_0 p (p +1)}{ \beta \hat{R}_b a^4} 
++ \frac{4 \hat{R}_b p (p + 1)}{3 a} \nonumber \\
+& & + \frac{\hat{n}_b^2 \beta \sigma_{Te}^2 c^2 (g-2) \eta_0^2 (p - 2 )}{\hat{R}_b^2 a^6} + \frac{2 \hat{n}_b \beta^2 \sigma_{Te} c \eta_0 g (p - 2)}{\hat{R}_b a^4}
++ \frac{4 \hat{n}_b \beta^2 \sigma_{Te} c (p - 2) \eta_0}{3 a^3} \Big] \nonumber \\
+& & \frac{2 \hat{R}_b \eta_0 c} { \hat{n}_b m_p  |M| }  a^3 \delta \rho_1 \,,
+\eea
+\bea
+V_{1(\gamma)} &=& 
+\Big[
+\frac{p(p+1)\epsilon(\epsilon +1)}{a^2} + (\beta^3 (p-2)\epsilon (\epsilon +1) + (\epsilon - 2) p (p+1))\frac{\hat{n}_b \sigma_{Te} \eta_0 c }{\beta \hat{R}_b a^4} \nonumber \\
+& & + (\epsilon - 2) (p - 2)\frac{\hat{n}_b^2 \sigma_{Te}^2 c^2 \eta_0^2 \beta }{\hat{R}_b^2 a^6} 
++ (p(p+1)+\beta \epsilon(\epsilon + 1)) \frac{c^2 e^2 \mu_0 \hat{n}_b \eta_0^2}{m_p \beta} \nonumber \\
+& & + ((\epsilon - 2) + \beta^2 (p-2)) \frac{e^2 \mu_0 \hat{n}_b^2 \eta_0^3 \sigma_{Te} c^3 }{\hat{R}_b m_p \beta a^2}
+ \Big]  \frac{2 \hat{R}_b \eta_0 c} { \hat{n}_b m_p  |M| }  a^3 \delta \rho_1 \,,
+\eea
+}}
+where $|M|$ is the determinant of the system of equations above and
+to leading order in $a$ is given by,
+\be
+|M|= \frac{ e^2 \hat{n}_b^2 \eta_0^3  \mu_0  \sigma_{Te}c^3 }{ \hat{R}_b \beta m_p a^3}
+ \left( c^2 \eta_0^2 k^2 (\epsilon - 2) a  + 3 ((\epsilon -2) 2 g + (g-2)(p+2)(p-1)) \hat{R}_b \right) \,.
+\ee
+As we saw in the previous section, these expressions can be greatly simplified by comparing the magnitude of
+the terms during the era we are interested in (radiation domination and the time around radiation-matter equality)
+and only keeping those that give the largest effect. This leaves us with the following expressions for the velocities,
+\be
+V_{1(p)} = \left[\frac{e^2 \mu_0 \eta_0 \hat{n}_b \sigma_{Te} c (2-g)(1 - \beta^2)}{\hat{R}_b a^2} - \frac{4}{3} (\beta + 1) e^2 \mu_0 \hat{R}_b a 
+ \right]  \frac{2 \hat{R}_b \eta_0^3 c^3} {\beta m_p^2 |M| }  a^3 \delta \rho_1 \,,
+\ee
+%where it is the second of the two terms which contributes the biggest effect.
+% \be
+% V_{1(p)} = -\left[ \frac{4}{3} (\beta + 1) e^2 \mu_0 \hat{R}_b a 
+% + \frac{e^2 \mu_0 \eta_0 \hat{n}_b \sigma_{Te} c (g-2)(1 - \beta^2)}{\hat{R}_b a^2} \right]  \frac{2 \hat{R}_b \eta_0^3 c^3} {\beta m_p^2 |M| }  a^3 \delta \rho_1
+% \ee
+\be
+V_{1(e)} = \left[ \frac{e^2 \mu_0 \eta_0 \hat{n}_b \sigma_{Te} c (g-2)(1 - \beta^2)}{\hat{R}_b a^2} + \frac{4}{3} (\beta + 1) e^2 \mu_0 \hat{R}_b a 
+\right]  \frac{2 \hat{R}_b \eta_0^3 c^3} {\beta m_p^2 |M| }  a^3 \delta \rho_1 \,,
+\ee
+%where it is the second of the two terms which contributes the biggest effect.
+% \be
+% V_{1(e)} = \left[ \frac{4}{3} (\beta + 1) e^2 \mu_0 \hat{R}_b a 
+% + \frac{e^2 \mu_0 \eta_0 \hat{n}_b \sigma_{Te} c (g-2)(1 - \beta^2)}{\hat{R}_b a^2} \right]  \frac{2 \hat{R}_b \eta_0^3 c^3} {\beta m_p^2 |M| }  a^3 \delta \rho_1
+% \ee
+\be
+V_{1(\gamma)} =
+\left[(p - 2)\frac{\hat{n}_b^2 \sigma_{Te}^2 c^2 \eta_0^2 \beta }{\hat{R}_b^2 a^6} 
+ + \left(1+ \beta^2 \frac{(p-2)}{(\epsilon - 2)}\right) \frac{e^2 \mu_0 \hat{n}_b^2 \eta_0^3 \sigma_{Te} c^3 }{\hat{R}_b m_p \beta a^2}
+ \right]  \frac{2(\epsilon - 2) \hat{R}_b \eta_0 c} { \hat{n}_b m_p  |M| }  a^3 \delta \rho_1 \,.
+\ee
+As was the case for the tight coupling results in Section~\ref{TCanalytic}, the scale and time dependence of the velocities of the three fluids 
+is different on small and large scales. As we did in that section we will proceed by considering these two cases separately allowing us to 
+find the scale and time dependence in each case.
+% For large scales ($c^2 \eta_0^2 k^2 a \ll \hat{R}_b $) this becomes,
+% \be
+% |M|= ((\epsilon -2) 2 g + (g-2)(p+2)(p-1))\frac{3  \hat{R}_b e^2 \hat{n}_b^2 \eta_0^3  \mu_0  \sigma_{Te}c^3 }{ \hat{R}_b \beta m_p a^3} \,,
+% \ee
+% and for small scales ($c^2 \eta_0^2 k^2 a \gg \hat{R}_b $) it becomes,
+% \be
+% |M|=  (\epsilon - 2)\frac{ e^2 \hat{n}_b^2 \eta_0^5  \mu_0  \sigma_{Te}c^5 k^2}{ \hat{R}_b \beta m_p a^2} \,.
+% \ee
+
+Firstly, we can consider small scales ($c^2 \eta_0^2 k^2 a \gg \hat{R}_b $) and combine the equations above with our expression for $|M|$
+to arrive at the following expressions for the velocities of the species
+% \be
+% |M|=  \frac{(\epsilon - 2) e^2 \hat{n}_b^2 \eta_0^5  \mu_0  \sigma_{Te}c^5 k^2}{ \hat{R}_b \beta m_p a^2}
+% \ee
+% \be
+% V_{1(p)} = -\frac{2 e^2 \mu_0 \eta_0^4 \hat{n}_b \sigma_{Te} c^4 (g-2)}{m_p^2 \beta } \frac{ a \delta \rho_1 } { |M| }  
+% \ee
+% \be
+% V_{1(e)} =  \frac{2 e^2 \mu_0 \eta_0^4 \hat{n}_b \sigma_{Te} c^4 (g-2)}{m_p^2 \beta } \frac{a \delta \rho_1 } { |M| }  
+% \ee
+% \be
+% V_{1(\gamma)} =   ((\epsilon - 2) + \beta^2 (p-2)) \frac{2 e^2 \mu_0 \hat{n}_b \eta_0^4 \sigma_{Te} c^4}{ m_p^2 \beta }  \frac{a \delta \rho_1} { |M| }  
+% \ee
+%substituting for $|M|$, noting that $\delta \rho_1 = A a^{-4} $ (see Section~\ref{denspert} for a full explanation)
+\bea
+V_{1(p)} &=& -\frac{2  \hat{R}_b (g-2)}{m_p (\epsilon - 2) \hat{n}_b \eta_0 c} k^{-2} a^{3} \delta \rho_1 \,, \\
+V_{1(e)} &=&  \frac{2 \hat{R}_b (g-2)}{m_p (\epsilon - 2) \hat{n}_b \eta_0 c} k^{-2} a^{3} \delta \rho_1 \,, \\
+V_{1(\gamma)} &=&   \frac{2  \hat{R}_b }{ m_p \hat{n}_b \eta_0 c} k^{-2}  a^{3}\delta \rho_1 \,.
+\eea
+% So we have 
+% \be
+% V_{1(\gamma)} = V_{1(e)} = - V_{1(p)} =  \frac{2 A \hat{R}_b }{ m_p \hat{n}_b \eta_0 c} k^{-2}  a^{-1}
+% \ee
+% As we saw in Eq.~(\ref{electricVel}) the electric field can be written in terms of velocity differences and their derivatives,
+%  \bea
+%  \EI
+% &=& \frac{\beta m_p c}{(1+\beta) a e} (V_{1 (p)} - V_{1 (e)})' 
+%  +  \left( \frac{\H \beta m_p c }{(1+\beta) a e}  + n_b e \eta_{e} c \right) (V_{1 (p)} - V_{1 (e)}) \nonumber \\
+%  & &  +  \frac{n_b \sigma_{Te} c^2 m_p}{R_b e}   \left( \beta^3(V_{1 (p)} - V_{1 (\gamma)}) - (V_{1(e)} - V_{1 (\gamma)}) \right)   \,. \nonumber 
+%  \eea
+%  This allows us to find an expression for the electric field strength,
+% \be
+%  \EI
+%  = - \frac{2 \hat{R}_b}{e m_p (\epsilon - 2) \hat{n}_b \eta_0 k^2}
+% \left[ 2 (g-2) 
+%  \ee
+It is clear from these expressions that the scale and time dependence of the velocities on small scales will depend on the bahviour of the density perturbation.
+
+Secondly, we move on to consider large scales ($c^2 \eta_0^2 k^2 a \ll \hat{R}_b $), as in the previous section, as we are considering large scales we can also use
+use Eq.~(\ref{densityin}) to eliminate $\delta\rho_1$.
+% \be
+% |M|= ((\epsilon -2) 2 g + (g-2)(p+2)(p-1))\frac{3  e^2 \hat{n}_b^2 \eta_0^3  \mu_0  \sigma_{Te}c^3 }{  \beta m_p a^3}
+% \ee
+% \be
+% V_{1(p)} = -\frac{2 e^2 \mu_0 \eta_0^4 \hat{n}_b \sigma_{Te} c^4 (g-2)}{m_p^2 \beta } \frac{ a \delta \rho_1 } { |M| }  
+% \ee
+% \be
+% V_{1(e)} =  \frac{2 e^2 \mu_0 \eta_0^4 \hat{n}_b \sigma_{Te} c^4 (g-2)}{m_p^2 \beta } \frac{a \delta \rho_1 } { |M| }  
+% \ee
+% \be
+% V_{1(\gamma)} =   ((\epsilon - 2) + \beta^2 (p-2)) \frac{2 e^2 \mu_0 \hat{n}_b \eta_0^4 \sigma_{Te} c^4}{ m_p^2 \beta }  \frac{a \delta \rho_1} { |M| }  
+% \ee
+% which gives us 
+\bea
+V_{1(p)} &=& -\frac{2 A \eta_0 c (g-2)}{3 ((\epsilon -2) 2 g + (g-2)(p+2)(p-1))  \hat{n}_b  m_p } \,, \\
+V_{1(e)} &=& \frac{2 A \eta_0 c (g-2)}{3 ((\epsilon -2) 2 g + (g-2)(p+2)(p-1))  \hat{n}_b  m_p } \,,\\
+V_{1(\gamma)} &=&  \frac{2 A ((\epsilon - 2) + \beta^2 (p-2)) \eta_0 c}{3 ((\epsilon -2) 2 g + (g-2)(p+2)(p-1)) \hat{n}_b m_p }  \,.
+\eea
+We can read off the exponents in the above equations, $p=\epsilon=\gamma=0$, which imply that to leading order the velocities are constant in time,
+i.e. slowly varying and are given by,
+\be
+V_{1(e)} = V_{1(\gamma)} = - V_{1(p)} =  \frac{ A \eta_0 c }{3 \hat{n}_b  m_p }  \,.
+\ee
+ As we saw in Eq.~(\ref{electricVel}) the electric field can be written in terms of velocity differences and their derivatives,
+ \bea
+  \EI
+ &=& \frac{\beta m_p c}{(1+\beta) a e} (V_{1 (p)} - V_{1 (e)})' 
+  +  \left( \frac{\H \beta m_p c }{(1+\beta) a e}  + n_b e \eta_{e} c \right) (V_{1 (p)} - V_{1 (e)}) \nonumber \\
+  & &  +  \frac{n_b \sigma_{Te} c^2 m_p}{R_b e}   \left( \beta^3(V_{1 (p)} - V_{1 (\gamma)}) - (V_{1(e)} - V_{1 (\gamma)}) \right)   \,. \nonumber 
+  \eea
+  This allows us to find an expression for the electric field strength,
+\be
+\EI =  \frac{2 A \beta c^2 }{3 e \hat{n}_b } a^{-2} + \frac{2 A \sigma_{Te}^2 c^2 m_p  \beta^2 }{3 \mu_0 \hat{R}_b e^3} a^{-8} \,,
+\label{electricNTCfull}
+\ee
+where we have kept the leading order and next to leading order terms in $a$.
+
+
+
+
+
+\section{Electric field strength on large scales}
+
+In this chapter we have found expressions for the velocities of a three species system of protons, electrons and photons
+in both the small and large scale limit, firstly when the tight coupling approximation holds and then when it is broken.
+In the large scale limit we were able to substitute our large scale solution for the density perturbation to 
+find the scale and time dependencies of the velocities.
+We found that the velocity differences between the three species can source an electric field 
+and evaluated an approximation for the time dependence and amplitude of such an electric field.
+When we assumed the tight coupling approximation held we found,
+\bea
+\EI = \frac{A c \beta \hat{R}_b}{6 e \eta_0  \sigma_{Te} \hat{n}_b^2  } \left( 1  + \frac{5 a}{4\eta_0 \hat{n}_b \sigma_{Te} c}  \right) \,, \nonumber
+\eea
+and when tight coupling was broken we found,
+\be
+\EI = \frac{2 A \beta c^2 }{3 e \hat{n}_b } a^{-2} + \frac{2 A \sigma_{Te}^2 c^2 m_p  \beta^2 }{3 \mu_0 \hat{R}_b e^3} a^{-8} \,, \nonumber
+\ee
+where both expressions are given to next to leading order in $a$.
+We can also see, both from these results and the expressions for the velocities, that it is the Thompson interactions between
+the matter and radiation that plays a much more dominant role in the behaviour of the species than the Coulomb collisions between the charged electrons and protons. 
+It should be noted that each of these expressions are only first order results in $a$, only accurate to order of magnitude precision and 
+only valid over the range of $a$ considered.
+In Chapter~\ref{MagPS} we will see that a first order electric field such as this generated during the radiation era can itself source
+a second order magnetic field. In the second half of this thesis we will study the generation of primordial magnetic fields
+using second order perturbations. 
+
+
+
+
+
+

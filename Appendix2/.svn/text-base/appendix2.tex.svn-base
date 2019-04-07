@@ -1,0 +1,65 @@
+
+% ------------------------------------------------------------------------
+
+\chapter{B: Second Order Metric \& Connection}
+
+In this appendix we will provide some of the useful geometrical quantities at second order\cite{Malik:2008im}.
+
+\section*{Metric}
+
+
+\bea
+g_{00} &=& -a^2 \left[1 + 2\phi_{1} + \phi_{2}\right] \\
+g_{0i} &=& a^2 \left[B_{1i} + \frac{1}{2} B_{2i}\right] \\
+g_{ij} &=& a^2 \left[\delta_{ij} + 2C_{1ij} + C_{2ij}\right]
+\eea
+
+\bea
+g^{00} &=& -a^{-2} \left[1 -2\phi_1 -\phi_2 +4\phi_1^2 -B_{1k}B_1^k\right] \\
+g^{0i} &=& a^{-2} \left[B_1^i + \frac{1}{2}B_2^i -2\phi_1 B_1^i -2B_{1k}C_1^{ki}\right] \\
+g^{ij} &=& a^{-2} \left[\delta^{ij} -2C_1^{ij} -C_2^{ij} +4C_1^{ik}C_{1k}^j -B_1^i B_1^j\right]
+\eea
+
+\section*{4-velocity}
+
+%% All are multiplied by c 
+
+\bea
+u_0 &=& -a \left[1 + \phi_1 + \frac{1}{2}\phi_2 - \frac{1}{2}\phi_1^2 + v_{1k}v_1^k\right] \\
+u_i &=& a \left[v_{1i} + B_{1i} + \frac{1}{2}(v_{2i} + B_{2i}) - \phi_1 B_{1i} + 2C_{1ik}v_1^k\right] \\
+u^0 &=& a^{-1} \left[1 - \phi_1 - \frac{1}{2}\phi_2 + \frac{3}{2}\phi_1^2 + v_{1k}(v_1^k + 2B_1^k)\right] \\
+u^i &=& a^{-1} \left[v_1^i + \frac{1}{2}v_2^i\right]
+\eea
+
+\section*{Connections}
+
+
+%{\color{blue} Note all time derivatives here should also have a 1/c factor}
+
+\bea
+\Gamma_{00}^0 &=& \H(1 + B_1^iB_{1i}) + {\phi_1}' + \frac{1}{2}{\phi_2}' - 2\phi_1 {\phi_1}' + B_1^i {B_{1i}}' + B_1^i \phi_{1,i} \\
+\Gamma_{0i}^0 = \Gamma_{i0}^0 &=& \phi_{1,i} + \frac{1}{2}\phi_{2,i} - 2\phi_1 \phi_{1,i} + \frac{1}{2}B_1^j (B_{1j,i} - B_{1i,j} + 2\dot{C}_{1ij}) \nonumber \\
+& &+
+\H (\frac{1}{2}B_{2i} + B_{1i} - 2\phi_1 B_{1i} ) \\
+\Gamma_{00}^i &=& \H (B_1^i + \frac{1}{2}B_2^i - 2B_{1k}C_1^{ki}) - {\phi_1}' B_1^i + {{B}_1^i}' + \frac{1}{2}{{B}_2^i}' + \phi_{1,}^i + \frac{1}{2}\phi_{2,}^i \nonumber \\
+& &- C_1^{ij}(2{{B}_{ij}}' + 2\phi_{1,j}) \\
+\Gamma_{ij}^0 &=& \H \left[(\delta_{ij}+2C_{1ij}+C_{2ij})  - \delta_{ij}(\phi_2-4\phi_1^2+B_{1k}B_1^k) - 2\phi_1(\delta_{ij}+2C_{1ij})\right] \nonumber \\
+& & + {{C}_{1ij}}' + \frac{1}{2} {{C}_{2ij}}'  -\frac{1}{4}(2B_{1i,j}+B_{2i,j}+2B_{1j,i}+B_{2j,i}) - \phi_1(2{{C}_{1ij}}'-B_{1i,j}-B_{1j,i}) \nonumber \\
+& &+ B_1^k(C_{1ki,j}+C_{1jk,i}-C_{1ij,k}) \nonumber \\
+\Gamma_{0j}^i = \Gamma_{j0}^i &=& \H \left[ \delta^i_j - B_{1j}B_1^i \right] - B_1^i\phi_{1,j} + \frac{1}{4} 
+(2B^i_{1,j} + B^i_{2,j} - 2B_{1j,}^i - B_{2j,}^i) \nonumber \\
+&& + {{C}_{1j}^i}' + \frac{1}{2}{{C}_{2j}^i}' - C_1^{ki}B_{1k,j} + C_1^{ki}B_{1j,k} - 2C_1^ki{{C}_{1jk}}'\\
+\Gamma_{jk}^i &=& -\H\left[(B_1^i + \frac{1}{2}B_2^i + 2\phi_1B_1^i + 2B_{1l}C_1^{li})\delta_{jk} + 2B_1^iC_{1jk} \right] \nonumber \\
+& & + \frac{1}{2}B_1^i(B_{1j,k}+B_{1k,j}-2{{C}_{1jk}}') \nonumber \\
+&& + \frac{1}{2}(2C^i_{1j,k} + C^i_{2j,k} + 2C^i_{1k,j} +C^i_{2k,j} - 2C_{1jk,}^i - C_{2jk,}^i) \nonumber \\
+& &- 2C_1^{li}(C_{1lj,k} + C_{1kl,j} - C_{1jk,l})
+\eea
+
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

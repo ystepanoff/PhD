@@ -1,0 +1,84 @@
+%input macros (i.e. write your own macros file called MacroFile1.tex)
+\documentclass[oneside,12pt]{Classes/CUEDthesisPSnPDF}
+\include{Macros/MacroFile1}
+
+\title{On an octonionic construction of the groups of type $\EE_6$ and ${}^2\EE_6$}
+
+%\ifpdf
+  \author{\href{mailto:e.stepanov@qmul.ac.uk}{Yegor Stepanov}}
+  \collegeordept{\href{https://maths.qmul.ac.uk/}{School of Mathematical Sciences}}
+  \university{\href{https://www.qmul.ac.uk}{Queen Mary, University of London}} 
+
+%\vspace{1cm}
+
+% insert below the file name that contains the crest in-place of 'UnivShield'
+\crest{
+\includegraphics[scale=0.25]{QMULBig.png}
+}
+%
+
+\degree{Doctor of Philosophy}
+\degreedate{2019}
+
+% turn off those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+% Put all the style files you want in the directory StyleFiles and usepackage like this:
+\hypersetup{linkcolor = black, urlcolor = black, citecolor = black}
+
+% Comment out the next line to get single spacing
+\onehalfspacing
+
+\begin{document}
+\pagestyle{empty}
+
+%\language{english}
+
+
+\mainmatter % book mode only
+\maketitle
+%\mainmatter % book mode only
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+%\frontmatter % book mode only
+%\pagenumbering{arabic}
+
+
+
+\include{Declaration/declaration}
+\include{Abstract/abstract}
+\include{Acknowledgement/acknowledgement}
+\include{Dedication/dedication}
+
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{plain}
+\tableofcontents
+
+%\mainmatter % book mode only
+\include{Introduction/introduction}
+\include{Chapter1/chapter1}
+\include{Chapter2/chapter2}
+\include{Chapter3/chapter3}
+%\include{Chapter4/chapter4}
+%\include{Chapter5/chapter5}
+%\include{Chapter6/chapter6}
+%\include{Chapter7/chapter7}
+%\include{Conclusions/conclusions}
+
+\backmatter % book mode only
+\appendix
+\include{Appendix1/appendix1}
+\include{Appendix2/appendix2}
+\include{Appendix3/appendix3}
+\include{Appendix4/appendix4}
+
+\bibliographystyle{Classes/hieeetr}
+\renewcommand{\bibname}{References} % changes default name Bibliography to References
+\bibliography{References/references} % References file
+
+\end{document}

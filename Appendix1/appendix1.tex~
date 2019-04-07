@@ -1,0 +1,133 @@
+
+% ------------------------------------------------------------------------
+
+\chapter{A: APPENDIX NAME}
+\label{AppA}
+In this appendix we will list all the constants and parameter used throughout the thesis. We also include a useful check list of dimensions of
+various cosmological quantities.
+
+
+\section*{Constants given in SI units}
+
+\bea
+G &=& 6.67300 \times 10^{-11} m^3 kg^{-1} s^{-2} \nonumber \\
+c &=& 2.99792458 \times 10^8 m s^{-1} \nonumber \\
+m_e &=& 9.10938188 \times 10^{-31} kg \nonumber \\
+m_p &=& 1.67262158 \times 10^{-27} kg \nonumber \\
+\sigma_{Te} &=& 6.65245854533 \times 10^{-29} m^2 \nonumber \\
+\zeta(3) &=& 1.202056903159594 \nonumber \\
+\sigma_{SB} &=& 5.670373 \times 10^{-8} kg s^{-3} K^{-4} \nonumber \\
+e &=& 1.60217646 \times 10^{-19} C \nonumber \\
+\epsilon_0 &=& 8.854187817620 \times 10^{-12} C^2 kg^{-1} m^{-3} s^2 \nonumber \\
+\mu_0 &=& 1.256637 \times 10^{-6} C^{-2} kg m \nonumber \\
+%\epsilon_0 &=& \frac{1}{\mu_0 c^2} = 8.85418782 \times 10^{-12} C^2 kg^{-1} m^{-3} s^2 \nonumber \\ 
+k_B &=& 1.3806503 \times 10^{-23} m^2 kg s^{-2} K^{-1} \nonumber \\
+\beta &=& 5.446170245 \times 10^{-4} \nonumber 
+\eea
+%%% Add any plasma constants needed 
+
+\section*{Cosmological Parameters}  
+
+We use a value for the CMB temperature based on the { \sc Wmap } data and given in Ref.~\cite{Fixsen:2009ug}.
+\be
+T_b = 2.72548 \pm 0.00057 K  \nonumber 
+\ee
+
+The following parameters have been taken from the {\sc Planck } results combined with the {\sc Wmap} polarization\cite{Ade:2013zuv}.
+\bea
+H_0 &=& 67.3 \pm 1.2 km s^{-1} Mpc^{-1}  ~ (68\% ~ \rm{CL}) \nonumber \\ 
+\Omega_k &=& -0.037^{+0.043}_{-0.049} ~ (95\% ~ \rm{CL}) \nonumber \\
+z_{\rm{eq}} &=& 3391 \pm 60 ~ (68\% ~ \rm{CL}) \nonumber \\ 
+h^2 \Omega_{b 0} &=&  0.02205 \pm 0.00028 ~ (68\% ~ \rm{CL}) \nonumber 
+\eea
+
+The following parameters have been taken from the {\sc Wmap } results \cite{Komatsu:2010fb, Hinshaw:2012aka}.
+\bea
+\alpha_0(k_0) &=& 0.15 ~ (95\% ~ \rm{CL})  \nonumber \\ 
+10^9 \Delta^2_{\R}(k_0) &=& 2.41 \pm 0.10 ~ (95\% ~ \rm{CL})  \nonumber \\ 
+k_0 &=& 0.002 Mpc^{-1} \nonumber  %   =  6.4815586 \times 10^{-26} m^{-1} 
+\eea
+
+We can calculate the following parameters based on the information given above
+\bea
+a_{\rm{eq}} &=& (1 + z_{\rm{eq}})^{-1} = 2.94 \times 10^{-4} \nonumber \\ 
+\eta_0 &=& \frac{2}{H_0} \nonumber \\
+\rho_c &=& 8.508 \times 10^{-27} kg m^{-3} \nonumber \\   % \frac{3H_0^2}{8\pi G}
+\rho_{0 \rm{init} } &=& 8.823 \times 10^{-27} kg m^{-3}\nonumber \\
+\Omega_{\gamma 0} &=& 3.78 \times 10^{-5} \nonumber \\ % \rho_{\gamma} = \frac{T_0^4}{c^2} \frac{8 \pi^5 k_B^4}{15 h^3 c^3}
+n_{\gamma 0} &=& 4.08 \times 10^{8} m^{-3} \nonumber \\ %% enery dens (above) / energy per photon ,  energy per photon = hc / lambda_max (lambda_max = 1cm - not checked
+\eta_{B0} &=& 6.160956522 \times 10^{-10} \nonumber \\ %% not checked
+n_{n 0} &=& 0.251 m^{-3} \nonumber  % not checked
+\eea
+
+
+% 
+% \section*{Variables}  
+% 
+% \bea
+% n = n_e = n_p = n_B &=& \frac{2\zeta(3)\eta_{B0} }{\pi^2} T^3 = 0.251367 a^{-3} m^{-3} \nonumber \\
+% R_b &=& 698.38 \left( \frac{h_0^2 \Omega_b}{0.023} \right) a = \hat{R}_b a \nonumber \\
+% \sigma_C &=& \frac{T^{3/2}}{\pi e^2 \sqrt{m_e} \rm{ln}\Lambda} \nonumber \\
+% &\approx& 10^{12} ( 10^3 a )^{-3/2}\frac{10}{\rm{ln}\lambda} {\color{blue}s^{-1}} \nonumber \\
+% &\approx& 7 \times 10^{12} ( 10^3 a )^{-3/2} {\color{blue}s^{-1}} \nonumber \\
+% &\approx& 2 \times 10^8 a^{-3/2} {\color{blue}s^{-1}} \nonumber \\
+% T &=& T_b \frac{\eta_C}{\eta}  = 2.73 a^{-1} K \nonumber \\   %% This is the temperature of the plasma 
+% \eea
+% 
+% During the radiation era H, T and a have the following dependencies on conformal time
+
+% \bea    
+% \H &=&  \eta_C^{-1}\left(\frac{\eta_C}{\eta}\right)  = 2.88 \times 10^{-20} a^{-1} s^{-1}\nonumber \\    %%% Don't need this bit here!! 
+% a &=& \frac{\eta}{\eta_C}
+% \eea
+
+\section*{Dimensions and Units}
+
+We note that when we take the scalar part of a vector perturbation the
+dimension of the quantity changes by one length factor (L) i.e.
+\be
+\left[V\right] = L \left[{V_i}\right]  \,.
+\ee
+We also not that when moving to Fourier space quantities will have
+three extra length dimension units, i.e.
+\be
+\left[V (k) \right] = L^3 \left[{V}(x) \right]  \,.
+\ee
+Finally we list some of the quantities we work with and their dimensions,
+where L represents a length dimension, m, a mass dimension, t a time dimension and B a magnetic dimension,
+such as Tesla or Gauss. Note that the magnetic units are related to the charge units by,
+$T = kg C^{-1} s^{-1}$.
+\bea
+%\left[B\right] &=& \left[v\right] = \left[V\right] = m \nonumber \\
+\left[B_i\right] &=& \left[v_i\right] = \left[{V_i}\right] = 1 \nonumber \\
+\left[\phi_1\right] &=& 1 \nonumber \\
+\left[u_i\right] &=& m t^{-1} \nonumber \\
+\left[\eta\right] &=& t \nonumber \\
+\left[\M_i(x,\eta)\right] &=& B \nonumber \\
+\left[\E_i(x,\eta)\right] &=& M L t^{-1} \nonumber \\
+% \left[\M (x,\eta)\right] &=& Tm \nonumber \\
+% \left[\E (x,\eta)\right] &=& T m^2 s^{-1} \nonumber \\
+% \left[\M_i(k,\eta)\right] &=& T m^3 \nonumber \\
+% \left[\E_i(k,\eta)\right] &=& T m^4 s^{-1} \nonumber \\
+% \left[\M (k,\eta)\right] &=& Tm^4 \nonumber \\
+% \left[\E (k,\eta)\right] &=& T m^5 s^{-1} \nonumber 
+% \eea
+% \bea
+\left[\mu_0 \J(x,\eta)\right] &=& B \nonumber \\
+% \left[\mu_0 \J_i(x,\eta)\right] &=& T m^{-1} \nonumber \\
+%\left[\mu_0 c \hat{\rho}\right] &=& T m^{-1} \nonumber \\
+%\left[\mu_0\right] &=& kg m C^{-2} \nonumber \\
+\left[\rho(x,\eta)\right] &=& \left[\drho(x,\eta) \right] = m L^{-3} \nonumber \\
+\left[P(x,\eta)\right] &=& \left[\dP(x,\eta)\right] = m L^{-1} t^{-2} \nonumber 
+%\left[\rho(k,\eta)\right] &=& \left[\drho(k,\eta) \right] = kg \nonumber \\
+%\left[P(k,\eta)\right] &=& \left[\dP(k,\eta)\right] = kg m^{2} s^{-2} \nonumber 
+\eea
+
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

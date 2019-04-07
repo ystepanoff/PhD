@@ -1,0 +1,174 @@
+
+% ------------------------------------------------------------------------
+
+\chapter{D: Writing correlators as delta functions}
+\label{AppD}
+In this appendix we show the full details of the calculation in Chapter~\ref{MagPS} in which
+we rewrite a long correlator in terms of delta functions. \\
+
+We start from our expression for the two-point correlator of the source term,
+\bea   %%% Check this equation!!
+\label{2pointcorS}
+& & \langle S(\mathbf{k}_1, \eta_1)  S^*(\mathbf{k}_2, \eta_2)  \rangle
+= \frac{a_1^2  a_2^2 k_1 k_2 \bar{e}^i\bar{e}^j}{(2\pi)^3(1+\omega)^2 \rho(\eta_1) \rho(\eta_2)} \nonumber \\
+& & \int d^3 \tilde{\mathbf{k}_1} \frac{\tilde{k_1}_i}{9\H_1^2(1+\omega) + 2 c^2 \tilde{k_1}^2 } 
+\int d^3 \tilde{\mathbf{k}_2} \frac{\tilde{k_2}_j}{9\H_2^2(1+\omega) + 2 c^2 \tilde{k_2}^2 } \nonumber \\
+& & \langle 
+[ f(\eta_1) \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1)  + g(\tilde{k}_1,\eta_1)\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1)]{\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)  \nonumber \\
+& & [ f(\eta_2)\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2)  + g(\tilde{k}_2,\eta_2)\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2)]
+{\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)   \rangle \,.
+\eea
+As correlators are simply averages over probability distributions, we may expand out the terms inside the angled brackets and rewrite them as a sum of correlators,
+ %(recalling that only the directional dependency need stay inside the angled brackets,
+\bea
+& &
+\langle \rangle \equiv \langle [ f(\eta_1) \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1)  + g(\tilde{k}_1,\eta_1) \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1)]{\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)  \nonumber \\
+& &  [ f(\eta_2)\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2)  + g(\tilde{k}_2,\eta_2) \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2)]{\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)  \rangle
+= \nonumber \\
+& & f(\eta_1)f(\eta_2)
+\langle \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle 
+\nonumber \\
+& & + f(\eta_1)g(\tilde{k}_2,\eta_2) 
+\langle \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle
+\nonumber \\
+& & + g(\tilde{k}_1,\eta_1)f(\eta_2)
+\langle \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2) {\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)  \rangle
+\nonumber \\
+& & + g(\tilde{k}_1,\eta_1)g(\tilde{k}_2,\eta_2) 
+\langle \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle
+\,, \nonumber \\
+& & \label{4pc}
+\eea
+where we have introduced the notation $\langle \rangle$ to correspond to the full four-point correlator.
+
+We assume that the fluctuations $\delta\rho_1$ and $\delta P_1$ and the electric field are Gaussian 
+(note that we showed in Chapter~\ref{multifluid} that the electric field was related to 
+$\delta\rho$, therefore if $\delta\rho$ is Gaussian this will imply that the electric field is too). %%Comment about why we can assume this
+We therefore proceed by putting the directional dependency of these three 
+into Gaussian random variables $\hat{E}(\mathbf{k})$ as follows,
+\bea
+\delta\rho_1(\mathbf{k}, \eta) &=& \delta\rho_1 (k, \eta) \hat{E}(\mathbf{k}) \,, \\
+\delta P_{1\rm{nad}}(\mathbf{k}, \eta) &=& \delta P_{1\rm{nad}} (k, \eta) \hat{E}(\mathbf{k}) \,, \\
+\EI (\mathbf{k}, \eta) &=& \EI (k, \eta) \hat{E}(\mathbf{k}) \,.
+\eea
+Gaussian variables obey the relationships
+\be
+ \langle \hat{E}^*(\mathbf{k}_1) \hat{E}(\mathbf{k}_2) \rangle = \delta(\mathbf{k}_1 - \mathbf{k}_2) \,, \quad
+ \langle \hat{E}(\mathbf{k}_1) \hat{E}(\mathbf{k}_2) \rangle = \delta(\mathbf{k}_1 + \mathbf{k}_2) \,.
+\ee
+
+We can now write our four-point correlators, from Eq.~(\ref{4pc}) in terms of Gaussian random variables as,
+\bea
+&& f(\eta_1)f(\eta_2)
+\langle \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle \nonumber \\
+ && \quad = f(\eta_1)f(\eta_2)\delta\rho_1(\tilde{k}_1,\eta_1){\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert,\eta_1)
+\delta\rho_1(\tilde{k}_2,\eta_2){\EI}(\lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert,\eta_2) \nonumber \\
+&& \quad \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \,,
+ \eea
+\bea
+&&  f(\eta_1)g(\tilde{k}_2,\eta_2) 
+\langle \delta\rho_1(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle \nonumber \\
+&& \quad = f(\eta_1)g(\tilde{k}_2,\eta_2) \delta\rho_1(\tilde{k}_1,\eta_1){\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert ,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2){\EI}( \lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert,\eta_2) \nonumber \\
+&& \quad \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \,,
+\eea
+\bea
+&& g(\tilde{k}_1,\eta_1)f(\eta_2)
+\langle \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta\rho_1(\tilde{\mathbf{k}}_2,\eta_2) {\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)  \rangle \nonumber \\
+&& \quad = g(\tilde{k}_1,\eta_1)f(\eta_2)\delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1){\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert ,\eta_1)
+\delta\rho_1(\tilde{k}_2,\eta_2) {\EI}(\lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert ,\eta_2) \nonumber \\
+&& \quad \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \,,
+ \eea
+\bea
+&& g(\tilde{k}_1,\eta_1)g(\tilde{k}_2,\eta_2) 
+\langle \delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_1,\eta_1){\EI}(\mathbf{k}_1-\tilde{\mathbf{k}}_1,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{\mathbf{k}}_2,\eta_2){\EI}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2),\eta_2)\rangle \nonumber \\
+&& \quad =  g(\tilde{k}_1,\eta_1)g(\tilde{k}_2,\eta_2) \delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1){\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2){\EI}( \lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert ,\eta_2) \nonumber \\
+&& \quad \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \,.
+\eea
+The four-point correlator in all the above expressions is the same so summing all the above terms leads to the following expression
+for the overall correlator in Eq.~(\ref{4pc}),
+\bea
+\langle \rangle &=&  {\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert,\eta_1){\EI}( \lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert ,\eta_2) \times \nonumber \\
+& & ( f(\eta_1)f(\eta_2)\delta\rho_1(\tilde{k}_1,\eta_1)\delta\rho_1(\tilde{k}_2,\eta_2) \nonumber \\
+& & + f(\eta_1)g(\tilde{k}_2,\eta_2) \delta\rho_1(\tilde{k}_1,\eta_1)\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2) \nonumber \\
+& & + g(\tilde{k}_1,\eta_1)f(\eta_2)\delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1)\delta\rho_1(\tilde{k}_2,\eta_2) \nonumber \\
+& & + g(\tilde{k}_1,\eta_1)g(\tilde{k}_2,\eta_2) \delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1)\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2) )
+\nonumber \\
+& & \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \,.
+\eea
+In order to expand out our four-point correlator above we make use of Wick's theorem \cite{Peskin:1995ev},
+\bea
+& & \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle = \nonumber \\
+& & \quad \quad \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1) \rangle \langle \hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-\tilde{\mathbf{k}}_2 - \mathbf{k}_2)\rangle \nonumber \\
+& & \quad \quad + \langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2) \rangle \langle \hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1 ) \hat{E}(-\tilde{\mathbf{k}}_2 - \mathbf{k}_2)\rangle \nonumber \\
+& & \quad \quad + \langle \hat{E}(\tilde{\mathbf{k}}_1) \hat{E}(-\tilde{\mathbf{k}}_2 - \mathbf{k}_2)\rangle \langle\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2) \rangle \,,\nonumber \\
+& &
+\eea
+and then substituting in delta functions in place of the two-point correlators, we find
+\bea
+& &\langle \hat{E}(\tilde{\mathbf{k}}_1)\hat{E}(\mathbf{k}_1-\tilde{\mathbf{k}}_1)\hat{E}(\tilde{\mathbf{k}}_2)\hat{E}(-(\tilde{\mathbf{k}}_2 + \mathbf{k}_2))\rangle \nonumber \\
+ & & = \delta(\tilde{\mathbf{k}}_1 + \tilde{\mathbf{k}}_2)\delta({\mathbf{k}}_1 - \tilde{\mathbf{k}}_2 - \tilde{\mathbf{k}}_1- \mathbf{k}_2)
++ \delta(\tilde{{\mathbf{k}}}_1 - \tilde{\mathbf{k}}_2 - \mathbf{k}_2)\delta({\mathbf{k}}_1 + \tilde{\mathbf{k}}_2 - \tilde{\mathbf{k}}_1) \,.
+\eea
+Inserting this expression for the four-point correlator into Eq.~(\ref{2pointcorS}), we arrive at,
+\bea   %%% Check this equation!!
+& & \langle S(\mathbf{k}_1, \eta_1)  S^*(\mathbf{k}_2, \eta_2)  \rangle
+= \frac{a_1^2  a_2^2 k_1 k_2 \bar{e}^i\bar{e}^j}{(2\pi)^3(1+\omega)^2 \rho(\eta_1) \rho(\eta_2)} \nonumber \\
+& & \int d^3 \tilde{\mathbf{k}_1} \frac{\tilde{k_1}_i {\EI}(\lvert \tilde{\mathbf{k}}_1 - \mathbf{k}_1 \rvert,\eta_1) }{9\H_1^2(1+\omega) + 2 c^2 \tilde{k_1}^2 } 
+\int d^3 \tilde{\mathbf{k}_2} \frac{\tilde{k_2}_j {\EI}( \lvert \tilde{\mathbf{k}}_2 + \mathbf{k}_2 \rvert ,\eta_2)  }{9\H_2^2(1+\omega) + 2 c^2 \tilde{k_2}^2 } \nonumber \\
+& & 
+( f(\eta_1)f(\eta_2)\delta\rho_1(\tilde{k}_1,\eta_1)\delta\rho_1(\tilde{k}_2,\eta_2) \nonumber \\
+& & + f(\eta_1)g(\tilde{k}_2,\eta_2) \delta\rho_1(\tilde{k}_1,\eta_1)
+\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2) \nonumber \\
+& & + g(\tilde{k}_1,\eta_1)f(\eta_2)\delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1)\delta\rho_1(\tilde{k}_2,\eta_2) \nonumber \\
+& & + g(\tilde{k}_1,\eta_1)g(\tilde{k}_2,\eta_2) 
+\delta P_{1\rm{nad}}(\tilde{k}_1,\eta_1)\delta P_{1\rm{nad}}(\tilde{k}_2,\eta_2) ) 
+ \nonumber \\
+& & (\delta(\tilde{\mathbf{k}}_1 + \tilde{\mathbf{k}}_2)\delta({\mathbf{k}}_1 - \tilde{\mathbf{k}}_2 - \tilde{\mathbf{k}}_1- \mathbf{k}_2)
++ \delta(\tilde{{\mathbf{k}}}_1 - \tilde{\mathbf{k}}_2 - \mathbf{k}_2)\delta({\mathbf{k}}_1 + \tilde{\mathbf{k}}_2 - \tilde{\mathbf{k}}_1))\,.
+\eea
+
+
+% We carry out the $\tilde{k}_2$ integral over one of the delta functions to find the following expression for the two-point correlator 
+% in terms of the density perturbation, pressure perturbation and electric field,
+% \bea   %%% Check this equation!!
+% & & \langle S(\mathbf{k}_1, \eta_1)  S^*(\mathbf{k}_2, \eta_2)  \rangle
+% = \frac{a_1^2  a_2^2  }{(2\pi)^3(1+\omega)^2 \rho(\eta_1) \rho(\eta_2)} k^2 \bar{e}^i \bar{e}^j \delta(\mathbf{k}_1 - \mathbf{k}_2) \nonumber \\
+% & & \int d^3 \tilde{\mathbf{k}} \frac{\tilde{k}_i}{9\H_1^2(1+\omega) + 2 c^2 \tilde{k}^2 } 
+%  {\EI}(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_1) \nonumber \\
+% & & \Big[
+% \frac{\tilde{k}_j}{9\H_2^2(1+\omega) + 2 c^2 \tilde{k}^2  }  {\EI}( \lvert \tilde{\mathbf{k}} + \mathbf{k} \rvert ,\eta_2) \times \nonumber \\
+% & & \Big( f(\eta_1)f(\eta_2)\delta\rho_1(\tilde{k},\eta_1)\delta\rho_1(\tilde{k},\eta_2) + f(\eta_1)g(\tilde{k},\eta_2) \delta\rho_1(\tilde{k},\eta_1)
+% \delta P_{1\rm{nad}}(\tilde{k},\eta_2) \nonumber \\
+% & & + g(\tilde{k},\eta_1)f(\eta_2)\delta P_{1\rm{nad}}(\tilde{k},\eta_1)\delta\rho_1(\tilde{k},\eta_2) \nonumber \\
+% & & + g(\tilde{k},\eta_1)g(\tilde{k},\eta_2) 
+% \delta P_{1\rm{nad}}(\tilde{k},\eta_1)\delta P_{1\rm{nad}}(\tilde{k},\eta_2) \Big)  \nonumber \\
+% & & +
+% \frac{\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert _j }{9\H_2^2(1+\omega) + 2 c^2\lvert\tilde{\mathbf{k}} - \mathbf{k}\rvert^2 } 
+%  {\EI}(\tilde\tilde{{k}} ,\eta_2) \times \nonumber \\
+% & & \Big( f(\eta_1)f(\eta_2)\delta\rho_1(\tilde{k},\eta_1)\delta\rho_1(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) \nonumber \\
+% & & + f(\eta_1)g(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) \delta\rho_1(\tilde{k},\eta_1)
+% \delta P_{1\rm{nad}}(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) \nonumber \\
+% & & + g(\tilde{k},\eta_1)f(\eta_2)\delta P_{1\rm{nad}}(\tilde{k},\eta_1)\delta\rho_1(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) \nonumber \\
+% & & + g(\tilde{k},\eta_1)g(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) 
+% \delta P_{1\rm{nad}}(\tilde{k},\eta_1)\delta P_{1\rm{nad}}(\lvert \tilde{\mathbf{k}} - \mathbf{k} \rvert,\eta_2) \Big) 
+% \Big] \,.\label{fullSS}
+% \eea
+%%%% Note i
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

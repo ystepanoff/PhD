@@ -1,0 +1,998 @@
+\chapter{Constraining the Curvature Perturbation}
+\ifpdf
+    \graphicspath{{Chapter2/Chapter2Figs/PNG/}{Chapter2/Chapter2Figs/PDF/}{Chapter2/Chapter2Figs/}}
+\else
+    \graphicspath{{Chapter2/Chapter2Figs/EPS/}{Chapter2/Chapter2Figs/}}
+\fi
+
+\label{zeta}
+
+In this chapter we will be introducing the curvature perturbation.
+We will start by discussing how we can generate seeds for the structure in the universe 
+using quantum fluctuations during inflation. We will then introduce conserved quantities, such as the
+curvature perturbation. Finally we will solve the evolution equations for the perturbation of the scalar field 
+numerically in order to evaluate the evolution of the curvature perturbation.
+This will allow us to give a detailed account of the behaviour of the curvature perturbation close to
+horizon crossing. Large sections of this chapter are published in the papers Ref.~\cite{Nalson:2011gc,Nalson:2013tm}.
+ 
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 
+
+\section{Producing perturbations during inflation}
+\label{introduction}
+
+
+
+\subsection{Quantum produced fluctuations}
+\label{Quantum}
+
+In Section~\ref{Inflation} we mentioned that it was possible to generate the seeds for the structure we see today by quantum fluctuation during a period of
+inflation. In this section we will be formulating this mathematically and explaining how the quantum fluctuations 
+in the very early universe lead to perturbations in the energy density at later times. 
+
+Starting from the Klein-Gordon equation, Eq.~(\ref{KGeq1st}) and working in flat gauge we make the change of variables $u = a \delta \vp_1 $ and $z = \frac{a \vp_0'}{\H}$.
+If we re-write the resulting equation in Fourier space then we arrive at the Mukhanov equation,  
+\be
+\label{Mukhanov}
+u''(k^i) + \left( k^2 - \frac{z''}{z} \right) u(k^i) = 0 \,.
+\ee
+
+If we wish to study what happens at a quantum level we will need to quantise this equation; in Minkowski space this
+is straight forward, we do it by promoting $u$ and $u'$ to operators \cite{Mukhanov:2005sc},
+\be
+u(k^i) \to \hat{u}(k^i) \,, \quad u'(k^i) \to \hat{u'}(k^i) \,.
+\ee
+ Working in the Heisenberg picture we can expand the operator $\hat{u}$ in terms of the standard creation and 
+annihilation operators ($\hat{a}$ and $\hat{a}^{\dagger}$ ),     
+\be
+\label{uDec}
+\hat{u}(k^i) = \omega (k^i) \hat{a}(k^i) + \omega^* (- k^i) \hat{a}^{\dagger}(- k^i) \,,
+\ee
+where $\omega$, the mode function, also satisfies the Mukhanov equation, 
+\be
+\label{Muk}
+\omega''(k^i) + \left( k^2 - \frac{z''}{z} \right) \omega(k^i) = 0 \,.
+\ee
+
+In order to solve this equation we require two boundary conditions. 
+The first is given by imposing the canonical commutator on our operators,
+\be
+[\hat{u}, \hat{u}' ] = i \,, %\hbar \,,
+\ee
+which leads to the following normalisation condition for the mode function \cite{Mukhanov:2005sc}, 
+\be
+\label{normal}
+\omega^* (k^i) \omega'(k^i) - {\omega^*}' (k^i) \omega(k^i) = - i \,. %\hbar  \,. %% Check the hbar factor???
+\ee
+
+The second boundary condition comes from our choice of vacuum. 
+There is not a unique choice for the vacuum state \cite{Birrell:1982ix, Unruh:1976db, Kinney:2009vz},
+so we pick the most natural choice which is the Minkowski vacuum. 
+This is the vacuum state seen by a comoving observer in the far past when 
+$\eta \to - \infty $  % Ref Liddle and lyth, kinney & Baumann TASI lectures 
+and all modes are much smaller than the Hubble radius,
+%We only need consider a small spacetime patch, which can be assumed flat.   
+and is known as the Bunch-Davies vacuum \cite{Birrell:1982ix, Kinney:2009vz}. 
+
+In the limit $\eta \to - \infty $ Eq.~(\ref{Muk}) becomes
+\be
+\omega''(k^i) +  k^2  \omega (k^i) = 0 \,,
+\ee
+which leads to the following solution
+\be
+\omega = Ae^{-ik\eta} + Be^{ik\eta} \,.
+\ee
+In the limit $\eta \to -\infty$ the first term dominates and the solution becomes 
+\be
+\omega = Ae^{-ik\eta} \,.
+\label{infsol}
+\ee
+
+Applying the first boundary condition in Eq.~(\ref{normal}) 
+to the solution in Eq.~(\ref{infsol}) we find that $A = 1/\sqrt{2k}$ so the initial condition for the mode function when $\eta \to  -\infty$ is
+\be
+\label{MukLim}
+\omega = {\frac{1}{\sqrt{2 k}}} e^{-i k \eta} \,.  %would have hbar if not natural units (as would A)
+\ee
+This initial condition holds for all modes as long as it is applied well inside the horizon. This
+gives us the following initial conditions, see Refs.~\cite{Salopek:1988qh, Huston:2009ac, Huston:2010by}:
+%
+\begin{eqnarray}
+ \delta\varphi |_{\rm{init}} &=& \frac{1}{aM_{\rm{PL}}\sqrt{2k}}e^{-ik\eta} \, ,  \nonumber \\       %%Where does the Mpl come into it, check with hbar???
+ \delta{\varphi}_{,\mathcal{N}} |_{\rm{init}} &=& -\frac{1}{aM_{\rm{PL}}\sqrt{2k}}e^{-ik\eta} \left( 1 + i \frac{k}{aH} \right) \, ,
+\label{InitCond}
+\end{eqnarray}
+where $ \eta = -(aH(1-\epsilon_H))^{-1}$ and $\epsilon_H = -\frac{H_{,\mathcal{N}}}{H}$ \, and $\mathcal{N}$ is the number of e-folds defined in Eq.~(\ref{efolds}) .
+
+During slow roll inflation we have a quasi-de Sitter spacetime. 
+In the case of a de Sitter spacetime, the Hubble parameter is constant and 
+$z''/z = 2/\eta^2$ which means Eq.~(\ref{Muk}) becomes
+\be
+\omega''(k^i) + \left( k^2 - \frac{2}{\eta^2} \right) \omega(k^i) = 0 \,.
+\ee
+and has solutions,
+\be
+\omega = Ae^{-ik\eta}\left(1 - \frac{i}{k\eta}\right) + Be^{ik\eta}\left(1 + \frac{i}{k\eta}\right) \,.
+\label{omegasol}
+\ee
+When we impose the two boundary conditions given by Eq.~(\ref{normal}) and the initial solution in the $\eta \to -\infty$ limit, Eq.~(\ref{MukLim}),
+we find that the constants in Eq.~(\ref{omegasol}) are given by $A = 1/\sqrt{2k}$ and $B=0$.
+So our solution for de Sitter spacetimes is given by
+\be
+\label{FlucdeSitt}
+\omega = \frac{ e^{-ik\eta}}{\sqrt{2k}} \left(1 - \frac{i}{k\eta} \right) \,.
+\ee
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In the numerical work that follows, once we have implemented the quantum initial conditions, we only consider the evolution of the scalar field perturbations classically. 
+There are issues concerning how and when the quantum-to-classical transition takes place but we will not attempt to address these here.
+For further discussion on these issues, see for instance, Refs.~\cite{Polarski:1995jg, Lyth:2006qz}. 
+
+% \subsection{Quantum to Classical transition}   %%%% Cut out this section??? 
+% 
+% These initial quantum fluctuations will go through a transition and become classical in nature.
+% In order to see why this happens we need to consider the solution given in Eq.~\ref{FlucdeSitt} 
+% well after horizon exit this solution becomes 
+% \be
+% \label{OmegaDeSitter}
+% \omega = \frac{-i}{\sqrt{2k} k \eta} \,.
+% \ee
+% 
+% Before horizon crossing the mode functions ($\omega$) change with time and therefore $u$ is constantly changing between
+% different linear combinations of the creation and annihilation operators. 
+% Therefore two consecutive measurements would lead to different observations implying $u$ is a quantum object.
+% After horizon crossing we can see from Eq.~\ref{OmegaDeSitter} that the mode function is imaginary. 
+% Therefore $\omega$ can be factored out of Eq.~\ref{uDec} and $u$
+% will always be made up of the same linear combination of creation and annihilation operators. 
+% This implies that $u$ can be considered a classical object.  
+% %%% Re word this in terms of eigenvectors and eigenstates??? 
+% 
+% In the numerical work that follows, once we have implemented the quantum initial conditions, we only consider the evolution of the scalar field perturbations classically. 
+% There are issues concerning how and when the quantum-to-classical transition takes place but we will not attempt to address these here.
+% For further discussion on these issues, see for instance, Ref. \cite{Polarski:1995jg, Lyth:2006qz}.  \\
+%Add more details?? 
+
+
+\subsection{Evolving the field fluctuations}
+
+In order to evolve the fluctuations in the scalar field we
+use the Einstein and conservation equations in flat gauge outlined in Section~\ref{dynamical}.  
+We assume the Klein Gordon equation, Eq.~(\ref{KGback}), 
+and Friedmann equation Eq.~(\ref{FriedmannPhi}), in the background
+and consider only single field canonical inflation as described in Section~\ref{Inflation}. 
+We only consider scalar perturbations which, as explained in Section~\ref{ScVeTe}, will decouple at first order.
+The evolution equation for the fluctuations is then given by the perturbed Klein-Gordon equation, Eq.~(\ref{KGeq1st}),
+which we gave in Section~\ref{consscalar}.
+
+We present the equation again here in Fourier space, 
+\be
+\label{KG1_flat}
+\delta\vp''+2\H\delta\vp'+ k^2\delta\vp  +a^2\left\{ U_{,\vp\vp} 
++\frac{1}{\H M_{\rm{PL}}^2} \left(2\vp_{0}'U_{,\vp}+{\vp_{0}'}^2\frac{1}{\H M_{\rm{PL}}^2}U_0\right)
+\right\}\delta\vp=0\,,
+\ee
+%
+where the Fourier component of the field fluctuation, $\delta\vp (k^i)$, is
+related to the fluctuation in real space, $\delta\vp (x^i)$, by
+%
+\be
+\delta\vp (x^i, \eta) = \frac{1}{(2\pi)^3} \int d^3 k \delta\vp (k^i) e^{ik_ix^i} \, .
+\ee
+
+% We also have expressions that
+%  relate the pressure, $P_0$ and $\delta P$, the energy density $\rho_0$
+%  and $\delta\rho_1$ to the scalar field, $\vp_0$ and $\dvp1$,
+% which we introduced in section \ref{PressDensIfl1st} but will repeat here for clarity  %%% Don't need this here just refer to previous section... 
+%  \bea
+%  P_0 &=& \frac{1}{2a^2}{\vp_{0}'}^2- U_0\,,\qquad
+%  \rho_0 = \frac{1}{2a^2}{\vp_{0}'}^2+ U_0\,,
+%  \eea
+%  %
+%  and
+%  %
+%  \bea
+%  \delta\rho &=& \frac{1}{a^2}\vp_{0}'\delta\vp'
+%  +\left(U_{,\vp}-\frac{3\H}{a^2}\frac{{\vp_{0}'}^3}{{\vp_{0}'}^2+2a^2U}\right)\dvp{}\,, \\
+%  \delta P &=& \frac{1}{a^2}\vp_{0}'\delta\vp'
+%  -\left(U_{,\vp}+\frac{3\H}{a^2}\frac{{\vp_{0}'}^3}{{\vp_{0}'}^2+2a^2U}\right)\dvp{}\,,
+%  \eea
+ %
+% see e.g.~Ref.~\cite{MW2008} for details. Move reference to previous section!!
+
+
+\section{From field fluctuations to observables}
+\label{Horizons}
+
+\subsection{The problem of reheating}
+\label{reheating}
+
+Now that we have fluctuations to the inflaton field we need to understand how
+these fluctuations generate perturbations in the energy density of radiation and matter that we observe today.
+Unfortunately, the process describing the decay of the inflaton scalar field into radiation, known as reheating, is not fully understood.
+Currently we do not know what particles were initially created or how the energy was transferred from the inflaton to the radiation.
+
+The simplest scenario is one where the scalar field loses energy through oscillations about its minimum.
+This corresponds to the decay of particles and can be modelled by the following modified continuity equation,
+\be
+\dot{\rho} + (3H + \Gamma)\rho = 0 \,,
+\ee
+ where $\Gamma$ is the particle decay rate.
+The decay products are relativistic and the energy quickly thermalizes leaving a species with a blackbody distribution and
+eventually all energy is in a radiation species at thermal equilibrium. 
+One can simplify this even further by assuming this transition happens instantaneously when $T = T_{\rm{reh}}$,
+this is known as instantaneous reheating, and is the model we will be using to evaluate the parameters and initial conditions
+for our scalar fields below.
+Even when using this model for reheating we must specify by what process the decay happens and give a decay rate. There are also many other
+scenarios for how the reheating process happened beyond this simplest example.
+For many more details on reheating and the various options for decay rates see for instance Refs.~\cite{Allahverdi:2010xz, Bassett:2005xm}. 
+
+
+Fortunately there is a method we can use which does not rely on the equations for this unknown process, namely,
+we can proceed by considering conserved quantities.
+The relative size of a given field fluctuation compared to the Hubble radius ($1/aH$) is important.
+As the fluctuations generated initially are quantum fluctuations, they are necessarily created on very small scales (i.e.~$k \gg aH$). We call such
+fluctuations subhorizon. 
+During inflation, the comoving Hubble rate ($aH$) increases approximately exponentially so the scales of interest will eventually become larger than the comoving Hubble
+radius (i.e.~$k \ll aH$) and we say the scales have ``left the horizon''; the fluctuations are now superhorizon.  
+During the radiation and matter era the comoving Hubble rate decreases and eventually those same scales will satisfy $k \gg aH$ 
+and will cross back inside the horizon again.
+As the field fluctuations cross the horizon (i.e.~when the size of the fluctuations is similar to the size of the Hubble radius, $k=aH$) 
+they continue to evolve, however there are quantities that under certain conditions remain conserved whilst outside the horizon (in the limit $k \to 0$).
+It is these quantities we will study in the following sections.
+By mapping the inflaton fluctuation's power spectrum onto the spectrum of one such conserved quantity,
+we can connect the fluctuations during inflation to the ones we observe at later times.
+For instance, the spectrum of the conserved quantity (e.g. the curvature perturbation, see below) can be used to set the
+initial conditions for standard Boltzmann codes see e.g.~Ref.~\cite{camb}, that are used to calculate the CMB anisotropies.
+
+
+\subsection{Conserved quantities}
+
+
+We focus here on two quantities which are conserved outside the horizon under certain conditions. Firstly the curvature perturbation on uniform
+density hypersurfaces $\zeta$ \cite{Bardeen:1983qw}, and secondly the comoving curvature perturbation $\R$ \cite{Lyth:1984gv}.
+% 
+The curvature perturbation on uniform density hypersurfaces is defined as
+%
+\be
+\label{defzeta}
+-\zeta \equiv \psi + \frac{\H}{\rho_0'}\delta\rho\,,
+\ee
+%
+which simplifies if we evaluate the right hand side in flat gauge to
+%
+%
+%\be
+$-\zeta=\frac{\H}{\rho_0'}\delta\rho_{\fl}\,,$
+%\ee
+% 
+where $\delta\rho_{\fl}$ was defined in Eq.~(\ref{denspertflat}). For ease of use we drop the subscript $\fl$ in the
+following. In terms of the scalar field perturbations this is
+\be
+\zeta=\frac{1}{3{\vp_{0}'}^2}  \left[\vp_{0}'\delta\vp'+\left(U_{,\vp}a^2-3\H\frac{{\vp_{0}'}^3}{{\vp_{0}'}^2+2Ua^2}\right)\dvp{} \right]\,,
+\ee
+The comoving curvature perturbation, that is, the curvature
+perturbation evaluated on comoving or uniform field slices, is defined
+by
+%
+\be
+\label{defR}
+\R \equiv \psi+\frac{\H}{\vp_0'} \delta\vp\,,
+\ee
+%
+which simplifies again if the right hand side is evaluated in flat gauge to
+$\R=\frac{\H}{\vp_0'} \delta\vp$.
+%
+Note that these two gauge-invariant curvature perturbations, defined in different gauges, are related by the constraint equation,
+\be
+\label{constraint}
+k^2 \Psi = -9 \frac{\H^2 {\vp_0'}^2}{2a^2\rho_0} (\R + \zeta)\,,
+\ee
+% 
+where $\Psi = \psi + \H\sigma_{s}$ is the curvature perturbation
+in longitudinal gauge. %, that is on uniform shear hypersurfaces. 
+As can be seen from \eq{constraint}, $\zeta + \R$ will become small on
+super-horizon scales. 
+
+
+We can determine what conditions are required for these two quantities to be conserved outside the horizon by
+considering the evolution equation for the curvature perturbation.
+Firstly note that $\zeta$ will be conserved outside the horizon during inflation driven by a single scalar field. %Not true for multi-field inflation REF!!
+To consider the period after inflation note that for $k \ll aH $ we have,
+\be
+\label{EvoZeta}
+\dot{\zeta} = \frac{\dot{\rho} \delta P - \dot{P} \delta \rho}{3 (\rho + P)^2} \,.
+\ee
+Setting the right hand side of this equation equal to zero is equivalent to the
+adiabatic condition for a fluid,
+\be
+\frac{\delta P}{\dot{P}} = \frac{\delta \rho}{\dot{\rho}} \,,
+\ee
+implying that after inflation the curvature perturbation is conserved for an adiabatic fluid.
+Note also that if the pressure can be given as a function of density only ($P = f(\rho)$)
+then the right hand side of Eq.~(\ref{EvoZeta}) is also zero, even if the fluctuations are not adiabatic,  %%% Check this??? Is this  different?? 
+ and the curvature perturbation is also conserved. 
+
+If the fluid is not adiabatic then there exists a non-adiabatic pressure perturbation, $\dPnad$. 
+In general this is not directly observable, but is a source term for the evolution of the
+curvature perturbations, (see Ref.~\cite{Wands:2000dp}) and therefore will be a quantity we are interested in. 
+
+The total pressure perturbation is split into an adiabatic and non-adiabatic part as seen in Ref.~\cite{ks},
+%
+\be
+\label{nonad}
+\dPnad = \delta P - \cs \delta\rho\,,
+\ee
+%
+where $\cs$ is the adiabatic speed of sound and is defined as $\cs
+\equiv {P_0}'/{\rho_0}'$.  This gives us an expression for $\dPnad$
+in terms of the scalar field quantities \cite{Christopherson:2008ry},
+%
+\be 
+\dPnad=\Bigg[\frac{U_{,\vp}}{3\H^2 M_{\rm{PL}}^2}\vpb'^2
+-2U_{,\vp}\Big(1+\frac{U_{,\vp}a^2}{3\H\vpb'}\Big)\Bigg]\dvp{}
+-\frac{2U_{,\vp}}{3\H}\dvp{}'\,.
+\ee
+This can also be written as
+\be 
+\label{deltaPnadfinal}
+\dPnad=-\frac{2 U_{,\vp} }{3 \H }
+\left[\delta\vp' +
+\left(\frac{a^2U_{,\vp}}{\vp_0'}+\frac{6\H Ua^2}{{\vp_{0}'}^2+2Ua^2}
+\right){\delta\vp}
+\right]\,.
+\ee
+
+
+\subsection{Observables}
+\label{Obs}
+
+As mentioned above the conserved quantities can be used to set initial conditions for Boltzmann codes. The results of these codes then allow us
+to make predictions for the perturbations we see in the CMB.
+In order to be able to compare our theoretical results more easily with observations, it is often beneficial to 
+present them in terms of power spectra. 
+The power spectrum for $\zeta$, $P^2_{\zeta} (k_1)$, is defined as \cite{Liddle:2000cg},
+\be
+\langle \zeta(\mathbf{k}_1) \zeta(\mathbf{k}_2) \rangle \equiv (2 \pi)^3 \delta (\mathbf{k}_1 + \mathbf{k}_2) P^2_{\zeta} (k_1) \,,
+\ee
+where $\langle ... \rangle$ denotes the ensemble average. It is also useful to define a
+dimensionless power spectrum as, 
+\be
+\P_{\zeta}^2 (k) \equiv \frac{k^3}{2 \pi^2} P^2_{\zeta} (k) \,.
+\ee
+
+Similarly for $\R$ we can define the power spectrum $P^2_{\R} (k_1)$ and the dimensionless power spectrum $\P_{\R}^2 (k)$ as,
+\be
+\langle \R(\mathbf{k}_1) \R(\mathbf{k}_2) \rangle \equiv (2 \pi)^3 \delta (\mathbf{k}_1 + \mathbf{k}_2) P^2_{\R} (k_1) \,,
+\ee
+and
+\be
+\P_{\R}^2 (k) \equiv \frac{k^3}{2 \pi^2} P^2_{\R} (k) \,.
+\ee
+%\be
+%\label{powerdef}
+%\P_{\R}(k) = \frac{k^3}{2 \pi^2} \left|\R\right|^2 \,.
+%\ee
+
+Both types of curvature perturbation can be used to describe the scalar field perturbation, however, 
+we potentially also have tensor perturbations being produced in the early universe.
+In the same way as above we can define a tensor power spectrum given by $\P_{T}^2 (k)$ and then define
+another observational parameter ($r$) to describe the ratio between the scalar and tensor power spectra,
+\be
+r \equiv \frac{\P_{T}^2 (k)}{\P_{\R}^2 (k)} \,.
+\ee
+We expect the power to be dominated by the scalar perturbations and therefore we expect $r$ to be small.
+The current upper limit provided by {\sc Planck} is $r < 0.11$ \cite{Ade:2013zuv} whereas 
+{\sc Bicep } find $r = 0.20^{+0.07}_{-0.05}$ with $r=0$ disfavored at $7.0 \sigma$. However, it is likely that when
+the contribution of foreground dust is accounted for this value for $r$ will decrease by an amount yet to be determined, 
+possibly bringing this in line with the {\sc Planck} result \cite{Ade:2014xna}. 
+
+
+One of the predictions of inflation is a near scale invariant spectrum. 
+In order to parametrise how close to scale invariance our observations are we define the spectral index, $n_s$, as
+\be
+n_s - 1 = \frac{d}{d \rm{ln} k} \rm{ln} \left( \P^2_{\R} (k) \right) \,,
+\ee
+such that $n_s = 1$ implies scale invariance. 
+This allows us to write the dimensionless power spectra as 
+\be
+\P_{\R}^2 (k) = \Delta_{\R} (k_0)^2 \left( \frac{k}{k_0} \right)^{n_s -1} \,,
+\ee
+where $\Delta_{\R} (k_0)^2 $ is the amplitude of the power spectrum evaluated at an arbitrary pivot scale ($k_0$).
+Current observations from {\sc Wmap} give $\Delta_{\R} (k_0)^2 = 2.38 \times 10^{-9}$ \cite{Hinshaw:2012aka} with a pivot scale of $k_0 = 0.002 \text{Mpc}^{-1}$,
+and observations from {\sc Planck} gives $n_s = 0.9616 \pm 0.00094$ (68\%) \cite{Ade:2013zuv}.
+
+If the dependence on $k$ is more complicated than just a simple power law, 
+we can introduce a second parameter to explain this dependence, the running ($\alpha_s$),
+\be
+\alpha_s = \frac{d}{d \ln k}  n_s \,.
+\ee
+The current  best observations from {\sc Planck} suggest that $\alpha_s = -0.013 \pm 0.009 $ (68\%) \cite{Ade:2013zuv}
+\\
+
+\section{Around Horizon crossing}  %%Motivation of work
+
+\subsection{Motivation}
+\label{motivation}
+
+In Section~\ref{reheating} we only considered the two limiting cases $k \ll aH$ and $k \gg aH$.
+As outlined above it is well known that for adiabatic perturbations the curvature perturbations on both uniform density
+hypersurfaces, $\zeta$, and on comoving hypersurfaces, $\R$, are
+conserved on large scales where gradient terms can be
+neglected (i.e.~in the limiting case where  $k \ll aH$ and $k \to 0$) \cite{Bardeen:1983qw,Lyth:1984gv}. 
+This result follows from the conservation of energy \cite{Wands:2000dp} and the evolution equation
+for the curvature perturbation given in Eq.~(\ref{EvoZeta}). 
+%
+
+The standard approach used to calculate the power spectrum of perturbations
+after horizon crossing assumes that the limit $k\to 0$ has been reached, see Ref.~\cite{Copeland:1993jj}.
+However, immediately after horizon crossing, the wavenumber will not yet have become sufficiently small
+for this limit to be accurate and gradient terms may still play a role.
+In fact, in single field inflation there will still be some residual non-adiabatic pressure perturbation,
+$\delta P_\mathrm{nad}$, present \cite{Mollerach:1989hu}. Then, even in the absence of other sources of $\delta P_\mathrm{nad}$,
+the curvature perturbation will continue to evolve for some number of
+e-folds before settling down to its value at the end of inflation.
+Although it is known that this evolution continues for a short time after horizon crossing, the exact amount of evolution has not been quantified. 
+Exactly how long the evolution will last and how much the magnitude of the power spectrum of $\zeta$ may vary in that time
+are issues which are yet to be addressed in the literature. 
+
+This is particularly important as observational cosmology is entering an era in which the data from
+observations of LSS and the CMB are becoming much more precise. Only
+eight years ago, the {\sc Wmap }  team were quoting cosmological parameters to
+an accuracy of about 10\% \cite{Komatsu:2003fd}. Now, as data sets are
+improving both in quality and size, the {\sc Wmap } seven year observations
+(hereafter WMAP7) can constrain these parameters to within a couple of
+percent \cite{Komatsu:2010fb} and {\sc Planck} can do even better. 
+Hence it is essential that the quantities we wish to study in
+the early universe are understood theoretically to this same level
+of precision. 
+
+Much work has been done calculating the power spectra for the curvature
+perturbations, $\zeta$ and $\R$, during
+inflation (see for example Refs.~\cite{Stewart:1993bc,Grivell:1996sr,Huang:2000bh,Leach:2001zf,Leach:2000yw,Stewart:2001cd}   
+and the reviews, Refs.~\cite{Lidsey:1995np,Lyth:1998xn}).  
+Analytic studies have to rely on either the slow roll limit, or large scale approximations, to make the
+calculations viable.  
+In these limits, and without anisotropic stress,  				%%% Move this sentence to above??
+the two definitions for the curvature perturbations are equal up to a sign difference, see e.g. Ref.~\cite{Malik:2008im}. 
+
+
+In the rest of this chapter we will be looking at these conserved quantities in greater detail.
+Specifically we will quantify the evolution of the curvature perturbation shortly before, during and after horizon
+crossing by considering the following questions:
+\bi
+\item How do $\zeta$ and $\R$ differ around horizon crossing? 
+\item How much do the instantaneous horizon crossing values differ from the values at the end of inflation?
+\item How long does it take for the quantities to reach these final values?
+\ei
+As we do not want to rely on the slow roll approximation or the large
+scale limit, we will be solving the Klein-Gordon equations numerically.
+However, first we will consider some of the analytic approximations which are used.
+
+
+\subsection{{Analytic Solutions}}
+\label{sec:analytic}
+
+Using numerical techniques we can evaluate the expressions for the curvature perturbation at
+any time whereas analytically this is not possible. 
+%
+To deduce an analytic expression for the
+curvature perturbation, such as that used in the popular $\delta N$ formalism, %(see Section~\ref{})
+we start from the definition \cite{Liddle:2000cg}
+%
+\be
+\label{powerdef}
+\P_{\R}(k) = \frac{k^3}{2 \pi^2} \left|\R\right|^2 \,.   %%%Move this part to observations section above...  How does it fit with the other definition?? Check L&L
+\ee
+%
+By obtaining an exact solution for power-law inflation and taking the $k \to 0$ limit, and then making
+an expansion about this solution, we arrive at the following expression \cite{Lidsey:1995np},  %%% Expand on this... add more of the details...
+%
+\be
+\label{PRest2}
+\P_{\R}(k)_{\rm{est}2*} = [1 - (2C + 1)\epsilon_{SR} + C\eta_{\rm SR}]^2  \frac{a^2 H^4}{(2\pi)^2 {\vp'_0}^2} \Big|_{k=aH}\,,  %%%Link this to the quantised solution above... 
+\ee
+%
+where $C = -2 + \ln 2 + \gamma$ and $\gamma$ is the Euler constant and $\epsilon_{SR}$ and $\eta_{SR}$ are slow roll parameters defined
+in Eq.~(\ref{srepsilon}) and Eq.~(\ref{sreta}).
+
+The expression given in \eq{PRest2} is only valid in the large scale
+limit, or equivalently a long time after horizon exit. However, it
+must be evaluated exactly when the corresponding mode crosses the
+horizon. In order to arrive at an expression which is valid at all times, we would need to consider the
+full analytic solution, including logarithmic corrections, as considered to some extent in Ref.~\cite{Burrage:2011hd}.
+We shall return to this subject in Section~\ref{sect:highlight}.
+
+The above result holds, to the lowest order in slow roll, for any general
+potential and if the slow roll parameters are assumed to be very small
+this simplifies to
+%
+\be
+\label{PRest1}
+\P_{\R}(k)_{\rm{est}1*} = \frac{a^2 H^4}{(2\pi)^2 {\vp'_0}^2} \Big|_{k=aH}\,.
+\ee
+In Eq.~(\ref{PRest1}) and Eq.~(\ref{PRest2}) above we have used subscript $\rm{est}*$ to denote that the power spectrum 
+has been calculated analytically, using horizon crossing values. The subscript $\rm{est}2*$ denotes the full solution
+to lowest order in slow roll, whilst subscript $\rm{est}1*$ denotes an approximation to this solution which holds when the slow roll
+parameters are very small.
+
+
+It is important to recognise that the analytic solution is derived using
+the $k\to 0$ limit but is evaluated using quantities at horizon
+crossing. Although this has been known in the literature for many
+years it is not often made clear when this mixing of late time
+solution and horizon crossing values is being used. Here 
+we highlight the large magnitude of the inaccuracies which would
+result if a na\"ive calculation of the power spectrum at horizon
+crossing is performed using horizon crossing values.
+
+
+For further discussions on the analytic treatment of curvature perturbations close to Horizon crossing, 
+we refer to Ref.~\cite{Kinney:2005vj, Byrnes:2009pe}
+
+
+\subsection{{Numerical Setup}}  
+\label{numerical}
+
+
+As mentioned above instead of relying on the analytic approximations we can
+solve the system numerically and in doing so we are following the work done by
+Salopek et al.\cite{Salopek:1988qh}, and use a Runge-Kutta code written in Fortran. %Add More details to this section?? 
+Following Ref.~\cite{Salopek:1988qh} we set the
+initial conditions for each $k$ mode a few e-folds before horizon
+crossing when the initial time $\N_{\rm{init}}(k)$ is such that 
+\be
+\frac{k}{aH|_{\rm{init}}} = 50 \,.
+\ee 
+This allows us to assume the Bunch-Davies vacuum (see Section~\ref{Quantum}) and therefore have initial conditions described
+by Eq.~(\ref{InitCond}) for modes well inside the horizon.
+ The linear scalar field perturbations are evolved from this initial state
+well inside the horizon until the inflationary expansion ends.
+
+Most of the results we present here use single field chaotic inflation, the simplest single field
+inflation model which is in agreement with WMAP7 and {\sc Planck}.
+% 
+In order to ensure that our results are representative beyond this
+simplest model, we also study a set of more complicated cannonical single field
+models, $U = U_0 + \frac{1}{2}m^2\vp^2$, $U = \frac{1}{4}\lambda
+\vp^4$ and $U = \sigma \vp^{2/3}$.
+The parameters for the background system are selected
+depending on the choice of potential: 
+%% Need to add the remaining parameters below!!
+\bi
+\item $U = \frac{1}{2}m^2 \vp^2 $ ,  $m = 6.32$ x $10^{-6}M_{\rm{PL}} $ 
+%
+\item $U = \frac{1}{4}\lambda \vp^4$ , $\lambda = 1.55 \times 10^{-13}$
+%
+\item $U = U_0 + \frac{1}{2}m^2\vp^2$ , $m_0 = 1.74 \times 10^{-6} M_{\rm{PL}}$ . $U_0 = 5 \times 10^{-10} M_{\rm{PL}}^4$
+%
+\item $U = \sigma \vp^{2/3}$, $\sigma = 3.82 \times 10^{-10} M_{\rm{PL}}^{10/3}$
+%
+\ei
+The mass values have been chosen such that $\P_{\R}(k) = 2.45$ x $10^{-9}$ at the end of inflation for the {\sc Wmap } pivot scale.
+The initial conditions for $\phi_0$ and $\phi_0^{\dagger}$ are again chosen depending on the choice of potential,
+so that the k modes which will be calculated begin well inside the horizon, for instance the initial conditions for chaotic inflation
+are set as $\vp_0 = 18M_{\rm{PL}}$ and $\vp_{0,\N} = -0.1M_{\rm{PL}}$. 
+We are using parameters and initial conditions specified in Ref.~\cite{Huston:2009ac,Huston:2010by}.
+
+We select a finite range of $k$ modes which cover all the modes which have been observed in the CMB. 
+The {\sc Wmap } team have released results corresponding to the range $k \in
+[3.5$x$10^{-4} , 0.12] \text{Mpc}^{-1}$, we will consider a similar range below. We use the number of e-folds, $\N = \log(a/a_{\rm{init}})$, defined
+in Eq.~(\ref{efolds}) as our
+time variable instead of conformal time where $a_{\rm{init}}$, the value
+of $a$ at the start of inflation, is evaluated by setting $a = 1$ today and using the background run, assuming instantaneous reheating.
+
+The behaviour of all the modes over the scales we consider are
+similar, so for clarity only $k_1$, $k_2$ and $k_3$ modes, given
+below, have been shown in the graphs that follow, where: 
+\bea
+k_1 &=& 2.77 \mbox{ x } 10^{-5} \text{Mpc}^{-1} = 7.28 \mbox{ x } 10^{-62} M_{\rm{PL}} \\
+k_2 &=& 2.00 \mbox{ x } 10^{-3} \text{Mpc}^{-1} = 5.25 \mbox{ x } 10^{-60} M_{\rm{PL}} \quad \text{({\sc Wmap } pivot)}\\
+k_3 &=& 1.45 \mbox{ x } 10^{-1} \text{Mpc}^{-1} = 3.80 \mbox{ x } 10^{-58} M_{\rm{PL}} \,.
+\eea
+It is worth noting that $k_2$ is the {\sc Wmap } pivot scale.
+ We compare these numerical results with the standard analytic solutions for single field inflation.  
+All the numerical results presented below have been verified with a second independent numerical program to 
+ensure their accuracy, see Ref.~\cite{Huston:2011vt}.
+
+
+
+\section{{Results}}
+\label{sec:results}
+ 
+In this section we present our results which attempt to answer the questions presented above. We quantify
+the difference between $\zeta$ and $\R$, the magnitude of
+error incurred if we would use \eq{powerdef} evaluated at horizon
+crossing instead of \eq{PRest2}, and the length of time taken for the
+power spectra to settle to their values at the end of inflation.
+The results presented in the graphs below are for the potential $U = \frac{1}{2} m^2\vp ^2$. 
+
+
+To start we consider the evolution of the power spectra in general. 
+The evolution, and indeed conservation, of the curvature perturbations has been studied in
+detail in the past, see Ref.~\cite{Bardeen:1983qw, Lyth:1984gv,GarciaBellido:1995qq,Wands:2000dp} and,
+as expected, we find that some time shortly after horizon crossing
+there is no longer any appreciable evolution in either the power
+spectrum of $\zeta$, $\P_{\zeta}(k)$ or the power spectrum of $\R$,
+$\P_{\R}(k)$, see Fig.~\ref{fig:1a}. The values of these power
+spectra converge very quickly onto the same conserved value. This
+behaviour is also supported by the graph in Fig.~\ref{fig:1b}
+which shows the non-adiabatic pressure perturbation, $\dPnad$. We
+find, again as expected, that during and after horizon crossing the
+size of $\dPnad$ drops sharply towards zero. The non-adiabatic
+pressure perturbation is directly related to the curvature
+perturbation (on large scales), see Ref.~\cite{GarciaBellido:1995qq,Wands:2000dp}, %%%% REF the equations outlining this above
+%
+\be
+{\zeta}' \propto \dPnad\, , %%%Move this up to the section above
+\ee  
+%
+and hence the rapid decrease in the non-adiabatic pressure
+perturbation causes the curvature perturbations to settle onto a
+conserved value. 
+
+However, it can also be seen from Fig. \ref{fig:1a} that there is
+some evolution of the power spectra immediately after horizon
+crossing.  As already stated this is well known in the literature where the phrase `soon
+after horizon crossing' is commonly used to refer to the time at which
+the power spectra have settled down.  In the sections that follow we
+will be looking at this evolution in more detail and in particular
+quantifying exactly how soon after horizon crossing the power spectra
+reach their final value and how different this is to the horizon crossing values.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_1a.pdf} 
+\caption[Evolution of the power spectrum of $\zeta$.]{The evolution of the power spectrum of $\zeta$, $\P_{\zeta}(k)$ and $\R$, $\P_{\R}(k)$ is plotted against the number of e-folds, $\N$.
+Both power spectra stop evolving shortly after horizon crossing (H.C.), however a short period of evolution immediately after horizon crossing is visible as is
+a difference between $\P_{\zeta}(k)$ and $\P_{\R}(k)$. The line H.C. marks the point at which each scale will cross the Horizon, i.e. when
+$k = aH$. (Black line, left: $k_1$, Blue line, middle: $k_2$, Red line, right: $k_3$)  }
+\label{fig:1a}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_1b.pdf} 
+\caption[Evolution of $\dPnad$.]{The evolution of $\dPnad$ is plotted against the number of e-folds, $\N$. $\dPnad$ rapidly drops towards zero after horizon crossing.
+We apply a cut off to the graph at $10^{-20}$, beneath which numerical noise dominates. 
+(Black line, left: $k_1$, Blue line, middle: $k_2$, Red line, right: $k_3$)}
+\label{fig:1b}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{{How do $\zeta$ and $\R$ differ?}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$\zeta$ and $\R$ are often used interchangeably.  
+Although they have different definitions, see
+\eq{defzeta} and \eq{defR}, it is well known that on large scales they
+are equivalent, as can be seen from \eq{constraint}. This equivalence
+is however only strictly true in the large scale limit, and on
+smaller, finite scales this is not the case. In Fig.~\ref{fig:1a} we
+see that there is a difference between the two curvature perturbations
+near to horizon crossing. Three different $k$-modes are plotted
+throughout their evolution, from deep within the horizon through
+horizon crossing (indicated by the dotted lines), until the end of
+inflation.
+
+
+Fig.~\ref{fig:zetaoverR} shows that $\zeta$ is as much as 20\%
+larger than $\R$ at horizon crossing and remains significantly larger
+for at least a couple of e-folds. This highlights the importance of
+making explicit the choice of curvature perturbation when carrying out
+calculations close to horizon crossing. We also note that $\zeta$ and
+$\R$ take slightly different amounts of time to settle down after
+horizon exit, as detailed in Section~\ref{sect:howquickly}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_2.pdf} 
+\caption[Ratio of $\zeta$ and $\R$]{The ratio of $\zeta$ and $\R$ is plotted against the number of e-folds, $\N$. Evolution is visible for a short period after horizon crossing,
+during which time $\zeta$ is noticeably larger than $\R$.(Black line, left: $k_1$, Blue line, middle: $k_2$, Red line, right: $k_3$) }
+\label{fig:zetaoverR}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{{What is the difference between instantaneous horizon crossing values and values at the end of inflation?}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[ht!] %htpb
+  \begin{center}
+    \mbox{
+      \subfigure[\label{fig:pcR} $\P_{\zeta}(k)$]{\scalebox{0.5}{\includegraphics[width=160mm]{Figure_3a.pdf}}}  \quad
+      \subfigure[\label{fig:pczeta} $\P_{\R}(k)$]{\scalebox{0.5}{\includegraphics[width=160mm]{Figure_3b.pdf}}} 
+      }
+    \caption[Percentage difference between $\P(k)$ and $\P(k)_{\rm{end}}$]
+{The percentage difference between $\P(k)$ evaluated, numerically, at the end of inflation and the $\P(k)$ obtained at each time step.
+There is as much as 180\% difference in the values of $\P_{\zeta}(k)$ and 100\% difference in the values of $\P_{\R}(k)$.
+Both the graphs above are plotted for three different $k$ modes. The black line (left) is $k_1$, the blue line (middle) is $k_2$,
+the {\sc Wmap } pivot scale, and the red line (right) is $k_3$.}
+    \label{fig:pcchange}
+  \end{center}
+\end{figure}
+
+
+As mentioned above it is well known that the values of the curvature
+perturbation power spectra are not the same at horizon crossing as
+they are at the end of inflation. However, it is not clear exactly how
+much of an error would be incurred if one would use the horizon crossing
+values instead of the correct values at the end of inflation.  In
+Fig. \ref{fig:pcchange} we can see exactly how different the power
+spectra are at horizon crossing compared to the values they take at
+the end of inflation.  In Fig. \ref{fig:pcR} $\P_{\R}(k)$ is 100\%
+larger at horizon crossing and in Fig. \ref{fig:pczeta}
+$\P_{\zeta}(k)$ is 180\% larger.  
+In fact if we use an analytic approximation that does take into account 
+this behaviour we can see the 100\% difference in the power 
+spectra. Near horizon crossing the scalar field's wavefunction ($\psi$) is 
+approximately proportional to $(1-ik\eta)e^{ik\eta}$.  %%% REF section above.... 
+At horizon crossing $|k\eta| = 1$ and 
+$|\psi|^2 \propto |1-ik\eta| = 2$.  A few e-folds later, $|k\eta| \approx 0$ and 
+$|\psi|^2 \propto |1| = 1$. This is a drop of 1. Hence the power spectra at 
+horizon crossing is expected to be roughly 100\% larger than that at late times. 
+The factor of two difference in $\P_{\R}(k)$, has previously been found analytically, see 
+for example Ref.~\cite{Polarski:1995jg, Byrnes:2009pe} 
+This is, however, a large difference and might impact on calculations if 
+$\P(k)_{k=aH}$ is used to approximate the value of the power spectra at 
+the end of inflation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{{How quickly does the power spectra reach its final value at the end of inflation?}}
+\label{sect:howquickly}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[ht!] %htpb
+  \begin{center}
+    \mbox{
+      \subfigure[$\P_{\zeta}(k)$]
+{\scalebox{0.5}{\includegraphics[width=160mm]{Figure_4a.pdf}}} \quad
+      \subfigure[ $\P_{\R}(k)$] 
+{\scalebox{0.5}{\includegraphics[width=160mm]{Figure_4b.pdf}}}
+      }
+    \caption[No. of e-folds for $\P (k)$ to be within 10\% and 1\% of $\P (k)_{\rm{end}}$]
+{These graphs show how many e-folds one needs to wait for $\P (k)$ to be within 10\% and 1\% of $\P (k)$ at the end 
+of inflation for a given value of $k$ (measured in $Mpc^{-1}$). Note that this is independent of $k$. 
+Table \ref{table:1} gives the exact number of e-folds for various potentials.}
+    \label{fig:pclines}
+  \end{center}
+\end{figure}
+
+
+The expressions ``soon after horizon crossing'' and ``a few e-folds
+after horizon crossing'' are often used in the literature to determine
+when it is reasonable to evaluate the power spectra, so that one can
+be confident that they have the same value as at the end of
+inflation.  Now that we have established that the values at horizon
+crossing can be as much as 180\% greater than those at the end of
+inflation we can study exactly how long after horizon crossing we
+must wait until the power spectra converge onto these final values.
+Fig. \ref{fig:pclines} shows how many e-folds one needs to wait for
+the power spectra to be within 10\% and 1\% of the value they have at
+the end of inflation.  It is clear from these graphs that this is
+independent of $k$ and is in the region of ``a few e-folds''.  Table
+\ref{table:1} shows the number of e-folds it takes to be within a
+fixed percentage of the final value, and also shows data for the three
+additional potentials we investigated. The choice of potential makes
+ little difference to the result.  For every potential considered 
+it took 1.40
+-- 1.44 e-folds for $\P_{\zeta}(k)$ to be within 10\% and 2.56 -- 2.86
+to be within 1\%.  It took 1.14 -- 1.20 e-folds for $\P_{\R}(k)$ to be
+within 10\% and 2.30 -- 3.21 e-folds to be within 1\%.  As we
+highlighted in Section~\ref{introduction} observational data will
+soon be constraining observables to within a percent, so this is at least the
+accuracy we would like to be able to evaluate quantities to.  Our
+results show that to be within 1\% of the correct power spectra value
+at the end of inflation, evaluating $\P_{\R}(k)$ approximately 3.2
+e-folds after horizon crossing and evaluating $\P_{\zeta}$ 2.9 e-folds
+after horizon crossing, would be sufficient, for all the potentials we
+studied.
+
+
+\begin{table} [ht!]
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{} r|rrrr|rrrr @{}} 
+\hline
+& \multicolumn{4}{c}{$\zeta$} &  \multicolumn{4}{c}{$\R$} \\
+ & \quad 10\% \quad & \quad 5\% \quad & \quad 3\% \quad & \quad 1\% \quad & \quad 10\% \quad & \quad 5\% \quad & \quad 3\% \quad & \quad 1\% \quad \\
+\hline
+$\frac{1}{2}m^2\vp^2$ & 1.43 & 1.80 & 2.09 & 2.86 & 1.20 & 1.59 & 1.91 & 3.10 \\
+$U_0 + \frac{1}{2}m^2\vp^2$ & 1.40 & 1.75 & 2.01 & 2.56 & 1.14 & 1.49 & 1.75 & 2.30 \\
+$\frac{1}{4} \lambda \vp^4$ & 1.44 & 1.80 & 2.08 & 2.77 & 1.18 & 1.55 & 1.84 & 2.59 \\
+$\sigma \vp^{2/3}$ & 1.41 & 1.77 & 2.05 & 2.74 & 1.20 & 1.61 & 1.98 & 3.21 \\
+\hline
+\end{tabular}
+\caption{The values in this table represent how many e-folds after horizon crossing it takes for the power spectrum 
+to be within a fixed percentage of the power spectrum at the end of inflation.}
+\label{table:1}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{{Comparing analytic and numeric results}}
+\label{sect:highlight}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_5a.pdf} 
+\caption[Comparing Numerical \& Analytic calculations of $\zeta$: A]
+{The evolution of the power spectrum of $\zeta$, $\P_{\zeta}(k)$ and $\R$, $\P_{\R}(k)$ is plotted against the number of e-folds, $\N$ for the mode $k_2$.
+The dotted lines show the correct analytic solution with and without slow roll corrections, defined in \eq{PRest2} and \eq{PRest1},
+and the na\"ive approximation of evaluating the power spectra at horizon crossing.}
+\label{fig:spectral1}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_5b.pdf} 
+\caption[Comparing Numerical \& Analytic calculations of $\zeta$: B]
+{The graph shows the same information as Fig.~\ref{fig:spectral1} but this time for the mode $k_2$ which is the {\sc Wmap } pivot scale (left hand lines) and  the mode $k_3$ (right hand lines).}
+\label{fig:spectral2}
+\end{figure}
+
+In Fig.~\ref{fig:spectral1} and Fig.~\ref{fig:spectral2} the evolution of the two types of curvature perturbation, 
+$\P_{\R}(k)$ and $\P_{\zeta}(k)$ are plotted against the number of e-folds, $\N$.
+These numerical solutions are compared to the correct analytic solution with and without slow roll corrections, \eq{PRest2} and \eq{PRest1},
+and the na\"ive approximation of evaluating the power spectra at horizon crossing. 
+
+In most analytic calculations an expression for the power spectrum is
+derived using the $k \to 0$ limit but is evaluated using quantities at
+horizon crossing, as given in \eq{PRest2}. As we mentioned in
+Section~\ref{motivation}, it is often not made explicitly clear
+in the literature when the mixing of late time solution and horizon
+crossing values is being used, even when this is well understood by
+the authors.  In Fig.~\ref{fig:spectral1} we compare both this correct
+analytic solution and the na\"ive calculation of the power spectrum at
+horizon crossing performed using horizon crossing values with the
+numerical solutions. In Fig.~\ref{fig:spectral1}, as expected, the
+correct analytic solution gives a very good estimate to the full
+numerical solution. Even the analytic solution without the slow roll
+correction, given in \eq{PRest1}, is a very good estimate to the
+full solution. In fact the error in not including the slow roll
+corrections for the {\sc Wmap } scale is only a slight underestimate of
+-0.38\%. However, when we compare the numerical solution to
+$\P_{\R}(k)$ evaluated at horizon crossing we find, as shown in Fig.~\ref{fig:pcR}, 
+that there is a 100\% error in our answer. As we have
+shown earlier in Fig.~\ref{fig:pczeta}, if we evaluated the
+$\P_{\zeta}(k)$ at horizon crossing the error would be even higher at
+180\%. This difference in the two power spectra can be seen clearly in
+Fig.~\ref{fig:spectral1}. This again highlights the importance of
+establishing that the correct analytic expression is used in
+calculations, and also when different calculations and results are compared.
+
+Another possible source of error would be to use the analytic
+expression given in \eq{PRest2} above, but not to evaluate it at
+horizon crossing. If one were to evaluate this expression `some e-folds
+after horizon crossing', one would underestimate the amplitude of the
+power spectrum. This corresponds to following the red line in Fig.
+\ref{fig:spectral2}. For example, evaluating \eq{PRest2} four e-folds after
+horizon crossing would incur an error of 15\%. Furthermore, evaluating
+the power spectrum at later and later times will increase the error.
+Lastly, it is worth noting that although the analytic and numerical expressions
+agree in the large scale limit, they do not agree with each other shortly after horizon crossing.
+As shown in the section above one must wait at least 3.2 e-folds for these two values to agree. 
+This is particularly important if there is a second phase of evolution caused for example by a second scalar field which   
+starts to dominate during these three e-folds, see for instance Ref.~\cite{Kinney:2005vj}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{{The Spectral Index}}
+\label{sect:spectral}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=130mm]{Figure_6.pdf} 
+\caption[Evolution of the spectral index]{The evolution of the spectral index for the two curvature perturbations, 
+$n_{\R}$ and $n_{\zeta}$, are plotted against the number of e-folds, $\N$. 
+The lines in this graph are shown for the mode $k_2$ which is the {\sc Wmap } pivot scale.}
+\label{fig:spectral}
+\end{figure}
+
+Using observations we can gain information about the power spectrum of curvature perturbations, which in turn allows us to constrain cosmological theories.
+Many observational results are given in terms of a few observables which can then be compared directly with predictions given by theories. One such 
+observable is the spectral index. This describes the scale dependence of the power spectrum of the curvature perturbation.
+The spectral index for $\zeta$ and $\R$ are defined by \cite{Liddle:2000cg}
+\be
+n_{\zeta} - 1 \equiv \frac{d\rm{ln}\P_{\zeta}(k)}{d\rm{ln}k} \, , \qquad  n_{\R} - 1 \equiv \frac{d\rm{ln}\P_{\R}(k)}{d\rm{ln}k} \, .
+\ee
+
+
+As an example of how the results presented in this paper will impact on particular observables we consider the spectral index in more detail presenting
+results using chaotic inflation. 
+Figure \ref{fig:spectral} shows, as expected, that just like the curvature perturbation the spectral index continues to evolve for a few e-folds after
+the mode has crossed outside the horizon. Evaluating the spectral index naively at horizon crossing gives a results of $n_{\R} \approx 2$ and 
+$n_{\zeta} \approx 2.3$, which is an error in both cases of more than 100\%. We find that in order for $n_{\zeta}$ and $n_{\R}$ to be within 1\% of their 
+values at the end of inflation, we should evaluate them at least 2.91 and 2.66 e-folds after horizon crossing, respectively. These values are 
+similar but slightly less than the number of e-folds it takes for the power spectrum to be within 1\% of it's final value, (see Table 1). 
+
+
+
+
+\section{{Discussion}}
+\label{sec:conclusions}
+
+In this chapter we have studied the evolution of the curvature
+perturbations after inflation in detail and highlighted where possible
+errors may arise. As we are entering an era where we can hope to constrain
+cosmological parameters to within a percent using the observational
+data from e.g.~{\sc Planck}, it is of particular importance that these
+errors are both quantified and minimised.  
+
+After presenting the evolution equations for the scalar field, we gave
+the expressions for the curvature perturbations we consider. We then
+outlined the numerical methods used to solve these equations and gave
+details of the various models and the initial conditions used. In
+presenting our results, we found that despite $\zeta$ and $\R$ being
+equivalent very far outside the horizon, the difference between $|\R|$
+and $|\zeta|$ at horizon crossing can be as much as 20\%.  We also
+found the error in evaluating the power spectra numerically at horizon crossing
+instead of either using the correct analytic expression or the full
+numerical solution at late times can be as much as 180\% for $\P_{\zeta}(k)$ and
+100\% for $\P_{\R}$.  Lastly, we showed that if one wanted to evaluate
+the power spectra without the use of the analytic expression
+\eq{PRest2}, one would need to wait at least 3.2 e-folds to ensure the
+answer for $\P_{\R}(k)$ is correct to within 1\% of the value at the
+end of inflation, and one would need to wait at least 2.9 e-folds to
+ensure the answer for $P_{\zeta}$ is correct to within 1\%.  
+There was no significant difference to these results when we considered the
+three additional single field models presented at the end of Section~\ref{numerical}. 
+
+We emphasise that there is a difference between analytic 
+and numerical expressions close to the horizon. The numerical results 
+are the instantaneous values of the power spectrum and spectral index 
+at horizon crossing, not the expected late time values. These instantaneous 
+results, while not of observational significance, are useful in many ways, 
+including providing initial conditions for other analytical or numerical schemes 
+which operate purely outside the horizon. Firstly, if we are interested 
+in the late time values we should not take the `na\"{\i}ve' numerical approach 
+of evaluating these at horizon crossing. Unlike the case when using the 
+analytic expressions these results will not be close to the correct answer. 
+Secondly, if we are interested in the instantaneous values at or close to 
+horizon crossing, for instance when developing codes which rely on this 
+information, the normal analytic expressions will not give the correct 
+answers as they are no longer valid and one needs to use numerical methods. 
+
+In this chapter we have only studied single field
+inflation models, in which the non-adiabatic pressure decays rapidly,
+see Fig.~\ref{fig:1b}. This is no longer the case in multi-field
+systems, as a recent work, Ref.~\cite{Huston:2011fr} has detailed. 
+It will be interesting to repeat our analysis for more complicated models 
+where superhorizon evolution of the curvature
+perturbation is expected. This would include, multi-field 
+inflation or ``ultra slow roll inflation'', see for instance Ref.~
+\cite{Kinney:2005vj, Leach:2001zf}. Since in this thesis we focus on 
+the single field case, we postpone a study of these cases to future work.
+
+We have chosen the end of inflation as a natural end point of our
+calculations. After the end of inflation the inflaton is assumed to
+decay into the standard matter fields during reheating, the detailed
+mechanism of which is as yet unclear. Also, after reheating we have a
+multi-fluid system, and hence automatically $\dPnad\neq 0$\cite{Brown:2011dn}, 
+which means that the curvature perturbations are no longer
+conserved (on any scale). Consequently the values at the end of
+reheating may no longer be the same as those at the end of
+inflation.
+
+In conclusion, we have highlighted the fact that the different
+curvature perturbations do evolve differently immediately after
+horizon exit. Confusion between the different curvature perturbations can
+introduce additional errors when comparing theoretical results with
+observations, which however can easily be avoided, if the correct choice
+of curvature perturbation is made.
+
+
+
+
+
