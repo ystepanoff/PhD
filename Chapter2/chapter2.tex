@@ -96,6 +96,7 @@ of the actions still is. Note that also $-\II_3$ acts trivially on $\J$.
 
 We first notice that the elements 
 \begin{equation}
+	\label{eq:delta_tau}
 	\delta = \begin{bmatrix}
 		0 & 1 & 0 \\
 		1 & 0 & 0 \\
@@ -273,8 +274,7 @@ action of $P_u$ on $\J_8^C$ is the composition $r_u \circ r_1$. As $u$ ranges th
 octonions of norm one, we get the action of $\Omega_8(F,\QQ_8^C)$ on $\J_8^C$. Since we
 assume that $\O$ is split, the form $\QQ_8$ is of plus type, so we may denote this
 group as $\Omega_8^+(F)$. When acting on $\J_{10}^{abC}$, the form $ab-C\ovC$ is
-preserved, so we again get the action of $\Omega_8^+(F)$. 
-
+preserved, so we again get the action of $\Omega_8^+(F)$.
 \end{proof}
 
 \section{The white points}
@@ -354,6 +354,7 @@ for all $B'$, so $DA = 0$. If $Y = (a',b',0\mid A',0,0)$ then \mbox{$\Tr(D(A'B))
 $Y = (a',b',0\mid 0,0,C')$ gives us $\Tr(cD\ovC') = 0$ for all $\ovC'$, so
 $cD = 0$, and thus $c = 0$. Therefore the radical is
 \begin{equation}
+	\label{eq:17_space}
 	\left\{ (a,b,0 \mid A,B,C)\ \big|\ DA = BD = \Tr(D\ovC) = 0 \right\}.
 \end{equation}
 To obtain $17$-spaces determined by other ``co\"{o}rdinate'' white vectors we apply 
@@ -635,6 +636,58 @@ number of white points in case of a finite field.
 	$\hat{X} \in \J_{17}^{cAB}$, i.e. our $\SE_6(F)$-congruence is trivial in this case 
 	as well.
 \end{proof}
+
+%Since $\SE_6(F)$ acts transitively
+%on white points and this action is linear, it is obvious that it also acts transitively
+%on white lines. 
+
+Suppose $\langle W \rangle$ and 
+$\langle X \rangle$ are two white points and consider a \textit{line} $\inner{W}{X}$ as 
+a \mbox{$2$-dimensional} subspace of $\J$ spanned by white vectors $W$ and $X$. 
+Given a white point $\langle W \rangle$, we are interested in finding all
+the white points $\langle X \rangle$ such that $\inner{W}{X}$ is totally white. 
+
+Since $\SE_6(F)$ acts transitively on white points, we may assume that 
+$W = (0,0,1\mid 0,0,0)$ and $X = (a,b,c\mid A,B,C)$. 
+Consider an element $\lambda W + X \in \inner{W}{X}$. First, we calculate the 
+value of Dickson--Freudenthal determinant:
+\begin{multline}
+	\fdet( \lambda W + X ) = ab(\lambda + c) - a A \ovA - b B \ovB - (\lambda + c) C \ovC + 
+		+ \Tr(ABC) \\
+		= \lambda( ab - C\ovC ) + \fdet(X).
+\end{multline}
+As $X = (a,b,c\mid A,B,C)$ is white, we get $\fdet(X) = 0$ and $ab = C\ovC$, so
+we conclude $\fdet( \lambda W + X) = 0$.
+
+\begin{proposition}
+	\label{prop:lines}
+	If $\langle W \rangle$ and $\langle X \rangle$ are two white points, then any vector in
+	(or any $1$-subspace of) $\inner{W}{X}$ is either white or grey.
+\end{proposition}
+
+The conditions for $\lambda W + X$ to be white are
+\begin{equation}
+	\left.
+		\begin{array}{r@{\;}c@{\;}l}
+			A\ovA & = & b (\lambda + c), \\
+			B\ovB & = & (\lambda + c) a, \\
+			C\ovC & = & ab, \\
+			AB & = & (\lambda + c) \ovC, \\
+			BC & = & a\ovA, \\
+			CA & = & b\ovB. 
+		\end{array}
+	\right\}
+\end{equation}
+Since $X$ is white by assumption, we get that $\lambda W + X$ is white if and only if
+$\lambda a = \lambda b = \lambda \ovC = 0$ for all $\lambda \in F$, which is equivalent to
+$a = b = C = 0$, i.e. $X \in \J_{17}^{cAB}$. Therefore, we conclude the following.
+
+\begin{proposition}
+	\label{prop:white_lines}
+	Given any white point $\langle W \rangle$, the line $\inner{W}{X}$, where $\langle X \rangle$
+	is another white point, is totally white if and only if $X$ belongs to the $17$-space 
+	determined by $W$. Otherwise, $\inner{W}{X}$ contains only two white points. 
+\end{proposition}
 
 \subsection{The stabiliser of a white point}
 \label{section:stabiliser}
@@ -1133,7 +1186,7 @@ e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$. Consider two isotropic Albert vec
 \end{equation}
 which are fixed by our copy of $\Omega_6^+(F)$. The action of the element
  $M_{e_{\omega}}$
-on $V_6$ preserves $u_{\omega}$ but not $u_{-\omega}$ and therefore adjoining this element
+on $V_8$ preserves $u_{\omega}$ but not $u_{-\omega}$ and therefore adjoining this element
 to $\Omega_6^+(F)$ we get the action of the group $V_6\cn\Omega_6^+(F)$. Next, 
 the element $M_{e_{-\omega}}$ does not preserve the $1$-space $\langle u_{\omega} \rangle$,
 so appending it to $V_6\cn\Omega_6^+(F)$ we get the action of the group
@@ -1148,7 +1201,7 @@ Finally, we consider the $10$-space $\J_{10}^{abC}$ with two isotropic Albert ve
 \end{equation}
 Following the same procedure, we adjoin the element $M_{e_0}$ which fixes $u_0$ but not 
 $u_{-0}$ to get the action of the group of shape $V_8\cn\Omega_8^+(F)$. 
-Appending the action of $M_{e_{-0}}$, which does not preserve $\langle e_0 \rangle$, to
+Appending the action of $M_{e_{-0}}$, which does not preserve $\langle u_0 \rangle$, to
 this yields the action of $\Omega_{10}^+(F)$ on $\J_{10}^{abC}$. 
 Lemma \ref{lemma:1_q16} allows us to conclude that we have shown the following result.
 
@@ -1586,8 +1639,48 @@ We obtain $\EE_6(q)$ as the quotient of $\SE_6(q)$ by any scalars it contains.
 Note that $\SE_6(q)$ contains non-trivial scalars if and only if $q \equiv 1 \Mod{3}$, so
 \begin{equation}
 	|\EE_6(q)| = \frac{1}{\gcd(3,q-1)} 
-				q^{36}(q^{12}-1)(q^9-1)(q^8-1)(q^6-1)(q^5-1)(q^2-1).
+				q^{36}(q^{12}-1)(q^9-1)(q^8-1)(q^6-1)(q^5-1)(q^2-1).				
 \end{equation}
+
+We can also invoke Proposition \ref{prop:white_lines} to count totally white lines in the finite
+case.
+
+\begin{proposition}
+	Given any white point $\langle W \rangle$, 
+	\begin{enumerate}[(i)]
+		\item there are exactly $q(q^8-1)(q^3+1)/(q-1)$ white points $\langle X \rangle$ such
+		that all points in $\inner{W}{X}$ are white;
+		\item there are exactly $q^8(q^4+1)(q^5-1)/(q-1)$ white points $\langle Y \rangle$ such
+		that $\inner{W}{Y}$ contains only two white points. 
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Without loss of generality assume $W = (0,0,1\mid 0,0,0)$. By Proposition 
+	\ref{prop:white_lines} we need to count the white points spanned by the vectors in
+	$\J_{17}^{cAB}$. Consider a general white vector $(0,0,c\mid A,B,0) \in \J_{17}^{cAB}$. 
+	The whiteness conditions are $A\ovA = B\ovB = 0 = AB$. We distinguish two cases.
+	If $A \neq 0$, then there are $(q^4-1)(q^3+1)$ choices for $A$. For each of these
+	there are $q^4$ choices for $B$ and $q$ choices for $c$. Therefore, there are
+	$q^5(q^4-1)(q^3+1)$ white vectors in $\J_{17}^{cAB}$ with $A \neq 0$.
+	In case $A = 0$ we require $B \neq 0$, so there are $(q^4-1)(q^3+1)$ choices for
+	$B$ and $q$ choices for $c$, giving $q(q^4-1)(q^3+1)$ white vectors. 
+	Adding these two values together, we get
+	\begin{equation*}
+		q^5(q^4-1)(q^3+1) + q(q^4-1)(q^3+1) = q(q^8-1)(q^3+1)
+	\end{equation*}	
+	white vectors in $\J_{17}^{cAB}$. To find the number of totally white lines, we divide this
+	value by $q-1$. 
+	
+	Obviously, all white points not already counted have the second property, so there are
+	\begin{equation*}
+		\frac{(q^9-1)(q^{12}-1)}{(q^4-1)(q-1)} - 
+			\frac{q(q^8-1)(q^3+1)}{(q-1)} - 1 = \frac{q^8(q^4+1)(q^5-1)}{(q-1)}
+	\end{equation*}
+	choices for $\langle Y \rangle$. Note that we subtract $1$ because we want 
+	$\langle W \rangle \neq \langle Y \rangle$.
+\end{proof}
+
 
 \section{Arbitrary octonion algebras} 
 

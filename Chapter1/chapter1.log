@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.8)  7 APR 2019 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.8)  9 APR 2019 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -18504,10 +18504,10 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 681.
+LaTeX Warning: Command \O invalid in math mode on input line 682.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 681.
+LaTeX Warning: Command \O invalid in math mode on input line 682.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -18537,22 +18537,22 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 681--682
+Overfull \hbox (20.0pt too wide) in paragraph at lines 682--683
 []
  []
 
 
-Overfull \hbox (15.16898pt too wide) in paragraph at lines 681--682
+Overfull \hbox (15.16898pt too wide) in paragraph at lines 682--683
 \OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 681--682
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 682--683
 \/cmr/m/n/10 ^^_$
  []
 
 ! Undefined control sequence.
-l.683 		(A\ovu
+l.684 		(A\ovu
               )(u B) = N(u) AB
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18561,7 +18561,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (88.4144pt too wide) detected at line 684
+Overfull \hbox (88.4144pt too wide) detected at line 685
 \/cmr/m/n/10 (\OML/cmm/m/it/10 A\/cmr/m/n/10 )(\OML/cmm/m/it/10 uB\/cmr/m/n/10 
 ) = \OML/cmm/m/it/10 N\/cmr/m/n/10 (\OML/cmm/m/it/10 u\/cmr/m/n/10 )\OML/cmm/m/
 it/10 AB
@@ -18579,10 +18579,10 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 685.
+LaTeX Warning: Command \O invalid in math mode on input line 686.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 685.
+LaTeX Warning: Command \O invalid in math mode on input line 686.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no f in font nullfont!
@@ -18596,10 +18596,10 @@ Missing character: There is no y in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no f in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 685.
+LaTeX Warning: Command \O invalid in math mode on input line 686.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 685.
+LaTeX Warning: Command \O invalid in math mode on input line 686.
 
 Missing character: There is no . in font nullfont!
 
@@ -18609,34 +18609,34 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.686 \end{corollary}
+l.687 \end{corollary}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (29.47563pt too wide) in paragraph at lines 684--687
+Overfull \hbox (29.47563pt too wide) in paragraph at lines 685--688
    $\OML/cmm/m/it/10 A; B \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 684--687
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 685--688
 \/cmr/m/n/10 ^^_$
  []
 
 
-Overfull \hbox (15.16898pt too wide) in paragraph at lines 684--687
+Overfull \hbox (15.16898pt too wide) in paragraph at lines 685--688
 \OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (10.59724pt too wide) in paragraph at lines 684--687
+Overfull \hbox (10.59724pt too wide) in paragraph at lines 685--688
 \OML/cmm/m/it/10 F \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (11.63893pt too wide) in paragraph at lines 684--687
+Overfull \hbox (11.63893pt too wide) in paragraph at lines 685--688
 \/cmr/m/n/10 1[]$
  []
 
@@ -18647,7 +18647,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.688 \begin{proof}
+l.689 \begin{proof}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -18667,7 +18667,7 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <write> ...associating_elements' on page \thepage 
                                                   \space undefined\on@line .
-l.689 	Proposition \ref{prop:associating_elements}
+l.690 	Proposition \ref{prop:associating_elements}
                                                    tells us that if $(xu) y ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18677,7 +18677,7 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `prop:associating_elements' on page  undefined on inpu
-t line 689.
+t line 690.
 
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -18699,10 +18699,10 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 690.
+LaTeX Warning: Command \O invalid in math mode on input line 691.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 690.
+LaTeX Warning: Command \O invalid in math mode on input line 691.
 
 Missing character: There is no , in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -18710,10 +18710,10 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 690.
+LaTeX Warning: Command \O invalid in math mode on input line 691.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 690.
+LaTeX Warning: Command \O invalid in math mode on input line 691.
 
 Missing character: There is no . in font nullfont!
 Missing character: There is no N in font nullfont!
@@ -18723,7 +18723,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.690 ... \O$, then $u \in \O$. Now put $x = A\ovu
+l.691 ... \O$, then $u \in \O$. Now put $x = A\ovu
                                                   $ and $y = B$; using this ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18791,63 +18791,63 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 689--692
+Overfull \hbox (20.0pt too wide) in paragraph at lines 690--693
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 689--692
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 690--693
 []
  []
 
 
-Overfull \hbox (35.03476pt too wide) in paragraph at lines 689--692
+Overfull \hbox (35.03476pt too wide) in paragraph at lines 690--693
 \/cmr/m/n/10 (\OML/cmm/m/it/10 xu\/cmr/m/n/10 )\OML/cmm/m/it/10 y \/cmr/m/n/10 
 =
  []
 
 
-Overfull \hbox (24.47925pt too wide) in paragraph at lines 689--692
+Overfull \hbox (24.47925pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 x\/cmr/m/n/10 (\OML/cmm/m/it/10 uy\/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (24.86568pt too wide) in paragraph at lines 689--692
+Overfull \hbox (24.86568pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 x; y \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 689--692
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 690--693
 \/cmr/m/n/10 ^^_$
  []
 
 
-Overfull \hbox (15.16898pt too wide) in paragraph at lines 689--692
+Overfull \hbox (15.16898pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 689--692
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 690--693
 \/cmr/m/n/10 ^^_$
  []
 
 
-Overfull \hbox (16.27078pt too wide) in paragraph at lines 689--692
+Overfull \hbox (16.27078pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 x \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (7.50002pt too wide) in paragraph at lines 689--692
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 A$
  []
 
 
-Overfull \hbox (15.81711pt too wide) in paragraph at lines 689--692
+Overfull \hbox (15.81711pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 y \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (8.0868pt too wide) in paragraph at lines 689--692
+Overfull \hbox (8.0868pt too wide) in paragraph at lines 690--693
 \OML/cmm/m/it/10 B$
  []
 
@@ -18865,10 +18865,10 @@ Missing character: There is no , in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no f in font nullfont!
 
-LaTeX Warning: Command \O invalid in math mode on input line 693.
+LaTeX Warning: Command \O invalid in math mode on input line 694.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 693.
+LaTeX Warning: Command \O invalid in math mode on input line 694.
 
 Missing character: There is no , in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -18909,29 +18909,29 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.694 \end{proof}
+l.695 \end{proof}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 693--695
+Overfull \hbox (20.0pt too wide) in paragraph at lines 694--696
 []
  []
 
 
-Overfull \hbox (15.16898pt too wide) in paragraph at lines 693--695
+Overfull \hbox (15.16898pt too wide) in paragraph at lines 694--696
 \OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (10.59724pt too wide) in paragraph at lines 693--695
+Overfull \hbox (10.59724pt too wide) in paragraph at lines 694--696
 \OML/cmm/m/it/10 F \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (11.63893pt too wide) in paragraph at lines 693--695
+Overfull \hbox (11.63893pt too wide) in paragraph at lines 694--696
 \/cmr/m/n/10 1[]$
  []
 
@@ -18945,7 +18945,7 @@ Overfull \hbox (11.63893pt too wide) in paragraph at lines 693--695
 Here is how much of TeX's memory you used:
  62 strings out of 492638
  744 string characters out of 6131710
- 108072 words of memory out of 5000000
+ 108101 words of memory out of 5000000
  4047 multiletter control sequences out of 15000+600000
  4294 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191

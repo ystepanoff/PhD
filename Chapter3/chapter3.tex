@@ -8,33 +8,786 @@
 
 \section{Quadratic field extensions}
 
-%
 Let $F$ and $K$ be two fields such that $F$ is a subfield of $K$. We say that 
-$K$ is an \textit{extension field} of $F$. An element $\lambda \in K$ is \textit{algebraic}
-over $F$ if there exist elements $a_0, ..., a_n$ ($n \geqslant 1$) of $F$ such 
-that $(a_0, ..., a_n) \neq (0, ..., 0)$ and 
+$K$ is an \textit{extension field} of $F$. The \textit{degree} of $K$ over $F$, 
+denoted by $[K:F]$, is the dimension of $K$ as a vector space over $F$. We denote the
+extension of $F$ by $K$ as $K / F$.
+
+A non-zero polynomial $f \in F[x]$ is called \textit{separable}, if each root of $f$ has 
+multiplicity $1$. If $\alpha \in F$ is algebraic, that is, $\alpha$ is a root of some polynomial
+$g \in F[x]$, then $\alpha$ is called \textit{separable}, if its minimal polynomial is separable. 
+
+We have defined what it means for a field element and a polynomial to be separable. Suppose that
+$[K:F]$ is finite, then $K / F$ is a \textit{separable} extension, if every element of $K$ is 
+separable over $F$. We also say that $K / F$ is \textit{normal}, if every irreducible 
+polynomial $f \in F[x]$ that has a root in K, splits into linear factors in $K[x]$. An extension
+$K / F$ which is normal, separable, and of finite degree, is called a \textit{Galois extension}.
+We are not going into too much detail here, for there are various  well-known references on theory
+of field extensions, of very high quality, for instance, \cite{PeterCameron}, \cite{DummitFoote}, \cite{Lang}, or \cite{Stewart}. In this chapter
+we are interested in Galois extensions of degree $2$. 
+In case when $F = \Fq$, we have $|K| = q^2$, and so $K = \Fqs$ (see, for example, \cite{Moore}).
+
+Given an extension $K / F$, we define the \textit{Galois group} of $K$ over $F$, denoted
+$\Gal(K / F)$, to be the group
+of automorphisms of $K$ that fix $F$ elementwise. In other words,
 \begin{equation}
-a_0 + a_1 \lambda + ... + a_n \lambda^n = 0.
+	\Gal(K / F) = \{\ \varsigma \in \Aut(K)\ \big|\ \alpha^{s} = \alpha\ \mbox{for all}\ 
+		\alpha \in F\ \}.
 \end{equation}
-If $\lambda$ is non-zero and algebraic, it is always possible to choose $a_0, ..., a_n$ in such
-a way that $a_0 \neq 0$.
+The most important result for us here is the following theorem.
+\begin{theorem}
+	Let $K / F$ be a Galois extension. Then
+	\begin{equation}
+		| \Gal(K / F) | = [K : F].
+	\end{equation}
+\end{theorem}
+It follows that in case $[K:F] = 2$ there is a unique non-trivial field automorphism 
+$\varsigma : K \rightarrow K$, fixing $F$ elementwise. If $F = \Fq$ and $K = \Fqs$, then
+$s$ takes the form $s : \lambda \mapsto \lambda^q$. 
 
 
+% Moore: Doubly-infinite systems of simple groups
 
-\section{Hermitian form in $\J$ and the group ${}^2\SE_6^K(F)$}
+\section{Spaces with two forms}
 
-\section{Some elements of ${}^2\SE_6^K(F)$}
+Let $K / F$ be a Galois extension of degree $2$, 
+and let $s$ be a $K$-automorphism
+with $F$ being its fixed field. Let also $V$ be a $2m$-dimensional vector space over $K$ with 
+a quadratic form $Q$ and a conjugate-symmetric sesquilinear form 
+\mbox{$B : V\times V \rightarrow K$},
+defined with respect to $\varsigma$. Denote by $f$ the polar form of $Q$, and suppose that 
+\mbox{$\mathcal{B} = \{ e_1, f_1, e_2, f_2, ..., e_m, f_m \}$}
+is a hyperbolic basis of $V$ with respect to $f$, i.e.
+\begin{equation}
+	Q(e_i) = Q(f_i) = 0,\ f(e_i, f_i) = 1,
+\end{equation}
+and $f(e_i,e_j) = f(e_i,f_j) = 0$ for $i \neq j$. The above said means that $(V,Q)$ is a hyperbolic
+orthogonal space. Denote by $G$ the maximal amongst all the subgroups of 
+$\GO(V, Q)$ which preserve $B$. If $U$ 
+is a subspace of $V$, then we denote the restrictions of $f$ and $B$ on $U$ as $f_U$ and $B_U$ 
+respectively. 
 
-\section{Action of ${}^2\SE_6^K(F)$ on white points}
+\begin{definition}
+	A $(Q,B)$-subspace of $V$ is an $F$-subspace $U$ of $V$ such that \mbox{$V = U \otimes_F K$}, 
+	$f_U = B_U$ is an $F$-form on $U$, and $Q_U$ is a non-degenerate quadratic form on $U$ of 
+	Witt index at least $2$. 
+\end{definition}
+
+\begin{proposition}
+	If $U$ is a $(Q,B)$-subspace of $V$, then it is the unique $(Q,B)$-subspace of $V$, and
+	$G = \GO(U,Q)$. 
+\end{proposition}
+
+We say that an element $v \in V$ is \textit{singular isotropic}, if $Q(v) = B(v,v) = 0$. 
+
+\begin{proposition}
+	\label{prop:3_2forms_orbits}
+	Let $U$ be a $(Q,B)$-subspace of $V$ if Witt index at least $2$. Fix $\lambda \in K 
+	\setminus F$. The group $G$ has two orbits on doubly singular points with representatives
+	$\langle u \rangle$ and $\langle u + \lambda v \rangle$, where $u,v \in U$ and 
+	$\langle u, v \rangle$ 	is a singular line. 
+\end{proposition}
+
+\section{Hermitean form in $\J$ and the group ${}^2\SE_6(K/F)$}
+
+Suppose as before $K / F$ is a quadratic Galois extension with $F$ being a fixed field of a
+$K$-automorphism $\varsigma$. In this chapter $\O_F$ will always be a split octonion algebra 
+over $F$ and $\O_K = \O_F \otimes_F K$. We also use the same basis 
+$\{\ e_i\ \mid\ i \in \pm I\ \}$ as in Section \ref{section:split_basis}.
+
+Denote by $\s$ the automorphism of $\O_K$ induced by the field automorphism 
+$\varsigma$:
+\begin{equation}
+	\left( \sum_{i\in \pm I} \lambda_i e_i \right)^{\s} = 
+	\sum_{i\in \pm I} \lambda_{i}^{\varsigma} e_i. 
+\end{equation}
+Consider the following Hermitean form defined on the elements of $\O_K$:
+\begin{equation}
+	h(x) = A \ovA^{\s} + A^{\s} \ovA = \Tr(A \ovA^{\s}).
+\end{equation}
+On the Albert space $\J = \J_K$ this induces the Hermitean form $\H$, where
+\begin{equation}
+	\H( (a,b,c\mid A,B,C) ) = 
+		a a^{\s} + b b^{\s} + c c^{\s} + 
+		\Tr(A \ovA^{\s} + B\ovB^{\s} + C\ovC^{\s}).
+\end{equation}
+
+Using the construction from previous chapter, we obtain the group $\SE_6(K)$ in the usual 
+way. Now define the group ${}^2\SE_6(K/F)$ as the subgroup of $\SE_6(K)$ which preserves 
+$\H$. In case $F = \Fq$ and $K = \Fqs$, we denote this by ${}^2\SE_6(q)$. As before,
+the group ${}^2\E_6(F/K)$ is defined as the quotient of ${}^2\SE_6(K/F)$ by its centre. 
+
+\section{Some elements of ${}^2\SE_6(K/F)$}
+
+Let $X = (a,b,c\mid A,B,C)$ be an arbitrary element of $\J = \J_K$. First of all we notice that 
+the matrices $\delta$ and $\tau$ preserve the Hermitean form, so they encode the elements of 
+${}^2\SE_6(K/F)$. 
+
+\begin{lemma}
+	\label{lemma:3_isotropic}
+	Let $x \in \O_K$ be such that $\ovx^{\s} x = x \ovx^{\s} = 0$. Then $x\ovx = 0$.
+\end{lemma}
+
+Consider the matrices
+\begin{equation}
+	N_x = \begin{bmatrix}
+		1 & x & 0 \\
+		-\ovx^{\s} & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix},\quad
+	N_x' = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & x \\
+		0 & -\ovx^{\s} & 1
+	\end{bmatrix},\quad
+	N_x'' = \begin{bmatrix}
+		1 & 0 & -\ovx^{\s} \\
+		0 & 1 & 0 \\
+		x & 0 & 1
+	\end{bmatrix},
+\end{equation}
+where $x\ovx^{\s} = \ovx^{\s}x = 0$. 
+It is easy to see that these encode the elements of $\SE_6(K)$. Indeed,
+\begin{equation}
+	\begin{bmatrix}
+		1 & x \\
+		0 & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & 0 \\
+		-\ovx ^{\s} & 1
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		1 - x\ovx ^{\s} & x \\
+		-\ovx ^{\s} & 1 
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		1 & x \\
+		-\ovx ^{\s} & 1
+	\end{bmatrix}.
+\end{equation}
+So, the elements $N_x$, $N_x'$, and $N_x''$ preserve the Dickson--Freudenthal determinant. 
+To verify that they preserve $\H$, we look at the action on $\J$:
+\begin{equation}
+	\label{eq:3_nx_image}
+	\begin{array}{r@{\;}c@{\;}l}
+		N_x: (a,b,c\mid A,B,C) & \mapsto &
+		(a-\Tr(C\ovx ^{\s}), b+\Tr(\ovC x), c \mid \\
+		& & \mid	A+\ovx \ovB , B-\ovA \ovx ^{\s},C-x^{\s}\ovC x+ax-bx^{\s}), \\
+		
+		N_x': (a,b,c\mid A,B,C) & \mapsto & 
+		(a, b-\Tr(a\ovx^{\s}), c+\Tr(\ovA x) \mid \\
+		& & \mid	A - x^{\s} \ovA x + bx-cx^{\s}, B + \ovx \ovC, C - \ovB \ovx^{\s}), \\
+		
+		N_x'': (a,b,c\mid A,B,C) & \mapsto &
+		(a+\Tr(\ovB x), b, c-\Tr(B\ovx^{\s}) \mid \\
+		& & \mid 	A-\ovC\ovx^{\s}, B-x^{\s}\ovB x + cx - ax^{\s}, C+\ovx\ovA).
+	\end{array}
+\end{equation}
+We need to prove an auxiliary lemma.
+
+\begin{lemma}
+	\label{lemma:3_oct_aux}
+	Suppose that $x,y,z \in \O_F$ with $x \ovx  = 0$. Then
+		\begin{enumerate}[(i)]
+			\item $x\Tr(yx) = x(yx)$,
+			\item $\Tr( (xy)(z\ovx ) ) = 0$.		
+		\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}[(i)]
+	
+	\item $x\Tr(yx) = x (yx + \ovx \ovy ) = x(yx) + x(\ovx \ovy )
+		 = x(yx) + (x\ovx )y = x(yx)$,
+		 
+	\item $\Tr( (xy)(z\ovx ) ) = \Tr( (z\ovx ) (xy) ) = \Tr( ((z\ovx )x) y ) = 
+		\Tr(z(x\ovx )y) = 0$. \qedhere
+	\end{enumerate}
+\end{proof}
+
+Obviously, it is enough to verify that the elements $N_x$ preserve the Hermitean form $\H$. 
+The individual terms in $\H(X) = aa^{\s} + bb^{\s} + cc^{\s} + \Tr(A\ovA ^{\s} + B\ovB ^{\s} +
+C\ovC ^{\s})$ are being mapped in the following way:
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		aa^{\s} & \mapsto & aa^{\s} - a^{\s}\Tr(C\ovx ^{\s}) - a\Tr(C^{\s} \ovx ) 
+					+ \Tr(C^{\s}\ovx ) \Tr(C\ovx ^{\s}), \\
+		bb^{\s} & \mapsto & bb^{\s} + b^{\s}\Tr(\ovC x) + b\Tr(\ovC ^{\s}x^{\s}) +
+					\Tr(\ovC x)\Tr(\ovC ^{\s}x^{\s}), \\
+		cc^{\s} & \mapsto & cc^{\s}, \\
+		\Tr(A\ovA ^{\s}) & \mapsto & \Tr(A\ovA ^{\s}) + \Tr(AB^{\s}x^{\s}) + 
+					\Tr(\ovx \ovB \ovA ^{\s}) + 
+					\Tr((\ovx \ovB )(B^{\s}x^{\s})), \\
+		\Tr(B\ovB ^{\s}) & \mapsto & \Tr(B\ovB ^{\s}) - 
+					\Tr(\ovA \ovx ^{\s} \ovB ^{\s}) - \Tr(BxA^{\s}) + 
+					\Tr((\ovA \ovx ^{\s})(xA^{\s})), \\
+		\Tr(C\ovC ^{\s}) & \mapsto & \Tr(C\ovC ^{\s}) - 
+					\Tr(C(\ovx ^{\s}C^{\s}\ovx )) - \Tr(C^{\s}(\ovx C\ovx ^{\s}))
+					+ a\Tr(x\ovC ^{\s}) + \\
+					& & + a^{\s}\Tr(C\ovx ^{\s}) -
+					b^{\s}\Tr(C\ovx ) - b\Tr(x^{\s}\ovC ^{\s}).
+	\end{array}
+\end{equation}
+Using Lemmas \ref{lemma:3_isotropic} and
+\ref{lemma:3_oct_aux}, we get
+\mbox{$\Tr((\ovA \ovx ^{\s})(xA^{\s})) = 0= \Tr((\ovx \ovB )(B^{\s}x^{\s}))$}.
+Next, we also obtain $\Tr(C( \ovx ^{\s} C^{\s} \ovx )) = \Tr(C \ovx ^{\s}
+\Tr(C^{\sigma} \ovx )) = \Tr(C^{\sigma} \ovx )\Tr(C\ovx ^{\s})$. Likewise,
+we get $\Tr(C^{\s}(\ovx C\ovx ^{\s})) = \Tr ((x^{\s}\ovC x)\ovC ^{\s}) = 
+\Tr(\ovC ^{\s} (x^{\s}\ovC x)) = \Tr(\ovC ^{\s} x^{\s})\Tr(\ovC x)$. We see
+that all the terms except $aa^{\s},bb^{\s},cc^{\s}$ and $\Tr(A\ovA ^{\s}),
+\Tr(B\ovB ^{\s}), \Tr(C\ovC ^{\s})$ cancel out, so it follows that the elements
+$N_x$ preserve the Hermitean form. Hence, we have shown the following. 
+
+\begin{proposition}
+	The matrices $N_x$, $N_x'$, and $N_x''$ with $x\ovx^{\s} = 0 = \ovx^{\s}x$, encode
+	the elements of ${}^2\SE_6(K/F)$. 
+\end{proposition}
+
+Of great interest for us is the action of $N_x$ on $\J_{10}^{abC}$. The rest of the section
+is devoted to proving the following result.
+
+\begin{theorem}
+	The actions of the elements $N_x$ on $\J_{10}^{abC}$, as $x$ ranges through a split
+	octonion algebra $\O_K$, generate a group of type $\Omega_{10}^{-,K}(F)$. 
+\end{theorem}
+
+We prove this theorem in the series of steps. First, consider the $4$-dimensional 
+$K$-subspace $V_4$ of $\J_K$, 
+spanned by the Albert vectors of the form $(a,b,0\mid 0,0,C_{-1} e_{-1} + C_1 e_1)$. 
+
+\begin{lemma}
+	The actions of the elements $N_{\lambda e_{ \pm 1 }}$ on $V_4$, where $\lambda \in K$, 
+	generate a group of type $\Omega_4^{-,K}(F)$. 
+\end{lemma}
+
+\begin{proof}
+	Consider the basis $\mathcal{B} = \{\ v_1, v_2, v_3, v_4\ \}$ for $V_4$, where
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			v_1 & = & (-1,0,0\mid 0,0,0), \\
+			v_2 & = & (0,1,0\mid 0,0,0), \\
+			v_3 & = & (0,0,0\mid 0,0,-e_{-1}), \\
+			v_4 & = & (0,0,0\mid 0,0,e_1).
+		\end{array}
+	\end{equation*}
+	Now we look at the action of $N_{\lambda e_{-1}}$ on these basis elements:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}l}
+			v_1 & \mapsto & (-1,0,0\mid 0,0,-\lambda e_{-1}) & = & v_1 + \lambda v_3, \\
+			v_2 & \mapsto & (0,1,0\mid 0,0,-\lambda^{\s} e_{-1}) & = & v_2 + \lambda^{\s} v_3, \\
+			v_3 & \mapsto & (0,0,0\mid 0,0,-e_{-1}) & = & v_3, \\
+			v_4 & \mapsto & (-\lambda^{\s}, \lambda, 0 \mid 0,0,-\lambda \lambda^{\s} 
+									e_{-1} + e1) & = & 
+							-\lambda^{\s} v_1 + \lambda v_2 - \lambda \lambda^{\s} v_3 + v_4.
+		\end{array}
+	\end{equation*}
+	It follows that the element $N_{\lambda e_{-1}}$ can be written as a $4\times 4$ 
+	matrix over $\Fqs$ with respect to $\mathcal{B}$:
+	\begin{equation*}
+		[N_{\lambda e_{-1}}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & 0 & \lambda & 0 \\
+			0 & 1 & \lambda^{\s} & 0 \\
+			0 & 0 & 1 & 0 \\
+			\lambda^{\s} & \lambda & \lambda \lambda^{\s} & 1
+		\end{bmatrix}.
+	\end{equation*}
+	For convenience, instead of the element $N_{\lambda e_1}$ we consider the element
+	$N_{-\lambda^{\s} e_1}$ which acts on the elements of $\mathcal{B}$ as follows:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}l}
+			v_1 & \mapsto & (-1,0,0\mid 0,0, \lambda^{\s} e_1) & = & v_1 + \lambda^{\s} v_4, \\
+			v_2 & \mapsto & (0,1,0\mid 0,0, \lambda e_1) & = & v_2 + \lambda v_4, \\
+			v_3 & \mapsto & (-\lambda, \lambda^{\s}, 0 \mid 0,0,-e_{-1}+\lambda \lambda^{\s} 
+							e_1) & = & 
+								\lambda v_1 + \lambda^{\s} v_2 + v_3 + \lambda \lambda^{\s} v_4, \\
+			v_4 & \mapsto & (0,0,0\mid 0,0,e_1) & = & v_4.
+		\end{array}
+	\end{equation*}
+	The matrix $[N_{-\lambda^{\s} e_1}]_{\mathcal{B}}$ has the form
+	\begin{equation*}
+		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & 0 & 0 & \lambda^{\s} \\
+			0 & 1 & 0 & \lambda \\
+			\lambda & \lambda^{\s} & 1 & \lambda \lambda^{\s} \\
+			0 & 0 & 0 & 1
+		\end{bmatrix}.
+	\end{equation*}
+	Consider the basis $\mathcal{B}' = \{\ v_3, v_4, v_1 v_4\ \}$ obtained as a permutation
+	of the elements in $\mathcal{B}$. With respect to $\mathcal{B}'$ the $4\times 4$
+	 matrices
+	$[N_{\lambda e_{-1}}]_{\mathcal{B'}}$ and 
+	$[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'}$ take the form
+	\begin{equation*}
+		[N_{\lambda e_{-1}}]_{\mathcal{B'}}	= \begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\lambda^{\s} & 1 & 0 & 0 \\
+			\lambda & 0 & 1 & 0 \\
+			\lambda\lambda^{\s} & \lambda & \lambda^{\s} & 1
+		\end{bmatrix},\quad 
+		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'} = \begin{bmatrix}
+			1 & \lambda^{\s} & \lambda & \lambda\lambda^{\s} \\
+			0 & 1 & 0 & \lambda \\
+			0 & 0 & 1 & \lambda^{\s} \\
+			0 & 0 & 0 & 1
+		\end{bmatrix}.
+	\end{equation*}
+	We notice that 
+	\begin{equation*}
+		[N_{\lambda e_{-1}}]_{\mathcal{B'}} = \begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1 
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda^{\s} & 1
+		\end{bmatrix},\quad
+		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'} = \begin{bmatrix}
+			1 & \lambda \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & \lambda^{\s} \\
+			0 & 1
+		\end{bmatrix},
+	\end{equation*}
+	where $\otimes$ is the Kronecker product of two matrices. The mapping
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1 
+		\end{bmatrix} \mapsto
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda^{\s} & 1
+		\end{bmatrix},\quad 
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1
+		\end{bmatrix} \mapsto
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & \lambda^{\s} \\
+			0 & 1
+		\end{bmatrix}
+	\end{equation*}
+	can be extended to a homomorphism $\phi$ which is obviously surjective as $\lambda$
+	 ranges
+	through the whole field $K$. Its kernel is a subgroup
+	\begin{equation*}
+		\ker(\phi) = 
+		\left\langle
+			\begin{bmatrix}
+				-1 & 0 \\
+				0 & -1
+			\end{bmatrix}
+		\right\rangle
+	\end{equation*}
+	which has order $2$, so we get the action of the group $\PSL_2(K)$ on $V_4$ since
+	the matrices
+	\begin{equation*}
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix},\quad
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1 
+		\end{bmatrix}
+	\end{equation*}
+	generate a group $\SL_2(K)$ by a well-known result.
+	Therefore, as $\PSL_2(K) \cong \Omega_4^-(q)$ (\ref{theorem:L2Omega4}), 
+	we have the action of $\Omega_4^{-,K}(F)$. 
+\end{proof}
+
+We again use the results of section \ref{section:orthogonal}. Consider the $6$-dimensional
+$K$-subspace $V_6$ spanned by the Albert vectors of the form 
+$(a,b,0\mid 0,0,C)$ with $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{-\bar{\omega}}, e_1 \rangle$.
+Our copy of $\Omega_4^{-,K}(F)$ preserves two isotropic Albert Vectors in $V_6$: 
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_{\bar{\omega}} & = & (0,0,0\mid 0,0,e_{\bar{\omega}}), \\
+		u_{-\bar{\omega}} & = & (0,0,0\mid 0,0,e_{-\bar{\omega}}). \\
+	\end{array} 
+\end{equation}
+The element $N_{e_{\bar{\omega}}}$ preserves $u_{\bar{\omega}}$, but not $u_{-\bar{\omega}}$. 
+Therefore, adjoining its action to our $\Omega_4^{-,K}(F)$, we obtain a subgroup of 
+$V_4\cn\Omega_4^{-,K}(F)$. We know that $\Omega_4^{-,K}(F)$ is maximal in the latter, so 
+we conclude that the actions of $N_{\lambda e_{\pm 1}}$ and $N_{e_{\bar{\omega}}}$ on 
+$V_6$ is that of $V_4\cn\Omega_4^{-,K}(F)$. Next, the element $N_{e_{-\bar{\omega}}}$
+preserves $V_6$ but it does not preserve $\langle u_{\bar{\omega}} \rangle$, so by Theorem
+\ref{theorem:1_space_stab}, adjoining $N_{e_{-\bar{\omega}}}$ to $V_4\cn\Omega_4^{-,K}(F)$,
+we get the action of $\Omega_6^{-,K}(F)$ on $V_6$.
+
+Next, take the $8$-space $V_8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
+$C \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, 
+e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$, and consider two isotropic vectors
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_{\omega} & = & (0,0,0 \mid 0,0,e_{\omega}), \\
+		u_{-\omega} & = & (0,0,0 \mid 0,0,e_{-\omega}),
+	\end{array}
+\end{equation}
+which are fixed by our copy of $\Omega_6^{-,K}(F)$. The action of $N_{e_{\omega}}$ on $V_8$
+preserves $u_{\omega}$ but not $u_{-\omega}$, and therefore adjoining this element to 
+$\Omega_6^{-,K}(F)$ we get the action of the group $V_6\cn\Omega_6^{-,K}(F)$. The element
+$N_{e_{-\omega}}$ does not preserve the $1$-space $\langle u_{\omega} \rangle$, so appending it to 
+$V_6\cn\Omega_6^{-,K}(F)$, we get the action of $\Omega_8^{-,K}(F)$ on $V_8$. 
+
+Finally, we choose two isotropic Albert vectors
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		u_0 & = & (0,0,0\mid 0,0,e_0), \\
+		u_{-0} & = & (0,0,0\mid 0,0,e_{-0}).
+	\end{array}
+\end{equation}
+in $\J_{10}^{abC}$. We adjoin the element $N_{e_{0}}$ which fixes $u_0$ but not $u_{-0}$ to 
+get the action of the group $V_8\cn \Omega_8^{-,K}(F)$. Appending to this the action of
+$N_{e_{-0}}$ which does not preserve $\langle u_0 \rangle$, we obtain the action of
+$\Omega_{10}^{-,K}(F)$.
+
+\section{Action of ${}^2\SE_6(K/F)$ on white points}
+
+As in the case of $\SE_6$, we are interested in the action on white points. We will, however, see 
+that although $SE_6$ acts transitively on white points, the action of ${}^2\SE_6(K/F)$ splits
+into several orbits. 
+
+We first consider some examples. Suppose $W_1 = (0,0,0\mid 0,0,e_0)$. As we know (\ref{eq:17_space}), 
+it determines 
+a $17$-space $	\{\ (a,b,0 \mid A,B,C)\ \big|\ e_0 A = B e_0 = \Tr(e_0 \ovC) = 0\ \}$. A
+straightforward calculation shows that
+this $17$-space $U_1$ is spanned by the Albert vectors of the form \mbox{$(a,b,0\mid A,B,C)$} with
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
+		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+		C & \in & \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, e_0, e_{-\omega}, e_{-\bar{\omega}}, e_1
+		\rangle.
+	\end{array}
+\end{equation}
+We are also interested in the radical $R_1$ of $\H$ inside this $17$-space. In our case it is spannned
+by the vectors of the form \mbox{$(0,0,0\mid A,B,C)$} with
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
+		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+		C & \in & \langle e_0 \rangle.
+	\end{array}
+\end{equation}
+In other words, our vector $W_1$ determines the $17$-space $U_1$ and the $9$-dimensional radical $R_1$ 
+of $\H$ in $U_1$. Note that $W_1$ is isotropic with respect to $\H$, and also $W_1 \in R_1$. 
+
+It turns out that there is another type of isotropic white vectors. Consider 
+$W_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$, where $\lambda \in K\setminus F$. It again determines a 
+$17$-space $U_2$, spanned by the Albert vectors of the form $(a,b,0\mid A,B,C)$ with 
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{\bar{\omega}}+\lambda e_{-\omega}, e_{\omega}-\lambda e_{-\bar{\omega}}
+		, e_{-0}, e_1
+		\rangle, \\
+		B & \in & \langle e_{-1}+\lambda e_0, e_{-0} - \lambda e_1,
+	e_{-\omega}, e_{-\bar{\omega}}  \rangle, \\
+		C & \in & \langle e_{-1}-\lambda^2 e_1 - \lambda, e_{\bar{\omega}}, e_{\omega},
+	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
+	\end{array}
+\end{equation}
+We find that the radical $R_2$ of $\H$ in $U_2$ is spanned by the vectors of the form 
+$(0,0,0\mid A,B,C)$ with 
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{-0}, e_1 \rangle, \\
+		B & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+		C & \in & \langle e_0 + \lambda^q e_1 \rangle,
+	\end{array}
+\end{equation}
+i.e. it is $5$-dimensional. We notice that $W_2$ is isotropic, but in this case $W_2 \not\in R_2$.
+
+We conclude that the white points $\langle W_1 \rangle$ and $\langle W_2 \rangle$ belong to different
+orbuts under the action of ${}^2\SE_6(K/F)$. Of course, there is also at least one orbit on the 
+non-isotropic white points. 
 
 \subsection{Orbits of ${}^2\SE_6^K(F)$ on white points}
 \subsection{The stabiliser of type 1 vector}
 \subsection{The stabiliser of type 2 vector}
 \subsection{The stabiliser of type 3 vector}
 
+Consider $W_3 = (0,0,1 \mid 0,0,0)$. We prove the following theorem.
+
+\begin{theorem}
+	The stabiliser in ${}^2\SE_6(K/F)$ of $W_3$ is the subgroup of shape $\Spin_{10}^{-,K}(F)$. 
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
 \section{Case of a finite field}
-\subsection{White vectors in $\J_8^A$}
-\subsection{White vectors in $\J_{16}^{AB}$}
+\subsection{White vectors in $\J_8^C$}
 
+As a practical counting excersise, we count the isotropic white vectors in $\J_{8}^{C}$.
+As before, $K = \Fqs$. First, we need the following auxiliary result.
 
+\begin{lemma}
+		\label{lemma:zn}
+		Let $V$ be a vector space over $\Fqs$ of dimension $2m$. 
+		Define the map $Z_m: V \rightarrow \Fq$ in the following way:
+		\begin{equation*}
+			Z_m(x) = (x_1^q - x_1) (x_2^q - x_2) + (x_3^q - x_3) (x_4^q - x_4) + \cdots +
+			(x_{2m-1}^q-x_{2m-1}) (x_{2m}^q - x_{2m}),
+		\end{equation*}
+		where $x = (x_1, ..., x_{2m})$. 
+		Denote by $z_m$ the number of $x\in V$ such that $Z_m(x) = 0$. Then
+		\begin{equation*}
+			z_n = q^{3m-1}(q^m+q-1).
+		\end{equation*}
+\end{lemma}
 
+\begin{proof}
+		We proceed by induction on $m$. If $m=1$, the equality $Z_m(x)=0$ reduces to
+		\begin{equation*}
+			(x_1^q - x_1) (x_2^q - x_2) = 0.
+		\end{equation*}
+		Note that this is possible when $x_1^q = x_1$ or $x_2^q = x_2$, i.e. when
+		$x_1 \in \Fq$ or $x_2 \in \Fq$. Thus, when $m=1$ there are precisely
+		$2q^3-q^2 = q^2(q+q-1)$ solutions.
+
+		Now suppose that the statement holds for all integers $k$ such that
+		$1 \leqslant k \leqslant m-1$. In the case
+		\begin{equation*}
+			\left.
+			\begin{array}{l}
+				(x_1^q - x_1) (x_2^q - x_2) = 0, \\
+				(x_3^q - x_3) (x_4^q - x_4) + \cdots + 
+					(x_{2m-1}^q-x_{2m-1}) (x_{2m}^q - x_{2m}) = 0,
+			\end{array}
+			\right\}
+		\end{equation*}
+		we get $z_1 z_{m-1}$ solutions. On the other hand, if
+		\begin{equation*}
+			\left.
+			\begin{array}{l}
+				(x_1^q - x_1) (x_2^q - x_2) = \lambda, \\
+				(x_3^q - x_3) (x_4^q - x_4) + \cdots + (x_{2m-1}^q-x_{2m-1})
+						(x_{2m}^q - x_{2m}) = -\lambda
+			\end{array}
+			\right\}
+		\end{equation*}
+		for $0\neq \lambda \in \Fq$, there are 
+		\begin{equation*}
+			(q^4-z_1) \frac{(q^{4(m-1)}-z_{m-1})}{q-1}
+		\end{equation*}
+		solutions.
+		We divide the second factor by $(q-1)$ since each pair $(x_1,x_2)$ satisfying the
+		first equation, fixes the value of $\lambda$ for the second equation. Overall we have
+		\begin{equation*}
+			z_m = z_1 z_{m-1} + (q^4-z_1) \frac{(q^{4(m-1)}-z_{m-1})}{q-1}.
+		\end{equation*}
+		Thus, we have obtained a recurrence relation and by substituting $z_1$ and $z_{m-1}$ in
+		it, we finally obtain $z_m = q^{3m-1}(q^m+q-1)$.
+\end{proof}
+
+The following theorem allows us to count the elements of $V$ satisfying simultaneously a 
+certain quadratic and a certain Hermitean form.
+
+	\begin{theorem}
+		Let $V$ be an vector space over $\Fqs$ of dimension $2m$. 
+		Let the quadratic form $Q_m:V \rightarrow \Fqs$ be defined as
+		\begin{equation}
+			Q_m(x) = x_1 x_2 + x_3 x_4 + \cdots + x_{2m-1} x_{2m},
+		\end{equation}
+		where $x = (x_1, ..., x_{2m})$, 
+		and also define the Hermitean form $H_m:V \rightarrow \Fq$ by
+		\begin{equation}
+			H_m(x) = x_1^q x_2 + x_1 x_2^q + x_3^q x_4 + x_3 x_4^q + \cdots + x_{2m-1}^q x_{2m}
+				+ x_{2m-1} x_{2m}^q.
+		\end{equation}
+		Let $w_m$ be the number of $x \in V$ such that
+		\begin{equation}
+			\label{eq:system1}
+			\left.
+				\begin{array}{l}
+					Q_m(x) = 0, \\
+					H_m(x) = 0.
+				\end{array}
+			\right\}
+		\end{equation}
+		Then
+		\begin{equation}
+			w_m = q^{2m} + q^{2m-1}(q^m-1)(q^{m-2}+1).
+		\end{equation}
+	\end{theorem}
+
+	\begin{proof}
+		We again proceed by induction on $m$. When $m=1$, the system (\ref{eq:system1}) reduces to
+		\begin{equation*}
+			\left.
+				\begin{array}{l}
+					x_1 x_2 = 0, \\
+					x_1^q x_2 + x_1 x_2^q = 0.
+				\end{array}
+			\right\}
+		\end{equation*}
+		Note that each pair $(x_1,x_2)$ which satisfies the first equation also satisfies the second
+		one, so in this case the number of solutions is $2q^2-1 = q^2 + q(q-1)(q^{-1}+1)$.
+
+		Suppose now that the statement holds for all integers $k$ such that
+		$1 \leqslant k \leqslant m-1$ and consider the following system:
+		\begin{equation*}
+			\left.
+				\begin{array}{l}
+					x_1 x_2 + x_3 x_4 + \cdots + x_{2m-1} x_{2m} = 0, \\
+					x_1^q x_2 + x_1 x_2^q + x_3^q x_4 + x_3 x_4^q + \cdots + x_{2m-1}^q x_{2m}
+				+ x_{2m-1} x_{2m}^q = 0.
+				\end{array}
+			\right\}
+		\end{equation*}
+		We distinguish two cases.
+
+		First, consider the case $x_1 = 0$. Then $x_2$ can take any of the $q^2$ possible values
+		and the remaining system is equivalent to
+		\begin{equation*}
+			\left.
+				\begin{array}{l}
+					Q_{m-1}(x) = 0, \\
+					H_{m-1}(x) = 0,
+				\end{array}
+			\right\}
+		\end{equation*}
+		so there are $q^2 w_{m-1}$ solutions in this case.
+
+		Now suppose that $x_1 \neq 0$. Without loss of generality we may consider the case $x_1=1$.
+		The system (\ref{eq:system1}) takes the form
+		\begin{equation*}
+			\left.
+				\begin{array}{l}
+					x_2 = - x_3 x_4 - \cdots - x_{2m-1} x_{2m}, \\
+					x_2 + x_2^q + x_3^q x_4 + x_3 x_4^q + \cdots + x_{2m-1}^q x_{2m}
+				+ x_{2m-1} x_{2m}^q = 0.
+				\end{array}
+			\right\}
+		\end{equation*}
+		We substitute $x_2$ from the first equation into the second one to obtain
+		\begin{equation*}
+			(x_3^q-x_3)(x_4^q-x_4) + \cdots + (x_{2m-1}^q-x_{2m-1})(x_{2m}^q-x_{2m}) = 0.
+		\end{equation*}
+		Using the result of Lemma \ref{lemma:zn}, we obtain that in this case there are
+		$(q^2-1)z_{m-1}$ solutions. In total, we obtain the following recurrence relation:
+		\begin{equation*}
+			w_n = q^2 w_{m-1} + (q^2-1) z_{m-1}.
+		\end{equation*}
+		By substituting the appropriate values for $w_{m-1}$ and $z_{m-1}$, we obtain the result.
+	\end{proof}
+
+An Albert vector $(0,0,0\mid 0,0,C) \in \J_8^C$ is white if and only if $C\ovC = 0$. Recall that
+$\O_K$ is split, so we can use our favourite basis $\{\ e_i\ \big|\ i \in \pm I\ \}$. Note that
+with respect to this basis $C\ovC = 0$ is equivalent to 
+\begin{equation}
+	C_{-1}C_{1} + C_{\bar{\omega}} C_{-\bar{\omega}} + C_{\omega} C_{-\omega} + C_{-0} C_{0} = 0.
+\end{equation}
+Next, $(0,0,0\mid 0,0,C)$ is isotropic if and only if $\Tr(C \ovC^{\s}) = 0$, which is equivalent
+to
+\begin{equation}
+	C_{-1}^qC_{1} + C_{-1}C_{1}^q + 
+	C_{\bar{\omega}}^q C_{-\bar{\omega}} + C_{\bar{\omega}} C_{-\bar{\omega}}^q + 
+	C_{\omega}^q C_{-\omega} + C_{\omega} C_{-\omega}^q + 
+	C_{-0}^q C_{0} + C_{-0} C_{0}^q = 0.
+\end{equation}
+
+We know that there are exactly $(q^8-1)(q^6+1)$ white vectors in $\J_8^C$. Furthermore,
+there are
+\begin{equation}
+	w_4 - 1 = (q^2+1)(q^3+1)(q^3(q^2+1)(q-1)+(q^5+1))
+\end{equation}
+isotropic white vectors of the form $(0,0,0 \mid 0,0,C)$ and
+\begin{equation}
+q^6(q^4-1)(q^3-1)(q-1)
+\end{equation}
+non-isotropic white vectors of the same form.
+
+Now, using Proposition \ref{prop:3_2forms_orbits}, we find that the full subgroup of 
+$\SE_6(K)$ which preserves $\QQ$ 
+and
+$\H$ on $\J_8^C$ has three orbits on white points, and the sizes of these orbits are given by
+\begin{enumerate}[(i)]
+	\item $(q^4-1)(q^3+1)/(q-1)$;
+	\item $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$;
+	\item $q^6 (q^4-1)(q^3-1)/(q+1)$.
+\end{enumerate}
+Of these, the first two are isotropic, while the last one is non-isotropic. 
+
+\subsection{White vectors in $\J_{16}^{BC}$}
+
+We can also count the isotropic white vectors in $\J_{16}^{BC}$, $K = \Fqs$. Suppose 
+\mbox{$X = (0,0,0\mid 0,B,C)$} is white and note that the whiteness conditions 
+take form $B\ovB = C\ovC = 0 = BC$. 
+
+First, we count the white vectors $(0,0,0\mid 0,B,C)$ such that $B \neq 0$ and $C \neq 0$.
+We notice that given $B \neq 0$ and $B\ovB = 0 = BC$, we automatically have $C\ovC = 0$. 
+Indeed, for if $C\ovC \neq 0$, $C$ is invertible and $BC = 0$ implies $B = 0$, a contradiction.
+So, there are $(q^8-1)(q^6+1)$ choices for $B$ and $(q^8-1)$ choices for $C$ 
+(see Lemma \ref{prop:octonion_annihilator}). In total, there are $(q^8-1)^2 (q^6+1)$ white
+vectors with $B \neq 0$ and $C \neq 0$. 
+
+To count the isotropic white vectors of the form $(0,0,0\mid 0,B,C)$ we distiguish two cases:
+\begin{equation}
+	\label{eq:8twocases}
+	\left.
+		\begin{array}{l}
+			B\ovB = BC = 0,\\
+			\Tr(B\ovB^{\s}) = 0,\\
+			\Tr(C\ovC^{\s}) = 0,\\
+		\end{array}
+	\right\},\quad
+	\left.
+		\begin{array}{l}
+			B\ovB = BC = 0,\\
+			\Tr(B\ovB^{\s}) = \lambda \neq 0,\\
+			\Tr(C\ovC^{\s}) = -\lambda.\\
+		\end{array}
+	\right\}.
+\end{equation}
+
+In the previous section we learned that the subgroup of $\SE_6(K)$, preserving $\QQ$ and $\H$
+on $\J_8^C$ has two orbits on isotropic white points. Proposition \ref{prop:3_2forms_orbits}
+the first orbit consists of white points
+$\langle X \rangle$ where $X$ is written over $\Fq$. That is, its representatives are
+one-dimensional $\Fqs$-subspaces generated by the white vectors written over $\Fq$.
+Suppose $X_C = (0,0,0\mid 0,0,C)$ belongs to the first orbit. By taking a particular candidate 
+for $C$, it is easy to see that in this case there are $q^8-1$ choices for $B$.
+Now, if $X_C$ belongs to the second orbit, there are $q^4(q^3+q^2-q)-1$ choices for $B$.
+If, on the other hand, $X_C$ is non-isotropic, then there are $q^3(q^4-1)$ choices for $B$, and overall
+we have 
+\begin{multline}
+	(q^4-1)(q^3+1)(q+1)(q^8-1) \\
+	+\ q(q^6-1)(q^4-1)(q^2+1)(q^4(q^3+q^2-q)-1) \\
+	+\ q^6(q^4-1)(q^3-1)(q-1)q^3(q^4-1) \\
+	=\ (q^{13}+q^{11}-q^{10}+2q^9+q^8+2q^7-q^6+2q^4+1)(q^4-1)^2
+\end{multline}
+isotropic white vectors of the form $(0,0,0\mid 0,B,C)$ with $B,C \neq 0$. 
+
+Recall that the group preserving $Q_4$ and $H_4$ has two orbits on the isotropic white
+points in $J_8$ with
+$(q^4-1)(q^3+1)/(q-1)$ and $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$ elements. Again, by PropositionThe first orbit
+consists of white points
+$\langle X \rangle$ where $X$ is written over $\Fq$. That is, its representatives are
+one-dimensional $\Fqs$-subspaces generated by the white vectors written over $\Fq$.
+Since we know the totality of white vectors of this form, we find that there are
+\begin{equation}
+	q^6(q^4-1)^2(q^4+2)(q^3-1)(q-1)
+\end{equation}
+non-isotropic white vectors in $\J_{16}^{BC}$ with $B,C\neq 0$. Overall there are
+\begin{multline}
+	q^6(q^4-1)^2(q^4+2)(q^3-1)(q-1)\\
+	+\ 2q^6(q^4-1)(q^3-1)(q-1)\\
+	=\ q^{10}(q^8-1)(q^3-1)(q-1)
+\end{multline}
+non-isotropic white vectors in $\J_{16}^{BC}$.
