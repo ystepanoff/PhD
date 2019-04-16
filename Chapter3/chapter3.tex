@@ -250,6 +250,7 @@ Of great interest for us is the action of $N_x$ on $\J_{10}^{abC}$. The rest of 
 is devoted to proving the following result.
 
 \begin{theorem}
+	\label{theorem:3_nx_omega}
 	The actions of the elements $N_x$ on $\J_{10}^{abC}$, as $x$ ranges through a split
 	octonion algebra $\O_K$, generate a group of type $\Omega_{10}^{-,K}(F)$. 
 \end{theorem}
@@ -459,7 +460,8 @@ $\Omega_{10}^{-,K}(F)$.
 
 As in the case of $\SE_6$, we are interested in the action on white points. We will, however, see 
 that although $SE_6$ acts transitively on white points, the action of ${}^2\SE_6(K/F)$ splits
-into several orbits. 
+into several orbits. We say that a non-zero Albert vector $X$ is \textit{isotropic}, if
+$\H(X) = 0$. 
 
 We first consider some examples. Suppose $W_1 = (0,0,0\mid 0,0,e_0)$. As we know (\ref{eq:17_space}), 
 it determines 
@@ -515,20 +517,37 @@ We conclude that the white points $\langle W_1 \rangle$ and $\langle W_2 \rangle
 orbuts under the action of ${}^2\SE_6(K/F)$. Of course, there is also at least one orbit on the 
 non-isotropic white points. 
 
-\subsection{Orbits of ${}^2\SE_6^K(F)$ on white points}
-\subsection{The stabiliser of type 1 vector}
-\subsection{The stabiliser of type 2 vector}
+\subsection{Orbits of ${}^2\SE_6(K/F)$ on white points}
+
 \subsection{The stabiliser of type 3 vector}
 
-Consider $W_3 = (0,0,1 \mid 0,0,0)$. We prove the following theorem.
+We are now interested in the stabiliser in ${}^2\SE_6(K/F)$ of 
+$W_3 = (0,0,1\mid 0,0,0)$, which is non-isotropic. As we know, the elements
+$N_x$ with $x\ovx^{\s} = \ovx^{\s}x = 0$ preserve $W_3$ (\ref{eq:3_nx_image}).
+We now prove the following theorem.
 
 \begin{theorem}
-	The stabiliser in ${}^2\SE_6(K/F)$ of $W_3$ is the subgroup of shape $\Spin_{10}^{-,K}(F)$. 
+	The stabiliser in ${}^2\SE_6(K/F)$ of $W_3 = (0,0,1\mid 0,0,0)$ 
+	is the subgroup of shape $\Spin_{10}^{-,K}(F)$. 
 \end{theorem}
 
 \begin{proof}
+	From Theorem \ref{theorem:3_nx_omega} we know that the actions on $\J_{10}^{abC}$
+	of the elements $N_x$ generate $\Omega_{10}^{-,K}(F)$. We use 
+	Lemma \ref{lemma:1_2_actions} to conclude that the action on $\J$ is that of
+	$\Spin_{10}^{-,K}(F)$. Our aim is to show that this group is the whole stabiliser
+	in ${}^2\SE_6(K/F)$ of $W_3$.
 	
+	Let $G$ be the stabiliser of $W_3$ in ${}^2\SE_6(K/F)$. In particular, $G$ is 
+	a subgroup of $\SE_6(K)$, so it preserves the Dickson--Freudenthal determinant
+	$\fdet$, and hence it stabilises the $17$-space $U_3 = \J_{17}^{cAB}$ 
+	determined by $W_3$. Next, $G$
+	is a subgroup of ${}^2\SE_6(K/F)$, so it preserves the Hermitean form $\H$,
+	and so $G$ stabilises $U_3^{\perp}$, where $\perp$ is taken with respect to $\H$. 
 \end{proof}
+
+\subsection{The stabiliser of type 1 vector}
+\subsection{The stabiliser of type 2 vector}
 
 \section{Case of a finite field}
 \subsection{White vectors in $\J_8^C$}
