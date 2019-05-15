@@ -49,6 +49,8 @@
 \usepackage{ifthen}
 \usepackage{ifpdf}
 
+\usepackage{apptools}
+
 \usepackage[]{color}
 \usepackage{default, amsmath, slashed, amssymb, mathrsfs}
 \usepackage{stmaryrd}

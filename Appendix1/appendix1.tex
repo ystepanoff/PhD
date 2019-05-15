@@ -1,9 +1,314 @@
 
 % ------------------------------------------------------------------------
-
-\chapter{A: Some private life of $\Omega_{2m}(F,Q)$}
+\chapter{A: Some properties of $\Omega_{2m}(F,Q)$}
 \label{AppA}
+\stepcounter{appendixsection}
 
+Let $V$ be a vector space over a field $F$ of dimension $n$. We assume that there is a 
+non-singular quadratic form $Q$ defined on $V$. Denote by $\GO_n(F,Q)$ the group of 
+non-singular linear transformations that preserve the
+form $Q$. In case of characteristic $2$ we define the \textit{quasideterminant}
+$\mathrm{qdet}:\GO_n(F,Q) \rightarrow \mathbb{F}_2$ to be the map
+\begin{equation}
+    \operatorname{qdet}: g \mapsto \dim_F ( \im(\II - g) )\ \operatorname{mod}\ 2.
+\end{equation}
+Further, the group $\SO_n(F,Q)$ is the kernel of the (quasi)determinant map. Define the 
+\textit{spinor norm} to be the homomorphism $\mathrm{sp} : \SO_n(F,Q) \rightarrow F^{\times} / 
+(F^{\times})^2$. This homomorphism is defined in the following way. Any element of 
+$\SO_n(F,Q)$ arising as a reflection in $v$ for some $v \in V$, is sent to the value
+$Q(v)$ modulo $(F^{\times})^2$. This extends to a well-defined homomorphism. The subgroup
+$\Omega_n(F, Q)$ of $\SO_n(F,Q)$ is defined as the kernel of spinor norm. If the characteristic 
+of the field is not $2$, then there exists a double cover of $\Omega_n(F,Q)$, denoted as
+$\Spin_n(F,Q)$. 
+
+This section is devoted to some of the private life of the group $\Omega_{2m}(F,Q)$.
+Consider the vector space $V$ of dimension
+$2m+2$ over $F$ with a non-singular quadratic form $Q$ defined on it. 
+Let $f$ be a polar form of $Q$. 
+Assuming that the Witt index of $Q$ is at least $1$, we can pick 
+the basis $\mathcal{B} = \{v_1, w_1,...,w_{2m}, v_2\}$ in $V$ such that $(v_1,v_2)$ 
+is a hyperbolic pair. Consider the decomposition $V = \langle v_1 \rangle \oplus
+\langle w_1, ..., w_{2m} \rangle \oplus \langle v_2 \rangle$ and denote 
+$W = \langle w_1, ..., w_{2m} \rangle$. Further, denote by $Q_W$ the restriction of 
+$Q$ on $W$.
+
+\begin{lemma}
+    \label{lemma:1_stabiliser_omega}
+	The stabiliser in $\Omega_{2m+2}(F,Q)$ of the vector $v_1$ 
+	is a subgroup of shape $W\cn\Omega_{2m}(F,Q_W)$, and the stabiliser of 
+	the pair $(v_1,v_2)$ is a subgroup $\Omega_{2m}(F,Q_W)$.  
+\end{lemma}
+
+\begin{proof}
+	Any element in $\Omega_{2m+2}(F,Q)$ which fixes $v_1$ also stabilises
+    $\langle v_1 \rangle^{\perp}$, so it has the
+    following form:
+    \begin{equation*}
+	\hat{A}=\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		u_2^\T &\ \ \ \ \ A\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		\mu & u_1 & \lambda\ 
+	    \end{array}
+	\right),
+    \end{equation*}
+    where the matrix $A$ acts on the $2m$-dimensional subspace, 
+    spanned by $\{w_1, ..., w_{2m}\}$. 
+    Suppose $u_1 = (\nu_1, ...,  \nu_{2m})$, so such an element acts on $v_1$ as
+    \begin{equation*}
+	\begin{array}{rcl}
+	    v_1 & \mapsto & \mu v_0 + \sum\limits_{i=1}^{2m} \nu_i w_i + \lambda v_1,
+	\end{array}
+    \end{equation*}
+    but since the bilinear form $f$ is preserved we get
+    \begin{equation*}
+	1 = f(v_0,v_1) = f(v_0,\mu v_0) + \sum\limits_{i=1}^{2m} f(v_0,\nu_i w_i) + \lambda
+	f(v_0,v_1) = \lambda,
+    \end{equation*}
+    i.e. $\lambda = 1$. Consider the decomposition $F^{2m+2} = \langle v_0 \rangle \oplus
+    \langle w_1, ..., w_{2m} \rangle \oplus \langle v_1 \rangle$ and denote by $Q$ and
+    $\beta$ the quadratic and bilinear forms
+    on the subspace $F^{2m} = \langle w_1,...,w_{2m} \rangle$ obtained as the restriction of 
+    $\hat{Q}$ and $f$ respectively.
+    
+    Since $(v_0,v_1)$ is a 
+    hyperbolic pair, the form $f$ on $F^{2m+2}$ can be represented by the Gram matrix
+    \begin{equation*}
+	[f]_{\mathcal{B}} = \left(
+	    \begin{array}{c|c|c}
+		0 & 0 & 1  \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ B\ \ \ \ \  & 0 \\ 
+		 & & \\ \hline 
+		1 & 0 & 0 
+	    \end{array}
+	\right),
+    \end{equation*}
+    where $B$ is the matrix of $\beta$ with respect to the basis 
+    $\{ w_1 , ..., w_{2m} \}$. 
+    We explore the fact that an element in the stabiliser of $v_0$ preserves the 
+    form $f$:
+    \begin{multline*}
+	\left(
+	    \begin{array}{c|c|c}
+		0 & 0 & 1  \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ B\ \ \ \ \  & 0 \\ 
+		 & & \\ \hline 
+		1 & 0 & 0 
+	    \end{array}
+	\right) =\\
+	= \left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		u_2^\T &\ \ \ \ \ A\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		\mu & u_1 & 1\ 
+	    \end{array}
+	\right)
+	\left(
+	    \begin{array}{c|c|c}
+		0 & 0 & 1  \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ B\ \ \ \ \  & 0 \\ 
+		 & & \\ \hline 
+		1 & 0 & 0 
+	    \end{array}
+	\right)
+	\left(
+	    \begin{array}{c|c|c}
+		1 & u_2 & \mu\  \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ A^\T\ \ \ \ \  & u_1^\T  \\ 
+		 & & \\ \hline 
+		0 & 0 & 1\  
+	    \end{array}
+	\right) =
+    \end{multline*}
+    \begin{equation*}
+	= \left(
+	    \begin{array}{c|c|c}
+		0 & 0 & 1\ \\ \hline
+		& & \\
+		0 &\ \ \ \ ABA^\T\ \ \ \ & ABu_1^\T + u_2^\T \\
+		& & \\ \hline
+		1 & u_2+u_1 BA^\T & 2\mu + u_1 B u_1^\T
+	    \end{array}
+	\right),
+    \end{equation*}
+    so we notice that $ABA^\T = B$. Furthermore, since
+    $(0\mid v \mid 0) \hat{A} = (0 \mid vA \mid 0)$, where $v \in F^{2m}$, we obtain
+    \begin{equation*}
+	Q(vA) = \hat{Q}((0 \mid vA \mid 0) ) = \hat{Q}((0 \mid v \mid 0) ) =
+	    Q(v),
+    \end{equation*}
+    so $A$ is an element of $\GO_{2m}(F,Q)$.
+    Additionally, $u_2 = -u_1BA^\T$ and we see that $u_2$ is uniquely determined by $u_1$. 
+    From the bottom right corner of the resulting matrix we obtain
+    $\mu = -Q(u_1)$ in odd characteristic. In case of characteristic $2$ we can 
+    explore the quadratic form again:
+    \begin{multline*}
+	0 = \hat{Q}(v_1) = \hat{Q}(v_1 \hat{A}) = \hat{Q}( (\mu \mid u_1 \mid 1) ) = \\
+	= \hat{Q}( (\mu \mid u_1 \mid 0) ) + \hat{Q}(v_1) + f( (\mu\mid u_1 \mid 0), v_1)
+	= Q(u_1) + \mu.
+    \end{multline*}
+    
+    Consider the decomposition
+    \begin{equation*}
+	\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-ABu_1^\T &\ \ \ \ \ A\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(u_1) & u_1 & 1
+	    \end{array}
+	\right) = \left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0 \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ A\ \ \ \ \  & 0  \\ 
+		 & & \\ \hline 
+		0 & 0 & 1 
+	    \end{array}
+	\right)
+	\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-Bu_1^\T &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(u_1) & u_1 & 1
+	    \end{array}
+	\right),
+    \end{equation*}
+    The matrices of the form
+    \begin{equation*}
+	C_{u_1} = \left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-Bu_1^\T &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(u_1) & u_1 & 1
+	    \end{array}
+	\right)
+    \end{equation*}
+    generate an elementary abelian group $F^{2m}$. Indeed, since the product
+    of two such matrices is given by
+    \begin{multline*}
+	\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-Bu^\T &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(u) & u & 1
+	    \end{array}
+	\right)\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-Bv^\T &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(v) & v & 1 
+	    \end{array}
+	\right)= \\
+	=\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		-B(u+v)^\T &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		-Q(u+v) & u+v & 1
+	    \end{array}
+	\right),
+    \end{multline*}
+    we see that the set of these matrices is closed under multiplication 
+    and moreover any two such matrices commute.
+    
+    To show that the matrix $A$ is an element of $\Omega_{2m}(F,Q)$,
+    we use Proposition 1.6.11 from \cite{BrayHoltRD} to calculate the spinor 
+    norm and, in case of characteristic $2$, the quasideterminant of the
+    matrices $C_{u_1}$. Note that $\det(C_{u_1}) = \det(\hat{A}) = 1$.
+    Consider the matrix
+    \begin{equation*}
+	\II-C_{u_1} = \left(
+	    \begin{array}{c|c|c}
+		0 & 0 & 0  \\ \hline 
+		 & & \\
+		Bu_1^\T &\ \ \ \ \ 0\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		Q(u_1) & -u_1 & 0
+	    \end{array}
+	\right).
+    \end{equation*}
+    For a vector $v$ we denote by $[v]_i$ its $i$-th component. Now, 
+    if $u_1 = 0$, then $\II-C_{u_1}$ has rank $0$, whereas if $u_1 \neq 0$, then
+    there is an index $i$ such that $[Bu_1^\T]_i \neq 0$ and it follows that
+    the rank of $\II-C_{u_1}$ in this case is $2$. Consequently, $k=\rank(\II-C_{u_1})$ is
+    even, and so by the Proposition 1.6.11 in \cite{BrayHoltRD} the quasideterminant of $C_{u_1}$
+    is $1$. Further, if $D$ is a $k\times (2m+2)$ matrix whose rows are the basis
+    elements of a complement of the nullspace of $\II-C_{u_1}$, then the spinor norm of
+     $C_{u_1}$ is $1$
+    if $\det(D(\II-C_{u_1}) [f]_{\mathcal{B}} D^\T)$ is a square in $F$. If $u_1 \neq 0$,
+    then the complement of the nullspace of $I-C_{u_1}$ has the basis
+    $\{ w_i, v_1 \}$, where the index $i$ is such that $[Bu_1^\T]_i \neq 0$. 
+    The matrix $D$ has the following form:
+    \begin{equation*}
+	D = \begin{pmatrix}
+	    0 & 0 & \cdots & 0 & 1 & 0 & \cdots & 0 & 0 \\
+	    0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 0 & 1
+	\end{pmatrix},
+    \end{equation*}
+    where $1$ in the first row is in the $(i+1)$-st position. We calculate
+    \begin{equation*}
+	D(\II-C_{u_1}) = \left(
+	    \begin{array}{c|c|c}
+		\alpha & 0 & 0 \\ \hline
+		Q(u_1) & -u_1 & 0
+	    \end{array}
+	\right),\ 
+	[f]_{\mathcal{B}} D^\T = \begin{pmatrix}
+	    0 & 1\  \\
+	    B_{1,i} & 0\  \\
+	    \vdots & \vdots \\
+	    B_{2m,i} & 0\  \\
+	    0 & 0
+	\end{pmatrix},
+    \end{equation*}
+    where $\alpha = [Bu_1^\T]_i = [u_1B]_i$. Finally, 
+    \begin{equation*}
+	D(\II-C_{u_1}) [f]_{\mathcal{B}} D^\T = \begin{pmatrix}
+	    0 & \alpha \\
+	    -\alpha & Q(u_1)
+	\end{pmatrix},
+    \end{equation*}
+    so $\det(D(\II-C_{u_1})FD^\T) = \alpha^2$ as needed. Since the quasideterminant and 
+    the spinor norm are multiplicative (Theorems 11.43 and 11.50 in \cite{Taylor}),
+    and $\hat{A} \in \Omega_{2m+2}(F,\hat{Q})$, we conclude that $A$ is
+    an element of $\Omega_{2m}(F,Q)$ and it follows that the stabiliser
+    of $v_0$ in $\Omega_{2m}(F,\hat{Q})$ is indeed a subgroup of shape
+    $W\cn\Omega_{2m}(F,Q)$.
+    
+    Lastly, if we stabilise $v_0$ and $v_1$ simultaneously, a general element in the
+    stabiliser takes the form
+    \begin{equation*}
+	\left(
+	    \begin{array}{c|c|c}
+		1 & 0 & 0 \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ A\ \ \ \ \  & 0 \\ 
+		 & & \\ \hline 
+		0 & 0 & 1
+	    \end{array}
+	\right),
+    \end{equation*}
+    so the stabiliser of $(v_0,v_1)$ is $\Omega_{2m}(F,Q)$. 
+\end{proof}
 
 % ------------------------------------------------------------------------
 

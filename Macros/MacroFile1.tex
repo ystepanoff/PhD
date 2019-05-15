@@ -145,7 +145,8 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{proposition}[theorem]{Proposition}
 
-
+\AtAppendix{\counterwithin{theorem}{appendixsection}}
+\AtAppendix{\renewcommand{\thetheorem}{\Alph{appendixsection}.\arabic{theorem}}}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "~/Documents/LaTeX/CUEDThesisPSnPDF/thesis"
