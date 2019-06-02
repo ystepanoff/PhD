@@ -42,7 +42,7 @@ $Q$ and $f$ on $W$.
     $\langle v_1 \rangle^{\perp}$, so it has the
     following form with respect to $\mathcal{B}$:
     \begin{equation*}
-	[g]_{\mathcal{B}}=\left(
+	[g]_{\mathcal{B}}=\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -50,25 +50,25 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		\mu & u_1 & \lambda\ 
 	    \end{array}
-	\right),
+	\right],
     \end{equation*}
     where the matrix $A$ acts on the $2m$-dimensional subspace, 
     spanned by $\{w_1, ..., w_{2m}\}$. Such an element $g$ acts on $v_2$ as
     \begin{equation*}
 	\begin{array}{r@{\;}c@{\;}l}
-		v_2 & \mapsto & (\mu \mid u_1 \mid\ \lambda),
+		v_2 & \mapsto & [\mu \mid u_1 \mid\ \lambda],
 	\end{array}
     \end{equation*}
     and since the bilinear form $f$ is preserved we get
     \begin{equation*}
 	1 = f(v_1,v_2) = f(v_1,\mu v_2) + 
-	f(v_1, (0 \mid u_1 \mid\ 0) ) + \lambda f(v_1,v_2) = \lambda,
+	f(v_1, [0 \mid u_1 \mid\ 0] ) + \lambda f(v_1,v_2) = \lambda,
     \end{equation*}
     
     Since $(v_1,v_2)$ is a 
     hyperbolic pair, $f$ can be represented by the Gram matrix
     \begin{equation*}
-	[f]_{\mathcal{B}} = \left(
+	[f]_{\mathcal{B}} = \left[
 	    \begin{array}{c|c|c}
 		0 & 0 & 1  \\ \hline 
 		 & & \\
@@ -76,14 +76,14 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		1 & 0 & 0 
 	    \end{array}
-	\right),
+	\right],
     \end{equation*}
     where $B$ is the matrix of $f_W$ with respect to the basis 
     $\{ w_1 , ..., w_{2m} \}$. 
     We explore the fact that an element in the stabiliser of $v_1$ preserves the 
     form $f$:
     \begin{multline*}
-	\left(
+	\left[
 	    \begin{array}{c|c|c}
 		0 & 0 & 1  \\ \hline 
 		 & & \\
@@ -91,10 +91,10 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		1 & 0 & 0 
 	    \end{array}
-	\right) =\\
+	\right] =\\
 	\end{multline*}
 	\begin{multline*}
-	= \left(
+	= \left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -102,8 +102,8 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		\mu & u_1 & 1\ 
 	    \end{array}
-	\right)
-	\left(
+	\right]
+	\left[
 	    \begin{array}{c|c|c}
 		0 & 0 & 1  \\ \hline 
 		 & & \\
@@ -111,8 +111,8 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		1 & 0 & 0 
 	    \end{array}
-	\right)
-	\left(
+	\right]
+	\left[
 	    \begin{array}{c|c|c}
 		1 & u_2 & \mu\  \\ \hline 
 		 & & \\
@@ -120,10 +120,10 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		0 & 0 & 1\  
 	    \end{array}
-	\right) =
+	\right] =
     \end{multline*}
     \begin{equation*}
-	= \left(
+	= \left[
 	    \begin{array}{c|c|c}
 		0 & 0 & 1\ \\ \hline
 		& & \\
@@ -131,12 +131,12 @@ $Q$ and $f$ on $W$.
 		& & \\ \hline
 		1 & u_2+u_1 BA^\T & 2\mu + u_1 B u_1^\T
 	    \end{array}
-	\right),
+	\right],
     \end{equation*}
     so we notice that $ABA^\T = B$. Furthermore, since
-    $(0\mid v \mid 0) [g]_{\mathcal{B}} = (0 \mid vA \mid 0)$, where $v \in W$, we obtain
+    $[0\mid v \mid 0] [g]_{\mathcal{B}} = [0 \mid vA \mid 0]$, where $v \in W$, we obtain
     \begin{equation*}
-	Q_W(vA) = Q((0 \mid vA \mid 0) ) = Q((0 \mid v \mid 0) ) =
+	Q_W(vA) = Q([0 \mid vA \mid 0]) = Q([0 \mid v \mid 0]) =
 	    Q_W(v),
     \end{equation*}
     so $A$ is an element of $\GO_{2m}(F,Q)$.
@@ -145,14 +145,14 @@ $Q$ and $f$ on $W$.
     $\mu = -Q(u_1)$ in odd characteristic. In case of characteristic $2$ we can 
     explore the quadratic form again:
     \begin{multline*}
-	0 = Q(v_2) = Q(v_2 [g]_{\mathcal{B}}) = Q( (\mu \mid u_1 \mid 1) ) = \\
-	= Q( (\mu \mid u_1 \mid 0) ) + Q(v_2) + f( (\mu\mid u_1 \mid 0), v_2)
+	0 = Q(v_2) = Q(v_2 [g]_{\mathcal{B}}) = Q( [\mu \mid u_1 \mid 1] ) = \\
+	= Q( [\mu \mid u_1 \mid 0] ) + Q(v_2) + f( [\mu\mid u_1 \mid 0], v_2)
 	= Q(u_1) + \mu.
     \end{multline*}
     
     Consider the decomposition
     \begin{equation*}
-	\left(
+	\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -160,7 +160,7 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(u_1) & u_1 & 1
 	    \end{array}
-	\right) = \left(
+	\right] = \left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0 \\ \hline 
 		 & & \\
@@ -168,8 +168,8 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		0 & 0 & 1 
 	    \end{array}
-	\right)
-	\left(
+	\right]
+	\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -177,11 +177,11 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(u_1) & u_1 & 1
 	    \end{array}
-	\right),
+	\right].
     \end{equation*}
     The matrices of the form
     \begin{equation*}
-	C_{u_1} = \left(
+	C_{u_1} = \left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -189,13 +189,13 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(u_1) & u_1 & 1
 	    \end{array}
-	\right)
+	\right]
     \end{equation*}
     generate an elementary abelian group isomorphic to $W$ (as abelian groups). 
     Indeed, since the product
     of two such matrices is given by
     \begin{multline*}
-	\left(
+	\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -203,7 +203,7 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(u) & u & 1
 	    \end{array}
-	\right)\left(
+	\right]\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -211,8 +211,8 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(v) & v & 1 
 	    \end{array}
-	\right)= \\
-	=\left(
+	\right]= \\
+	=\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0\  \\ \hline 
 		 & & \\
@@ -220,7 +220,7 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		-Q(u+v) & u+v & 1
 	    \end{array}
-	\right),
+	\right],
     \end{multline*}
     we see that the set of these matrices is closed under multiplication 
     and moreover any two such matrices commute.
@@ -231,7 +231,7 @@ $Q$ and $f$ on $W$.
     matrices $C_{u_1}$. Note that $\det(C_{u_1}) = \det([g]_{\mathcal{B}}) = 1$.
     Consider the matrix
     \begin{equation*}
-	\II-C_{u_1} = \left(
+	\II-C_{u_1} = \left[
 	    \begin{array}{c|c|c}
 		0 & 0 & 0  \\ \hline 
 		 & & \\
@@ -239,7 +239,7 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		Q(u_1) & -u_1 & 0
 	    \end{array}
-	\right).
+	\right].
     \end{equation*}
     For a vector $v$ we denote by $[v]_i$ its $i$-th component. Now, 
     if $u_1 = 0$, then $\II-C_{u_1}$ has rank $0$, whereas if $u_1 \neq 0$, then
@@ -254,33 +254,33 @@ $Q$ and $f$ on $W$.
     $\{ w_i, v_1 \}$, where the index $i$ is such that $[Bu_1^\T]_i \neq 0$. 
     The matrix $D$ has the following form:
     \begin{equation*}
-	D = \begin{pmatrix}
+	D = \begin{bmatrix}
 	    0 & 0 & \cdots & 0 & 1 & 0 & \cdots & 0 & 0 \\
 	    0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 0 & 1
-	\end{pmatrix},
+	\end{bmatrix},
     \end{equation*}
     where $1$ in the first row is in the $(i+1)$-st position. We calculate
     \begin{equation*}
-	D(\II-C_{u_1}) = \left(
+	D(\II-C_{u_1}) = \left[
 	    \begin{array}{c|c|c}
 		\alpha & 0 & 0 \\ \hline
 		Q(u_1) & -u_1 & 0
 	    \end{array}
-	\right),\ 
-	[f]_{\mathcal{B}} D^\T = \begin{pmatrix}
+	\right],\ 
+	[f]_{\mathcal{B}} D^\T = \begin{bmatrix}
 	    0 & 1\  \\
 	    B_{1,i} & 0\  \\
 	    \vdots & \vdots \\
 	    B_{2m,i} & 0\  \\
 	    0 & 0
-	\end{pmatrix},
+	\end{bmatrix},
     \end{equation*}
     where $\alpha = [Bu_1^\T]_i = [u_1B]_i$. Finally, 
     \begin{equation*}
-	D(\II-C_{u_1}) [f]_{\mathcal{B}} D^\T = \begin{pmatrix}
+	D(\II-C_{u_1}) [f]_{\mathcal{B}} D^\T = \begin{bmatrix}
 	    0 & \alpha \\
 	    -\alpha & Q(u_1)
-	\end{pmatrix},
+	\end{bmatrix},
     \end{equation*}
     so $\det(D(\II-C_{u_1})FD^\T) = \alpha^2$ as needed. Since the quasideterminant and 
     the spinor norm are multiplicative (Theorems 11.43 and 11.50 in \cite{Taylor}),
@@ -292,7 +292,7 @@ $Q$ and $f$ on $W$.
     Lastly, if we stabilise $v_1$ and $v_2$ simultaneously, a general element in the
     stabiliser takes the form
     \begin{equation*}
-	\left(
+	\left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0 \\ \hline 
 		 & & \\
@@ -300,7 +300,7 @@ $Q$ and $f$ on $W$.
 		 & & \\ \hline 
 		0 & 0 & 1
 	    \end{array}
-	\right),
+	\right],
     \end{equation*}
     so the stabiliser of the pair $(v_1,v_2)$ is $\Omega_{2m}(F,Q)$. 
 \end{proof}
@@ -323,14 +323,14 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
     Suppose $u, v \in O_{\lambda}$. Since by Witt's lemma $\GO_{2m+2}(F,Q)$
     acts transitively on $O_{\lambda}$, there is an element 
     $g \in \GO_{2m+2}(F,Q)$ which sends $u$ to $v$. Consider the basis 
-    for $V$, $\mathcal{B} = \{e, w_1, ..., w_{2m-2}, f\}$ such that 
-    $(e,f)$ is a hyperbolic pair and $u \in \langle e, f \rangle$, and so
-    $V = \langle e \rangle \oplus \langle w_1, ..., w_{2m-2} \rangle
-    \oplus \langle f \rangle$. Suppose $h$ is an element in the stabiliser of $(e,f)$.
+    for $V$, $\mathcal{B} = \{v_1, w_1, ..., w_{2m-2}, v_1\}$ such that as before
+    $(v_1,v_2)$ is a hyperbolic pair and $u \in \langle v_1, v_2 \rangle$, and so
+    $V = \langle v_1 \rangle \oplus \langle w_1, ..., w_{2m-2} \rangle
+    \oplus \langle v_2 \rangle$. Suppose $h$ is an element in the stabiliser of $(v_1,v_2)$.
     As a consequence, $h$ stabilises $u$ and with respect to $\mathcal{B}$ it has 
     the form
     \begin{equation*}
-	[h]_{\mathcal{B}} = \left(
+	[h]_{\mathcal{B}} = \left[
 	    \begin{array}{c|c|c}
 		1 & 0 & 0 \\ \hline 
 		 & & \\
@@ -338,29 +338,29 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
 		 & & \\ \hline 
 		0 & 0 & 1
 	    \end{array}
-	\right),
+	\right],
     \end{equation*}
     where the matrix $A$ acts on \mbox{$W=\langle w_1, ..., w_{2m-2} \rangle$} as an
      element of $\GO_{2m}(W,Q_W)$. If the determinant of $g$ is $1$,
     then we may take
     \begin{equation*}
-	A = \begin{pmatrix}
+	A = \begin{bmatrix}
 	    \mu & 0 & 0 & \cdots & 0 \\
 	    0 & \mu^{-1} & 0 & \cdots & 0 \\
 	    0 & 0 & 1 & \cdots & 0 \\
 	    \vdots & \vdots & \vdots & \ddots & \vdots \\
 	    0 & 0 & 0 & \cdots & 1
-	\end{pmatrix},
+	\end{bmatrix},
     \end{equation*}
     where $\mu \in F$. On the other hand, if $\det(g) = -1$, then we take		
     \begin{equation*}
-	A = \begin{pmatrix}
+	A = \begin{bmatrix}
 	    0 & \mu^{-1} & 0 & \cdots & 0 \\
 	    \mu & 0 & 0 & \cdots & 0 \\
 	    0 & 0 & 1 & \cdots & 0 \\
 	    \vdots & \vdots & \vdots & \ddots & \vdots \\
 	    0 & 0 & 0 & \cdots & 1
-	\end{pmatrix}
+	\end{bmatrix}
     \end{equation*}	
     instead, so we can always get $\det(hg) = 1$. Note that the latter choice of 
     $A$ also adjusts the quasideterminant in characteristic $2$ as the 
@@ -369,7 +369,7 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
     we can ensure that the spinor norm of $hg$ is $1$, i.e. $hg \in \Omega_{2m+2}(F,Q)$. 
 \end{proof}
 
-The following lemmata is explicitly used in the constructions of certain orthogonal subgroups
+The following theorems are explicitly used in the constructions of certain orthogonal subgroups
 of $\EE_6(F)$ and ${}^2\EE_6^K(F)$. 
 
 \begin{theorem}
@@ -381,13 +381,13 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
 \begin{proof}
 	Recall that $v_2 \in V$ is mapped under the action of 
     $\mathcal{G} = W\cn\Omega_{2m}(F,Q_W)$ to a vector of the
-    form $(-Q_W(u) \mid u \mid 1)$, where $u$ is an element of $W$. 
+    form $[-Q_W(u) \mid u \mid 1]$, where $u$ is an element of $W$. 
     Since the stabiliser of $v_2$ in $\mathcal{G}$ is $\Omega_{2m}(F,Q_W)$, 
     we conclude that 
     the orbit of $v_2$ under the action of $\mathcal{G}$ is the following set:
     \begin{equation*}
-	\Orb_{\mathcal{G}}(v_2) = \left\{\  \left( -Q_W(u) \mid  u \mid 1
-	 \right)\ \bigg|\ u \in W \ \right\}.
+	\Orb_{\mathcal{G}}(v_2) = \left\{\  \left[ -Q_W(u) \mid  u \mid 1
+	 \right]\ \bigg|\ u \in W \ \right\}.
     \end{equation*}
     Since the elements of this orbit are in one-to-one correspondence with the
     cosets of $\Omega_{2m}(F,Q_W)$ in $\mathcal{G}$, 
@@ -398,10 +398,10 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
     $\Orb_{\mathcal{G}}(v_2)$. A general element in $\mathcal{G}$ 
     acts on the elements of $\Orb_{\mathcal{G}}(v_2)$ in the following way:
     \begin{multline*}
-	( -Q_W(u) \mid  u \mid 1 ) \ \mapsto \ 
-	( -Q_W(u) - uABv^\T - Q(v) \mid
-	    uA + v \mid 1) = \\
-	    = (-Q_W(uA + v) \mid uA + v \mid 1).
+	[ -Q_W(u) \mid  u \mid 1 ] \ \mapsto \ 
+	[ -Q_W(u) - uABv^\T - Q(v) \mid
+	    uA + v \mid 1] = \\
+	    = [-Q_W(uA + v) \mid uA + v \mid 1].
     \end{multline*}
     Note that $uABv^\T = f_W( uA, v )$. 
     We see that this action is isomorphic to the action on $W$ defined by
@@ -412,32 +412,32 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
     Denote the group generated by the described action on $W$ as
     $\mathrm{A\Omega}_{2m}(F,Q_W)$.
     
-    Since $Q_W$ is of Witt index at least $2$, we may choose a hyperbolic pair 
-    $(e,f)$ in $W$ such that $W = \langle e, f \rangle \oplus U$, where 
-    $U = \langle e, f \rangle^{\perp}$. We aim to show that any 
+    Since $Q_W$ is of Witt index at least $1$, we may choose a hyperbolic pair 
+    $(u_1,u_2)$ in $W$ such that $W = \langle u_1, u_2 \rangle \oplus U$, where 
+    $U = \langle u_1, u_2 \rangle^{\perp}$. We aim to show that any 
     $\mathrm{A\Omega}_{2m}(F,Q_W)$-congruence on $W$ is trivial (and hence, the 
     action is primitive). Suppose $w_1 \sim w_2$, where $w_1,w_2 \in W$ and 
     $\sim$ is some congruence relation preserved by $\mathrm{A\Omega}_{2m}(F,Q_W)$.
     It follows that $w_1 - w_2 \sim 0$, and so we may start with $v \sim 0$ for some
     $v \in W$. We distinguish two cases.
     
-    First, if $Q_W(v) = 0$, then since $\Omega_{2m}(F,Q_W)$ acts transitively on vectors
-    of norm $1$, we get $e \sim 0$, $f \sim 0$, and also $-\lambda f \sim 0$ for any 
+    First, if $Q_W(v) = 0$, then since $\Omega_{2m}(F,Q_W)$ acts transitively on isotropic
+    vectors in $W$, we get $u_1 \sim 0$, $u_2 \sim 0$, and also $-\lambda u_2 \sim 0$ for any 
     $\lambda \in F$. Since $\sim$ is a congruence relation, it is transitive and so
-    $e \sim -\lambda f$, from which it follows $e + \lambda f \sim 0$. Now, 
-    $Q_W(e + \lambda f) = \lambda$, and $\lambda$ is an arbitrary field element,
+    $u_1 \sim -\lambda u_2$, from which it follows $u_1 + \lambda u_2 \sim 0$. Now, 
+    $Q_W(u_1 + \lambda u_2) = \lambda$, and $\lambda$ is an arbitrary field element,
     so $\sim$ is trivial.
     
     Next, if $Q_W(v) = \lambda$ for some non-zero $\lambda \in F$, we consider two vectors
-    $w_1 = e + \lambda f$ and $w_2 = e + (\lambda - Q_W(u))f + u$ for some $u \in U$. 
+    $w_1 = u_1 + \lambda u_2$ and $w_2 = u_1 + (\lambda - Q_W(u))u_2 + u$ for some $u \in U$. 
     Note that $Q_W(w_1) = Q_W(w_2) = \lambda$, so since $\Omega_{2m}(F,Q_W)$
     acts transitively on the vectors of norm $\lambda$, we obtain
     $w_1 \sim 0$ and $w_2 \sim 0$, from which it immediately follows that 
     $w_1 \sim w_2$, and further $w_1 - w_2 \sim 0$. 
-    We find $Q_W(w_1 - w_2) = Q_W(u - Q(u)f) = Q_W(u)$, so in fact we have
-    $u \sim 0$ for some $u \in U$. From $Q(e+u) = Q(u)$ it follows that 
-    $e + u \sim 0$, and so by transitivity $e+u \sim u$. We subtract $u$ from both
-    sides to obtain $e \sim 0$, which is covered by the previous case. 
+    We find $Q_W(w_1 - w_2) = Q_W(u - Q(u)u_2) = Q_W(u)$, so in fact we have
+    $u \sim 0$ for some $u \in U$. From $Q(u_1+u) = Q(u)$ it follows that 
+    $u_1 + u \sim 0$, and so by transitivity $u_1+u \sim u$. We subtract $u$ from both
+    sides to obtain $u_1 \sim 0$, which is covered by the previous case. 
 \end{proof}
 
 As we already know from Lemma \ref{lemma:A_stabiliser_omega}, the stabiliser in $\Omega_{2m+2}(F,Q)$
@@ -448,12 +448,66 @@ the $1$-space spanned by $v_1$.
 
 \begin{theorem}
 	\label{theorem:A_space_stab}
-	Let $Q_W$ be of Witt index at least $2$. Any subgroup $H$ such that
+	Let $Q_W$ be of Witt index at least $1$. Any subgroup $H$ such that
 	\begin{equation}
 		W\cn\Omega_{2m}(F,Q_W) \leqslant H < \Omega_{2m+2}(F,Q),
 	\end{equation}
 	stabilises the $1$-space $\langle v_1 \rangle$. 
 \end{theorem}
+
+\begin{proof}
+	Let $G = \Omega_{2m+2}(F,Q)$. We aim to prove that if $v_1 \sim v$ for some $v \in V$, where
+	$\sim$ is any non-trivial $G$-congruence, then $v = \lambda v_1$ for some $\lambda \in F$. 
+	For the sake of finding a contradiction, suppose that $v = \lambda v_1 + u + \mu v_2$,
+	where $u + \mu v_2 \neq 0$, i.e. either $u \neq 0$ or $\mu \neq 0$. We distinguish two cases.
+	
+	First, if $\mu = 0$, then $v_1 \sim v$, where $v = \lambda v_1 + u$ with $0\neq u \in W$.
+	We have $0 = Q(v) = Q_W(u)$. 
+	Recall that $W\cn \Omega_{2m}(F,Q_W)$ is the stabiliser in $\Omega_{2m+2}(F, Q)$ of $v_1$,
+	so with respect to the familiar basis $\mathcal{B} = \{v_1, w_1 ,..., w_{2m}, v_2\}$,
+	its general element has the form 
+	\begin{equation*}
+	[g]_{\mathcal{B}}=\left[
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		 & & \\
+		u_2^\T &\ \ \ \ \ A\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		\mu & u_1 & 1\ 
+	    \end{array}
+	\right],
+	\end{equation*}
+	where $u_2 = -u_1 BA^{\T}$. Now, $g$ maps $v$ to a vector of the form \mbox{$v^g = 
+	(\lambda + u u_2^{\T}) v_1 + uA$}. Since $u u_2^{\T} = 
+	-u A B u_1^{\T} = f_W(u, u_1)$, we get \mbox{$v^g = (\lambda - f_W(u, u_1))v_1 + uA$}.
+	Setting $A = \II_{2m}$, we see that it is possible to send $v$ to a vector
+	of the form $\alpha v_1 + u$ for any $\alpha \in F$. On the other hand, taking $u_1 = 0$,
+	we obtain the action on \mbox{$W = \langle w_1, ..., w_{2m} \rangle$} 
+	of $\Omega_{2m}(F,Q_W)$, which is 
+	transitive on the isotropic vectors in $W$. We have shown that $v_1 \sim v$ for any $v$ of
+	the form $\alpha v_1 + u$ for arbitrary $\alpha \in F$ and $0\neq u \in W$. 
+	The group $\Omega_{2m+2}(F,Q)$	in 
+	its turn is transitive on the isotropic vectors in $V$, so there exists an element
+	$h \in \Omega_{2m+2}(F,Q)$ such that $v_1^h = v_2$ and $v^h \in \langle v_1\rangle
+	\oplus W$. It follows that $v_2 \sim v^h$ and so, by transitivity of $\sim$ we find that 
+	$v_1 \sim v_2$. Finally, it is easy to derive the congruences of the form 
+	$v_1 \sim \alpha v_1$ and $v_2 \sim \beta v_2$ for any non-zero $\alpha,\beta \in F$. 
+	For instance, $v_2$ can be scaled using an element of the form 
+	\begin{equation*}
+		[s(\beta)]_{\mathcal{B}} = \left[
+	    \begin{array}{c|c|c}
+		\beta^{-1} & 0 & 0\  \\ \hline 
+		 & & \\
+		0 &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
+		 & & \\ \hline 
+		0 & 0 & \beta 
+	    \end{array}
+	\right].
+	\end{equation*}
+	It follows that if $\mu = 0$, the congruence relation $\sim$ is universal. 
+	
+	
+\end{proof}
 
 % ------------------------------------------------------------------------
 
