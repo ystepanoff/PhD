@@ -31,7 +31,7 @@ Given an extension $K : F$, we define the \textit{Galois group} of $K$ over $F$,
 $\Gal(K : F)$, to be the group
 of automorphisms of $K$ that fix $F$ elementwise. In other words,
 \begin{equation}
-	\Gal(K : F) = \{\ \varsigma \in \Aut(K)\ \big|\ \alpha^{\varsigma} = \alpha\ \mbox{for all}\ 
+	\Gal(K : F) = \{\ \sigma \in \Aut(K)\ \big|\ \alpha^{\sigma} = \alpha\ \mbox{for all}\ 
 		\alpha \in F\ \}.
 \end{equation}
 The most important result for us here is the following theorem.
@@ -42,8 +42,8 @@ The most important result for us here is the following theorem.
 	\end{equation}
 \end{theorem}
 It follows that in case $[K:F] = 2$ there is a unique non-trivial field automorphism 
-$\varsigma : K \rightarrow K$, fixing $F$ elementwise. If $F = \Fq$ and $K = \Fqs$, then
-$\varsigma$ takes the form $\varsigma : \lambda \mapsto \lambda^q$. 
+$\sigma : K \rightarrow K$, fixing $F$ elementwise. If $F = \Fq$ and $K = \Fqs$, then
+$\sigma$ takes the form $\sigma : \lambda \mapsto \lambda^q$. 
 
 % Moore: Doubly-infinite systems of simple groups
 
@@ -54,7 +54,7 @@ and let $s$ be a $K$-automorphism
 with $F$ being its fixed field. Let also $V$ be a $2m$-dimensional vector space over $K$ with 
 a quadratic form $Q$ and a conjugate-symmetric sesquilinear form 
 \mbox{$B : V\times V \rightarrow K$},
-defined with respect to $\varsigma$. Denote by $f$ the polar form of $Q$, and suppose that 
+defined with respect to $\sigma$. Denote by $f$ the polar form of $Q$, and suppose that 
 \mbox{$\mathcal{B} = \{ e_1, f_1, e_2, f_2, ..., e_m, f_m \}$}
 is a hyperbolic basis of $V$ with respect to $f$, i.e.
 \begin{equation}
@@ -89,16 +89,17 @@ respectively. We say that an element $v \in V$ is \textit{singular isotropic}, i
 \section{Hermitean form in $\J$ and the group ${}^2\SE_6^K(F)$}
 
 Suppose as before $K : F$ is a quadratic Galois extension with $F$ being a fixed field of a
-$K$-automorphism $\varsigma$. In this chapter $\O_F$ will always be a split octonion algebra 
+$K$-automorphism $\sigma$. In this chapter $\O_F$ will always be a split octonion algebra 
 over $F$ and $\O_K = \O_F \otimes_F K$. We also use the same basis 
 $\{\ e_i\ \mid\ i \in \pm I\ \}$ as in Section \ref{section:split_basis}.
 
-Denote by $\s$ the automorphism of $\O_K$ induced by the field automorphism 
-$\varsigma$:
+We slightly abuse the notation here denoting by $\s$ also the automorphism of $\O_K$ induced by 
+the field automorphism $\sigma$:
 \begin{equation}
 	\left( \sum_{i\in \pm I} \lambda_i e_i \right)^{\s} = 
-	\sum_{i\in \pm I} \lambda_{i}^{\varsigma} e_i. 
+	\sum_{i\in \pm I} \lambda_{i}^{\sigma} e_i. 
 \end{equation}
+This, however, should not create any difficulties for the reader. 
 Consider the following Hermitean form defined on the elements of $\O_K$:
 \begin{equation}
 	h(x) = A \ovA^{\s} + A^{\s} \ovA = \Tr(A \ovA^{\s}).
@@ -230,7 +231,7 @@ To verify that they preserve $\H$, we look at the action on $\J$:
 		& & \mid	A+\ovx \ovB , B-\ovA \ovx ^{\s},C-x^{\s}\ovC x+ax-bx^{\s}), \\
 		
 		N_x': (a,b,c\mid A,B,C) & \mapsto & 
-		(a, b-\Tr(a\ovx^{\s}), c+\Tr(\ovA x) \mid \\
+		(a, b-\Tr(A \ovx^{\s}), c+\Tr(\ovA x) \mid \\
 		& & \mid	A - x^{\s} \ovA x + bx-cx^{\s}, B + \ovx \ovC, C - \ovB \ovx^{\s}), \\
 		
 		N_x'': (a,b,c\mid A,B,C) & \mapsto &
@@ -526,7 +527,7 @@ that although $SE_6$ acts transitively on white points, the action of ${}^2\SE_6
 into several orbits. We say that a non-zero Albert vector $X$ is \textit{isotropic}, if
 $\H(X) = 0$. 
 
-We first consider some examples. Suppose $W_1 = (0,0,0\mid 0,0,e_0)$. As we know (\ref{eq:17_space}), 
+We first consider some examples. Suppose $X_1 = (0,0,0\mid 0,0,e_0)$. As we know (\ref{eq:17_space}), 
 it determines 
 a $17$-space $	\{\ (a,b,0 \mid A,B,C)\ \big|\ e_0 A = B e_0 = \Tr(e_0 \ovC) = 0\ \}$. A
 straightforward calculation shows that
@@ -539,7 +540,7 @@ this $17$-space $U_1$ is spanned by the Albert vectors of the form \mbox{$(a,b,0
 		\rangle.
 	\end{array}
 \end{equation}
-We are also interested in the radical $R_1$ of $\H$ inside this $17$-space. In our case it is spannned
+We are also interested in the radical $R_1$ of $\H$ inside this $17$-space. In our case it is spanned
 by the vectors of the form \mbox{$(0,0,0\mid A,B,C)$} with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -548,11 +549,11 @@ by the vectors of the form \mbox{$(0,0,0\mid A,B,C)$} with
 		C & \in & \langle e_0 \rangle.
 	\end{array}
 \end{equation}
-In other words, our vector $W_1$ determines the $17$-space $U_1$ and the $9$-dimensional radical $R_1$ 
-of $\H$ in $U_1$. Note that $W_1$ is isotropic with respect to $\H$, and also $W_1 \in R_1$. 
+In other words, our vector $X_1$ determines the $17$-space $U_1$ and the $9$-dimensional radical $R_1$ 
+of $\H$ in $U_1$. Note that $X_1$ is isotropic with respect to $\H$, and also $X_1 \in R_1$. 
 
 It turns out that there is another type of isotropic white vectors. Consider 
-$W_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$, where $\lambda \in K\setminus F$. It again determines a 
+$X_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$, where $\lambda \in K\setminus F$. It again determines a 
 $17$-space $U_2$, spanned by the Albert vectors of the form $(a,b,0\mid A,B,C)$ with 
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -571,12 +572,12 @@ $(0,0,0\mid A,B,C)$ with
 	\begin{array}{r@{\;}c@{\;}l}
 		A & \in & \langle e_{-0}, e_1 \rangle, \\
 		B & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		C & \in & \langle e_0 + \lambda^q e_1 \rangle,
+		C & \in & \langle e_0 + \lambda^{\s} e_1 \rangle,
 	\end{array}
 \end{equation}
-i.e. it is $5$-dimensional. We notice that $W_2$ is isotropic, but in this case $W_2 \not\in R_2$.
+i.e. it is $5$-dimensional. We notice that $X_2$ is isotropic, but in this case $X_2 \not\in R_2$.
 
-We conclude that the white points $\langle W_1 \rangle$ and $\langle W_2 \rangle$ belong to different
+We conclude that the white points $\langle X_1 \rangle$ and $\langle X_2 \rangle$ belong to different
 orbuts under the action of ${}^2\SE_6^K(F)$. Of course, there is also at least one orbit on the 
 non-isotropic white points. 
 
@@ -585,12 +586,12 @@ non-isotropic white points.
 \subsection{The stabiliser of type 3 vector}
 
 We are now interested in the stabiliser in ${}^2\SE_6^K(F)$ of 
-$W_3 = (0,0,1\mid 0,0,0)$, which is non-isotropic. As we know, the elements
-$N_x$ with $x\ovx^{\s} = \ovx^{\s}x = 0$ preserve $W_3$ (\ref{eq:3_nx_image}).
+$X_3 = (0,0,1\mid 0,0,0)$, which is non-isotropic. As we know, the elements
+$N_x$ with $x\ovx^{\s} = \ovx^{\s}x = 0$ preserve $X_3$ (\ref{eq:3_nx_image}).
 We now prove the following theorem.
 
 \begin{theorem}
-	The stabiliser in ${}^2\SE_6^K(F)$ of $W_3 = (0,0,1\mid 0,0,0)$ 
+	The stabiliser in ${}^2\SE_6^K(F)$ of $X_3 = (0,0,1\mid 0,0,0)$ 
 	is the subgroup of shape $\Spin_{10}^{-,K}(F)$. 
 \end{theorem}
 
@@ -599,37 +600,37 @@ We now prove the following theorem.
 	of the elements $N_x$ generate $\Omega_{10}^{-,K}(F)$. We use 
 	Lemma \ref{lemma:1_2_actions} to conclude that the action on $\J$ is that of
 	$\Spin_{10}^{-,K}(F)$. Our aim is to show that this group is the whole stabiliser
-	in ${}^2\SE_6^K(F)$ of $W_3$.
+	in ${}^2\SE_6^K(F)$ of $X_3$.
 	
-	Let $G$ be the stabiliser of $W_3$ in ${}^2\SE_6^K(F)$. In particular, $G$ is 
+	Let $G$ be the stabiliser of $X_3$ in ${}^2\SE_6^K(F)$. In particular, $G$ is 
 	a subgroup of $\SE_6(K)$, so it preserves the Dickson--Freudenthal determinant
 	$\fdet$, and hence it stabilises the $17$-space $U_3 = \J_{17}^{cAB}$ 
-	determined by $W_3$. Next, $G$
+	determined by $X_3$. Next, $G$
 	is a subgroup of ${}^2\SE_6^K(F)$, so it preserves the Hermitean form $\H$,
 	and so $G$ stabilises $U_3^{\perp}$, where $\perp$ is taken with respect to $\H$. 
 	Now, $U_3^{\perp}$ has two forms defined on it, so we use Aschbacher's result 
-	(Proposition \ref{prop:3_2forms}) to conclude that there exists a $(Q, H)$-subspace.	
+	(Proposition \ref{prop:3_2forms}) to conclude that there exists a $(Q, \H)$-subspace.	
 	
 	Consider the $10$-dimensional $F$-subspace $V_{10}^-$ spanned by the vectors 
-	of the form $(\lambda\cdot 1, -\lambda^{\varsigma}\cdot 1, 
+	of the form $(\lambda\cdot 1, -\lambda^{\sigma}\cdot 1, 
 	0 \mid 0,0,C)$, where $\lambda \in K$ and 
 	$C \in \O_F$. First, we check that the action of our copy of $\Omega_{10}^{-,K}(F)$ 
 	preserves $V_{10}^-$. The action on this subspace is given by
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
-			N_x: (\lambda\cdot 1_{\O}, -\lambda^{\varsigma} \cdot 1_{\O}, 0 \mid 0,0, C) & \mapsto & 
+			N_x: (\lambda\cdot 1_{\O}, -\lambda^{\sigma} \cdot 1_{\O}, 0 \mid 0,0, C) & \mapsto & 
 				((\lambda - \Tr(C \ovx^{\s}))\cdot 1_{\O}, 
-				-(\lambda^{\varsigma} -\Tr(\ovC x))\cdot 1_{\O}, 
+				-(\lambda^{\sigma} -\Tr(\ovC x))\cdot 1_{\O}, 
 				0 \mid \\
-		& &					0,0, C - x^{\s} \ovC x + \lambda x + \lambda^{\varsigma} x^{\s}).
+		& &					0,0, C - x^{\s} \ovC x + \lambda x + \lambda^{\sigma} x^{\s}).
 		\end{array}
 	\end{equation*}
 	Note that the product $x^{\s} \ovC x$ makes sense since $x$ and $x^{\s}$ generate a
 	sociable subalgebra of $\O_K$. It is easy to see that 
-	$(\lambda - \Tr(C\ovx^{\s}))^{\varsigma} = 
-	\lambda^{\varsigma} - \Tr(\ovC x)$. Lemma \ref{lemma:sociable} also implies that 
+	$(\lambda - \Tr(C\ovx^{\s}))^{\sigma} = 
+	\lambda^{\sigma} - \Tr(\ovC x)$. Lemma \ref{lemma:sociable} also implies that 
 	$x^{\s} \ovC x = x \ovC x^{\s} = (x^{\s} \ovC x)^{\s}$. That is, $x^{\s} \ovC x$ is an 
-    element of $\O_F$. Finally, $\lambda x +  \lambda^{\varsigma} x^{\s} \in \O_F$, 
+    element of $\O_F$. Finally, $\lambda x +  \lambda^{\sigma} x^{\s} \in \O_F$, 
     so we conclude that 
     the elements $N_x$ indeed preserve $V_{10}^{-}$.
     
@@ -637,7 +638,7 @@ We now prove the following theorem.
 	\ref{prop:3_2forms} asserts that such a subspace is unique, so we conclude that $G$ is 
 	a subgroup of $\GO_{10}^{-,K}(F)$ in its action on $V_{10}^-$. In fact, since $G$ is a 
 	subgroup of white vector stabiliser, namely $K^{16}\cn\Spin_{10}^+(K)$, we conclude that 
-	$G \leqslant \SO_{10}^{-,K}(F)$ (in action on $V_{10}^-$. 
+	$G \leqslant \SO_{10}^{-,K}(F)$ in its action on $V_{10}^-$. 
 	
 	Now let us look at the action on $V_{10}^{-}$ in more detail. The restriction of $\H$ on
 	this $10$-space is represented by the Gram matrix
@@ -742,9 +743,9 @@ We now prove the following theorem.
 	we obtain the following conditions on $\alpha, \beta$ and $\lambda$:
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
-			\lambda \lambda^{\varsigma} & = & 1, \\
-			\alpha \alpha^{\varsigma} & = & 1, \\
-			\beta \beta^{\varsigma} & = & 1.
+			\lambda \lambda^{\sigma} & = & 1, \\
+			\alpha \alpha^{\sigma} & = & 1, \\
+			\beta \beta^{\sigma} & = & 1.
 		\end{array}
 	\end{equation*}
 	We see that $S$ acts on $V_{10}^-$ as 
@@ -761,30 +762,32 @@ We now prove the following theorem.
 		\right].
 	\end{equation}
 	This is an element of $\Omega_{10}^{-,K}(F)$. With the help of Lemma \ref{lemma:1_2_actions}
-	we find that the action of the stabiliser in ${}^2\SE_6^K(F)$ of $W_3$ is that of 
+	we find that the action of the stabiliser in ${}^2\SE_6^K(F)$ of $X_3$ is that of 
 	$\Spin_{10}^{-,K}(F)$. 
 \end{proof}
 
 \subsection{The stabiliser of type 1 vector}
 
 We are ready to investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
-\mbox{$W_1 = (0,0,0\mid 0,0,e_0)$}. From the previous section we know that the stabiliser of 
-$W_3$ is the subgroup of shape $\Spin_{10}^{-,K}(F)$. By stabilising $W_3$ and $W_1$ simultaneously,
-with the help of Lemma \ref{lemma:A_stabiliser_omega}, we find that the stabiliser of $W_1$ is 
+\mbox{$X_1 = (0,0,0\mid 0,0,e_0)$}. From the previous section we know that the stabiliser of 
+$X_3$ is the subgroup of shape $\Spin_{10}^{-,K}(F)$. By stabilising $X_3$ and $X_1$ simultaneously,
+with the help of Lemma \ref{lemma:A_stabiliser_omega}, we find that the stabiliser of $X_1$ is 
 at least a subgroup $F^8\cn\Spin_8^{-,K}(F)$.
 
-As we know, $W_1$ determines the $17$-space $U_1$, spanned by the Albert vectors of the form
-$(a,b,0\mid A,B,C)$, where
+To find the rest of the stabiliser, we consider the elements $N_{\mu x}$, $N_{\mu x}'$, and
+$N_{\mu x}''$ which preserve $X_1$ but do not preserve $X_3$. It turns out that only the elements
+$N_{\mu x}'$ with $x \in \{e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1\}$ and 
+$N_{\nu y}''$ with $y \in \{ e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \}$ for any 
+$\mu,\nu \in K$,
+do what we want, except when $(\mu,\nu) = (0,0)$. These elements move $X_3$ in the following way:
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
-		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		C & \in & \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, e_0,
-						e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
+		N_{\mu x}': (0,0,1\mid 0,0,0) & \mapsto & (0,0,1\mid -\mu^{\s} x, 0, 0), \\
+		N_{\nu y}'': (0,0,1\mid 0,0,0) & \mapsto & (0,0,1\mid 0, \nu y, 0).  
 	\end{array}
 \end{equation}
-With respect to $\H$, the subspace $U_1^{\perp}$ is spanned by the Albert vectors
-of the form \mbox{$(0,0,c \mid A, B, C)$} with
+Consider the subspace $U_1^{\perp}$ (with respect to the Hermitian form $\H$). We find that
+$U_1^{\perp}$ is $10$-dimensional and spanned by the vectors $(0,0,c\mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
 		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
@@ -792,37 +795,122 @@ of the form \mbox{$(0,0,c \mid A, B, C)$} with
 		C & \in & \langle e_0 \rangle.
 	\end{array}
 \end{equation}
-It follows that $U_1^{\perp}$ is a $10$-space of $\J$. Given $W \in U_1^{\perp}$, the value 
-of $\H$ is given by
+Note that $X_3 \in U_1^{\perp}$, so the stabiliser in ${}^2\SE_6^K(F)$ sends $X_3$ to some vector
+in $U_1^{\perp}$. 
+The actions on $U_1^{\perp}$ of the elements $N_{\mu x}'$ and $N_{\nu x}''$ from above are given
+by
 \begin{equation}
-	H(W) = c c^{\s} + \Tr(A \ovA^{\s}) + \Tr(B \ovB^{\s} ).
+	\begin{array}{r@{\;}c@{\;}l}
+		N_{\mu x}' : (0,0,c\mid A,B,C) & \mapsto & 
+			(0,-\mu^{\s}\Tr(A\ovx^{\s}), c+\mu\Tr(\ovA x) \mid \\
+		& & \mid A - \mu\mu^{\s} x^{\s} \ovA x - \mu^{\s} c x^{\s}, \\
+		& &		 B + \mu\ovx\ovC, C - \mu^{\s} \ovB \ovx^{s}), \\
+				 
+		N_{\nu y}'' : (0,0,c\mid A,B,C) & \mapsto & 
+			(\nu\Tr(\ovB y), 0, c-\nu^{\s}\Tr(B\ovy^{s}) \mid \\
+		& & \mid A - \nu^{\s}\ovC\ovy^{\s}, \\
+		& & B - \nu\nu^{\s} y^{\s}\ovB y + \nu c y, C + \nu\ovy\ovA). 
+	\end{array}
 \end{equation}
-Notice that $\Tr(A \ovA^{\s}) = \Tr(B \ovB^{\s}) = 0$, so in fact
+Since $x \in \{e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1\}$, we find $\Tr(A\ovx^{\s}) = 
+\Tr(\ovA x) = 0 = x^{\s} \ovA x = \ovx \ovC$, and also $x^{\s} = x$, $\ovB \ovx^{\s} \in 
+\langle e_0 \rangle$. Similarly, $\Tr(\ovB y) = \Tr(B\ovy^{\s}) = 0 = y^{\s} \ovB y = \ovC \ovy^{\s}$,
+and $y^{\s} = y$, $\ovy \ovA \in \langle e_0 \rangle$ as $y \in \{ e_{-1}, e_{-0}, e_{-\omega}, 
+e_{-\bar{\omega}} \}$. After these simplifications the action takes the form
 \begin{equation}
-	H(W) = c c^{\s}.
+	\begin{array}{r@{\;}c@{\;}l}
+		N_{\mu x}' : (0,0,c\mid A,B,C) & \mapsto &
+			(0,0,c\mid A  - \mu^{\s} c x, B, C - \mu^{\s}\ovB\ovx ), \\
+		
+		N_{\nu y}'' : (0,0,c\mid A,B,C) & \mapsto &
+			(0,0,c\mid A, B + \nu c y, C + \nu \ovy \ovA).
+	\end{array}
 \end{equation}
-We also see that $W_3 \in U_1^{\perp}$. An Albert vector $(0,0,c\mid A,B,C) \in U_1^{\perp}$ 
-is white if and only if 
+
+The value of $\H$ on $U_1^{\perp}$ is given by
 \begin{equation}
-	\left\{
-		\begin{array}{l}
-			A\ovA = B\ovB = C\ovC = 0, \\
-			BC = CA = 0, \\
-			AB = c \ovC. 
-		\end{array}
-	\right.
+	\H((0,0,c\mid A,B,C)) = c c^{\s},
 \end{equation}
-The first two are satisfied automatically, so we get $AB = c \ovC$. If $c \neq 0$, this is 
-also satisfied, and so any such vector $(0,0,c\mid A,B,C)$ is white and non-isotropic with respect
-to $\H$. 
+so we conclude that the subgroup of the stabiliser of $X_1$, which does not preserve $X_3$, 
+sends $X_3$ to a vector of the form $(0,0,1\mid A,B, \ovB \ovA)$. These vectors span a 
+totally white $8$-subspace of $U_1^{\perp}$. We are interested in the action on its subspaces
+$S_A$ and $S_B$, spanned by the vectors of the form $(0,0,1\mid A,0,0)$ and 
+$(0,0,1\mid 0,B,0)$ respectively. The action of the elements $N_{\mu x}'$ and $N_{\nu y}''$ 
+on these subspaces is given by
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		N_{\mu x}' : (0,0,1\mid A,0,0) & \mapsto & 
+			(0,0,1\mid A -\mu^{\s} x , 0, 0), \\
+			
+		N_{\mu x}' : (0,0,1\mid 0,B,0) & \mapsto &
+			(0,0,1\mid 0,B,0), \\
+			
+		N_{\nu y}'' : (0,0,1\mid A,0,0) & \mapsto &
+			(0,0,1\mid A,0,0), \\
+			
+		N_{\nu y}'' : (0,0,1\mid 0,B,0) & \mapsto &
+			(0,0,1\mid 0,B + \nu y, 0).
+	\end{array}
+\end{equation}
+We see that the action of $N_{\mu x}'$ on $S_A$ is that of $K^4$, as well as the action
+of $N_{\nu y}''$ on $S_B$. We also see that the intersection of these two copies of $K^4$
+is trivial, hence we get the action of $K^4 \times K^4 \cong K^8$ on $U_1^{\perp}$. 
+Finally, we have shown the following.
+
+\begin{theorem}
+	The stabiliser in ${}^2\SE_6^K(F)$ of $X_1 = (0,0,0\mid 0,0,e_0)$ is the subgroup
+	of shape $F^8.K^8\cn\Spin_8^{-,K}(F)$. 
+\end{theorem}
+
+%As we know, $X_1$ determines the $17$-space $U_1$, spanned by the Albert vectors of the form
+%$(a,b,0\mid A,B,C)$, where
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
+%		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%		C & \in & \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, e_0,
+%						e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
+%	\end{array}
+%\end{equation}
+%With respect to $\H$, the subspace $U_1^{\perp}$ is spanned by the Albert vectors
+%of the form \mbox{$(0,0,c \mid A, B, C)$} with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
+%		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%		C & \in & \langle e_0 \rangle.
+%	\end{array}
+%\end{equation}
+%It follows that $U_1^{\perp}$ is a $10$-space of $\J$. Given $W \in U_1^{\perp}$, the value 
+%of $\H$ is given by
+%\begin{equation}
+%	\H(W) = c c^{\s} + \Tr(A \ovA^{\s}) + \Tr(B \ovB^{\s} ).
+%\end{equation}
+%Notice that $\Tr(A \ovA^{\s}) = \Tr(B \ovB^{\s}) = 0$, so in fact
+%\begin{equation}
+%	\H(W) = c c^{\s}.
+%\end{equation}
+%We also see that $X_3 \in U_1^{\perp}$. An Albert vector $(0,0,c\mid A,B,C) \in U_1^{\perp}$ 
+%is white if and only if 
+%\begin{equation}
+%	\left\{
+%		\begin{array}{l}
+%			A\ovA = B\ovB = C\ovC = 0, \\
+%			BC = CA = 0, \\
+%			AB = c \ovC. 
+%		\end{array}
+%	\right.
+%\end{equation}
+%The first two are satisfied automatically, so we get $AB = c \ovC$. If $c \neq 0$, it is possible
+%to find a unique value of $C$ such that $(0,0,c\mid A,B,C)$ is white and non-isotropic with respect
+%to $\H$. 
 
 \subsection{The stabiliser of type 2 vector}
 
-Knowledge of the stabilisers of $W_1$ and $W_3$ enables us to 
-investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
-\mbox{$W_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$}, where $\lambda \in K \setminus F$. 
+Finally, we investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
+\mbox{$X_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$}, where $\lambda \in K \setminus F$. 
 For this we need to prepare certain ingredients. 
-Recall that the $17$-space $U_1$ determined by $W_1$ is spanned by the vectors of the form
+Recall that the $17$-space $U_1$ determined by $X_1$ is spanned by the vectors of the form
 $(a,b,0\mid A,B,C)$ with 
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -832,7 +920,12 @@ $(a,b,0\mid A,B,C)$ with
 					e_{-\omega}, e_{-\bar{\omega}}, e_{1} \rangle. 
 	\end{array}
 \end{equation}
-The quotient $10$-dimensional space is spanned by the vectors $(0,0,c\mid A,B,C)$ with 
+Recall that the stabiliser of a white vector in $\SE_6(K)$ is a subgroup of shape 
+$K^{16}\cn\Spin_{10}^+(K)$ (Theorem \ref{theorem:1_white_stab}). As we know, an element
+in the stabiliser, preserving the $1\oplus 16 \oplus 10$ decomposition, belongs to 
+$\Spin_{10}^+(K)$. The $10$-space of $X_1$, denoted $W_1$, 
+preserved by such an element, is spanned by the
+Albert vectors $(0,0,c \mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
 		A & \in & \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
@@ -840,10 +933,10 @@ The quotient $10$-dimensional space is spanned by the vectors $(0,0,c\mid A,B,C)
 		C & \in & \langle e_{-0} \rangle.
 	\end{array}
 \end{equation}
-We are also interested in the $10$-dimensional quotient space determined by $W_2$. To find it, we 
-find an element in $\SE_6(K)$ which maps $W_1$ to $W_2$. For example, the element
-$P_u$ with $u = 1 - \lambda e_1$ does exactly what we want. Next, we conjugate the $10$-space
-for $W_1$ with $P_{1-\lambda e_1}$ to obtain the corresponding $10$-space for $W_2$: it is spanned
+
+To obtain the corresponding $10$-space for $X_2$, we 
+find an element in $\SE_6(K)$ which maps $X_1$ to $X_2$. For example, the element 
+$P_u$ with $u = 1 - \lambda e_1$ does exactly what we want. Now, $W_2$ is spanned
 by the vectors of the form $(0,0,c \mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -857,17 +950,18 @@ by the vectors of the form $(0,0,c \mid A,B,C)$ with
 	\end{array}
 \end{equation}
 Note that since $P_{1-\lambda e_1}$ is an element of $\SE_6(K)$, it preserves colour, so all the 
-white vectors in the $10$-space of $W_1$ are mapped to the white vectors in the $10$-space of $W_2$.
-For a vector $(0,0,c \mid A,B,C)$ in the $10$-space of $W_1$ to be white it is necessary and
+white vectors in $W_1$ are mapped to the white vectors in $W_2$.
+For a vector $(0,0,c \mid A,B,C) \in T_1$ to be white it is necessary and
 sufficient that $A\ovA = B\ovB = C\ovC = 0$, $AB = c\ovC$, and $BC = CA = 0$. Most of these conditions,
 except possibly $AB = c\ovC$, are satisfied automatically. Now, we find that $AB \in \langle e_0
-\rangle$ by an explicit calculation, so if $c \neq 0$, an element $(0,0,c \mid A,B,C)$ in the 
-$10$-space of $W_1$ is always white. The action of $P_{1-\lambda e_1}$ on the third 
-`co\"{o}rdinate' is trivial, so we may conclude that an element $(0,0,c \mid A,B,C)$ in the 
-$10$-space of $W_2$ is always white given $c \neq 0$. 
+\rangle$ by an explicit calculation, so if $c \neq 0$, there is a unique value of $C$ such that 
+an element $(0,0,c \mid A,B,C)$ in $W_2$ is white. The action of $P_{1-\lambda e_1}$ on the third 
+`co\"{o}rdinate' is trivial, so we may conclude that there is a unique value of $C$ such that 
+an element $(0,0,c \mid A,B,C)$ in $W_2$ is white given $c \neq 0$. 
 
-Next, the stabiliser of $W_2$ not only preserves the colour, but it also preserves the value 
-of $\H$ on the described $10$-space. For $X = (0,0,c\mid A,B,C)$ in the $10$-space, 
+Next, the subgroup of $\Spin_{10}^+(K)$, stabilising $X_2$, not only preserves the colour, 
+but it also preserves the value 
+of $\H$ on $W_2$. For $X = (0,0,c\mid A,B,C) \in W_2$, 
 the value of $\H$ is given by
 \begin{equation}
 	\H(X) = c c^{\s} + \Tr(A\ovA^{\s}) + \Tr(B\ovB^{\s}) + \Tr(C\ovC^{\s}). 
@@ -928,18 +1022,40 @@ so
 \begin{equation}
 	\Tr(C\ovC^{\s}) = 0.
 \end{equation}
-It follows that on the $10$-space of $W_2$ the Hermitian form $\H$ becomes
+It follows that on the elements of $W_2$, Hermitian form $\H$ becomes
 \begin{equation}
 	\H(X) = c c^{\s} + (\lambda^{\s} - \lambda) ( A_0 A_{-1}^{\s} - A_{-1} A_0^{\s} + 
 			B_{\bar{\omega}} B_{\omega}^{\s} - B_{\omega} B_{\bar{\omega}}^{\s}).
 \end{equation}
-This is a unitary form in $5$ variables, which is preserved by the stabiliser of $W_2$. Note that
-$\lambda^{\s}-\lambda \neq 0$ since $\lambda \in K \setminus F$. As a result, on the $10$-space 
-of $W_2$ we get the action of the group of type $\SU_5^K(F)$, which is a subgroup of
-$\Spin_{10}^+(K)$. 
+This is a unitary form in $5$ variables, which is preserved by the subgroup of the stabiliser of $X_2$
+inside $\Spin_{10}^+(K)$. Note that
+$\lambda^{\s}-\lambda \neq 0$ since $\lambda \in K \setminus F$. Given $X = (a,b,c \mid A,B,C) \in \J$,
+the value of the quadratic form $Q(X) = \fdet(X+X_2) - \fdet(X)$, determined by $X_2$, is 
+\begin{multline}
+	Q(X) = \Tr( (e_0 + \lambda e_1) ( AB - c\ovC ) ) \\
+	= A_0 (B_0 - \lambda B_{-1}) - (A_{-\omega} - \lambda A_{\bar{\omega}}) B_{\omega} \\ 
+	- (A_{-\bar{\omega}} + \lambda A_{\omega}) B_{\bar{\omega}} - A_{-1} (B_1 + \lambda B_{-0}) \\
+	- c (C_{-0} + \lambda C_{-1}).
+\end{multline}
+On $W_2$ this becomes
+\begin{equation}
+	Q(X) = A_0 B_0 - A_{-\omega}B_{\omega} - A_{-\bar{\omega}}B_{\bar{\omega}} - A_{-1}B_1 - cC_{-0}. 
+\end{equation}
+Consider the $5$-dimensional subspace of $W_2$ spanned by the vectors $(0,0,c\mid A,B,C)$ with
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+		B & \in & \langle e_0, e_1 \rangle, \\
+		C & \in & \langle e_{-0} \rangle. 
+	\end{array}
+\end{equation}
+This is the radical of $\H$ in $W_2$. We also notice that this subspace coincides with a 
+maximal totally isotropic subspace of $Q$ on $W_2$. Therefore, the action of the subgroup
+of $\Spin_{10}^+(K)$, preserving $W_2$, also preserves a $5 \oplus 5$ decomposition of $W_2$.
+As a result, we get the action of the group of type $\SU_5^K(F,\H)$.
 
 Using the element $P_{1 - \lambda e_1}$ we can also easily find the $17$-space $U_2$, determined
-by $W_2$. We conjugate $U_1$ by $P_{1-\lambda e_1}$, and find that $U_2$ is spanned by the vectors
+by $X_2$. We conjugate $U_1$ by $P_{1-\lambda e_1}$, and find that $U_2$ is spanned by the vectors
 of the form $(a,b,0\mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -952,7 +1068,7 @@ of the form $(a,b,0\mid A,B,C)$ with
 	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
 	\end{array}
 \end{equation}
-As in the previous section, suppose that we stabilise $W_3$ and $W_2$ simultaneously. The subspace
+As in the previous section, suppose that we stabilise $X_3$ and $X_2$ simultaneously. The subspace
 $U_2^{\perp}$ with respect to $\H$ is spanned by the Albert vectors $(0,0,c\mid A,B,C)$ with 
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
