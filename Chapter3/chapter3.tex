@@ -110,6 +110,10 @@ On the Albert space $\J = \J_K$ this induces the Hermitean form $\H$, where
 		a a^{\s} + b b^{\s} + c c^{\s} + 
 		\Tr(A \ovA^{\s} + B\ovB^{\s} + C\ovC^{\s}).
 \end{equation}
+As usual, the sesquilinear form associated with $\H$ is obtained by polarising the Hermitean form:
+\begin{equation}
+	\inner{X}{Y}_{\H} = H(X+Y) - H(X) - H(Y).
+\end{equation}
 
 Using the construction from previous chapter, we obtain the group $\SE_6(K)$ in the usual 
 way. Now define the group ${}^2\SE_6^K(F)$ as the subgroup of $\SE_6(K)$ which preserves 
@@ -607,7 +611,8 @@ We now prove the following theorem.
 	$\fdet$, and hence it stabilises the $17$-space $U_3 = \J_{17}^{cAB}$ 
 	determined by $X_3$. Next, $G$
 	is a subgroup of ${}^2\SE_6^K(F)$, so it preserves the Hermitean form $\H$,
-	and so $G$ stabilises $U_3^{\perp}$, where $\perp$ is taken with respect to $\H$. 
+	and so $G$ stabilises $U_3^{\perp}$, where $\perp$ is taken with respect to the
+	sesquilinear form. 
 	Now, $U_3^{\perp}$ has two forms defined on it, so we use Aschbacher's result 
 	(Proposition \ref{prop:3_2forms}) to conclude that there exists a $(Q, \H)$-subspace.	
 	
@@ -640,7 +645,8 @@ We now prove the following theorem.
 	subgroup of white vector stabiliser, namely $K^{16}\cn\Spin_{10}^+(K)$, we conclude that 
 	$G \leqslant \SO_{10}^{-,K}(F)$ in its action on $V_{10}^-$. 
 	
-	Now let us look at the action on $V_{10}^{-}$ in more detail. The restriction of $\H$ on
+	Now let us look at the action on $V_{10}^{-}$ in more detail. The restriction of 
+	$\inner{\cdot}{\cdot}_{\H}$ on
 	this $10$-space is represented by the Gram matrix
 	\begin{equation*}
 		\begin{bmatrix}
@@ -786,7 +792,7 @@ do what we want, except when $(\mu,\nu) = (0,0)$. These elements move $X_3$ in t
 		N_{\nu y}'': (0,0,1\mid 0,0,0) & \mapsto & (0,0,1\mid 0, \nu y, 0).  
 	\end{array}
 \end{equation}
-Consider the subspace $U_1^{\perp}$ (with respect to the Hermitian form $\H$). We find that
+Consider the subspace $U_1^{\perp}$ (with respect to $\inner{\cdot}{\cdot}_{\H}$). We find that
 $U_1^{\perp}$ is $10$-dimensional and spanned by the vectors $(0,0,c\mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -826,7 +832,6 @@ e_{-\bar{\omega}} \}$. After these simplifications the action takes the form
 			(0,0,c\mid A, B + \nu c y, C + \nu \ovy \ovA).
 	\end{array}
 \end{equation}
-
 The value of $\H$ on $U_1^{\perp}$ is given by
 \begin{equation}
 	\H((0,0,c\mid A,B,C)) = c c^{\s},
@@ -951,8 +956,8 @@ by the vectors of the form $(0,0,c \mid A,B,C)$ with
 \end{equation}
 Note that since $P_{1-\lambda e_1}$ is an element of $\SE_6(K)$, it preserves colour, so all the 
 white vectors in $W_1$ are mapped to the white vectors in $W_2$.
-For a vector $(0,0,c \mid A,B,C) \in T_1$ to be white it is necessary and
-sufficient that $A\ovA = B\ovB = C\ovC = 0$, $AB = c\ovC$, and $BC = CA = 0$. Most of these conditions,
+An Albert vector \mbox{$(0,0,c \mid A,B,C) \in W_1$} is white if and only if
+ \mbox{$A\ovA = B\ovB = C\ovC = 0$, $AB = c\ovC$}, and $BC = CA = 0$. Most of these conditions,
 except possibly $AB = c\ovC$, are satisfied automatically. Now, we find that $AB \in \langle e_0
 \rangle$ by an explicit calculation, so if $c \neq 0$, there is a unique value of $C$ such that 
 an element $(0,0,c \mid A,B,C)$ in $W_2$ is white. The action of $P_{1-\lambda e_1}$ on the third 
@@ -1068,24 +1073,37 @@ of the form $(a,b,0\mid A,B,C)$ with
 	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
 	\end{array}
 \end{equation}
-As in the previous section, suppose that we stabilise $X_3$ and $X_2$ simultaneously. The subspace
-$U_2^{\perp}$ with respect to $\H$ is spanned by the Albert vectors $(0,0,c\mid A,B,C)$ with 
+The subspace $U_2$ is preserved by the stabiliser of $W_2$, and therefore so is the orthogonal 
+complement $U_2^{\perp}$ in $\J$, 
+which is $10$-dimensional and spanned by the Albert vectors of the form
+$(0,0,c \mid A,B,C)$ with
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{-0}, e_{1} \rangle, \\
-		B & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		C & \in & \langle e_{0} + \lambda^{\s} e_1 \rangle. 
+		A & \in & \langle e_{\bar{\omega}} + \lambda^{\s} e_{-\omega}, e_{\omega} - \lambda^{\s} 
+					e_{-\bar{\omega}}, e_{-0}, e_1 \rangle, \\
+		
+		B & \in & \langle e_{-1} + \lambda^{\s} e_0, e_{-0} - \lambda^{\s} e_1, 
+					e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+					
+		C & \in & \langle e_0 + \lambda^{\s} e_1 \rangle. 
 	\end{array}
 \end{equation}
-Given $X = (0,0,c\mid A,B,C) \in U_2^{\perp}$, the value of $\H$ is given by
+As a result, we get the action of $K^{10}\cn\SU_5^K(F,\H)$. The $\SU_5^K(F,\H)$ acts 
+on the corresponding image of $W_2$, which is being moved around. 
+
+Now assume the trivial action on $U_2^{\perp}$. Then the action is also trivial on 
+$U_2^{\perp} \cap U_2$, and so it is trivial on $(U_2^{\perp} \cap U_2)^{\perp}$,
+and finally, the same holds for $W_2 \cap (U_2^{\perp} \cap U_2)^{\perp}$. 
+The latter is a $5$-dimensional subspace of $W_2$, spanned by the vectors
+$(0,0,c\mid A,B,0)$ with
 \begin{equation}
-	\H(X) = c c^{\s}. 
+	\begin{array}{r@{\;}c@{\;}l}
+		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+		B & \in & \langle e_{0}, e_1 \rangle.
+	\end{array}
 \end{equation}
-Now, we find that $A\ovA = B\ovB = C\ovC = 0$ and also $BC = CA = 0$, so $X$ is white
-if and only if $AB = c\ovC$, but we also see that $AB = 0$, so if $c \neq 0$, this condition
-is satisfied precisely when $C = 0$, i.e. $X$ is a non-isotropic white vector of the form
-$(0,0,c\mid A,B,0) \in U_2^{\perp}$. If $c = 0$, then $X$ is an isotropic white vector of the form 
-$(0,0,0\mid A,B,C) \in U_2^{\perp}$. 
+
+ 
 
 \section{Case of a finite field}
 \subsection{White vectors in $\J_8^C$}
