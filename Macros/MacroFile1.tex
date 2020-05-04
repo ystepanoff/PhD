@@ -153,3 +153,10 @@
 %%% mode: latex
 %%% TeX-master: "~/Documents/LaTeX/CUEDThesisPSnPDF/thesis"
 %%% End: 
+
+% enable justification for matrices
+\makeatletter
+\renewcommand*\env@matrix[1][c]{\hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols #1}}
+\makeatother
