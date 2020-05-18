@@ -372,3 +372,4 @@
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 %{\newpage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
+\usepackage{stmaryrd}
