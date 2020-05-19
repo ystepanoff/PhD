@@ -1875,7 +1875,7 @@ its action on white points, it is possible to figure out the joint stabilisers. 
 \end{lemma}
 
 \begin{proof}
-	The $17$-space of $\langle (0,0,0 \mid e_0,0,0) \rangle$ 
+	The $17$-space $U$ of $\langle (0,0,0 \mid e_0,0,0) \rangle$ 
 	consists of the vectors 
 	$(0,b,c \mid A,B,C)$ where $b,c \in F\cdot 1_{\O}$, and
 	\begin{equation*}
@@ -1899,12 +1899,127 @@ its action on white points, it is possible to figure out the joint stabilisers. 
 	\end{equation*}	 
 	It follows that $M_x$ preserves the $5$-space for any $x \in \O$, and $L_x$ does so if and only if $b\NN(x) + \Tr(Cx) = 0$, from 
 	which we find $x \in \langle e_{-1}, e_{0}, e_{-\omega}, e_{-\bar{\omega}} \rangle$. Finally, $M_x''$ and $L_x'$ act trivially on the intersection.
+	
+	Those $M_x$ with $x \in \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}}\rangle$ act trivially on $U \cap \J_{10}^{abC}$, while 
+	the rest of the elements $M_x$ and all suitable $L_x$ act as transvections. All other possible transvections which generate $\SL_5(F)$ 
+	can be obtained as commutators of these. It follows that the action of the stabiliser on $U \cap \J_{10}^{abC}$ is that of $\SL_5(F)$. 
+	
+	Now we are going back to the action on the $10$-space. We choose the following basis in $\J_{10}^{abC}$:
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			v_1 & = & (0,-1,0 \mid 0,0,0), \\
+			v_2 & = & (0,0,0 \mid 0,0, e_{-1}), \\
+			v_3 & = & (0,0,0 \mid 0,0, e_{-0}), \\
+			v_4 & = & (0,0,0 \mid 0,0, e_{-\omega}), \\
+			v_5 & = & (0,0,0 \mid 0,0, e_{-\bar{\omega}}), \\
+			v_6 & = & (1,0,0 \mid 0,0,0), \\
+			v_7 & = & (0,0,0 \mid 0,0,e_1), \\
+			v_8 & = & (0,0,0 \mid 0,0,e_0), \\
+			v_9 & = & (0,0,0 \mid 0,0,e_{\omega}), \\
+			v_{10} & = & (0,0,0 \mid 0,0,e_{\bar{\omega}}). 
+		\end{array}
+	\end{equation*}
+	Thus, the first five vectors form a basis of $U \cap \J_{10}^{abC}$. With respect to this basis the elements 
+	$M_x$ with $x \in \langle e_{\bar{\omega}}, e_{\omega}, e_0, e_1 \rangle$ and 
+	$L_x$ with $x \in \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle$ act as 
+	the matrices of the form 
+	\begin{equation*}
+		\left[
+			\begin{array}{@{\;\;\;\;\;}c@{\;\;\;\;\;}|c}
+				S & 0 \\ \hline
+				0 & (S^{-1})^{\T}
+			\end{array}
+		\right],
+	\end{equation*}
+	Indeed, for example $L_{e_{-1}}$ has the following matrix form:
+	\begin{equation*}
+	\begin{bmatrix}[r]
+	
+		1 & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot  \\
+		 \cdot & \phantom{-}1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot  \\
+		 \cdot & \cdot & \phantom{-}1 &  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \phantom{-}1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \phantom{-}1 & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \phantom{-}1 &  \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & -1 & \phantom{-}1 &  \cdot & \cdot & \cdot  \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \phantom{-}1 &  \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \phantom{-}1 & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \phantom{-}1  
+	
+	\end{bmatrix}.
+	\end{equation*}
+	The elements $M_x$ with $x \in \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle$ act trivially on $U\cap \J_{10}^{abC}$, but
+	on the whole $10$-space they act as
+	\begin{equation*}
+		\left[
+			\begin{array}{c|c}
+				\II_5 & 0 \\ \hline
+				A & \II_5
+			\end{array}
+		\right],
+	\end{equation*}
+	where $A$ is a $5 \times 5$ matrix. For instance, the element $M_{e_{-1}}$ is represented by the matrix
+	\begin{equation*}
+	\begin{bmatrix}[r]
+	
+		1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot  \\
+		 \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot  \\
+		 \cdot & \cdot &1 &  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot \\
+		  \cdot & 1  & \cdot & \cdot & \cdot & 1 &  \cdot & \cdot & \cdot & \cdot \\
+		  1 & \cdot & \cdot & \cdot & \cdot & \cdot & 1 &  \cdot & \cdot & \cdot  \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 &  \cdot & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot \\
+		  \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1  
+	
+	\end{bmatrix}.
+	\end{equation*}
+	
+	With respect to our chosen basis, the inner product in $\J_{10}^{abC}$ has the form
+	\begin{equation}
+		\left[
+			\begin{array}{c|c}
+				0 & -\II_5 \\ \hline
+				-\II_5 & 0
+			\end{array}
+		\right],
+	\end{equation}
+	and so we can derive the conditions on the matrix $A$:
+	\begin{equation}
+		\left[
+			\begin{array}{c|c}
+				\II_5 & 0 \\ \hline
+				A & \II_5
+			\end{array}
+		\right]
+		\left[
+			\begin{array}{c|c}
+				0 & -\II_5 \\ \hline
+				-\II_5 & 0
+			\end{array}
+		\right]
+		\left[
+			\begin{array}{c|c}
+				\II_5 & A^{\T} \\ \hline
+				0 & \II_5
+			\end{array}
+		\right] = 
+		\left[
+			\begin{array}{@{\;\;\;\;\;\;\;}c@{\;\;\;\;\;\;\;}|c}
+				 0 & -\II_5 \\ \hline
+				-\II_5 & -(A+A^{\T})
+			\end{array}
+		\right].
+	\end{equation}
+	It follows that $A + A^{\T} = 0$. In characteristic other that $2$ this also implies that the diagonal entries in $A$ are zero. 
+	In characteristic $2$ we need to consider the quadratic form to obtain the same result. 
 \end{proof}
 
 We have already seen the proof of the following lemma (Theorem \ref{theorem:1_white_space_stab}), so we just state the result here.
 \begin{lemma}
 	\label{lemma1_stab_joint_3}
-	The joint stabiliser in $\SE_6(F)$ of\phantom{;} $\J_{10}^{abC}$ and $\langle (0,0,1 \mid 0,0,0) \rangle$ is a7 subgroup
+	The joint stabiliser in $\SE_6(F)$ of\phantom{;} $\J_{10}^{abC}$ and $\langle (0,0,1 \mid 0,0,0) \rangle$ is a subgroup
 	of shape 
 	\begin{equation}
 		\Spin_{10}^+(F).F^{\times}.
