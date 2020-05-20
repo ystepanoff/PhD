@@ -1,0 +1,79 @@
+\begin{thebibliography}{Haw00}
+
+\bibitem[CC88]{CC}
+A.~M. Cohen and B.~N. Cooperstein.
+\newblock {The $2$-spaces of the standard $\EE_6(q)$-module}.
+\newblock {\em Geometries and Groups. Proceedings of the Workshop Geometries
+  and Groups, Finite and Algebraic.}, pages 467--480, 1988.
+
+\bibitem[Che55]{Chevalley}
+C.~Chevalley.
+\newblock {Sur certains groupes simples}.
+\newblock {\em Tôhoku Math. J.}, 7:14–66, 1955.
+
+\bibitem[Dic01]{Dickson1}
+L.~E. Dickson.
+\newblock {A class of groups in an arbitrary realm connected with the
+  configuration ofthe 27 lines on a cubic surface}.
+\newblock {\em Quart. J. Pure Appl. Math}, 33:145–173, 1901.
+
+\bibitem[Dic08]{Dickson2}
+L.~E. Dickson.
+\newblock {A class of groups in an arbitrary realm connected with the
+  configuration of the 27 lines on a cubic surface (second paper)}.
+\newblock {\em Quart. J. Pure Appl. Math}, 39:205–209, 1908.
+
+\bibitem[Haw00]{HawkinsThomas}
+T.~Hawkins.
+\newblock {\em {Emergence of the Theory of Lie Groups: An Essay in the History
+  of Mathematics 1869--1926}}.
+\newblock Sources and Studies in the History of Mathematics and Physical
+  Sciences. Springer New York, 2000.
+
+\bibitem[Jac59]{JacobsonOne}
+N.~Jacobson.
+\newblock {Some Groups of Transformations defined by Jordan Algebras. I.}
+\newblock {\em Journal für die reine und angewandte Mathematik},
+  1959(201):178–195, 1959.
+
+\bibitem[Jac60]{JacobsonTwo}
+N.~Jacobson.
+\newblock {Some groups of transformations defined by Jordan algebras. II.}
+\newblock {\em Journal für die reine und angewandte Mathematik},
+  1960(204):74–98, 1960.
+
+\bibitem[Jac61]{JacobsonThree}
+N.~Jacobson.
+\newblock {Some groups of Transformations defined by Jordan Algebras. III.}
+\newblock {\em Journal für die reine und angewandte Mathematik},
+  1961(207):61–85, 1961.
+
+\bibitem[Mag90]{Magaard}
+Kay Magaard.
+\newblock {\em {The maximal subgroups of the Chevalley groups $\F_4(F)$ where F
+  is a finite or algebraically closed field of characteristic not equal to
+  $2$,$3$.}}
+\newblock PhD thesis, {California Institute of Technology}, 1990.
+
+\bibitem[Sch66]{Schafer}
+R.~D. Schafer.
+\newblock {\em {An Introduction to Nonassociative Algebras}}.
+\newblock Pure and applied mathematics. Academic Press, 1966.
+
+\bibitem[Sel81]{Seligman}
+G.~B. Seligman.
+\newblock {\em {Rational Constructions of Modules for Simple Lie Algebras}}.
+\newblock Contemporary mathematics – American Mathematical Society. American
+  Mathematical Society, 1981.
+
+\bibitem[SV00]{SpringerVeldkamp}
+T.~A. Springer and F.~D. Veldkamp.
+\newblock {\em {Octonions, Jordan Algebras, and Exceptional Groups}}.
+\newblock Monographs in Mathematics. Springer, 2000.
+
+\bibitem[Wil09]{WilsonBook}
+R.~A. Wilson.
+\newblock {\em {The Finite Simple Groups}}.
+\newblock Graduate Texts in Mathematics. Springer London, 2009.
+
+\end{thebibliography}

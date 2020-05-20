@@ -69,7 +69,7 @@
 
 %Bibliography
 %uncomment next line to change bibliography name to references for Book document class
-\renewcommand{\bibname}{References}
+%\renewcommand{\bibname}{References}
 % note that this doesn't do much if you later define another bibliography style 
 
 
@@ -107,7 +107,7 @@
                  bookmarksnumbered = true,
                  breaklinks = true,
                  linktocpage,
-                 pagebackref,
+                 %pagebackref,
                  colorlinks = true,
                  linkcolor = blue,
                  urlcolor  = blue,
@@ -128,7 +128,7 @@
                  bookmarksnumbered = true,
                  breaklinks = true,
                  linktocpage,
-                 pagebackref,
+                 %pagebackref,
                  colorlinks = true,
                  linkcolor = blue,
                  urlcolor  = blue,
