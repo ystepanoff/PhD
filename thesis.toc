@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {2.7}Centre of an octonion algebra}{18}{section.2.7}% 
 \contentsline {chapter}{\numberline {3}Groups of type $\mathord {\mathrm {E}}_6$}{20}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Albert vectors}{20}{section.3.1}% 
-\contentsline {subsection}{\numberline {3.1.1}Albert space $\mathbb {J}$}{20}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Albert space $\mdmathbb {J}$}{20}{subsection.3.1.1}% 
 \contentsline {subsection}{\numberline {3.1.2}Dickson--Freudenthal determinant and $\mathrm {SE}_6(F)$}{21}{subsection.3.1.2}% 
 \contentsline {section}{\numberline {3.2}Some elements of $\mathrm {SE}_6(F)$}{22}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}The white points}{25}{section.3.3}% 
@@ -25,26 +25,24 @@
 \contentsline {subsection}{\numberline {3.3.2}Action of $\mathrm {SE}_6(F)$ on white points}{28}{subsection.3.3.2}% 
 \contentsline {subsection}{\numberline {3.3.3}The stabiliser of a white point}{33}{subsection.3.3.3}% 
 \contentsline {section}{\numberline {3.4}Some related geometry}{49}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}The stabiliser in $\mathrm {SE}_6(F)$ of $\mathbb {J}_{10}^{abC}$}{50}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Joint stabilisers of $\mathbb {J}_{10}^{abC}$ and a white point}{53}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Simplicity of $\mathord {\mathrm {E}}_6(F)$}{57}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Case of a finite field}{59}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Arbitrary octonion algebras}{62}{section.3.7}% 
-\contentsline {chapter}{\numberline {4}Groups of type ${}^2\mathord {\mathrm {E}}_6$}{65}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Quadratic field extensions}{65}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Spaces with two forms}{66}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Hermitean form in $\mathbb {J}$ and the group ${}^2\mathrm {SE}_6^K(F)$}{67}{section.4.3}% 
+\contentsline {subsection}{\numberline {3.4.1}The stabiliser in $\mathrm {SE}_6(F)$ of $\mdmathbb {J}_{10}^{abC}$}{49}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Joint stabilisers of $\mdmathbb {J}_{10}^{abC}$ and a white point}{53}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Simplicity of $\mathord {\mathrm {E}}_6(F)$}{58}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}The case of a finite field}{60}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Arbitrary octonion algebras}{63}{section.3.7}% 
+\contentsline {chapter}{\numberline {4}Groups of type ${}^2\mathord {\mathrm {E}}_6$}{66}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Quadratic field extensions}{66}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Spaces with two forms}{67}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Hermitean form in $\mdmathbb {J}$ and the group ${}^2\mathrm {SE}_6^K(F)$}{68}{section.4.3}% 
 \contentsline {section}{\numberline {4.4}Some elements of ${}^2\mathrm {SE}_6^K(F)$}{68}{section.4.4}% 
 \contentsline {section}{\numberline {4.5}Action of ${}^2\mathrm {SE}_6^K(F)$ on white points}{74}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Orbits of ${}^2\mathrm {SE}_6^K(F)$ on white points}{75}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}The stabiliser of type 3 vector}{75}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}The stabiliser of type 1 vector}{78}{subsection.4.5.3}% 
-\contentsline {subsection}{\numberline {4.5.4}The stabiliser of type 2 vector}{80}{subsection.4.5.4}% 
-\contentsline {section}{\numberline {4.6}Case of a finite field}{84}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mathbb {J}_8^C$}{84}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}White vectors in $\mathbb {J}_{16}^{BC}$}{88}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.5.3}The stabiliser of type 1 vector}{79}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}The stabiliser of type 2 vector}{81}{subsection.4.5.4}% 
+\contentsline {section}{\numberline {4.6}The case of a finite field}{84}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mdmathbb {J}_8^C$}{84}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}White vectors in $\mdmathbb {J}_{16}^{BC}$}{88}{subsection.4.6.2}% 
 \contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{90}{appendix*.2}% 
-\contentsline {chapter}{B: $\Omega _4^+(F) \cong \mathrm {SL}_2(F) \circ \mathrm {SL}_2(F)$}{100}{appendix*.3}% 
-\contentsline {chapter}{C: $\Omega _4^{-,K}(F) \cong \mathrm {PSL}_2(K)$}{101}{appendix*.4}% 
-\contentsline {chapter}{D: Magma code}{102}{appendix*.5}% 
-\contentsline {chapter}{Bibliography}{103}{appendix*.6}% 
+\contentsline {chapter}{D: Magma code}{100}{appendix*.3}% 
+\contentsline {chapter}{Bibliography}{101}{appendix*.4}% 

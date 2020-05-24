@@ -333,92 +333,48 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 \end{lemma}
 
 \begin{proof}
-	Consider the basis $\mathcal{B} = \{\ v_1, v_2, v_3, v_4\ \}$ for $V_4$, where
+	Consider the basis $\mathcal{B}$ of $V_4$, consisting of the vectors $v_3$, $v_2$, $v_1$, and $v_4$, in that order, where
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
-			v_1 & = & (-1,0,0\mid 0,0,0), \\
+			v_1 & = & (1,0,0\mid 0,0,0), \\
 			v_2 & = & (0,1,0\mid 0,0,0), \\
-			v_3 & = & (0,0,0\mid 0,0,-e_{-1}), \\
+			v_3 & = & (0,0,0\mid 0,0,e_{-1}), \\
 			v_4 & = & (0,0,0\mid 0,0,e_1).
 		\end{array}
 	\end{equation*}
-	Now we look at the action of $N_{\lambda e_{-1}}$ on these basis elements:
+	
+	With respect to $\mathcal{B}$ the $4 \times 4$ matrices
+	$[N_{\lambda e_{-1}}]_{\mathcal{B}}$ and  $[N_{\lambda e_1}]_{\mathcal{B}}$ take the form
 	\begin{equation*}
-		\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}l}
-			v_1 & \mapsto & (-1,0,0\mid 0,0,-\lambda e_{-1}) & = & v_1 + \lambda v_3, \\
-			v_2 & \mapsto & (0,1,0\mid 0,0,-\lambda^{\s} e_{-1}) & = & v_2 + \lambda^{\s} v_3, \\
-			v_3 & \mapsto & (0,0,0\mid 0,0,-e_{-1}) & = & v_3, \\
-			v_4 & \mapsto & (-\lambda^{\s}, \lambda, 0 \mid 0,0,-\lambda \lambda^{\s} 
-									e_{-1} + e1) & = & 
-							-\lambda^{\s} v_1 + \lambda v_2 - \lambda \lambda^{\s} v_3 + v_4.
-		\end{array}
-	\end{equation*}
-	It follows that the element $N_{\lambda e_{-1}}$ can be written as a $4\times 4$ 
-	matrix over $\Fqs$ with respect to $\mathcal{B}$:
-	\begin{equation*}
-		[N_{\lambda e_{-1}}]_{\mathcal{B}} = \begin{bmatrix}
-			1 & 0 & \lambda & 0 \\
-			0 & 1 & \lambda^{\s} & 0 \\
-			0 & 0 & 1 & 0 \\
-			\lambda^{\s} & \lambda & \lambda \lambda^{\s} & 1
-		\end{bmatrix}.
-	\end{equation*}
-	For convenience, instead of the element $N_{\lambda e_1}$ we consider the element
-	$N_{-\lambda^{\s} e_1}$ which acts on the elements of $\mathcal{B}$ as follows:
-	\begin{equation*}
-		\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}l}
-			v_1 & \mapsto & (-1,0,0\mid 0,0, \lambda^{\s} e_1) & = & v_1 + \lambda^{\s} v_4, \\
-			v_2 & \mapsto & (0,1,0\mid 0,0, \lambda e_1) & = & v_2 + \lambda v_4, \\
-			v_3 & \mapsto & (-\lambda, \lambda^{\s}, 0 \mid 0,0,-e_{-1}+\lambda \lambda^{\s} 
-							e_1) & = & 
-								\lambda v_1 + \lambda^{\s} v_2 + v_3 + \lambda \lambda^{\s} v_4, \\
-			v_4 & \mapsto & (0,0,0\mid 0,0,e_1) & = & v_4.
-		\end{array}
-	\end{equation*}
-	The matrix $[N_{-\lambda^{\s} e_1}]_{\mathcal{B}}$ has the form
-	\begin{equation*}
-		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}} = \begin{bmatrix}
-			1 & 0 & 0 & \lambda^{\s} \\
-			0 & 1 & 0 & \lambda \\
-			\lambda & \lambda^{\s} & 1 & \lambda \lambda^{\s} \\
-			0 & 0 & 0 & 1
-		\end{bmatrix}.
-	\end{equation*}
-	Consider the basis $\mathcal{B}' = \{\ v_3, v_4, v_1 v_4\ \}$ obtained as a permutation
-	of the elements in $\mathcal{B}$. With respect to $\mathcal{B}'$ the $4\times 4$
-	 matrices
-	$[N_{\lambda e_{-1}}]_{\mathcal{B'}}$ and 
-	$[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'}$ take the form
-	\begin{equation*}
-		[N_{\lambda e_{-1}}]_{\mathcal{B'}}	= \begin{bmatrix}
+		[N_{\lambda e_{-1}}]_{\mathcal{B}}	= \begin{bmatrix}
 			1 & 0 & 0 & 0 \\
-			\lambda^{\s} & 1 & 0 & 0 \\
+			-\lambda^{\s} & 1 & 0 & 0 \\
 			\lambda & 0 & 1 & 0 \\
-			\lambda\lambda^{\s} & \lambda & \lambda^{\s} & 1
+			-\lambda\lambda^{\s} & \lambda & -\lambda^{\s} & 1
 		\end{bmatrix},\quad 
-		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'} = \begin{bmatrix}
-			1 & \lambda^{\s} & \lambda & \lambda\lambda^{\s} \\
-			0 & 1 & 0 & \lambda \\
-			0 & 0 & 1 & \lambda^{\s} \\
-			0 & 0 & 0 & 1
+		[N_{\lambda e_1}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & \phantom{-}\lambda & -\lambda^{\s} & -\lambda\lambda^{\s} \\
+			0 & \phantom{-}1 & 0 & -\lambda^{\s} \\
+			0 & \phantom{-}0 & 1 & \lambda \\
+			0 & \phantom{-}0 & 0 & 1
 		\end{bmatrix}.
 	\end{equation*}
 	We notice that 
 	\begin{equation*}
-		[N_{\lambda e_{-1}}]_{\mathcal{B'}} = \begin{bmatrix}
+		[N_{\lambda e_{-1}}]_{\mathcal{B}} = \begin{bmatrix}
 			1 & 0 \\
 			\lambda & 1 
 		\end{bmatrix} \otimes
 		\begin{bmatrix}
 			1 & 0 \\
-			\lambda^{\s} & 1
+			-\lambda^{\s} & 1
 		\end{bmatrix},\quad
-		[N_{-\lambda^{\s} e_1}]_{\mathcal{B}'} = \begin{bmatrix}
-			1 & \lambda \\
+		[N_{\lambda e_1}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & -\lambda^{\s} \\
 			0 & 1
 		\end{bmatrix} \otimes
 		\begin{bmatrix}
-			1 & \lambda^{\s} \\
+			1 & \lambda \\
 			0 & 1
 		\end{bmatrix},
 	\end{equation*}
@@ -434,18 +390,18 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 		\end{bmatrix} \otimes
 		\begin{bmatrix}
 			1 & 0 \\
-			\lambda^{\s} & 1
+			-\lambda^{\s} & 1
 		\end{bmatrix},\quad 
 		\begin{bmatrix}
 			1 & \lambda \\
 			0 & 1
 		\end{bmatrix} \mapsto
 		\begin{bmatrix}
-			1 & \lambda \\
+			1 & -\lambda^{\s} \\
 			0 & 1
 		\end{bmatrix} \otimes
 		\begin{bmatrix}
-			1 & \lambda^{\s} \\
+			1 & \lambda \\
 			0 & 1
 		\end{bmatrix}
 	\end{equation*}
@@ -459,7 +415,7 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 				-1 & 0 \\
 				0 & -1
 			\end{bmatrix}
-		\right\rangle
+		\right\rangle,
 	\end{equation*}
 	which has order $2$, so we get the action of the group $\PSL_2(K)$ on $V_4$ since
 	the matrices
@@ -474,30 +430,59 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 		\end{bmatrix}
 	\end{equation*}
 	generate a group $\SL_2(K)$ by a well-known result.
-	Therefore, as $\PSL_2(K) \cong \Omega_4^{-,K}(F)$ (\ref{theorem:L2Omega4}), 
+	Therefore, as $\PSL_2(K) \cong \Omega_4^{-,K}(F)$ (see, for example, \S 7 in \cite{Waerden}), 
 	we have the action of $\Omega_4^{-,K}(F)$. 
 \end{proof}
 
-We again use the results of Appendix A. Consider the $6$-dimensional
-$K$-subspace $V_6$ spanned by the Albert vectors of the form 
-$(a,b,0\mid 0,0,C)$ with $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{-\bar{\omega}}, e_1 \rangle$.
-Our copy of $\Omega_4^{-,K}(F)$ preserves two isotropic Albert Vectors in $V_6$: 
+Consider now a $6$-dimensional $K$-space $V_6$ with the basis $\mathcal{B}$ consisting of the vectors
+$v_5, v_3, v_2, v_1, v_4, v_6$, in that order, where
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
-		u_{\bar{\omega}} & = & (0,0,0\mid 0,0,e_{\bar{\omega}}), \\
-		u_{-\bar{\omega}} & = & (0,0,0\mid 0,0,e_{-\bar{\omega}}). \\
+		v_5 & = & (0,0,0\mid 0,0,e_{\bar{\omega}}), \\
+		v_6 & = & (0,0,0\mid 0,0,e_{-\bar{\omega}}). \\
 	\end{array} 
 \end{equation}
-The element $N_{e_{\bar{\omega}}}$ preserves $u_{\bar{\omega}}$, but not $u_{-\bar{\omega}}$. 
-Therefore, adjoining its action to our $\Omega_4^{-,K}(F)$, we obtain a subgroup of 
-$V_4\cn\Omega_4^{-,K}(F)$. We know that $\Omega_4^{-,K}(F)$ is maximal in the latter, so 
-we conclude that the actions of $N_{\lambda e_{\pm 1}}$ and $N_{e_{\bar{\omega}}}$ on 
-$V_6$ is that of $V_4\cn\Omega_4^{-,K}(F)$. Next, the element $N_{e_{-\bar{\omega}}}$
-preserves $V_6$ but it does not preserve $\langle u_{\bar{\omega}} \rangle$, so by Theorem
-\ref{theorem:1_space_stab}, adjoining $N_{e_{-\bar{\omega}}}$ to $V_4\cn\Omega_4^{-,K}(F)$,
-we get the action of $\Omega_6^{-,K}(F)$ on $V_6$.
+We are interested in the group, obtained by adjoining the action of $N_{\mu e_{\bar{\omega}}}$ to 
+$\Omega_4^{-,K}(F)$. With respect to the chosen basis, this new element has the following matrix form:
+\begin{equation}
+	\begin{bmatrix}[c]
+		1 & 0 &  \phantom{-}0 & 0 & 0 & \phantom{-}0 \\
+		0 & 1 & \phantom{-}0 & 0 & 0 & \phantom{-}0 \\
+		-\mu^{\s} & 0 & \phantom{-}1 & 0 & 0 & \phantom{-}0 \\
+		\mu & 0 & \phantom{-}0 & 1 & 0 & \phantom{-}0 \\
+		0 & 0 & \phantom{-}0 & 0 & 1 & \phantom{-}0 \\
+		-\mu \mu^{\s} & 0 & \phantom{-}\mu & -\mu^{\s} & 0 & \phantom{-}1
+	\end{bmatrix}.
+\end{equation}
+We are interested in the vector $u = (0,\mu, -\mu^{\s}, 0)$. Recall that with respect to the basis
+$v_3, v_2, v_1, v_4$ the elements $N_{\lambda e_{-1}}$ and $N_{\lambda e_1}$ are represented 
+by the following matrices respectively:
+\begin{equation}
+		 \begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			-\lambda^{\s} & 1 & 0 & 0 \\
+			\lambda & 0 & 1 & 0 \\
+			-\lambda\lambda^{\s} & \lambda & -\lambda^{\s} & 1
+		\end{bmatrix},\quad 
+		\begin{bmatrix}
+			1 & \phantom{-}\lambda & -\lambda^{\s} & -\lambda\lambda^{\s} \\
+			0 & \phantom{-}1 & 0 & -\lambda^{\s} \\
+			0 & \phantom{-}0 & 1 & \lambda \\
+			0 & \phantom{-}0 & 0 & 1
+		\end{bmatrix}.	
+\end{equation}
+The element $N_{\lambda e_{-1}}$, represented by the lower triangular matrix, sends our vector
+$u$
+to $(-\lambda^{\s} \mu - \lambda\mu^{\s}, \mu, -\mu^{\s}, 0)$, while 
+$N_{\lambda e_1}$, represented by the upper triangular matrix, sends it to
+$(0,\mu, -\mu^{\s}, \lambda\mu + \lambda^{\s}\mu^{\s})$. Note that
+$\lambda^{s}\mu + \lambda\mu^{\s}$ and $\lambda\mu + \lambda^{\s}\mu^{\s}$ are
+the elements of $F$, and the pair $(\mu, -\mu^{\s})$ generates $K \cong F^{2}$ as
+$\mu$ ranges through $K$. Hence, we have the action of $\Omega_4^{-,K}(F)$ on
+$F^4$, so by adjoining the element $N_{\mu e_{\bar{\omega}}}$ to $\Omega_4^{-,K}(F)$
+we have obtained a group of shape $F^{4}\cn\Omega_4^{-,K}(F)$. 
 
-Next, take the $8$-space $V_8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
+We again use the results of Appendix A. Consider the $8$-space $V_8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
 $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, 
 e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$, and consider two isotropic vectors
 \begin{equation}
@@ -582,7 +567,7 @@ $(0,0,0\mid A,B,C)$ with
 i.e. it is $5$-dimensional. We notice that $X_2$ is isotropic, but in this case $X_2 \not\in R_2$.
 
 We conclude that the white points $\langle X_1 \rangle$ and $\langle X_2 \rangle$ belong to different
-orbuts under the action of ${}^2\SE_6^K(F)$. Of course, there is also at least one orbit on the 
+orbits under the action of ${}^2\SE_6^K(F)$. Of course, there is also at least one orbit on the 
 non-isotropic white points. 
 
 \subsection{Orbits of ${}^2\SE_6^K(F)$ on white points}
@@ -596,7 +581,7 @@ We now prove the following theorem.
 
 \begin{theorem}
 	The stabiliser in ${}^2\SE_6^K(F)$ of $X_3 = (0,0,1\mid 0,0,0)$ 
-	is the subgroup of shape $\Spin_{10}^{-,K}(F)$. 
+	is a subgroup of shape $\Spin_{10}^{-,K}(F)$. 
 \end{theorem}
 
 \begin{proof}
@@ -1105,7 +1090,7 @@ $(0,0,c\mid A,B,0)$ with
 
  
 
-\section{Case of a finite field}
+\section{The case of a finite field}
 \subsection{White vectors in $\J_8^C$}
 
 As a practical counting excersise, we count the isotropic white vectors in $\J_{8}^{C}$.

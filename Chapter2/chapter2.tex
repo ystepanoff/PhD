@@ -339,7 +339,7 @@ so we may take $Y = (1,1,0\mid 0,0,0)$ to get $M(Y,X) = 1 \neq 0$.
 The terms white, grey and black were introduced by Cohen and Cooperstein 
 \cite{CC}. In the paper by Aschbacher \cite{Asch1} they are called
 'singular', 'brilliant non-singular' and 'dark' respectively. 
-Jacobson \cite{Jac2} uses the terms 'rank $1$', 'rank $2$' and 'rank $3$'. 
+Jacobson \cite{JacobsonTwo} uses the terms 'rank $1$', 'rank $2$' and 'rank $3$'. 
 
 It is clear that the action of $\SE_6(F)$ preserves the colour, except possibly in case
 $F = \mathbb{F}_2$, when white and grey vectors may be intermixed. 
@@ -1730,8 +1730,8 @@ we are looking for can be.
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
 			P_u': (a,b,0\mid 0,0,C) & \mapsto &
-		(a,b \NN(u), c \NN(u)^{-1} \mid \ovu A \ovu \NN(u)^{-1},
-			u B \NN(u)^{-1}, C u), 
+		(a,b \NN(u), 0 \mid 0,
+			0, C u), 
 		\end{array}
 	\end{equation*}
 	so we get $F^{\times}$ on top of the stabiliser, 
@@ -2115,8 +2115,34 @@ $W$ under the isomorphism $\varphi$ is $\bigwedge^2 (V)$,
 as a submodule of $V \otimes V$. Thus, we have
 	the action of $\SL_5(F)$ on $\bigwedge^2(V) \cong F^{10}$.
 	
-So far we have shown that the joint stabiliser is no bigger
-than $F^{16}\cn F^{10}\cn \SL_5(F).F^{\times}.F^{\times}$.
+The elements $P_u$ and $P_u'$ act on the white vector $(0,0,0 \mid e_0,0,0)$ in the following way:
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+		P_u : (0,0,0 \mid e_0, 0,0) & \mapsto & (0,0,0 \mid u e_0 \NN(u)^{-1}, 0,0), \\
+		P_u' : (0,0,0 \mid e_0,0,0) & \mapsto & (0,0,0 \mid \ovu e_0 \ovu \NN(u)^{-1}, 0,0).
+	\end{array}
+\end{equation*}
+Taking $u = \lambda \cdot 1_{\O}$ where $\lambda \in F$ for both $P_u$ and $P_u'$, we obtain the action
+of the group of shape $F^{\times}.F^{\times}$, which preserves the white point $\langle (0,0,0 \mid e_0,0,0) \rangle$.
+
+So far we have shown that the joint stabiliser is  no bigger than the group of shape  \mbox{$F^{16}\cn F^{10}\cn \SL_5(F).F^{\times}.F^{\times}$}.
+We notice that $M_x''$ with $x \in \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle$ and $L_y'$ with 
+$y \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}}, e_1\rangle$ preserve
+the white point $\langle (0,0,0 \mid e_0,0,0) \rangle$. These elements generate an abelian group isomorphic to $F^{11}$. Let now
+$M_x'' \cdot L_x'$ be a general element in $F^{16}$. It sends $(0,0,0 \mid e_0, 0,0)$ to $(0,\Tr(e_0 y),0 \mid e_0, 0, \ovx e_{-0})$,
+so we get the following conditions on $x$ and $y$:
+\begin{equation*}
+	\left.
+		\begin{array}{r@{\;}c@{\;}l}
+			\ovx e_{-0} & = & 0, \\
+			\Tr(e_0 y) & = & 0.
+		\end{array}
+	\right\}
+\end{equation*}
+The first condition implies that $\ovx e_0 \in \langle e_{\bar{\omega}}, e_{\omega}, e_0, e_1 \rangle$, so
+$x \in \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle$. From the second condition we derive
+$y \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}}, e_1\rangle$, 
+so indeed the joint stabiliser is $F^{11}\cn F^{10} \cn \SL_5(F).F^{\times}.F^{\times}$. 
 \end{proof}
 
 We have already seen the proof of the following lemma (Theorem \ref{theorem:1_white_space_stab}), so we just state the result here.
@@ -2128,6 +2154,7 @@ We have already seen the proof of the following lemma (Theorem \ref{theorem:1_wh
 		\Spin_{10}^+(F).F^{\times}.
 	\end{equation}
 \end{lemma}
+
 
 
 \section{Simplicity of $\EE_6(F)$}
@@ -2234,7 +2261,7 @@ Finally, using the Iwasawa's Lemma we obtain the following theorem.
 	The group $\EE_6(F)$ is simple. 
 \end{theorem}
 
-\section{Case of a finite field}
+\section{The case of a finite field}
 
 In this section $F$ is a finite field of $q$ elements, that is, $F = \Fq$. 
 Our aim is to count the white points in this case, and hence find the group order. 

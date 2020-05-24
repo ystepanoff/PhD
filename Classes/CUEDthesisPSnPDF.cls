@@ -107,11 +107,12 @@
                  bookmarksnumbered = true,
                  breaklinks = true,
                  linktocpage,
-                 %pagebackref,
+                 %backref,
                  colorlinks = true,
                  linkcolor = blue,
                  urlcolor  = blue,
-                 citecolor = red,
+                 citecolor = blue,
+                 allcolors = blue,
                  anchorcolor = green,
                  hyperindex = true,
                  hyperfigures
@@ -122,17 +123,18 @@
     \pdfcompresslevel=9
     \graphicspath{{ThesisFigs/PNG/}{ThesisFigs/PDF/}{ThesisFigs/}}
 \else
-    \usepackage[ dvips, 
+    \usepackage[ dvips,
                  bookmarks,
                  bookmarksopen = true,
                  bookmarksnumbered = true,
                  breaklinks = true,
                  linktocpage,
-                 %pagebackref,
+                 %backref,
                  colorlinks = true,
                  linkcolor = blue,
                  urlcolor  = blue,
-                 citecolor = red,
+                 citecolor = blue,
+                 allcolors = blue,
                  anchorcolor = green,
                  hyperindex = true,
                  hyperfigures
@@ -373,3 +375,7 @@
 %{\newpage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
 \usepackage{stmaryrd}
+
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[charter]{mathdesign}
