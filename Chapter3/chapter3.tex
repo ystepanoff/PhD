@@ -580,8 +580,12 @@ $N_x$ with $x\ovx^{\s} = \ovx^{\s}x = 0$ preserve $X_3$ (\ref{eq:3_nx_image}).
 We now prove the following theorem.
 
 \begin{theorem}
+	\label{theorem:2_type3_stabiliser}
 	The stabiliser in ${}^2\SE_6^K(F)$ of $X_3 = (0,0,1\mid 0,0,0)$ 
-	is a subgroup of shape $\Spin_{10}^{-,K}(F)$. 
+	is a subgroup of shape
+	\begin{equation}
+		\Spin_{10}^{-,K}(F).
+	\end{equation}
 \end{theorem}
 
 \begin{proof}
@@ -786,7 +790,54 @@ $U_1^{\perp}$ is $10$-dimensional and spanned by the vectors $(0,0,c\mid A,B,C)$
 		C & \in & \langle e_0 \rangle.
 	\end{array}
 \end{equation}
-Note that $X_3 \in U_1^{\perp}$, so the stabiliser in ${}^2\SE_6^K(F)$ sends $X_3$ to some vector
+We first show that $U_1^{\perp}$ is an image in $\SE_6(K)$
+of $\J_{10}^{abC}$, so that we can use the geometry 
+described in Section \ref{section:1_geometry} to pin down
+the stabiliser of type $1$ vector to a certain subgroup.
+
+Consider an element $M$ of $\SE_6(K)$, defined as
+\begin{equation*}
+	M = \begin{bmatrix}[c]
+		- e_{-0} & 1 & 0 \\
+		0 & 0 & 1 \\
+		e_0 & e_{-0} & 0
+	\end{bmatrix}.
+\end{equation*}
+It is straightforward to see that $M$ indeed preserves
+the Dickson--Freudenthal determinant. The action of
+$M$ on an arbitrary vector $(a,b,0\mid 0,0,C) \in \J_{10}^{abC}$
+is given by
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+		(a,b,0\mid 0,0,C) & \mapsto & (0,a,b \mid A, B, -a e_0),\\
+	\end{array}
+\end{equation*}
+where 
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+			A & \in & \langle e_{-1}, e_{\bar{\omega}},
+						e_{\omega}, e_0 \rangle, \\
+		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, 
+						e_{-\bar{\omega}} \rangle.	
+	\end{array}
+\end{equation*}
+Acting further by $M_{e_{-0}}$, we obtain a vector
+$(0,0,b \mid \hat{A}, \hat{B}, -a e_0)$ with
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+		\hat{A} & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1 \rangle, \\
+		\hat{B} & \in & \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \rangle.
+	\end{array}
+\end{equation*}
+In other words, we have shown that $U_1^{\perp}$ is indeed
+an image in $\SE_6(K)$ of $\J_{10}^{abC}$. 
+Now, $X_1 \in U_1^{\perp}$, so the
+stabiliser of $\langle X_1 \rangle$ is no bigger than  
+\mbox{$K^{16}\cn K^8 \cn \Spin_8^+(F).K^{\times}.K^{\times}$}.
+
+
+Note that $X_3 \in U_1^{\perp}$, so the stabiliser in 
+${}^2\SE_6^K(F)$ sends $X_3$ to some vector
 in $U_1^{\perp}$. 
 The actions on $U_1^{\perp}$ of the elements $N_{\mu x}'$ and $N_{\nu x}''$ from above are given
 by
@@ -821,36 +872,45 @@ The value of $\H$ on $U_1^{\perp}$ is given by
 \begin{equation}
 	\H((0,0,c\mid A,B,C)) = c c^{\s},
 \end{equation}
-so we conclude that the subgroup of the stabiliser of $X_1$, which does not preserve $X_3$, 
-sends $X_3$ to a vector of the form $(0,0,1\mid A,B, \ovB \ovA)$. These vectors span a 
-$9$-subspace of $U_1^{\perp}$. We are interested in the action on its subspaces
-$S_A$ and $S_B$, spanned by the vectors of the form $(0,0,1\mid A,0,0)$ and 
-$(0,0,1\mid 0,B,0)$ respectively. The action of the elements $N_{\mu x}'$ and $N_{\nu y}''$ 
-on these subspaces is given by
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		N_{\mu x}' : (0,0,1\mid A,0,0) & \mapsto & 
-			(0,0,1\mid A -\mu^{\s} x , 0, 0), \\
-			
-		N_{\mu x}' : (0,0,1\mid 0,B,0) & \mapsto &
-			(0,0,1\mid 0,B,0), \\
-			
-		N_{\nu y}'' : (0,0,1\mid A,0,0) & \mapsto &
-			(0,0,1\mid A,0,0), \\
-			
-		N_{\nu y}'' : (0,0,1\mid 0,B,0) & \mapsto &
-			(0,0,1\mid 0,B + \nu y, 0).
-	\end{array}
-\end{equation}
-We see that the action of $N_{\mu x}'$ on $S_A$ is that of $K^4$, as well as the action
-of $N_{\nu y}''$ on $S_B$. We also see that the intersection of these two copies of $K^4$
-is trivial, hence we get the action of $K^4 \times K^4 \cong K^8$ on $U_1^{\perp}$. 
-Finally, we have shown the following.
+so we conclude that the elements of the stabiliser of $X_1$, 
+which do not preserve $X_3$, 
+send $X_3$ to a vector of the form $(0,0,c\mid A,B, \ovB \ovA 
+c^{-1})$, where $c$ is such that $c c^{\s} = 1$. In particular,
+$c \neq 0$, so we can repeatedly use the elements $N_{\mu x}'$
+and $N_{\nu y}''$ which preserve $X_1$ to map any vector
+$(0,0,c\mid A,B, \ovB \ovA c^{-1})$ to $(0,0,c \mid 0,0,0)$,
+showing the transitive action on such vectors.
 
-\begin{theorem}
-	The stabiliser in ${}^2\SE_6^K(F)$ of $X_1 = (0,0,0\mid 0,0,e_0)$ is the subgroup
-	of shape $F^8.K^8\cn\Spin_8^{-,K}(F)$. 
-\end{theorem}
+
+%These vectors span a 
+%$9$-subspace of $U_1^{\perp}$. We are interested in the action on its subspaces
+%$S_A$ and $S_B$, spanned by the vectors of the form $(0,0,1\mid A,0,0)$ and 
+%$(0,0,1\mid 0,B,0)$ respectively. The action of the elements $N_{\mu x}'$ and $N_{\nu y}''$ 
+%on these subspaces is given by
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		N_{\mu x}' : (0,0,1\mid A,0,0) & \mapsto & 
+%			(0,0,1\mid A -\mu^{\s} x , 0, 0), \\
+%			
+%		N_{\mu x}' : (0,0,1\mid 0,B,0) & \mapsto &
+%			(0,0,1\mid 0,B,0), \\
+%			
+%		N_{\nu y}'' : (0,0,1\mid A,0,0) & \mapsto &
+%			(0,0,1\mid A,0,0), \\
+%			
+%		N_{\nu y}'' : (0,0,1\mid 0,B,0) & \mapsto &
+%			(0,0,1\mid 0,B + \nu y, 0).
+%	\end{array}
+%\end{equation}
+%We see that the action of $N_{\mu x}'$ on $S_A$ is that of $K^4$, as well as the action
+%of $N_{\nu y}''$ on $S_B$. We also see that the intersection of these two copies of $K^4$
+%is trivial, hence we get the action of $K^4 \times K^4 \cong K^8$ on $U_1^{\perp}$. 
+%Finally, we have shown the following.
+%
+%\begin{theorem}
+%	The stabiliser in ${}^2\SE_6^K(F)$ of $X_1 = (0,0,0\mid 0,0,e_0)$ is the subgroup
+%	of shape $F^8.K^8\cn\Spin_8^{-,K}(F)$. 
+%\end{theorem}
 
 %As we know, $X_1$ determines the $17$-space $U_1$, spanned by the Albert vectors of the form
 %$(a,b,0\mid A,B,C)$, where
