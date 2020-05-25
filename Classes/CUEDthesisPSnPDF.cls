@@ -379,3 +379,10 @@
 \usepackage[T1]{fontenc}
 \usepackage{charter}
 \usepackage[charter]{mathdesign}
+
+\newcommand\epigraph[3]{
+\vspace{1em}\hfill{}\begin{minipage}{#1}{\begin{spacing}{0.9}
+\small\noindent\textit{#2}\end{spacing}
+\vspace{2em}
+\hfill{}{#3}}\vspace{2em}
+\end{minipage}}

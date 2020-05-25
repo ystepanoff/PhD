@@ -14,10 +14,9 @@ A level-1 auxiliary file: Appendix4/appendix4.aux
 The style file: alpha.bst
 Database file #1: References/references.bib
 Warning--I didn't find a database entry for "WilsonPaper"
-Warning--I didn't find a database entry for "PeterCameron"
 You've used 31 entries,
             2543 wiz_defined-function locations,
-            782 strings with 9034 characters,
+            781 strings with 9011 characters,
 and the built_in function-call counts, 10492 in all, are:
 = -- 1045
 > -- 364
@@ -56,4 +55,4 @@ warning$ -- 0
 while$ -- 96
 width$ -- 35
 write$ -- 403
-(There were 2 warnings)
+(There was 1 warning)

@@ -40,9 +40,9 @@
 \contentsline {subsection}{\numberline {4.5.2}The stabiliser of type 3 vector}{75}{subsection.4.5.2}% 
 \contentsline {subsection}{\numberline {4.5.3}The stabiliser of type 1 vector}{79}{subsection.4.5.3}% 
 \contentsline {subsection}{\numberline {4.5.4}The stabiliser of type 2 vector}{81}{subsection.4.5.4}% 
-\contentsline {section}{\numberline {4.6}The case of a finite field}{84}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mdmathbb {J}_8^C$}{84}{subsection.4.6.1}% 
+\contentsline {section}{\numberline {4.6}The case of a finite field}{85}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mdmathbb {J}_8^C$}{85}{subsection.4.6.1}% 
 \contentsline {subsection}{\numberline {4.6.2}White vectors in $\mdmathbb {J}_{16}^{BC}$}{88}{subsection.4.6.2}% 
-\contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{90}{appendix*.2}% 
+\contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{91}{appendix*.2}% 
 \contentsline {chapter}{D: Magma code}{100}{appendix*.3}% 
 \contentsline {chapter}{Bibliography}{101}{appendix*.4}% 

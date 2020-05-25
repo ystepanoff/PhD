@@ -311,7 +311,7 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
 
 \begin{lemma}
     \label{lemma:A_omega_transitive}
-    The group $\Omega_{2m+2}(F,Q)$, where $Q$ is of Witt index at least $1$, 
+    The group $\Omega_{2m+2}(F,Q)$, where $Q$ is of Witt index at least $2$, 
     acts transitively on
     \begin{equation*}
 	O_{\lambda} = \left\{ \  v \in V\ \big|\ Q(v) = \lambda,\ v \neq 0 \ \right\}
@@ -448,7 +448,7 @@ the $1$-space spanned by $v_1$.
 
 \begin{theorem}
 	\label{theorem:A_space_stab}
-	Let $Q_W$ be of Witt index at least $1$. Any subgroup $H$ such that
+	Let $Q_W$ be of Witt index at least $2$. Any subgroup $H$ such that
 	\begin{equation}
 		W\cn\Omega_{2m}(F,Q_W) \leqslant H < \Omega_{2m+2}(F,Q),
 	\end{equation}
@@ -473,7 +473,7 @@ the $1$-space spanned by $v_1$.
 		 & & \\
 		u_2^\T &\ \ \ \ \ A\ \ \ \ \  & 0\  \\ 
 		 & & \\ \hline 
-		\mu & u_1 & 1\ 
+		\nu & u_1 & 1\ 
 	    \end{array}
 	\right],
 	\end{equation*}
@@ -488,23 +488,14 @@ the $1$-space spanned by $v_1$.
 	the form $\alpha v_1 + u$ for arbitrary $\alpha \in F$ and $0\neq u \in W$. 
 	The group $\Omega_{2m+2}(F,Q)$	in 
 	its turn is transitive on the isotropic vectors in $V$, so there exists an element
-	$h \in \Omega_{2m+2}(F,Q)$ such that $v_1^h = v_2$ and $v^h \in \langle v_1\rangle
-	\oplus W$. It follows that $v_2 \sim v^h$ and so, by transitivity of $\sim$ we find that 
+	\mbox{$h \in \Omega_{2m+2}(F,Q)$} such that $v_1^h = v_2$ and $v^h \in W \oplus \langle v_2 \rangle$. 
+	It follows that $v_2 \sim v^h$ and so, by transitivity of $\sim$ we find that 
 	$v_1 \sim v_2$. Finally, it is easy to derive the congruences of the form 
-	$v_1 \sim \alpha v_1$ and $v_2 \sim \beta v_2$ for any non-zero $\alpha,\beta \in F$. 
-	For instance, $v_2$ can be scaled using an element of the form 
-	\begin{equation*}
-		[s(\beta)]_{\mathcal{B}} = \left[
-	    \begin{array}{c|c|c}
-		\beta^{-1} & 0 & 0\  \\ \hline 
-		 & & \\
-		0 &\ \ \ \ \ \II_{2m}\ \ \ \ \  & 0\  \\ 
-		 & & \\ \hline 
-		0 & 0 & \beta 
-	    \end{array}
-	\right].
-	\end{equation*}
-	It follows that if $\mu = 0$, the congruence relation $\sim$ is universal. 
+	$v_1 \sim \beta v_1$ and $v_2 \sim \beta v_2$ for any non-zero $\beta \in F$. Indeed, 
+	there exists an element \mbox{$g \in  \Omega_{2m+2}(F,Q)$} such that $v_1^g = \beta v_1$ for some non-zero
+	$\beta \in F$. We have $\beta v_2 \sim \alpha \beta v_1 + u^g$, so \mbox{$v_1 \sim \beta v_1$}. Similarly we obtain
+	$v_2 \sim \beta v_2$ for any non-zero $\beta \in F$, and so $\sim$ is universal, contradiction.
+
 	
 	
 \end{proof}
