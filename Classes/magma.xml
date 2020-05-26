@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE MODE SYSTEM "xmode.dtd">
+
+<!--
+  jEdit Magma mode
+  Don Taylor (don.e.taylor@gmail.com)
+  2010-07-27
+  Based on Magma 2.16
+  
+  <MODE NAME="magma" FILE="magma.xml" FILE_NAME_GLOB="*.{m,lm}" />
+-
+-->
+
+<MODE>
+    <PROPS>
+        <PROPERTY NAME="commentStart" VALUE="/*" />
+        <PROPERTY NAME="commentEnd" VALUE="*/" />
+        <PROPERTY NAME="lineComment" VALUE="//" />
+        <!--
+        <PROPERTY NAME="wordBreakChars" VALUE=",+-=&lt;&gt;/?^&amp;*" /> 
+        -->
+        
+        <!-- auto indent modes -->
+        <PROPERTY NAME="indentNextLines" 
+          VALUE=".*(for|do|else|elif|try|catch|case|while|then)\s*(//.*)?$"/>
+        <PROPERTY NAME="unindentThisLine" VALUE="^\s*end\b.*;"/>
+        <PROPERTY NAME="unindentNextLines" VALUE="^\s*end\b.*;"/>
+    </PROPS>
+
+    <RULES
+        IGNORE_CASE="FALSE" HIGHLIGHT_DIGITS="TRUE">
+        <EOL_SPAN TYPE="COMMENT1">//</EOL_SPAN>
+        <SPAN TYPE="COMMENT2" NO_LINE_BREAK="FALSE">
+          <BEGIN>/*</BEGIN> <END>*/</END>
+        </SPAN>
+        <SPAN TYPE="COMMENT3" AT_WHITESPACE_END="TRUE" NO_LINE_BREAK="FALSE">
+          <BEGIN>{</BEGIN> <END>}</END>
+        </SPAN>
+        <SPAN TYPE="LITERAL1">
+          <BEGIN>"</BEGIN> <END>"</END>
+        </SPAN>
+        <SPAN TYPE="LITERAL3" NO_WORD_BREAK="TRUE">
+          <BEGIN>`</BEGIN> <END>`</END>
+		    </SPAN>
+        <SEQ TYPE="OPERATOR">#</SEQ>
+        <SEQ TYPE="OPERATOR">~</SEQ>
+        <SEQ TYPE="OPERATOR">..</SEQ>
+        <SEQ TYPE="OPERATOR">:=</SEQ>
+        <SEQ TYPE="OPERATOR">+:=</SEQ>
+        <SEQ TYPE="OPERATOR">*:=</SEQ>
+        <SEQ TYPE="OPERATOR">-:=</SEQ>
+        <SEQ TYPE="OPERATOR">/:=</SEQ>
+        <SEQ TYPE="OPERATOR">^:=</SEQ>
+        <SEQ TYPE="OPERATOR">join:=</SEQ>
+        <SEQ TYPE="OPERATOR">meet:=</SEQ>
+        <SEQ TYPE="OPERATOR">diff:=</SEQ>
+        <SEQ TYPE="OPERATOR">sdiff:=</SEQ>
+        <SEQ TYPE="OPERATOR">cat:=</SEQ>
+        <SEQ TYPE="OPERATOR">div:=</SEQ>
+        <SEQ TYPE="OPERATOR">mod:=</SEQ>
+        <SEQ TYPE="OPERATOR">and:=</SEQ>
+        <SEQ TYPE="OPERATOR">or:=</SEQ>
+        <SEQ TYPE="OPERATOR">xor:=</SEQ>
+        <SEQ TYPE="OPERATOR">+</SEQ>
+        <SEQ TYPE="OPERATOR">-</SEQ>
+        <SEQ TYPE="OPERATOR">/</SEQ>
+        <SEQ TYPE="OPERATOR">^</SEQ>
+        <SEQ TYPE="OPERATOR">*</SEQ>
+        <SEQ TYPE="OPERATOR">$$</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;+</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;*</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;and</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;or</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;join</SEQ>
+        <SEQ TYPE="OPERATOR">&amp;meet</SEQ>
+
+        <KEYWORDS>
+          <LITERAL2>true</LITERAL2>
+          <LITERAL2>false</LITERAL2>
+
+          <!-- relations -->
+          <KEYWORD2>adj</KEYWORD2>
+          <KEYWORD2>and</KEYWORD2>
+          <KEYWORD2>cat</KEYWORD2>
+          <KEYWORD2>cmpeq</KEYWORD2>
+          <KEYWORD2>cmpne</KEYWORD2>
+          <KEYWORD2>diff</KEYWORD2>
+          <KEYWORD2>div</KEYWORD2>
+          <KEYWORD2>eq</KEYWORD2>
+          <KEYWORD2>ge</KEYWORD2>
+          <KEYWORD2>gt</KEYWORD2>
+          <KEYWORD2>in</KEYWORD2>
+          <KEYWORD2>is</KEYWORD2>
+          <KEYWORD2>join</KEYWORD2>
+          <KEYWORD2>le</KEYWORD2>
+          <KEYWORD2>lt</KEYWORD2>
+          <KEYWORD2>meet</KEYWORD2>
+          <KEYWORD2>mod</KEYWORD2>
+          <KEYWORD2>ne</KEYWORD2>
+          <KEYWORD2>notadj</KEYWORD2>
+          <KEYWORD2>notin</KEYWORD2>
+          <KEYWORD2>notsubset</KEYWORD2>
+          <KEYWORD2>or</KEYWORD2>
+          <KEYWORD2>sdiff</KEYWORD2>
+          <KEYWORD2>subset</KEYWORD2>
+          <KEYWORD2>xor</KEYWORD2>
+          <!-- keywords -->
+          <KEYWORD1>assigned</KEYWORD1>
+          <KEYWORD1>break</KEYWORD1>
+          <KEYWORD1>by</KEYWORD1>
+          <KEYWORD1>case</KEYWORD1>
+          <KEYWORD1>catch</KEYWORD1>
+          <KEYWORD1>continue</KEYWORD1>
+          <KEYWORD1>declare</KEYWORD1>
+          <KEYWORD1>default</KEYWORD1>
+          <KEYWORD1>delete</KEYWORD1>
+          <KEYWORD1>do</KEYWORD1>
+          <KEYWORD1>elif</KEYWORD1>
+          <KEYWORD1>else</KEYWORD1>
+          <KEYWORD1>end</KEYWORD1>
+          <KEYWORD1>eval</KEYWORD1>
+          <KEYWORD1>exists</KEYWORD1>
+          <KEYWORD1>exit</KEYWORD1>
+          <KEYWORD1>for</KEYWORD1>
+          <KEYWORD1>forall</KEYWORD1>
+          <KEYWORD1>fprintf</KEYWORD1>
+          <KEYWORD1>if</KEYWORD1>
+          <KEYWORD1>local</KEYWORD1>
+          <KEYWORD1>not</KEYWORD1>
+          <KEYWORD1>print</KEYWORD1>
+          <KEYWORD1>printf</KEYWORD1>
+          <KEYWORD1>quit</KEYWORD1>
+          <KEYWORD1>random</KEYWORD1>
+          <KEYWORD1>read</KEYWORD1>
+          <KEYWORD1>readi</KEYWORD1>
+          <KEYWORD1>repeat</KEYWORD1>
+          <KEYWORD1>restore</KEYWORD1>
+          <KEYWORD1>save</KEYWORD1>
+          <KEYWORD1>select</KEYWORD1>
+          <KEYWORD1>then</KEYWORD1>
+          <KEYWORD1>time</KEYWORD1>
+          <KEYWORD1>to</KEYWORD1>
+          <KEYWORD1>try</KEYWORD1>
+          <KEYWORD1>until</KEYWORD1>
+          <KEYWORD1>vprint</KEYWORD1>
+          <KEYWORD1>vprintf</KEYWORD1>
+          <KEYWORD1>vtime</KEYWORD1>
+          <KEYWORD1>when</KEYWORD1>
+          <KEYWORD1>where</KEYWORD1>
+          <KEYWORD1>while</KEYWORD1>
+          <!-- directives -->
+          <LITERAL1>clear</LITERAL1>
+          <LITERAL1>forward</LITERAL1>
+          <LITERAL1>freeze</LITERAL1>
+          <LITERAL1>iload</LITERAL1>
+          <LITERAL1>import</LITERAL1>
+          <LITERAL1>load</LITERAL1>
+          <!-- error checks -->
+          <LITERAL3>assert</LITERAL3>
+          <LITERAL3>error</LITERAL3>
+          <LITERAL3>require</LITERAL3>
+          <LITERAL3>requirege</LITERAL3>
+          <LITERAL3>requirerange</LITERAL3>
+          <!-- functions -->
+          <FUNCTION>function</FUNCTION>
+          <FUNCTION>func</FUNCTION>
+          <MARKUP>intrinsic</MARKUP>
+          <FUNCTION>procedure</FUNCTION>
+          <FUNCTION>return</FUNCTION>
+          <!-- constructors -->
+          <KEYWORD3>car</KEYWORD3>
+          <KEYWORD3>comp</KEYWORD3>
+          <KEYWORD3>cop</KEYWORD3>
+          <KEYWORD3>elt</KEYWORD3>
+          <KEYWORD3>ext</KEYWORD3>
+          <KEYWORD3>frac</KEYWORD3>
+          <KEYWORD3>hom</KEYWORD3>
+          <KEYWORD3>ideal</KEYWORD3>
+          <KEYWORD3>iso</KEYWORD3>
+          <KEYWORD3>lideal</KEYWORD3>
+          <KEYWORD3>loc</KEYWORD3>
+          <KEYWORD3>map</KEYWORD3>
+          <KEYWORD3>ncl</KEYWORD3>
+          <KEYWORD3>pmap</KEYWORD3>
+          <KEYWORD3>proc</KEYWORD3>
+          <KEYWORD3>quo</KEYWORD3>
+          <KEYWORD3>rec</KEYWORD3>
+          <KEYWORD3>recformat</KEYWORD3>
+          <KEYWORD3>rep</KEYWORD3>
+          <KEYWORD3>rideal</KEYWORD3>
+          <KEYWORD3>sub</KEYWORD3>
+          <!-- other constructors (semi-reserved) -->
+          <KEYWORD3>AbelianGroup</KEYWORD3> 
+          <KEYWORD3>AdditiveCode</KEYWORD3>
+          <KEYWORD3>AffineAlgebra</KEYWORD3>
+          <KEYWORD3>Algebra</KEYWORD3>
+          <KEYWORD3>AssociativeAlgebra</KEYWORD3>
+          <KEYWORD3>Character</KEYWORD3>
+          <KEYWORD3>CliffordAlgebra</KEYWORD3>
+          <KEYWORD3>Design</KEYWORD3>
+          <KEYWORD3>Digraph</KEYWORD3>
+          <KEYWORD3>ExtensionField</KEYWORD3>
+          <KEYWORD3>FPAlgebra</KEYWORD3>
+          <KEYWORD3>FiniteAffinePlane</KEYWORD3>
+          <KEYWORD3>FiniteProjectivePlane</KEYWORD3>
+          <KEYWORD3>Graph</KEYWORD3>
+          <KEYWORD3>Group</KEYWORD3>
+          <KEYWORD3>GroupAlgebra</KEYWORD3>
+          <KEYWORD3>IncidenceStructure</KEYWORD3>
+          <KEYWORD3>LieAlgebra</KEYWORD3>
+          <KEYWORD3>LinearCode</KEYWORD3>
+          <KEYWORD3>LinearSpace</KEYWORD3>
+          <KEYWORD3>MatrixAlgebra</KEYWORD3>
+          <KEYWORD3>MatrixGroup</KEYWORD3>
+          <KEYWORD3>MatrixRing</KEYWORD3>
+          <KEYWORD3>Monoid</KEYWORD3>
+          <KEYWORD3>MultiDigraph</KEYWORD3>
+          <KEYWORD3>MultiGraph</KEYWORD3>
+          <KEYWORD3>NearLinearSpace</KEYWORD3>
+          <KEYWORD3>Network</KEYWORD3>
+          <KEYWORD3>PartialMap</KEYWORD3>
+          <KEYWORD3>PermutationGroup</KEYWORD3>
+          <KEYWORD3>PolycyclicGroup</KEYWORD3>
+          <KEYWORD3>QuaternionAlgebra</KEYWORD3>
+          <KEYWORD3>Semigroup</KEYWORD3>
+          <KEYWORD3>ZModule</KEYWORD3>
+
+        </KEYWORDS>
+    </RULES>
+
+
+</MODE>

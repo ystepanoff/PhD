@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Syntax highlighting for Magma (version 2.16) : 2010-06-17
+
+ Author: Don Taylor <don.e.taylor@gmail.com>
+
+-->
+<language id="magma" _name="Magma" version="2.0" _section="Scientific">
+  <metadata>
+    <property name="mimetypes">text/x-magma</property>
+    <property name="globs">*.m;*.mag;*.lm</property>
+    <property name="line-comment-start">//</property>
+    <property name="block-comment-start">/*</property>
+    <property name="block-comment-end">*/</property>
+  </metadata>
+
+  <styles>
+    <style id="comment"     _name="Comment"     map-to="def:comment"/>
+    <style id="doc-comment" _name="Doc Comment" map-to="def:statement"/>
+    <style id="string"      _name="String"      map-to="def:string"/>
+    <style id="directive"   _name="Directive"   map-to="def:preprocessor"/>
+    <style id="character"   _name="Character"   map-to="def:string"/>
+    <style id="keyword"     _name="Keyword"     map-to="def:keyword"/>
+    <style id="error"       _name="Error"       map-to="def:type"/>
+    <style id="function"    _name="Function"    map-to="def:function"/>
+    <style id="constructor" _name="Constructor" map-to="def:type"/>
+    <style id="relation"    _name="Relation"    map-to="def:type"/>
+    <style id="float"       _name="Float"       map-to="def:floating-point"/>
+    <style id="decimal"     _name="Decimal"     map-to="def:decimal"/>
+    <style id="binary"      _name="Binary"      map-to="def:base-n-integer"/>
+    <style id="hexadecimal" _name="Hex"         map-to="def:base-n-integer"/>
+    <style id="boolean"     _name="Boolean"     map-to="def:boolean"/>
+  </styles>
+
+  <default-regex-options case-sensitive="true"/>
+
+  <definitions>
+    <context id="character" style-ref="character">
+      <match>\'(\\[trnb\\\'\"]|[^\\])\'</match> 
+    </context>
+
+    <context id="keyword" style-ref="keyword">
+      <keyword>#</keyword>
+      <keyword>assigned</keyword>
+      <keyword>break</keyword>
+      <keyword>by</keyword>
+      <keyword>case</keyword>
+      <keyword>catch</keyword>
+      <keyword>continue</keyword>
+      <keyword>declare</keyword>
+      <keyword>default</keyword>
+      <keyword>delete</keyword>
+      <keyword>do</keyword>
+      <keyword>elif</keyword>
+      <keyword>else</keyword>
+      <keyword>end</keyword>
+      <keyword>eval</keyword>
+      <keyword>exists</keyword>
+      <keyword>exit</keyword>
+      <keyword>for</keyword>
+      <keyword>forall</keyword>
+      <keyword>fprintf</keyword>
+      <keyword>if</keyword>
+      <keyword>local</keyword>
+      <keyword>not</keyword>
+      <keyword>print</keyword>
+      <keyword>printf</keyword>
+      <keyword>quit</keyword>
+      <keyword>random</keyword>
+      <keyword>read</keyword>
+      <keyword>readi</keyword>
+      <keyword>repeat</keyword>
+      <keyword>restore</keyword>
+      <keyword>save</keyword>
+      <keyword>select</keyword>
+      <keyword>then</keyword>
+      <keyword>time</keyword>
+      <keyword>to</keyword>
+      <keyword>try</keyword>
+      <keyword>until</keyword>
+      <keyword>vprint</keyword>
+      <keyword>vprintf</keyword>
+      <keyword>vtime</keyword>
+      <keyword>when</keyword>
+      <keyword>where</keyword>
+      <keyword>while</keyword>
+    </context>
+    
+    <context id="directive" style-ref="directive">
+      <keyword>forward</keyword>
+      <keyword>freeze</keyword>
+      <keyword>iload</keyword>
+      <keyword>import</keyword>
+      <keyword>load</keyword>
+    </context>
+
+    <context id="error-check" style-ref="error">
+      <keyword>assert</keyword>
+      <keyword>error</keyword>
+      <keyword>require</keyword>
+      <keyword>requirege</keyword>
+      <keyword>requirerange</keyword>
+    </context>
+
+
+    <context id="relation" style-ref="relation">
+      <keyword>adj</keyword>
+      <keyword>and</keyword>
+      <keyword>cat</keyword>
+      <keyword>clear</keyword>
+      <keyword>cmpeq</keyword>
+      <keyword>cmpne</keyword>
+      <keyword>diff</keyword>
+      <keyword>div</keyword>
+      <keyword>eq</keyword>
+      <keyword>ge</keyword>
+      <keyword>gt</keyword>
+      <keyword>in</keyword>
+      <keyword>is</keyword>
+      <keyword>join</keyword>
+      <keyword>le</keyword>
+      <keyword>lt</keyword>
+      <keyword>meet</keyword>
+      <keyword>mod</keyword>
+      <keyword>ne</keyword>
+      <keyword>notadj</keyword>
+      <keyword>notin</keyword>
+      <keyword>notsubset</keyword>
+      <keyword>or</keyword>
+      <keyword>sdiff</keyword>
+      <keyword>subset</keyword>
+      <keyword>xor</keyword>    
+    </context>
+
+    <context id="function" style-ref="function">
+      <keyword>function</keyword>
+      <keyword>intrinsic</keyword>
+      <keyword>procedure</keyword>
+      <keyword>return</keyword>
+    </context>
+
+    <context id="constructor" style-ref="constructor">
+      <keyword>car</keyword>
+      <keyword>comp</keyword>
+      <keyword>cop</keyword>
+      <keyword>elt</keyword>
+      <keyword>ext</keyword>
+      <keyword>frac</keyword>
+      <keyword>func</keyword>
+      <keyword>hom</keyword>
+      <keyword>ideal</keyword>
+      <keyword>iso</keyword>
+      <keyword>lideal</keyword>
+      <keyword>loc</keyword>
+      <keyword>map</keyword>
+      <keyword>ncl</keyword>
+      <keyword>pmap</keyword>
+      <keyword>proc</keyword>
+      <keyword>quo</keyword>
+      <keyword>rec</keyword>
+      <keyword>recformat</keyword>
+      <keyword>rep</keyword>
+      <keyword>rideal</keyword>
+      <keyword>sub</keyword>
+      <!-- other constructors (semi-reserved) -->
+      <keyword>AbelianGroup</keyword>
+      <keyword>AffineAlgebra</keyword>
+      <keyword>Algebra</keyword>
+      <keyword>AssociativeAlgebra</keyword>
+      <keyword>Character</keyword>
+      <keyword>CliffordAlgebra</keyword>
+      <keyword>Design</keyword>
+      <keyword>Digraph</keyword>
+      <keyword>ExtensionField</keyword>
+      <keyword>FPAlgebra</keyword>
+      <keyword>FiniteAffinePlane</keyword>
+      <keyword>FiniteProjectivePlane</keyword>
+      <keyword>Graph</keyword>
+      <keyword>Group</keyword>
+      <keyword>GroupAlgebra</keyword>
+      <keyword>IncidenceStructure</keyword>
+      <keyword>LieAlgebra</keyword>
+      <keyword>LinearCode</keyword>
+      <keyword>LinearSpace</keyword>
+      <keyword>MatrixAlgebra</keyword>
+      <keyword>MatrixGroup</keyword>
+      <keyword>MatrixRing</keyword>
+      <keyword>Monoid</keyword>
+      <keyword>MultiGraph</keyword>
+      <keyword>MultiDigraph</keyword>
+      <keyword>NearLinearSpace</keyword>
+      <keyword>Network</keyword>
+      <keyword>PartialMap</keyword>
+      <keyword>PermutationGroup</keyword>
+      <keyword>PolycyclicGroup</keyword>
+      <keyword>QuaternionAlgebra</keyword>
+      <keyword>Semigroup</keyword>
+      <keyword>ZModule</keyword>
+    </context>
+
+    <context id="boolean" style-ref="boolean">
+      <keyword>true</keyword>
+      <keyword>false</keyword>
+    </context>
+
+    <context id="becomes" style-ref="function">
+      <match>-&gt;</match>
+    </context>
+
+    <context id="float" style-ref="float">
+      <match extended="true">
+          [0-9]+ \. [0-9]+ ([eE][+-]?[0-9]+)?
+        | [0-9]+            [eE][+-]?[0-9]+
+      </match>
+    </context>
+
+    <context id="hexadecimal" style-ref="hexadecimal">
+      <match>0[xX][0-9a-fA-F]+</match>
+    </context>
+
+    <context id="binary" style-ref="binary">
+      <match>0[oO][0-7]+</match>
+    </context>
+
+    <context id="decimal" style-ref="decimal">
+      <match>\b[0-9]+\b</match>
+    </context>
+
+    <context id="doc-comment" style-ref="doc-comment">
+      <start>^{</start>
+      <end>}</end>
+    </context>
+
+    <context id="comment" style-ref="comment" end-at-line-end="true">
+      <start>//</start>
+      <include>
+        <context ref="def:in-line-comment"/>
+      </include>
+    </context>
+
+    <context id="comment-multiline" style-ref="comment">
+      <start>/\*</start>
+      <end>\*/</end>
+      <include>
+        <context ref="def:in-comment"/>
+      </include>
+    </context>
+
+    <context id="string" style-ref="string" end-at-line-end="true">
+      <start>"</start>
+      <end>"</end>
+    </context>
+
+    <context id="close-comment-outside-comment" style-ref="error">
+      <match>\*/(?!\*)</match>
+    </context>
+        
+    <context id="magma">
+      <include>
+        <context ref="doc-comment"/>
+        <context ref="comment"/>
+        <context ref="comment-multiline"/>
+        <context ref="close-comment-outside-comment"/>
+        <context ref="directive"/>
+        <context ref="string"/>
+        <context ref="error-check"/>
+        <context ref="character"/>
+        <context ref="keyword"/>
+        <context ref="constructor"/>
+        <context ref="function"/>
+        <context ref="becomes"/>
+        <context ref="relation"/>
+        <context ref="decimal"/>
+        <context ref="float"/>
+        <context ref="hexadecimal"/>
+        <context ref="binary"/>
+        <context ref="boolean"/>
+      </include>
+    </context>
+  </definitions>
+</language>

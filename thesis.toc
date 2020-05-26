@@ -2,8 +2,6 @@
 \contentsline {chapter}{Contents}{1}{chapter*.1}% 
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Historical notes}{3}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Motivation}{5}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Notation}{5}{section.1.3}% 
 \contentsline {chapter}{\numberline {2}Octonions}{6}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Composition algebras}{6}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}Quadratic and Bilinear Forms}{6}{subsection.2.1.1}% 
@@ -35,14 +33,12 @@
 \contentsline {section}{\numberline {4.2}Spaces with two forms}{67}{section.4.2}% 
 \contentsline {section}{\numberline {4.3}Hermitean form in $\mdmathbb {J}$ and the group ${}^2\mathrm {SE}_6^K(F)$}{68}{section.4.3}% 
 \contentsline {section}{\numberline {4.4}Some elements of ${}^2\mathrm {SE}_6^K(F)$}{68}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Action of ${}^2\mathrm {SE}_6^K(F)$ on white points}{74}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Orbits of ${}^2\mathrm {SE}_6^K(F)$ on white points}{75}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}The stabiliser of type 3 vector}{75}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}The stabiliser of type 1 vector}{79}{subsection.4.5.3}% 
-\contentsline {subsection}{\numberline {4.5.4}The stabiliser of type 2 vector}{81}{subsection.4.5.4}% 
-\contentsline {section}{\numberline {4.6}The case of a finite field}{85}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mdmathbb {J}_8^C$}{85}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}White vectors in $\mdmathbb {J}_{16}^{BC}$}{88}{subsection.4.6.2}% 
-\contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{91}{appendix*.2}% 
-\contentsline {chapter}{D: Magma code}{100}{appendix*.3}% 
-\contentsline {chapter}{Bibliography}{101}{appendix*.4}% 
+\contentsline {section}{\numberline {4.5}Action of ${}^2\mathrm {SE}_6^K(F)$ on white points}{75}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}The stabiliser of type 3 vector}{76}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}The stabiliser of type 1 vector}{80}{subsection.4.5.2}% 
+\contentsline {section}{\numberline {4.6}The case of a finite field}{82}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}White vectors in $\mdmathbb {J}_8^C$}{82}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}White vectors in $\mdmathbb {J}_{16}^{BC}$}{86}{subsection.4.6.2}% 
+\contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{88}{appendix*.2}% 
+\contentsline {chapter}{D: Magma code}{97}{appendix*.3}% 
+\contentsline {chapter}{Bibliography}{98}{appendix*.4}% 

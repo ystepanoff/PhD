@@ -431,7 +431,54 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 	\end{equation*}
 	generate a group $\SL_2(K)$ by a well-known result.
 	Therefore, as $\PSL_2(K) \cong \Omega_4^{-,K}(F)$ (see, for example, \S 7 in \cite{Waerden}), 
-	we have the action of $\Omega_4^{-,K}(F)$. 
+	we have the action of $\Omega_4^{-,K}(F)$. To show that the matrices $[N_{\lambda e_{-1}}]_{\mathcal{B}}$ and
+	$[N_{\lambda e_{1}}]_{\mathcal{B}}$ which generate $\PSL_2(K)$, also generate $\Omega_4^{-,K}(F)$, we first 
+	show the transitivity of our copy of $\PSL_2(K)$ on $1$-spaces spanned by isotropic vectors in $V_4$.
+	
+	Let $A = [N_{\lambda e_{-1}}]_{\mathcal{B}}$, $B = [N_{\lambda e_{1}}]_{\mathcal{B}}$, and let
+	$\langle v \rangle = \langle (\alpha,\beta,\gamma,\delta) \rangle$ be an isotropic point in $V_4$, i.e. with 
+	$\alpha \delta - \beta \gamma = 0$. 
+	We have
+	\begin{equation*}
+		\begin{array}{r@{\;}c@{\;}l}
+			v A & = & (\alpha - \lambda^{\s} \beta + \lambda \gamma - \lambda \lambda^{\s} \delta,\  \beta+\lambda\delta,\  
+					\gamma-\lambda^{\s}\delta,\  \delta), \\
+			
+			v B & = & (\alpha,\  \beta+\lambda\alpha,\  \gamma-\lambda^{\s}\alpha,\  
+						\delta - \lambda\lambda^{\s} \alpha - \lambda^{\s}\beta + \lambda\gamma + \delta),
+		\end{array}
+	\end{equation*}
+	so if $\delta \neq 0$ we can make $\beta = \gamma = 0$ by choosing suitable values of $\lambda$ in the matrix
+	$A$, and since the point remains isotropic, we automatically have $\alpha = 0$, so we end up with a point
+	of the form $\langle (0,0,0,*) \rangle$. If, on the other hand, $\delta = 0$, then if $\alpha = 0$, we can right-multiply by
+	the matrix $A$ with a suitable $\lambda$ to obtain $\alpha \neq 0$. Having $\delta = 0$ and  $\alpha \neq 0$,
+	we can make $\beta = \gamma = 0$ as in the case $\delta \neq 0$ by using the matrix $B$, hence obtaining a point 
+	of the form $\langle (*,0,0,0) \rangle$. Finally, to map $\langle (*,0,0,0) \rangle$ to $\langle (0,0,0,*) \rangle$ we can use the element of
+	$\PSL_2(K)$, represented by the matrix
+	\begin{equation*}
+		\begin{bmatrix}[r]
+			0 & 0 & 0 & -1 \\
+			0 & 0 & 1 & 0 \\
+			0 & -1 & 0 & 0 \\
+			1 & 0 & 0 & 0
+		\end{bmatrix}.
+	\end{equation*}
+	
+	Finally, suppose $g \in \Omega_4^{-,K}(F)$, and since we now have transitivity of $\PSL_2(K)$ on isotropic points,
+	we pick an element $h \in \PSL_2(K)$ such that $\langle v_5 \rangle^{g h^{-1}} = \langle v_5 \rangle$, so with respect
+	to the chosen basis the element $g h^{-1}$ has the form
+	\begin{equation*}
+			[g h^{-1}]_{\mathcal{B}} = 
+		\left[
+	    \begin{array}{c|c|c}
+		\lambda & 0 & 0\  \\ \hline 
+		* &\  A\   & 0\  \\ \hline
+		* & * & \lambda^{-1}\ 
+	    \end{array}
+	\right],
+	\end{equation*}
+	where $A$ is chosen so that $g h^{-1}$ has spinor norm $1$. The rest of the proof is rather the same as 
+	in Lemma \ref{lemma:1_omega4}. 
 \end{proof}
 
 Consider now a $6$-dimensional $K$-space $V_6$ with the basis $\mathcal{B}$ consisting of the vectors
@@ -480,7 +527,9 @@ $\lambda^{s}\mu + \lambda\mu^{\s}$ and $\lambda\mu + \lambda^{\s}\mu^{\s}$ are
 the elements of $F$, and the pair $(\mu, -\mu^{\s})$ generates $K \cong F^{2}$ as
 $\mu$ ranges through $K$. Hence, we have the action of $\Omega_4^{-,K}(F)$ on
 $F^4$, so by adjoining the element $N_{\mu e_{\bar{\omega}}}$ to $\Omega_4^{-,K}(F)$
-we have obtained a group of shape $F^{4}\cn\Omega_4^{-,K}(F)$. 
+we have obtained a group of shape $F^{4}\cn\Omega_4^{-,K}(F)$. Adding also the action
+of $N_{\lambda e_1}$ to this we obtain a group, which is transitive on isotropic vectors, and hence
+we obtain a copy of $\Omega_6^{-,K}(F)$. 
 
 We again use the results of Appendix A. Consider the $8$-space $V_8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
 $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, 
@@ -569,8 +618,6 @@ i.e. it is $5$-dimensional. We notice that $X_2$ is isotropic, but in this case 
 We conclude that the white points $\langle X_1 \rangle$ and $\langle X_2 \rangle$ belong to different
 orbits under the action of ${}^2\SE_6^K(F)$. Of course, there is also at least one orbit on the 
 non-isotropic white points. 
-
-\subsection{Orbits of ${}^2\SE_6^K(F)$ on white points}
 
 \subsection{The stabiliser of type 3 vector}
 
@@ -879,7 +926,7 @@ c^{-1})$, where $c$ is such that $c c^{\s} = 1$. In particular,
 $c \neq 0$, so we can repeatedly use the elements $N_{\mu x}'$
 and $N_{\nu y}''$ which preserve $X_1$ to map any vector
 $(0,0,c\mid A,B, \ovB \ovA c^{-1})$ to $(0,0,c \mid 0,0,0)$,
-showing the transitive action on such vectors.
+showing the transitive action on such vectors. 
 
 
 %These vectors span a 
@@ -955,200 +1002,200 @@ showing the transitive action on such vectors.
 %to find a unique value of $C$ such that $(0,0,c\mid A,B,C)$ is white and non-isotropic with respect
 %to $\H$. 
 
-\subsection{The stabiliser of type 2 vector}
-
-Finally, we investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
-\mbox{$X_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$}, where $\lambda \in K \setminus F$. 
-For this we need to prepare certain ingredients. 
-Recall that the $17$-space $U_1$ determined by $X_1$ is spanned by the vectors of the form
-$(a,b,0\mid A,B,C)$ with 
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_{1} \rangle, \\
-		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega} e_{-\bar{\omega}} \rangle, \\
-		C & \in & \langle e_{-1}, e_{\bar{\omega}}, e_{\omega} e_0, 
-					e_{-\omega}, e_{-\bar{\omega}}, e_{1} \rangle. 
-	\end{array}
-\end{equation}
-Recall that the stabiliser of a white vector in $\SE_6(K)$ is a subgroup of shape 
-$K^{16}\cn\Spin_{10}^+(K)$ (Theorem \ref{theorem:1_white_stab}). As we know, an element
-in the stabiliser, preserving the $1\oplus 16 \oplus 10$ decomposition, belongs to 
-$\Spin_{10}^+(K)$. The $10$-space of $X_1$, denoted $W_1$, 
-preserved by such an element, is spanned by the
-Albert vectors $(0,0,c \mid A,B,C)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		B & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_0, e_1 \rangle, \\
-		C & \in & \langle e_{-0} \rangle.
-	\end{array}
-\end{equation}
-
-To obtain the corresponding $10$-space for $X_2$, we 
-find an element in $\SE_6(K)$ which maps $X_1$ to $X_2$. For example, the element 
-$P_u$ with $u = 1 - \lambda e_1$ does exactly what we want. Now, $W_2$ is spanned
-by the vectors of the form $(0,0,c \mid A,B,C)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{-1}+\lambda e_{-0}, e_0 - \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}
-					\rangle, \\
-					
-		B & \in & \langle e_{\bar{\omega}}-\lambda e_{-\omega}, e_{\omega} + \lambda e_{-\bar{\omega}},
-					e_0, e_1 \rangle, \\
-					
-		C & \in & \langle e_{-0} + \lambda e_1 \rangle.
-	\end{array}
-\end{equation}
-Note that since $P_{1-\lambda e_1}$ is an element of $\SE_6(K)$, it preserves colour, so all the 
-white vectors in $W_1$ are mapped to the white vectors in $W_2$.
-An Albert vector \mbox{$(0,0,c \mid A,B,C) \in W_1$} is white if and only if
- \mbox{$A\ovA = B\ovB = C\ovC = 0$, $AB = c\ovC$}, and $BC = CA = 0$. Most of these conditions,
-except possibly $AB = c\ovC$, are satisfied automatically. Now, we find that $AB \in \langle e_0
-\rangle$ by an explicit calculation, so if $c \neq 0$, there is a unique value of $C$ such that 
-an element $(0,0,c \mid A,B,C)$ in $W_2$ is white. The action of $P_{1-\lambda e_1}$ on the third 
-`co\"{o}rdinate' is trivial, so we may conclude that there is a unique value of $C$ such that 
-an element $(0,0,c \mid A,B,C)$ in $W_2$ is white given $c \neq 0$. 
-
-Next, the subgroup of $\Spin_{10}^+(K)$, stabilising $X_2$, not only preserves the colour, 
-but it also preserves the value 
-of $\H$ on $W_2$. For $X = (0,0,c\mid A,B,C) \in W_2$, 
-the value of $\H$ is given by
-\begin{equation}
-	\H(X) = c c^{\s} + \Tr(A\ovA^{\s}) + \Tr(B\ovB^{\s}) + \Tr(C\ovC^{\s}). 
-\end{equation}
-As we know,
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & = & A_{-1} (e_{-1} + \lambda e_{-0}) + A_0 (e_0 - \lambda e_1) + 
-				A_{-\omega} e_{-\omega} + A_{-\bar{\omega}} e_{-\bar{\omega}}, \\
-				
-		B & = & B_{\bar{\omega}} ( e_{\bar{\omega}} - \lambda e_{-\omega} ) +
-				B_{\omega} ( e_{\omega} + \lambda e_{-\bar{\omega}} ) + 
-				B_0 e_0 + B_1 e_1, \\
-				
-		C & = & C_{-0} ( e_{-0} + \lambda e_1 ).
-	\end{array}
-\end{equation}
-We then find
-\begin{multline}
-	A\ovA^{\s} = A_{-1} A_0^{\s} ( e_{-1} + \lambda e_{-0} - \lambda^{\s} e_0 + 
-						\lambda \lambda^{\s} e_1 ) - 
-	A_{-1} A_{-\omega}^{\s} e_{\bar{\omega}} + A_{-1} A_{-\bar{\omega}}^{\s} e_{\omega} \\	
-	+ A_0 A_{-1}^{\s} (\lambda^{\s} e_0 - \lambda \lambda^{\s} e_1 - e_{-1} - \lambda e_{-0} ) -
-	A_0 A_{-\omega}^{\s} e_{-\omega} - A_0 A_{-\bar{\omega}}^{\s} e_{-\bar{\omega}} \\	
-	+ A_{-\omega} A_{-1}^{\s} e_{\bar{\omega}} + A_{-\omega} A_0^{\s} e_{-\omega}  - 
-	A_{-\omega} A_{-\bar{\omega}}^{\s} e_1 \\
-	+ A_{-\bar{\omega}} A_{-\omega}^{\s} e_{-\bar{\omega}} + 
-	A_{-\bar{\omega}} A_{-1}^{\s} e_{\omega} + A_{-\bar{\omega}} A_{-\omega}^{\s} e_1,
-\end{multline}
-so 
-\begin{multline}
-	\Tr(A\ovA^{\s}) = -\lambda^{\s} A_{-1} A_0^{\s} + \lambda^{\s} A_0 A_{-1}^{\s} + 
-						\lambda A_{-1} A_0^{\s} - \lambda A_0 A_{-1}^{\s} \\
-						= (\lambda^{\s} - \lambda)( A_0 A_{-1}^{\s} - A_{-1} A_0^{\s} ).
-\end{multline}
-Next,
-\begin{multline}
-	B\ovB^{\s} = -B_{\bar{\omega}}B_{\omega}^{\s} ( -e_{-1} + \lambda e_0 - \lambda^{\s} e_{-0}
-					- \lambda \lambda^{\s} e_1) - B_{\bar{\omega}} B_0^{\s} \lambda e_{-\omega} 
-					+ B_{\bar{\omega}} B_1^{\s} e_{-\omega} \\
-	+ B_{\omega}B_{\bar{\omega}}^{\s} ( -\lambda^{\s} e_{-0} -\lambda \lambda^{\s} e_1 - e_{-1}
-					+ \lambda e_0) + B_{\omega}B_0^{\s} \lambda e_{-\bar{\omega}} - 
-					B_{\omega} B_1^{\s} e_{-\bar{\omega}} \\
-	+ B_0 B_{\bar{\omega}}^{\s} \lambda^{\s} e_{-\omega} - B_0 B_{\omega}^{\s} \lambda^{\s}
-					e_{-\bar{\omega}} + B_1 B_{\bar{\omega}}^{\s} e_{-\omega}
-					- B_1 B_{\omega}^{\s} e_{-\bar{\omega}},
-\end{multline}
-and so similarly,
-\begin{equation}
-	\Tr(B\ovB^{\s}) = (\lambda^{\s} - \lambda) ( B_{\bar{\omega}} B_{\omega}^{\s} - 
-					B_{\omega} B_{\bar{\omega}}^{\s} ).
-\end{equation}
-Finally,
-\begin{equation}
-	C\ovC^{\s} = C_{-0}C_{-0}^{\s}(\lambda e_1 - \lambda^{\s}e_1),
-\end{equation}
-so
-\begin{equation}
-	\Tr(C\ovC^{\s}) = 0.
-\end{equation}
-It follows that on the elements of $W_2$, Hermitian form $\H$ becomes
-\begin{equation}
-	\H(X) = c c^{\s} + (\lambda^{\s} - \lambda) ( A_0 A_{-1}^{\s} - A_{-1} A_0^{\s} + 
-			B_{\bar{\omega}} B_{\omega}^{\s} - B_{\omega} B_{\bar{\omega}}^{\s}).
-\end{equation}
-This is a unitary form in $5$ variables, which is preserved by the subgroup of the stabiliser of $X_2$
-inside $\Spin_{10}^+(K)$. Note that
-$\lambda^{\s}-\lambda \neq 0$ since $\lambda \in K \setminus F$. Given $X = (a,b,c \mid A,B,C) \in \J$,
-the value of the quadratic form $Q(X) = \fdet(X+X_2) - \fdet(X)$, determined by $X_2$, is 
-\begin{multline}
-	Q(X) = \Tr( (e_0 + \lambda e_1) ( AB - c\ovC ) ) \\
-	= A_0 (B_0 - \lambda B_{-1}) - (A_{-\omega} - \lambda A_{\bar{\omega}}) B_{\omega} \\ 
-	- (A_{-\bar{\omega}} + \lambda A_{\omega}) B_{\bar{\omega}} - A_{-1} (B_1 + \lambda B_{-0}) \\
-	- c (C_{-0} + \lambda C_{-1}).
-\end{multline}
-On $W_2$ this becomes
-\begin{equation}
-	Q(X) = A_0 B_0 - A_{-\omega}B_{\omega} - A_{-\bar{\omega}}B_{\bar{\omega}} - A_{-1}B_1 - cC_{-0}. 
-\end{equation}
-Consider the $5$-dimensional subspace of $W_2$ spanned by the vectors $(0,0,c\mid A,B,C)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		B & \in & \langle e_0, e_1 \rangle, \\
-		C & \in & \langle e_{-0} \rangle. 
-	\end{array}
-\end{equation}
-This is the radical of $\H$ in $W_2$. We also notice that this subspace coincides with a 
-maximal totally isotropic subspace of $Q$ on $W_2$. Therefore, the action of the subgroup
-of $\Spin_{10}^+(K)$, preserving $W_2$, also preserves a $5 \oplus 5$ decomposition of $W_2$.
-As a result, we get the action of the group of type $\SU_5^K(F,\H)$.
-
-Using the element $P_{1 - \lambda e_1}$ we can also easily find the $17$-space $U_2$, determined
-by $X_2$. We conjugate $U_1$ by $P_{1-\lambda e_1}$, and find that $U_2$ is spanned by the vectors
-of the form $(a,b,0\mid A,B,C)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{\bar{\omega}}+\lambda e_{-\omega}, e_{\omega}-\lambda e_{-\bar{\omega}}
-		, e_{-0}, e_1
-		\rangle, \\
-		B & \in & \langle e_{-1}+\lambda e_0, e_{-0} - \lambda e_1,
-	e_{-\omega}, e_{-\bar{\omega}}  \rangle, \\
-		C & \in & \langle e_{-1}-\lambda^2 e_1 - \lambda \cdot 1_{\O}, e_{\bar{\omega}}, e_{\omega},
-	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
-	\end{array}
-\end{equation}
-The subspace $U_2$ is preserved by the stabiliser of $W_2$, and therefore so is the orthogonal 
-complement $U_2^{\perp}$ in $\J$, 
-which is $10$-dimensional and spanned by the Albert vectors of the form
-$(0,0,c \mid A,B,C)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{\bar{\omega}} + \lambda^{\s} e_{-\omega}, e_{\omega} - \lambda^{\s} 
-					e_{-\bar{\omega}}, e_{-0}, e_1 \rangle, \\
-		
-		B & \in & \langle e_{-1} + \lambda^{\s} e_0, e_{-0} - \lambda^{\s} e_1, 
-					e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-					
-		C & \in & \langle e_0 + \lambda^{\s} e_1 \rangle. 
-	\end{array}
-\end{equation}
-As a result, we get the action of $K^{10}\cn\SU_5^K(F,\H)$. The $\SU_5^K(F,\H)$ acts 
-on the corresponding image of $W_2$, which is being moved around. 
-
-Now assume the trivial action on $U_2^{\perp}$. Then the action is also trivial on 
-$U_2^{\perp} \cap U_2$, and so it is trivial on $(U_2^{\perp} \cap U_2)^{\perp}$,
-and finally, the same holds for $W_2 \cap (U_2^{\perp} \cap U_2)^{\perp}$. 
-The latter is a $5$-dimensional subspace of $W_2$, spanned by the vectors
-$(0,0,c\mid A,B,0)$ with
-\begin{equation}
-	\begin{array}{r@{\;}c@{\;}l}
-		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
-		B & \in & \langle e_{0}, e_1 \rangle.
-	\end{array}
-\end{equation}
-
- 
+%\subsection{The stabiliser of type 2 vector}
+%
+%Finally, we investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
+%\mbox{$X_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$}, where $\lambda \in K \setminus F$. 
+%For this we need to prepare certain ingredients. 
+%Recall that the $17$-space $U_1$ determined by $X_1$ is spanned by the vectors of the form
+%$(a,b,0\mid A,B,C)$ with 
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_{1} \rangle, \\
+%		B & \in & \langle e_{-1}, e_{-0}, e_{-\omega} e_{-\bar{\omega}} \rangle, \\
+%		C & \in & \langle e_{-1}, e_{\bar{\omega}}, e_{\omega} e_0, 
+%					e_{-\omega}, e_{-\bar{\omega}}, e_{1} \rangle. 
+%	\end{array}
+%\end{equation}
+%Recall that the stabiliser of a white vector in $\SE_6(K)$ is a subgroup of shape 
+%$K^{16}\cn\Spin_{10}^+(K)$ (Theorem \ref{theorem:1_white_stab}). As we know, an element
+%in the stabiliser, preserving the $1\oplus 16 \oplus 10$ decomposition, belongs to 
+%$\Spin_{10}^+(K)$. The $10$-space of $X_1$, denoted $W_1$, 
+%preserved by such an element, is spanned by the
+%Albert vectors $(0,0,c \mid A,B,C)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%		B & \in & \langle e_{\bar{\omega}}, e_{\omega}, e_0, e_1 \rangle, \\
+%		C & \in & \langle e_{-0} \rangle.
+%	\end{array}
+%\end{equation}
+%
+%To obtain the corresponding $10$-space for $X_2$, we 
+%find an element in $\SE_6(K)$ which maps $X_1$ to $X_2$. For example, the element 
+%$P_u$ with $u = 1 - \lambda e_1$ does exactly what we want. Now, $W_2$ is spanned
+%by the vectors of the form $(0,0,c \mid A,B,C)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{-1}+\lambda e_{-0}, e_0 - \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}
+%					\rangle, \\
+%					
+%		B & \in & \langle e_{\bar{\omega}}-\lambda e_{-\omega}, e_{\omega} + \lambda e_{-\bar{\omega}},
+%					e_0, e_1 \rangle, \\
+%					
+%		C & \in & \langle e_{-0} + \lambda e_1 \rangle.
+%	\end{array}
+%\end{equation}
+%Note that since $P_{1-\lambda e_1}$ is an element of $\SE_6(K)$, it preserves colour, so all the 
+%white vectors in $W_1$ are mapped to the white vectors in $W_2$.
+%An Albert vector \mbox{$(0,0,c \mid A,B,C) \in W_1$} is white if and only if
+% \mbox{$A\ovA = B\ovB = C\ovC = 0$, $AB = c\ovC$}, and $BC = CA = 0$. Most of these conditions,
+%except possibly $AB = c\ovC$, are satisfied automatically. Now, we find that $AB \in \langle e_0
+%\rangle$ by an explicit calculation, so if $c \neq 0$, there is a unique value of $C$ such that 
+%an element $(0,0,c \mid A,B,C)$ in $W_2$ is white. The action of $P_{1-\lambda e_1}$ on the third 
+%`co\"{o}rdinate' is trivial, so we may conclude that there is a unique value of $C$ such that 
+%an element $(0,0,c \mid A,B,C)$ in $W_2$ is white given $c \neq 0$. 
+%
+%Next, the subgroup of $\Spin_{10}^+(K)$, stabilising $X_2$, not only preserves the colour, 
+%but it also preserves the value 
+%of $\H$ on $W_2$. For $X = (0,0,c\mid A,B,C) \in W_2$, 
+%the value of $\H$ is given by
+%\begin{equation}
+%	\H(X) = c c^{\s} + \Tr(A\ovA^{\s}) + \Tr(B\ovB^{\s}) + \Tr(C\ovC^{\s}). 
+%\end{equation}
+%As we know,
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & = & A_{-1} (e_{-1} + \lambda e_{-0}) + A_0 (e_0 - \lambda e_1) + 
+%				A_{-\omega} e_{-\omega} + A_{-\bar{\omega}} e_{-\bar{\omega}}, \\
+%				
+%		B & = & B_{\bar{\omega}} ( e_{\bar{\omega}} - \lambda e_{-\omega} ) +
+%				B_{\omega} ( e_{\omega} + \lambda e_{-\bar{\omega}} ) + 
+%				B_0 e_0 + B_1 e_1, \\
+%				
+%		C & = & C_{-0} ( e_{-0} + \lambda e_1 ).
+%	\end{array}
+%\end{equation}
+%We then find
+%\begin{multline}
+%	A\ovA^{\s} = A_{-1} A_0^{\s} ( e_{-1} + \lambda e_{-0} - \lambda^{\s} e_0 + 
+%						\lambda \lambda^{\s} e_1 ) - 
+%	A_{-1} A_{-\omega}^{\s} e_{\bar{\omega}} + A_{-1} A_{-\bar{\omega}}^{\s} e_{\omega} \\	
+%	+ A_0 A_{-1}^{\s} (\lambda^{\s} e_0 - \lambda \lambda^{\s} e_1 - e_{-1} - \lambda e_{-0} ) -
+%	A_0 A_{-\omega}^{\s} e_{-\omega} - A_0 A_{-\bar{\omega}}^{\s} e_{-\bar{\omega}} \\	
+%	+ A_{-\omega} A_{-1}^{\s} e_{\bar{\omega}} + A_{-\omega} A_0^{\s} e_{-\omega}  - 
+%	A_{-\omega} A_{-\bar{\omega}}^{\s} e_1 \\
+%	+ A_{-\bar{\omega}} A_{-\omega}^{\s} e_{-\bar{\omega}} + 
+%	A_{-\bar{\omega}} A_{-1}^{\s} e_{\omega} + A_{-\bar{\omega}} A_{-\omega}^{\s} e_1,
+%\end{multline}
+%so 
+%\begin{multline}
+%	\Tr(A\ovA^{\s}) = -\lambda^{\s} A_{-1} A_0^{\s} + \lambda^{\s} A_0 A_{-1}^{\s} + 
+%						\lambda A_{-1} A_0^{\s} - \lambda A_0 A_{-1}^{\s} \\
+%						= (\lambda^{\s} - \lambda)( A_0 A_{-1}^{\s} - A_{-1} A_0^{\s} ).
+%\end{multline}
+%Next,
+%\begin{multline}
+%	B\ovB^{\s} = -B_{\bar{\omega}}B_{\omega}^{\s} ( -e_{-1} + \lambda e_0 - \lambda^{\s} e_{-0}
+%					- \lambda \lambda^{\s} e_1) - B_{\bar{\omega}} B_0^{\s} \lambda e_{-\omega} 
+%					+ B_{\bar{\omega}} B_1^{\s} e_{-\omega} \\
+%	+ B_{\omega}B_{\bar{\omega}}^{\s} ( -\lambda^{\s} e_{-0} -\lambda \lambda^{\s} e_1 - e_{-1}
+%					+ \lambda e_0) + B_{\omega}B_0^{\s} \lambda e_{-\bar{\omega}} - 
+%					B_{\omega} B_1^{\s} e_{-\bar{\omega}} \\
+%	+ B_0 B_{\bar{\omega}}^{\s} \lambda^{\s} e_{-\omega} - B_0 B_{\omega}^{\s} \lambda^{\s}
+%					e_{-\bar{\omega}} + B_1 B_{\bar{\omega}}^{\s} e_{-\omega}
+%					- B_1 B_{\omega}^{\s} e_{-\bar{\omega}},
+%\end{multline}
+%and so similarly,
+%\begin{equation}
+%	\Tr(B\ovB^{\s}) = (\lambda^{\s} - \lambda) ( B_{\bar{\omega}} B_{\omega}^{\s} - 
+%					B_{\omega} B_{\bar{\omega}}^{\s} ).
+%\end{equation}
+%Finally,
+%\begin{equation}
+%	C\ovC^{\s} = C_{-0}C_{-0}^{\s}(\lambda e_1 - \lambda^{\s}e_1),
+%\end{equation}
+%so
+%\begin{equation}
+%	\Tr(C\ovC^{\s}) = 0.
+%\end{equation}
+%It follows that on the elements of $W_2$, Hermitian form $\H$ becomes
+%\begin{equation}
+%	\H(X) = c c^{\s} + (\lambda^{\s} - \lambda) ( A_0 A_{-1}^{\s} - A_{-1} A_0^{\s} + 
+%			B_{\bar{\omega}} B_{\omega}^{\s} - B_{\omega} B_{\bar{\omega}}^{\s}).
+%\end{equation}
+%This is a unitary form in $5$ variables, which is preserved by the subgroup of the stabiliser of $X_2$
+%inside $\Spin_{10}^+(K)$. Note that
+%$\lambda^{\s}-\lambda \neq 0$ since $\lambda \in K \setminus F$. Given $X = (a,b,c \mid A,B,C) \in \J$,
+%the value of the quadratic form $Q(X) = \fdet(X+X_2) - \fdet(X)$, determined by $X_2$, is 
+%\begin{multline}
+%	Q(X) = \Tr( (e_0 + \lambda e_1) ( AB - c\ovC ) ) \\
+%	= A_0 (B_0 - \lambda B_{-1}) - (A_{-\omega} - \lambda A_{\bar{\omega}}) B_{\omega} \\ 
+%	- (A_{-\bar{\omega}} + \lambda A_{\omega}) B_{\bar{\omega}} - A_{-1} (B_1 + \lambda B_{-0}) \\
+%	- c (C_{-0} + \lambda C_{-1}).
+%\end{multline}
+%On $W_2$ this becomes
+%\begin{equation}
+%	Q(X) = A_0 B_0 - A_{-\omega}B_{\omega} - A_{-\bar{\omega}}B_{\bar{\omega}} - A_{-1}B_1 - cC_{-0}. 
+%\end{equation}
+%Consider the $5$-dimensional subspace of $W_2$ spanned by the vectors $(0,0,c\mid A,B,C)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%		B & \in & \langle e_0, e_1 \rangle, \\
+%		C & \in & \langle e_{-0} \rangle. 
+%	\end{array}
+%\end{equation}
+%This is the radical of $\H$ in $W_2$. We also notice that this subspace coincides with a 
+%maximal totally isotropic subspace of $Q$ on $W_2$. Therefore, the action of the subgroup
+%of $\Spin_{10}^+(K)$, preserving $W_2$, also preserves a $5 \oplus 5$ decomposition of $W_2$.
+%As a result, we get the action of the group of type $\SU_5^K(F,\H)$.
+%
+%Using the element $P_{1 - \lambda e_1}$ we can also easily find the $17$-space $U_2$, determined
+%by $X_2$. We conjugate $U_1$ by $P_{1-\lambda e_1}$, and find that $U_2$ is spanned by the vectors
+%of the form $(a,b,0\mid A,B,C)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{\bar{\omega}}+\lambda e_{-\omega}, e_{\omega}-\lambda e_{-\bar{\omega}}
+%		, e_{-0}, e_1
+%		\rangle, \\
+%		B & \in & \langle e_{-1}+\lambda e_0, e_{-0} - \lambda e_1,
+%	e_{-\omega}, e_{-\bar{\omega}}  \rangle, \\
+%		C & \in & \langle e_{-1}-\lambda^2 e_1 - \lambda \cdot 1_{\O}, e_{\bar{\omega}}, e_{\omega},
+%	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
+%	\end{array}
+%\end{equation}
+%The subspace $U_2$ is preserved by the stabiliser of $W_2$, and therefore so is the orthogonal 
+%complement $U_2^{\perp}$ in $\J$, 
+%which is $10$-dimensional and spanned by the Albert vectors of the form
+%$(0,0,c \mid A,B,C)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{\bar{\omega}} + \lambda^{\s} e_{-\omega}, e_{\omega} - \lambda^{\s} 
+%					e_{-\bar{\omega}}, e_{-0}, e_1 \rangle, \\
+%		
+%		B & \in & \langle e_{-1} + \lambda^{\s} e_0, e_{-0} - \lambda^{\s} e_1, 
+%					e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%					
+%		C & \in & \langle e_0 + \lambda^{\s} e_1 \rangle. 
+%	\end{array}
+%\end{equation}
+%As a result, we get the action of $K^{10}\cn\SU_5^K(F,\H)$. The $\SU_5^K(F,\H)$ acts 
+%on the corresponding image of $W_2$, which is being moved around. 
+%
+%Now assume the trivial action on $U_2^{\perp}$. Then the action is also trivial on 
+%$U_2^{\perp} \cap U_2$, and so it is trivial on $(U_2^{\perp} \cap U_2)^{\perp}$,
+%and finally, the same holds for $W_2 \cap (U_2^{\perp} \cap U_2)^{\perp}$. 
+%The latter is a $5$-dimensional subspace of $W_2$, spanned by the vectors
+%$(0,0,c\mid A,B,0)$ with
+%\begin{equation}
+%	\begin{array}{r@{\;}c@{\;}l}
+%		A & \in & \langle e_{-\omega}, e_{-\bar{\omega}} \rangle, \\
+%		B & \in & \langle e_{0}, e_1 \rangle.
+%	\end{array}
+%\end{equation}
+%
+% 
 
 \section{The case of a finite field}
 \subsection{White vectors in $\J_8^C$}
