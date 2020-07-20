@@ -17,7 +17,26 @@ $\SO_n(F,Q)$ arising as a reflection in $v$ for some $v \in V$, is sent to the v
 $Q(v)$ modulo $(F^{\times})^2$. This extends to a well-defined homomorphism. The subgroup
 $\Omega_n(F, Q)$ of $\SO_n(F,Q)$ is defined as the kernel of spinor norm. If the characteristic 
 of the field is not $2$, then there exists a double cover of $\Omega_n(F,Q)$, denoted as
-$\Spin_n(F,Q)$. 
+$\Spin_n(F,Q)$. If $n = 2m$, $K:F$ is a 
+quadratic Galois extension with $\s$ being the
+nontrivial field automorphism fixing $F$
+pointwise, and a maximal
+totally isotropic subspace of $V$ has dimension
+$m-1$, so that $V$ can be written as a direct
+sum
+\begin{equation}
+V = \langle e_1, f_1 \rangle \oplus ...
+\langle e_{m-1}, f_{m-1} \rangle \oplus 
+W_2,	
+\end{equation}
+where $(e_1,f_1),...,(e_{m-1},f_{m-1})$ are
+hyperbolic pairs and $W_2 \cong K$ with 
+$Q_{W_2}(\lambda) = \lambda \lambda^{\s}$,
+then we denote the group $\Omega_{2m}(F,Q)$
+as $\Omega_{2m}^{-,K}(F)$. If $n = 2m$ and 
+the dimension of a maximal totally isotropic 
+subspace of $V$ is $m$, then we write
+$\Omega_{2m}(F,Q)$ as $\Omega_{2m}^+(F)$.
 
 This section is devoted to some of the private life of the group $\Omega_{2m}(F,Q)$.
 Consider the vector space $V$ of dimension
@@ -32,8 +51,8 @@ $Q$ and $f$ on $W$.
 
 \begin{lemma}
     \label{lemma:A_stabiliser_omega}
-	The stabiliser in $\Omega_{2m+2}(F,Q)$ of the vector $v_1$ 
-	is a subgroup of shape $W\cn\Omega_{2m}(F,Q_W)$, and the stabiliser of 
+	The stabiliser in $\Omega_{2m+2}(F,Q)$ of the isotropic vector $v_1$ 
+	is a subgroup of shape \mbox{$W\cn\Omega_{2m}(F,Q_W)$}, and the stabiliser of 
 	the pair $(v_1,v_2)$ is a subgroup $\Omega_{2m}(F,Q_W)$.  
 \end{lemma}
 
@@ -56,13 +75,13 @@ $Q$ and $f$ on $W$.
     spanned by $\{w_1, ..., w_{2m}\}$. Such an element $g$ acts on $v_2$ as
     \begin{equation*}
 	\begin{array}{r@{\;}c@{\;}l}
-		v_2 & \mapsto & [\mu \mid u_1 \mid\ \lambda],
+		v_2 & \mapsto & (\mu \mid u_1 \mid\ \lambda),
 	\end{array}
     \end{equation*}
     and since the bilinear form $f$ is preserved we get
     \begin{equation*}
 	1 = f(v_1,v_2) = f(v_1,\mu v_2) + 
-	f(v_1, [0 \mid u_1 \mid\ 0] ) + \lambda f(v_1,v_2) = \lambda,
+	f(v_1, (0 \mid u_1 \mid\ 0) ) + \lambda f(v_1,v_2) = \lambda,
     \end{equation*}
     
     Since $(v_1,v_2)$ is a 
@@ -134,7 +153,7 @@ $Q$ and $f$ on $W$.
 	\right],
     \end{equation*}
     so we notice that $ABA^\T = B$. Furthermore, since
-    $[0\mid v \mid 0] [g]_{\mathcal{B}} = [0 \mid vA \mid 0]$, where $v \in W$, we obtain
+    $(0\mid v \mid 0) [g]_{\mathcal{B}} = (0 \mid vA \mid 0)$, where $v \in W$, we obtain
     \begin{equation*}
 	Q_W(vA) = Q([0 \mid vA \mid 0]) = Q([0 \mid v \mid 0]) =
 	    Q_W(v),
@@ -145,8 +164,8 @@ $Q$ and $f$ on $W$.
     $\mu = -Q(u_1)$ in odd characteristic. In case of characteristic $2$ we can 
     explore the quadratic form again:
     \begin{multline*}
-	0 = Q(v_2) = Q(v_2 [g]_{\mathcal{B}}) = Q( [\mu \mid u_1 \mid 1] ) = \\
-	= Q( [\mu \mid u_1 \mid 0] ) + Q(v_2) + f( [\mu\mid u_1 \mid 0], v_2)
+	0 = Q(v_2) = Q(v_2 [g]_{\mathcal{B}}) = Q( (\mu \mid u_1 \mid 1) ) = \\
+	= Q( (\mu \mid u_1 \mid 0) ) + Q(v_2) + f( (\mu\mid u_1 \mid 0), v_2)
 	= Q(u_1) + \mu.
     \end{multline*}
     
@@ -381,13 +400,13 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
 \begin{proof}
 	Recall that $v_2 \in V$ is mapped under the action of 
     $\mathcal{G} = W\cn\Omega_{2m}(F,Q_W)$ to a vector of the
-    form $[-Q_W(u) \mid u \mid 1]$, where $u$ is an element of $W$. 
+    form $(-Q_W(u) \mid u \mid 1)7$, where $u$ is an element of $W$. 
     Since the stabiliser of $v_2$ in $\mathcal{G}$ is $\Omega_{2m}(F,Q_W)$, 
     we conclude that 
     the orbit of $v_2$ under the action of $\mathcal{G}$ is the following set:
     \begin{equation*}
-	\Orb_{\mathcal{G}}(v_2) = \left\{\  \left[ -Q_W(u) \mid  u \mid 1
-	 \right]\ \bigg|\ u \in W \ \right\}.
+	\Orb_{\mathcal{G}}(v_2) = \left\{\  \left( -Q_W(u) \mid  u \mid 1
+	 \right)\ \big|\ u \in W \ \right\}.
     \end{equation*}
     Since the elements of this orbit are in one-to-one correspondence with the
     cosets of $\Omega_{2m}(F,Q_W)$ in $\mathcal{G}$, 
@@ -398,10 +417,10 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
     $\Orb_{\mathcal{G}}(v_2)$. A general element in $\mathcal{G}$ 
     acts on the elements of $\Orb_{\mathcal{G}}(v_2)$ in the following way:
     \begin{multline*}
-	[ -Q_W(u) \mid  u \mid 1 ] \ \mapsto \ 
-	[ -Q_W(u) - uABv^\T - Q(v) \mid
-	    uA + v \mid 1] = \\
-	    = [-Q_W(uA + v) \mid uA + v \mid 1].
+	( -Q_W(u) \mid  u \mid 1 ) \ \mapsto \ 
+	( -Q_W(u) - uABv^\T - Q(v) \mid
+	    uA + v \mid 1) = \\
+	    = (-Q_W(uA + v) \mid uA + v \mid 1).
     \end{multline*}
     Note that $uABv^\T = f_W( uA, v )$. 
     We see that this action is isomorphic to the action on $W$ defined by
@@ -493,9 +512,12 @@ the $1$-space spanned by $v_1$.
 	$v_1 \sim v_2$. Finally, it is easy to derive the congruences of the form 
 	$v_1 \sim \beta v_1$ and $v_2 \sim \beta v_2$ for any non-zero $\beta \in F$. Indeed, 
 	there exists an element \mbox{$g \in  \Omega_{2m+2}(F,Q)$} such that $v_1^g = \beta v_1$ for some non-zero
-	$\beta \in F$. We have $\beta v_2 \sim \alpha \beta v_1 + u^g$, so \mbox{$v_1 \sim \beta v_1$}. Similarly we obtain
+	$\beta \in F$. We have 
+\mbox{$\beta v_2 \sim \alpha \beta v_1 + u^g$}, so \mbox{$v_1 \sim \beta v_1$}. Similarly we obtain
 	$v_2 \sim \beta v_2$ for any non-zero $\beta \in F$, and so $\sim$ is universal, contradiction.
 
+The case $\mu = 0$ can be established with 
+essentially similar reasoning. 
 	
 	
 \end{proof}

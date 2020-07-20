@@ -41,7 +41,8 @@ where $a,b,c,A,B,C \in \O$ and furthermore $a,b,c \in \langle 1_{\O} \rangle$.
 Now, an \textit{Albert vector} is an element of $\J$. To denote
 certain subspaces of $\J$ we use the following intuitive notation. The $10$-dimensional
 subspace spanned by the Albert vectors of the form \mbox{$(a,b,0\mid 0,0,C)$} is denoted
-$\J_{10}^{abC}$, while the $8$-space spanned by the vectors \mbox{$(0,0,0\mid A,0,0)$} 
+$\J_{10}^{abC}$, while the $8$-dimensional
+subspace spanned by the vectors \mbox{$(0,0,0\mid A,0,0)$} 
 is denoted $\J_{8}^{A}$ and so on. That is, the subscript determines the dimension
 and the superscript shows which of the six `co{\"o}rdinates' we use to span the
 corresponding subspace. Of course, this notation is by no means complete as it does not
@@ -85,9 +86,9 @@ $X \mapsto \ovM^{\T} X M$ makes sense. Indeed, every entry in the matrix $\ovM^{
 is a sum of the terms of the form $m_1 x m_2$, where $m_1$ and $m_2$ belong to the same
 sociable subalgebra, and so $(m_1 x) m_2 = m_1 (x m_2)$. Furthermore, the map
 $X \mapsto \ovM^{\T} X M$ is obviously $F$-linear:
-\begin{equation*}
+\begin{equation}
 	\ovM^{\T} (\lambda X + \mu Y) M = \lambda (  M^{\T} X M ) + \mu ( M^{\T} Y M ).
-\end{equation*}
+\end{equation}
 
 \section{Some elements of $\SE_6(F)$}
 \label{section:elts_E6}
@@ -127,7 +128,6 @@ preserve the Dickson--Freudenthal determinant. Their actions are given by
 		\tau: (a,b,c\mid A,B,C) & \mapsto & (c,a,b\mid C,A,B). 
 	\end{array}
 \end{equation}
-
 Now let $x$ be any octonion and consider the matrices
 \begin{equation}
 	M_x = \begin{bmatrix}
@@ -329,8 +329,9 @@ $M(Y,X)\neq 0$:
 \begin{equation}
 	M(Y,X) = \lambda (bc - A\ovA) + (ac - B\ovB) + (ab - C\ovC). 
 \end{equation}
-Taking, for instance, $Y = (0,1,1\mid 0,0,0)$, we get $M(Y,X) = \lambda \neq 0$. Finally, 
-$(0,1,1\mid 0,0,0)$ is grey as $\Delta(X) = 0$ and for $Y = (a,b,c\mid A,B,C)$ the
+Taking, for instance, $Y = (0,1,1\mid 0,0,0)$, we get $M(Y,X) = \lambda \neq 0$. Finally, the
+vector
+\mbox{$(0,1,1\mid 0,0,0)$} is grey as $\Delta(X) = 0$ and for $Y = (a,b,c\mid A,B,C)$ the
 value of $M$ is given by
 \begin{equation}
 	M(Y,X) = (ac - B\ovB) + (ab - C\ovC),
@@ -418,7 +419,7 @@ as required. This completes the proof.
 In this thesis we will be mostly interested in the action of $\SE_6(F)$ on the 
 white points. 
 
-Consider $X = (a,b,c\mid A,B,C)$ and $Y = (0,0,1\mid 0,0,0)$. Then we find 
+Consider the white vectors $X = (a,b,c\mid A,B,C)$ and $Y = (0,0,1\mid 0,0,0)$. We find 
 \mbox{$\Delta(X+Y) - \Delta(X) = ab - C\ovC$}, which is a quadratic form with 
 \mbox{$17$-dimensional} radical in $\J$. In case when $Y = (0,1,1\mid 0,0,0)$ we get
 $\Delta(X+Y) - \Delta(X) = a+ab+ac-B\ovB-C\ovC$. If $F = \mathbb{F}_2$, 
@@ -461,29 +462,29 @@ goals is to show that $\SE_6(F)$ acts transitively on white points.
 	so we are allowed to choose orbit representatives with $(a,b,c) \neq (0,0,0)$. 
 	
 	As before, using a suitable power of $\tau$, we may assume $c \neq 0$. Now we apply 
-	the element $M_x$ with $x = -c^{-1}B$ to $X$, which gives us the vector of the form
-	$(a,b,c\mid A,0,C)$, where the `co\"{o}rdinate' $c$ stays the same, while 
-	$a,b,A,C$ are possibly different. Next, the vector $(a,b,c\mid A,0,C)$ is being mapped
-	to the vector of the form $(a,b,c\mid 0,0,C)$ under the action of $L_x$ with
+	the element $M_x$ with $x = -c^{-1}B$ to $X$, to obtain a vector of the form
+	\mbox{$(a,b,c\mid A,0,C)$}, where the `co\"{o}rdinate' $c$ stays the same, while 
+	$a,b,A,C$ are possibly different. Next,
+	$(a,b,c\mid A,0,C)$ is being mapped
+	to a vector of the form $(a,b,c\mid 0,0,C)$ under the action of $L_x$ with
 	$x = -c^{-1}A$, where the value of $c$ stays the same while the values of 
 	$a,b,C$ may be adjusted. 
 	
 	If $a=b=0$, $C \neq 0$, then we apply the element $L_x$ with $x$ such that 
-	\mbox{$\Tr(Cx)\neq 0$} to get the vector of the form $(\Tr(Cx),0,c\mid 0,0,C)$, i.e.
+	\mbox{$\Tr(Cx)\neq 0$} to get a vector of the form $(\Tr(Cx),0,c\mid 0,0,C)$, i.e.
 	we may assume that \mbox{$a \neq 0$}. With the latter assumption we apply the element
-	$M_x$ with $x = -a^{-1} C$ to \mbox{$(a,b,c\mid 0,0,C)$} to get the vector of the form
+	$M_x$ with $x = -a^{-1} C$ to \mbox{$(a,b,c\mid 0,0,C)$} to get a vector of the form
 	$(a,b,c\mid 0,0,0)$ with the value of $b$ being adjusted. 
 	
-	Finally, we use the elements $\tau$, $P_u$ and $P_v''$ to standardise the vector
-	of the form $(a,b,c\mid 0,0,0)$ to one the forms in the statement. 
+	Finally, we use the elements $\tau$, $P_u$ and $P_v''$ to standardise $(a,b,c\mid 0,0,0)$ to one of the forms in the statement. 
 \end{proof}
 
 Note that the last part of the proof of this lemma used the fact that the map
-$\NN : \O \rightarrow F$ is onto, which is the case when $\O$ is split. 
+\mbox{$\NN : \O \rightarrow F$} is onto, which is the case when $\O$ is split. 
 However, this is not true in any octonion algebra, which possibly leads 
 to a bigger number of orbits. A vector of the form $(a,b,c\mid 0,0,0)$ is 
 white if and only if precisely one of the $a,b,c$ is non-zero, so we get 
-the transitive action of $\SE_6(F)$ on white points regardless of the 
+a transitive action of $\SE_6(F)$ on white points regardless of the 
 chosen octonion algebra. 
 
 Furthermore, we used the fact that $\NN$ is a non-singular
@@ -530,15 +531,15 @@ number of white points in case of a finite field.
 	If $B = 0$ then evidently $A \neq 0$ and so we can apply the duality element $\delta$
 	to obtain a white vector of the form $(0,0,0\mid A,B,0)$ with $B \neq 0$. 
 	If now $A \neq 0$, we act by $M_x$ to obtain $(0,0,0\mid A+\ovx \ovB,B,0)$. Our 
-	aim is to show that there exists such $x \in \O$ that $A+\ovx \ovB = 0$. 
+	aim is to show that there exists such $x$ in $\O$ that $A+\ovx \ovB = 0$. 
 	Denote $U = \left\{ y \in \O\ \big|\ \ovy B = 0\right\}$. Since for all
-	$x \in \O$ we have $(\ovx \ovB) B = \ovx (\ovB B) = 0$, we conclude
+	$x \in \O$ we have \mbox{$(\ovx \ovB) B = \ovx (\ovB B) = 0$}, we conclude
 	that $\O \ovB \leqslant U$. Furthermore, we know that both
 	subspaces are four-dimensional, so $\O\ovB = U$. As $AB = 0$, we have $A \in U$, and
 	therefore there exists $y = \ovx\ovB \in U$ such that $A+y = 0$.
 	
-	Now, the elements $P_u''$ with $\NN(u)=1$ act on the Albert vectors of the form 
-	$(0,0,0\mid 0,B,0)$ as
+	Now, the elements $P_u''$ with $\NN(u)=1$ act on the vectors of the form 
+	\mbox{$(0,0,0\mid 0,B,0)$} as
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
 			(0,0,0\mid 0,B,0) & \mapsto & (0,0,0\mid 0,\ovu B \ovu,0),
@@ -569,8 +570,8 @@ number of white points in case of a finite field.
 	 						A - a^{-1}\ovC \ovB, B, 0).
 	 	\end{array}
 	 \end{equation*}
-	 The whiteness conditions imply $C\ovC = ab$ and $BC = a\ovA$, so additionally we get 
-	 $b+ aa^{-2} C\ovC - \Tr(a^{-1}\ovC C) = b+b-\Tr(b) = 0$ and 
+	 The whiteness conditions imply $C\ovC = ab$ and $BC = a\ovA$, and so additionally we have 
+	 \mbox{$b+ aa^{-2} C\ovC - \Tr(a^{-1}\ovC C) = b+b-\Tr(b) = 0$} and 
 	 $A - a^{-1}\ovC \ovB = A - A = 0$. This means that the given $M_x$ acts on the elements
 	 of $\J\setminus \J_{17}^{cAB}$ in the following way:
 	 \begin{equation*}
@@ -604,7 +605,7 @@ number of white points in case of a finite field.
 	the statement in case when $\O$ is split.
 
 	Suppose $X,Y \in \J$ are white vectors such that $\langle X \rangle \neq
-	\langle Y \rangle$. Define $\sim$ to be an $\SE_6(F)$-congruence on white points and
+	\langle Y \rangle$. Define $\sim$ to be an \mbox{$\SE_6(F)$-congruence} on white points and
 	let $\langle X\rangle \sim \langle Y\rangle$. Our aim is to show that this generates 
 	the universal congruence. 
 	Since for $\O$ split the action on the white vectors is transitive, we may assume
@@ -653,14 +654,14 @@ number of white points in case of a finite field.
 %on white points and this action is linear, it is obvious that it also acts transitively
 %on white lines. 
 
-Suppose $\langle W \rangle$ and 
+Suppose now $\langle W \rangle$ and 
 $\langle X \rangle$ are two white points and consider a \textit{line} $\inner{W}{X}$ as 
-a \mbox{$2$-dimensional} subspace of $\J$ spanned by white vectors $W$ and $X$. 
+a $2$-dimensional subspace of $\J$ spanned by white vectors $W$ and $X$. 
 Given a white point $\langle W \rangle$, we are interested in finding all
 the white points $\langle X \rangle$ such that $\inner{W}{X}$ is totally white. 
 
-Since $\SE_6(F)$ acts transitively on white points, we may assume that 
-$W = (0,0,1\mid 0,0,0)$ and $X = (a,b,c\mid A,B,C)$. 
+We may assume that 
+\mbox{$W = (0,0,1\mid 0,0,0)$} and $X = (a,b,c\mid A,B,C)$, as $\SE_6(F)$ acts transitively on white points. 
 Consider an element $\lambda W + X \in \inner{W}{X}$. First, we calculate the 
 value of Dickson--Freudenthal determinant:
 \begin{multline}
@@ -690,7 +691,7 @@ The conditions for $\lambda W + X$ to be white are
 		\end{array}
 	\right\}
 \end{equation}
-Since $X$ is white by assumption, we get that $\lambda W + X$ is white if and only if
+Since $X$ is white by assumption, $\lambda W + X$ is white if and only if
 $\lambda a = \lambda b = \lambda \ovC = 0$ for all $\lambda \in F$, which is equivalent to
 $a = b = C = 0$, i.e. $X \in \J_{17}^{cAB}$. Therefore, we conclude the following.
 
@@ -808,7 +809,7 @@ where $x,y \in \O$.
 		isomorphic to $F^8$. 
 		
 		\item Let $(R, S)$ be any pair from the set 
-		$\{(L,M''), (L',M), (L'',M')\}$ or any of the 
+		$\{(L,M''), (L',M), (L'',M')\}$ or any of the pairs in
 		$\{(L,M'), (L',M''), (L'',M)\}$. Then
 		the actions of $R_x$ and $S_x$, as $x$ ranges through $\O$, 
 		generate an elementary abelian 
@@ -879,8 +880,8 @@ where $x,y \in \O$.
     \end{equation*}
     for arbitrary $A,B,C \in \O$. In other words, we get $\ovC x = B y$ for arbitrary octonions
     $B$ and $C$. In particular, if $B = 1_{\O}$ and $C = 0$, we get $y = 0$ and if
-    $B = 0$ and $C = 1_{\O}$ we obtain $x = 0$. So, the intersection of two copies of
-    $F^8$ consists of the identity element, as needed, and the result follows. 
+    $B = 0$ and $C = 1_{\O}$, we obtain $x = 0$. So, the intersection of two copies of
+    $F^8$ consists of the identity element as needed, and the result follows. 
     Again, to get (b) for the rest of the pairs in the first set we apply the 
     triality element. The calculations for the second set of pairs are essentially
     of the same nature. 
@@ -1192,11 +1193,11 @@ $4$-space $V_4$ spanned by the Albert vectors of the form
 	$\SL_2(F) \circ \SL_2(F)$ also generate the whole of $\Omega_4^+(F)$. Indeed, if $F$ is infinite, having just an isomorphism
 	is not sufficient, since in this case the group can easily be isomorphic to a proper subgroup of itself. 
 First, we show that the action
-	of $G = \SL_2(F) \circ \SL_2(F) \leqslant \Omega_4^+(F)$ on the isotropic vectors in $V_4$ is transitive. 
+	of the group $G = \SL_2(F) \circ \SL_2(F) \leqslant \Omega_4^+(F)$ on the isotropic vectors in $V_4$ is transitive. 
 	
 	Let $v = (a, b, 0 \mid 0,0, \alpha e_{-1} + \beta e_{1})$ be an arbitrary isotropic vector in $V_4$ with $\alpha, \beta \in F$.
-	We find $Q(v) = ab - \alpha \beta$, so $v$ is isotropic if and only if $ab = \alpha \beta$ with $(a,b,\alpha,\beta) \neq
-	(0,0,0,0)$. The actions of the generators on $v$ are given by
+	We find $Q(v) = ab - \alpha \beta$, so $v$ is isotropic if and only if $(a,b,\alpha,\beta) \neq
+	(0,0,0,0)$ and $ab = \alpha \beta$. The actions of the generators on $v$ are given by
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
 			M_{\lambda e_{-1}} :  (a, b, 0 \mid 0,0, \alpha e_{-1} + \beta e_{1}) & \mapsto & 
@@ -1212,14 +1213,15 @@ First, we show that the action
 						 (a + \lambda \alpha, b , 0 \mid 0,0, \alpha e_{-1} + (\beta - \lambda b) e_{1}). 
 		\end{array}
 	\end{equation*}
-	Consider the case $(a, b) = (0,0)$. Then for $v$ to be isotropic, it has to be either $\alpha = 0, \beta \neq 0$ or 
+	Consider the case $(a, b) = (0,0)$. For the
+	vector $v$ to be isotropic, it has to be either $\alpha = 0, \beta \neq 0$ or 
 	$\alpha \neq 0, \beta = 0$. Acting on $(0,0,0\mid 0,0,\beta e_1)$ by $L_{-\beta^{-1} e_{-1}}$, we obtain the vector
 	$(1,0,0 \mid 0,0,\beta e_1)$. Next, we act by $M_{-\beta e_1}$ to obtain $(1,0,0 \mid 0,0,0)$. Similarly,
 	acting on $(0,0,0 \mid 0,0,\alpha e_{-1})$ with $\alpha \neq 0$ by $L_{-\alpha^{-1} e_{1}}$, and then by $M_{-\alpha e_{-1}}$, 
-	we get $(1,0,0 \mid 0,0,0)$ as well.
+	we get the vector $(1,0,0 \mid 0,0,0)$ as well.
 	
 	If $a \neq 0$ and $b \neq 0$, we are forced to have $\alpha \neq 0$ and $\beta \neq 0$. Acting by $M_{b \alpha^{-1} e_{1}}$, 
-	we obtain the vector $(a,0,0 \mid 0,0, \alpha e_{-1} + (\beta + b \alpha^{-1} a) e_1)$. Next, we consider $(a,0,0 \mid 0,0, \alpha e_{-1} + \beta e_{1})$
+	we obtain the vector $(a,0,0 \mid 0,0, \alpha e_{-1} + (\beta + b \alpha^{-1} a) e_1)$. Next, we consider the vector \mbox{$(a,0,0 \mid 0,0, \alpha e_{-1} + \beta e_{1})$}
 	with $a \neq 0$. If $\alpha \neq 0$, then we may act by $L_{a\alpha^{-1} e_1}$ to obtain $(0,0,0 \mid 0,0,\alpha e_{-1} + \beta e_1)$; on the other hand,
 	if $\beta \neq 0$, we may act by $L_{a\beta^{-1} e_{-1}}$ to obtain the same vector. If $(\alpha, \beta) = (0,0)$, then we map 
 	$(a,0,0, \mid 0,0,0)$ to $(a,0,0 \mid 0,0,e_1)$ by the action of $M_{a^{-1} e_1}$, and further to $(0,0,0 \mid 0,0,e_1)$ by the action of $L_{a e_{-1}}$. 
@@ -1257,8 +1259,8 @@ First, we show that the action
 			1 & 0 & 0 & 0
 		\end{bmatrix},
 	\end{equation*}
-	so using the conditions above we find $\inner{v_1}{w} = v_1 B w^{\T} = \delta$, so $\delta = 0$. Next, 
-	$\QQ_4(w) = -\beta \gamma$, so either $\beta = 0,\ \gamma \neq 0$ or $\beta \neq 0,\ \gamma = 0$. The 
+	so we find $\inner{v_1}{w} = v_1 B w^{\T} = \delta$, so $\delta = 0$. Next, 
+	\mbox{$\QQ_4(w) = -\beta \gamma$}, so either $\beta = 0,\ \gamma \neq 0$ or $\beta \neq 0,\ \gamma = 0$. The 
 	case $(\beta, \gamma) = (0,0)$ does not satisfy the condition on dimension, so we do not consider it. 
 	
 	It follows that either $w = \alpha v_1 + \beta v_4$, $\beta \neq 0$ or $w = \alpha v_1 + \gamma v_3$, $\gamma \neq 0$. 
@@ -1525,10 +1527,12 @@ $27$-space $\J$.
     $\mu^2 = 1$, so the action on $\J$ is indeed that of $P_{\pm 1}$. 
 \end{proof}
 
-Now let $X = (a,b,c\mid A,B,C)$
-and let $Y = (a',b',c' \mid A', B', C')$. An isometry which maps $X$ to
-    $Y$ and $v$ to $\lambda v$ must send $\fdet(X+v)-\fdet(X) = ab-C\ovC $ to
-    $\fdet(Y+\lambda v) - \fdet(Y) = \lambda (a'b' - C'\ovC ')$. The \mbox{$17$-dimensional}
+Now let $X = (a,b,c\mid A,B,C)$ and $Y = (a',b',c' \mid A', B', C')$ be arbitrary
+Albert vectors. An isometry which maps $X$ to
+    $Y$ and $v$ to $\lambda v$ also scales the
+    quadratic form. Indeed, it changes 
+    \mbox{$\fdet(X+v)-\fdet(X) = ab-C\ovC$} to
+    \mbox{$\fdet(Y+\lambda v) - \fdet(Y) = \lambda (a'b' - C'\ovC ')$}. The \mbox{$17$-dimensional}
      radical
     of both of these forms is fixed, and the quadratic form $ab-C\ovC$ is being scaled by
     a factor of $\lambda$. In particular, when $\lambda = 1$, the quadratic
@@ -1610,7 +1614,8 @@ illustrates the following result:
 \end{equation}
 where the products in the right-hand side are understood as the products of the actions rather
 than as the matrix products. Furthermore, the intersection
-of the groups $\Spin_{10}^+(F)$ and $F^{16}$ is trivial: the action of $\Spin_{10}^+(F)$
+of the groups $\Spin_{10}^+(F)$ and $F^{16}$ is trivial: the action of $\Spin_{10}^+(F)$ on
+$\J$
 preserves the decomposition $\J = \J_{1}^c \oplus \J_{16}^{AB} \oplus \J_{10}^{abC}$,
 while any non-trivial action of the elementary abelian group $F^{16}$ fails to do so.
 Indeed, a general element in $F^{16}$ has the form $M_x' \cdot L_y''$ for some $x,y \in 
@@ -1798,14 +1803,14 @@ precisely a group of shape $F^{16}\cn\Spin_{10}^+(F).F^{\times}$.
 \end{proof}
 
 Next, we investigate the orbits of the stabiliser of $\J_{10}^{abC}$ on white vectors and white points. First, we consider white vectors
-in $\J_{10}^{abC}$. An arbitrary non-zero vector $(a,b,0\mid 0,0,C)$ is white if and only if $a b - C\ovC = 0$.
+in $\J_{10}^{abC}$. An arbitrary non-zero Albert vector $(a,b,0\mid 0,0,C)$ is white if and only if $a b - C\ovC = 0$.
 Note that the stabiliser of $\J_{10}^{abC}$ acts on the [quotient] $10$-space as $\Omega_{10}^+(F)$, and is transitive on such vectors. 
 Therefore, the stabiliser of $\J_{10}^{abC}$ is transitive on white vectors in
 $\J_{10}^{abC}$, and on the white points spanned by them. 
 
 Suppose now that $(a,b,c \mid A,B,C)$ is a white vector such that $(c,A,B) \neq (0,0,0)$. We consider two cases.
 First, assume $c \neq 0$. The element $M_{-c^{-1} B}''$ maps our vector to $(a - c^{-1}\NN(B), b, c \mid A,0, C-c^{-1}\ovB \ovA)$, and since
-the latter is white, we have $a - c^{-1}\NN(B) = 0 = C - c^{-1}\ovB\ovA$, so our new vector is of the form
+the latter is white, we have \mbox{$a - c^{-1}\NN(B) = 0  = C - c^{-1}\ovB\ovA$}, so our new vector is of the form
 $(0,b,c \mid A,0,0)$. Similarly, we act on it by $L_{-c^{-1} \ovA}$ to obtain $(0,b-c^{-1}\NN(A),c \mid 0,0,0)$, and since this vector is also 
 white, we have $b - c^{-1} \NN(A) = 0$, so the resulting vector is of the form $(0,0,c\mid 0,0,0)$, $c \neq 0$. 
 
@@ -1829,7 +1834,7 @@ We again distinguish two cases.
 If $a \neq 0$, then we act on $(a,b,0\mid A,B,C)$ by $M_{-a^{-1} C}$ to get $(a,0,0\mid 0,B,0)$. Next, we act by 
 $M_y''$ to get \mbox{$(a + \Tr(\ovy B), 0, 0 \mid 0,B,0)$}, and choosing a suitable $y$ we obtain $(0,0,0\mid 0,B,0)$.
 
-If on the other hand $b \neq 0$, the action by $L_{-b^{-1} \ovC}$ maps $(a,b,0\mid A,B,C)$ to $(0,b,0\mid A,0,0)$ and 
+If $b \neq 0$, the action by $L_{-b^{-1} \ovC}$ maps $(a,b,0\mid A,B,C)$ to \mbox{$(0,b,0\mid A,0,0)$} and 
 similarly acting by a suitable $L_y'$, we obtain $(0,0,0\mid A,0,0)$. Recall that the duality element $\delta$ preserves 
 $\J_{10}^{abC}$, so it is enough to consider vectors $(0,0,0\mid 0,0,0)$ with $A \in \O$. By choosing a copy of $\Omega_8^+(F)$ 
 generated by the elements $P_u'$ with $u$ being an octonion of norm one, we can map $(0,0,0\mid A,0,0)$ to 
@@ -1868,7 +1873,7 @@ its action on white points, it is possible to figure out the joint stabilisers. 
 	spanned by the vectors in this $10$-space. Any white point $\langle (a,b,0 \mid 0,0,C) \rangle$ int this $10$-space satisfies $ab - C\ovC = 0$. The
 	normal subgroup 
 \mbox{$F^{16} \trianglelefteqslant F^{16}\cn\Spin_{10}^+(F).F^{\times}$} acts trivially on $\J_{10}^{abC}$. Preserving a white point
-	is equivalent to preserving an isotropic point in $\Spin_{10}^+(F).F^{\times}$ and thus we obtain $F^{16}\cn F^8\cn\Spin_8^+(F).F^{\times}.F^{\times}$.
+	is equivalent to preserving an isotropic point in $\Spin_{10}^+(F).F^{\times}$ and thus we obtain the action of a group of shape $F^{16}\cn F^8\cn\Spin_8^+(F).F^{\times}.F^{\times}$.
 \end{proof}
 
 \begin{lemma}
@@ -2063,8 +2068,8 @@ stabiliser represented by the matrix
 	\end{multline*}
 	so we indeed have $A_{i i} = 0$ for $1 \leqslant i \leqslant 5$. 
 	
-	Now, regardless of characteristic, such matrices $A$ reside
-	in a $10$-dimensional \mbox{$F$-space}. 
+	Regardless of characteristic, such matrices $A$ reside
+	in a $10$-dimensional $F$-space. 
 	In fact, all such matrices
 	span a $10$-dimensional $F$-space $W$, and the spanning set
 	can be obtained, for example, by taking relevant 
@@ -2195,7 +2200,7 @@ where $1 \leqslant i \leqslant 8$ and $C_i \ovC_i = a_i b_i$. Since in particula
 $\langle v_1 \rangle,...,\langle v_{10}\rangle$, the action on $\J_{10}^{cAB}$ is that of a 
 $10 \times 10$ diagonal matrix $\diag(\lambda_1, ..., \lambda_{10})$ 
 with respect to the basis $\{v_1, ..., v_{10}\}$. Consider 
-an Albert vector $v = (a,b,0\mid 0,0,C)$, where $C = C_1 + \cdots + C_8$ and 
+a vector $v = (a,b,0\mid 0,0,C)$, where \mbox{$C = C_1 + \cdots + C_8$} and 
 $a,b$ are such that $v$ is white, i.e. $C\ovC = ab$. Now, if $F\neq \mathbb{F}_2$, we can choose
 $a,b \in F$ in such a way that $v$ can be written as a linear combination 
 $v = \alpha v_1 + \beta v_2 + v_3 + \cdots + v_{10}$ with $\alpha \neq 0$. The stabiliser of 
@@ -2223,7 +2228,6 @@ Now, by using the triality element, we map $\J_{10}^{abC}$ to $\J_{10}^{bcA}$ an
 to $\J_{10}^{caB}$ and so we obtain that the stabiliser of all white points
 acts on $\J$ by scalar multiplications. That is, the stabiliser of all the white points
 is trivial in $\EE_6(F)$. 
-
 \end{proof}
 
 From Lemma \ref{lemma:1_white_primitive} we know that the action of $\EE_6(F)$ 
@@ -2309,12 +2313,12 @@ Our aim is to count the white points in this case, and hence find the group orde
 	$\delta$ followed by $\tau$ to $(a,b,0\mid A,B,C)$ in order to obtain a 
 	vector of the form $(a,b,0\mid A,B,C)$ with $A \neq 0$. Note that the values
 	of $a,b,A,B,C$ are not the same as in the initial Albert vector. So, assuming 
-	$A \neq 0$, we have $AB = 0$ exactly when $B$ is in a particular $4$-dimensional
+	$A \neq 0$, we have $AB = 0$ exactly when $B$ resides in a particular $4$-dimensional
 	subspace of $\O$ and any such $B$ satisfies $B\ovB = 0$. For any octonion $x$, the
 	action by the element $L_x$ establishes a bijection between the white vectors of
 	the form $(*,*,0\mid A,B,*)$ and those of the form \mbox{$(*,*,0\mid A,B+\ovA x,*)$}.
 	Left-multiplication by $\ovA$ annihilates a $4$-dimensional subspace of $\O$
-	(see Lemma \ref{lemma:1_octonion_annihilator}), so by
+	(Proposition \ref{prop:octonion_annihilator}), so by
 	the rank-nullity theorem we conclude that the image 
 	$\mathcal{A} = \{ \ovA x\ \mid\ x \in \O \}$ is also $4$-dimensional. Note that
 	$A (\ovA x) = (A\ovA)x = 0$, for any $x \in \O$, so $\mathcal{A}$ is the $4$-space

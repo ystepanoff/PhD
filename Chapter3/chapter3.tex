@@ -6,6 +6,16 @@
 \fi
 %leave these commands here
 
+In this chapter we are looking at the 
+possibility to adopt our technique to the
+construction of the groups of type
+${}^2\E_6$. Although this ``twisted'' case
+proves to be more difficult, especially
+with the arbitrary quadratic field extensions,
+we were still able to investigate some of the
+structure and establish several important 
+results. 
+
 \section{Quadratic field extensions}
 
 Let $F$ and $K$ be two fields such that $F$ is a subfield of $K$. We say that 
@@ -27,8 +37,8 @@ of field extensions, of very high quality, for instance, \cite{PeterCameron}, \c
 we are interested in Galois extensions of degree $2$. 
 In case when $F = \Fq$, we have $|K| = q^2$, and so $K = \Fqs$ (see, for example, \cite{Moore}).
 
-Given an extension $K : F$, we define the \textit{Galois group} of $K$ over $F$, denoted
-$\Gal(K : F)$, to be the group
+Given a field extension $K : F$, we define the \textit{Galois group} of $K$ over $F$, denoted
+\mbox{$\Gal(K : F)$}, to be the group
 of automorphisms of $K$ that fix $F$ elementwise. In other words,
 \begin{equation}
 	\Gal(K : F) = \{\ \sigma \in \Aut(K)\ \big|\ \alpha^{\sigma} = \alpha\ \mbox{for all}\ 
@@ -49,14 +59,20 @@ $\sigma$ takes the form $\sigma : \lambda \mapsto \lambda^q$.
 
 \section{Spaces with two forms}
 
+In this section we describe the results
+from \cite[Section 11]{Asch1}, which will
+be of great importance to us in the further
+discussion.
+
 Let $K : F$ be a Galois extension of degree $2$, 
 and let $s$ be a $K$-automorphism
 with $F$ being its fixed field. Let also $V$ be a $2m$-dimensional vector space over $K$ with 
 a quadratic form $Q$ and a conjugate-symmetric sesquilinear form 
 \mbox{$B : V\times V \rightarrow K$},
 defined with respect to $\sigma$. Denote by $f$ the polar form of $Q$, and suppose that 
-\mbox{$\mathcal{B} = \{ e_1, f_1, e_2, f_2, ..., e_m, f_m \}$}
-is a hyperbolic basis of $V$ with respect to $f$, i.e.
+\mbox{$\mathcal{B}$}
+is a basis of $V$ with respect to $f$, consisting of the elements
+$e_1, ..., e_m$, $f_1,...,f_m$, so that
 \begin{equation}
 	Q(e_i) = Q(f_i) = 0,\ f(e_i, f_i) = 1,
 \end{equation}
@@ -80,10 +96,12 @@ respectively. We say that an element $v \in V$ is \textit{singular isotropic}, i
 
 \begin{proposition}
 	\label{prop:3_2forms_orbits}
-	Let $U$ be a $(Q,B)$-subspace of $V$ if Witt index at least $2$. Fix $\lambda \in K 
-	\setminus F$. The group $G$ has two orbits on doubly singular points with representatives
-	$\langle u \rangle$ and $\langle u + \lambda v \rangle$, where $u,v \in U$ and 
-	$\langle u, v \rangle$ 	is a singular line. 
+	Let $U$ be a $(Q,B)$-subspace of $V$ if Witt index at least $2$. Fix
+	\mbox{$\lambda \in K
+	\setminus F$}. The group $G$ has 
+	precisely two orbits on doubly singular points with representatives
+	$\langle u \rangle$ and \mbox{$\langle u + \lambda v \rangle$}, where $u,v \in U$ and 
+	\mbox{$\langle u, v \rangle$} 	is a singular line. 
 \end{proposition}
 
 \section{Hermitean form in $\J$ and the group ${}^2\SE_6^K(F)$}
@@ -316,8 +334,8 @@ is devoted to proving the following result.
 
 \begin{theorem}
 	\label{theorem:3_nx_omega}
-	The actions of the elements $N_x$ on $\J_{10}^{abC}$, where $x$ is such that 
-	$x \ovx^{\s} = 0 = \ovx^{\s} x$, with $x,\ovx^{\s}$ generating a sociable subalgebra, 
+	The actions of the elements $N_x$ on $\J_{10}^{abC}$, where $x \in \O$ is such that 
+	\mbox{$x \ovx^{\s} = 0 = \ovx^{\s} x$}, with $x,\ovx^{\s}$ generating a sociable subalgebra, 
 	generate a group of type $\Omega_{10}^{-,K}(F)$, as $x$ ranges through all suitable octonions
 	in $\O_K$.  
 \end{theorem}
@@ -481,7 +499,7 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 	in Lemma \ref{lemma:1_omega4}. 
 \end{proof}
 
-Consider now a $6$-dimensional $K$-space $V_6$ with the basis $\mathcal{B}$ consisting of the vectors
+Consider now a $6$-dimensional $F$-space $F_6$ with the basis $\mathcal{B}$ consisting of the vectors
 $v_5, v_3, v_2, v_1, v_4, v_6$, in that order, where
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -531,7 +549,7 @@ we have obtained a group of shape $F^{4}\cn\Omega_4^{-,K}(F)$. Adding also the a
 of $N_{\lambda e_1}$ to this we obtain a group, which is transitive on isotropic vectors, and hence
 we obtain a copy of $\Omega_6^{-,K}(F)$. 
 
-We again use the results of Appendix A. Consider the $8$-space $V_8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
+We again use the results of Appendix A. Consider the $8$-space $F^8$ spanned by the Albert vectors $(a,b,0\mid 0,0,C)$ with 
 $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{\omega}, 
 e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$, and consider two isotropic vectors
 \begin{equation}
@@ -540,11 +558,11 @@ e_{- \omega}, e_{-\bar{\omega}}, e_1 \rangle$, and consider two isotropic vector
 		u_{-\omega} & = & (0,0,0 \mid 0,0,e_{-\omega}),
 	\end{array}
 \end{equation}
-which are fixed by our copy of $\Omega_6^{-,K}(F)$. The action of $N_{e_{\omega}}$ on $V_8$
+which are fixed by our copy of $\Omega_6^{-,K}(F)$. The action of $N_{e_{\omega}}$ on $F^8$
 preserves $u_{\omega}$ but not $u_{-\omega}$, and therefore adjoining this element to 
-$\Omega_6^{-,K}(F)$ we get the action of the group $V_6\cn\Omega_6^{-,K}(F)$. The element
+$\Omega_6^{-,K}(F)$ we get the action of the group $F^6\cn\Omega_6^{-,K}(F)$. The element
 $N_{e_{-\omega}}$ does not preserve the $1$-space $\langle u_{\omega} \rangle$, so appending it to 
-$V_6\cn\Omega_6^{-,K}(F)$, we get the action of $\Omega_8^{-,K}(F)$ on $V_8$. 
+$F^6\cn\Omega_6^{-,K}(F)$, we get the action of $\Omega_8^{-,K}(F)$ on $F^8$. 
 
 Finally, we choose two isotropic Albert vectors
 \begin{equation}
@@ -554,7 +572,7 @@ Finally, we choose two isotropic Albert vectors
 	\end{array}
 \end{equation}
 in $\J_{10}^{abC}$. We adjoin the element $N_{e_{0}}$ which fixes $u_0$ but not $u_{-0}$ to 
-get the action of the group $V_8\cn \Omega_8^{-,K}(F)$. Appending to this the action of
+get the action of the group $F^8\cn \Omega_8^{-,K}(F)$. Appending to this the action of
 $N_{e_{-0}}$ which does not preserve $\langle u_0 \rangle$, we obtain the action of
 $\Omega_{10}^{-,K}(F)$.
 
@@ -563,7 +581,7 @@ $\Omega_{10}^{-,K}(F)$.
 As in the case of $\SE_6$, we are interested in the action on white points. We will, however, see 
 that although $\SE_6$ acts transitively on white points, the action of ${}^2\SE_6^K(F)$ splits
 into several orbits. We say that a non-zero Albert vector $X$ is \textit{isotropic}, if
-$\H(X) = 0$. 
+\mbox{$\H(X) = 0$}. 
 
 We first consider some examples. Suppose $X_1 = (0,0,0\mid 0,0,e_0)$. As we know (\ref{eq:17_space}), 
 it determines 
@@ -590,7 +608,7 @@ by the vectors of the form \mbox{$(0,0,0\mid A,B,C)$} with
 In other words, our vector $X_1$ determines the $17$-space $U_1$ and the $9$-dimensional radical $R_1$ 
 of $\H$ in $U_1$. Note that $X_1$ is isotropic with respect to $\H$, and also $X_1 \in R_1$. 
 
-It turns out that there is another type of isotropic white vectors. Consider 
+It turns out that there is another type of isotropic white vectors. Consider the vector
 $X_2 = (0,0,0 \mid 0,0,e_0 + \lambda e_1)$, where $\lambda \in K\setminus F$. It again determines a 
 $17$-space $U_2$, spanned by the Albert vectors of the form $(a,b,0\mid A,B,C)$ with 
 \begin{equation}
@@ -604,7 +622,7 @@ $17$-space $U_2$, spanned by the Albert vectors of the form $(a,b,0\mid A,B,C)$ 
 	e_0 + \lambda e_1, e_{-\omega}, e_{-\bar{\omega}}, e_1 \rangle.
 	\end{array}
 \end{equation}
-We find that the radical $R_2$ of $\H$ in $U_2$ is spanned by the vectors of the form 
+We find that the radical $R_2$ of $\H$ in $U_2$ is spanned by the Albert vectors of the form 
 $(0,0,0\mid A,B,C)$ with 
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -644,7 +662,7 @@ We now prove the following theorem.
 	
 	Let $G$ be the stabiliser of $X_3$ in ${}^2\SE_6^K(F)$. In particular, $G$ is 
 	a subgroup of $\SE_6(K)$, so it preserves the Dickson--Freudenthal determinant
-	$\fdet$, and hence it stabilises the $17$-space $U_3 = \J_{17}^{cAB}$ 
+	$\fdet$, and hence it stabilises the \mbox{$17$-space} $U_3 = \J_{17}^{cAB}$ 
 	determined by $X_3$. Next, $G$
 	is a subgroup of ${}^2\SE_6^K(F)$, so it preserves the Hermitean form $\H$,
 	and so $G$ stabilises $U_3^{\perp}$, where $\perp$ is taken with respect to the
@@ -812,7 +830,7 @@ We now prove the following theorem.
 
 We are ready to investigate the stabiliser in ${}^2\SE_6^K(F)$ of 
 \mbox{$X_1 = (0,0,0\mid 0,0,e_0)$}. From the previous section we know that the stabiliser of 
-$X_3$ is the subgroup of shape $\Spin_{10}^{-,K}(F)$. By stabilising $X_3$ and $X_1$ simultaneously,
+$X_3$ is a subgroup of shape $\Spin_{10}^{-,K}(F)$. By stabilising $X_3$ and $X_1$ simultaneously,
 with the help of Lemma \ref{lemma:A_stabiliser_omega}, we find that the stabiliser of $X_1$ is 
 at least a subgroup $F^8\cn\Spin_8^{-,K}(F)$.
 
@@ -927,6 +945,76 @@ $c \neq 0$, so we can repeatedly use the elements $N_{\mu x}'$
 and $N_{\nu y}''$ which preserve $X_1$ to map any vector
 $(0,0,c\mid A,B, \ovB \ovA c^{-1})$ to $(0,0,c \mid 0,0,0)$,
 showing the transitive action on such vectors. 
+
+Denote by $H$ the subgroup of ${}^2\SE_6^K(F)$, generated
+by the actions on $\J$ of the elements $N_x'$ and $N_y''$
+with $x \in \{e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1\}$ and 
+$y \in \{ e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \}$.
+Denote by $G_1$ the stabiliser of $X_1$ and by $G_{13}$ the
+joint stabiliser of $X_1$ and $X_3$. Let $\mathcal{O}$ and
+$\hat{\mathcal{O}}$ to be
+the following sets:
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+	\mathcal{O} & = & 
+	\left\{\ W \in U_1^{\perp}\ \big|\ \mbox{$W$ is white and
+		$\H(W)=1$ } \right\}, \\
+		
+	\hat{\mathcal{O}} & = & \left\{ 
+		\ \langle W \rangle\ \big|\ W \in \mathcal{O}\ 
+	\right\}.
+	\end{array}
+\end{equation}
+Further, denote by $\hat{G}_{13}$ the joint stabiliser
+of $X_1$ and $\langle X_3 \rangle$. Now, $\hat{\mathcal{O}}$
+is $G_1$-invariant, and the subgroup $H \leqslant G_1$
+acts transitively on it, which means 
+$\langle X_3 \rangle^{G_1} = \langle X_3 \rangle^H$. We can
+also show that $H \cap \hat{G}_{13} \cong F^8$. In fact,
+this copy of $F^8$ is generated by all possible commutators
+$[N_{\lambda x}', N_{\mu y}']$, $[N_{\lambda x}', N_{\mu y}'']$,
+and $[N_{\lambda x}'', N_{\mu y}'']$ with relevant $x$ and $y$.
+For example, with respect to the basis
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		w_1 & = & (0,0,0 \mid 0,0,e_0), \\
+		w_2 & = & (0,0,0 \mid 0,0,e_{\omega}), \\
+		w_3 & = & (0,0,0 \mid 0,0,e_{\bar{\omega}}), \\
+		w_4 & = & (0,0,0 \mid 0,0,e_{-1}), \\
+		w_5 & = & (1,0,0 \mid 0,0,0), \\
+		w_6 & = & (0,1,0 \mid 0,0,0), \\
+		w_7 & = & (0,0,0 \mid 0,0,e_1), \\
+		w_8 & = & (0,0,0 \mid 0,0,e_{-\bar{\omega}}), 
+	\end{array}
+\end{equation}
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
+		w_9 & = & (0,0,0 \mid 0,0,e_{-\omega}), \\
+		w_{10} & = & (0,0,0 \mid 0,0,e_{-0}), \\
+	\end{array}
+\end{equation*}
+the commutator $[N_{\lambda e_{\bar{\omega}}}', 
+N_{\mu e_{\omega}}']$ is represented by the matrix 
+
+\begin{equation}
+\II_{10} + (\lambda \mu^{\s} + \lambda^{\s}\mu)E_{7,1} 
+- (\lambda \mu^{\s} + \lambda^{\s}\mu) E_{10,4},
+\end{equation}
+where 
+$E_{i j}$ as usual denotes the matrix with $1$ in the row $i$
+and column $j$ and zeroes in any other position. As we know,
+$\lambda \mu^{\s} + \lambda^{\s}\mu \in F$, and a straightforward
+calculation shows that all the considered commutators preserve
+$X_3$, so $H \cong F^8\cn K^8$, and we have the following theorem.
+\begin{theorem}
+	\label{theorem:2_type1_stabiliser}
+	The stabiliser in ${}^2\SE_6^K(F)$ of 
+	$X_1 = (0,0,0\mid 0,0,e_0)$ 
+	is a subgroup of shape
+	\begin{equation}
+		F^{8}\cn K^{8}\cn\Spin_{8}^{-,K}(F).
+	\end{equation}
+\end{theorem}
 
 
 %These vectors span a 
@@ -1201,12 +1289,13 @@ showing the transitive action on such vectors.
 \subsection{White vectors in $\J_8^C$}
 
 As a practical counting excersise, we count the isotropic white vectors in $\J_{8}^{C}$.
-As before, $K = \Fqs$. First, we need the following auxiliary result.
+We have $F = \Fq$ and $K = \Fqs$. First, we need the following auxiliary result.
 
 \begin{lemma}
 		\label{lemma:zn}
 		Let $V$ be a vector space over $\Fqs$ of dimension $2m$. 
-		Define the map $Z_m: V \rightarrow \Fq$ in the following way:
+		Define the map \mbox{$Z_m: V \rightarrow \Fq$} 
+		in the following way:
 		\begin{equation*}
 			Z_m(x) = (x_1^q - x_1) (x_2^q - x_2) + (x_3^q - x_3) (x_4^q - x_4) + \cdots +
 			(x_{2m-1}^q-x_{2m-1}) (x_{2m}^q - x_{2m}),
@@ -1385,15 +1474,15 @@ $\SE_6(K)$ which preserves $\QQ$
 and
 $\H$ on $\J_8^C$ has three orbits on white points, and the sizes of these orbits are given by
 \begin{enumerate}[(i)]
-	\item $(q^4-1)(q^3+1)/(q-1)$;
-	\item $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$;
+	\item $(q^4-1)(q^3+1)/(q-1)$,
+	\item $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$,
 	\item $q^6 (q^4-1)(q^3-1)/(q+1)$.
 \end{enumerate}
 Of these, the first two are isotropic, while the last one is non-isotropic. 
 
 \subsection{White vectors in $\J_{16}^{BC}$}
 
-We can also count the isotropic white vectors in $\J_{16}^{BC}$, $K = \Fqs$. Suppose 
+We can also count the isotropic white vectors in $\J_{16}^{BC}$, $K = \Fqs$. Suppose an Albert vector
 \mbox{$X = (0,0,0\mid 0,B,C)$} is white and note that the whiteness conditions 
 take form $B\ovB = C\ovC = 0 = BC$. 
 
@@ -1443,7 +1532,7 @@ isotropic white vectors of the form $(0,0,0\mid 0,B,C)$ with $B,C \neq 0$.
 
 Recall that the group preserving $Q_4$ and $H_4$ has two orbits on the isotropic white
 points in $J_8$ with
-$(q^4-1)(q^3+1)/(q-1)$ and $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$ elements. Again, by PropositionThe first orbit
+$(q^4-1)(q^3+1)/(q-1)$ and $q(q^6-1)(q^4-1)(q^2+1)/(q^2-1)$ elements. Again, by Proposition \ref{prop:3_2forms_orbits} the first orbit
 consists of white points
 $\langle X \rangle$ where $X$ is written over $\Fq$. That is, its representatives are
 one-dimensional $\Fqs$-subspaces generated by the white vectors written over $\Fq$.

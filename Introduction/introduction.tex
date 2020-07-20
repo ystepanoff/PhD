@@ -1,13 +1,13 @@
 %%% Thesis Introduction --------------------------------------------------
-\chapter{Introduction}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
 \ifpdf
     \graphicspath{{Introduction/IntroductionFigs/PNG/}{Introduction/IntroductionFigs/PDF/}{Introduction/IntroductionFigs/}}
 \else
     \graphicspath{{Introduction/IntroductionFigs/EPS/}{Introduction/IntroductionFigs/}}
 \fi
 \label{Intro}
-
-\section{Historical notes}
 
 One may think of the exceptional groups of Lie type 
 as of the wonders of our
@@ -17,8 +17,9 @@ and physics. For instance, physicists have some high hopes that
 exceptional groups will somehow reveal themselves in the theory
 of quantum mechanics. 
 
-The history of the exceptional groups began roughly at the turn
-of the 19th and 20th centuries. Elie Cartan (1869--1951)
+The history of the exceptional groups began roughly between
+the 19\textsuperscript{th} and 
+20\textsuperscript{th} centuries. Elie Cartan (1869--1951)
 first completely classified simple Lie algebras, and then by 
 determining the real forms of complex algebras he classified the
 simple real Lie algebras. A rigorous and highly readable historical
@@ -34,8 +35,8 @@ to the works of Leonard Eugene Dickson (1874--1954),
 who characterised $\E_6$ as a $27$-dimensional group with an
 invariant cubic form \cite{Dickson1, Dickson2}. 
 Dickson also managed to write down a 
-large number of group generators. He uses $27$ coordinates
-labelled $x_i$, $y_i$, and $z_{ij} = -z_{ji}$ where 
+large number of group generators. He used $27$ coordinates
+labelled $x_i$, $y_i$, and $z_{ij} = -z_{ji}$, where 
 $i,j \in \{1,2,3,4,5,6\}$ and $i \neq j$. His group is defined
 as the stabiliser of a cubic form with $45$ terms
 \begin{equation}
@@ -44,26 +45,30 @@ as the stabiliser of a cubic form with $45$ terms
 \end{equation}
 where the second sum is taken over all partitions 
 $\{\{i, j\}, \{k, l\}, \{m, n\}\}$ of 
-$\{1,2,3,4,5,6\}$, ordered so that $(i\ j\ k\ l\ m\ n)$ is 
+the index set
+\mbox{$\{1,2,3,4,5,6\}$}, ordered so that $\bigl(\begin{smallmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  i & j & k & l & m & n
+\end{smallmatrix}\bigr)$ is 
 an even permutation.
 
 In 1955 Claude Chevalley (1909--1984) obtained a uniform
 construction of what are now known as Chevalley groups 
 \cite{Chevalley}. Chevalley's construction included $\E_6$ albeit
 he constructs the $78$-dimensional representation whereas
-Dickson obtained the smallest $27$-dimensional representation. 
+Dickson obtained the $27$-dimensional representation, which is
+the minimal one. 
 
 There was another major breakthrough following Dickson's 
 construction of $\E_6$: in $1932$ a new subatomic particle called
 neutron was discovered, which indicated the need for a new 
 algebraic underpinning of quantum mechanics.
-
-In the same $1932$ a German physicist 
+In the same year a German physicist 
 Pascual Jordan\footnote{
 Naming the first-born son Pascual was a family tradition. 
-Furthermore, while in English 'Jordan' is pronounced with the
-first sound being the same as in the word 'judge', in German
-the first sound is the same as in the word 'yolk'.
+Furthermore, while in English `Jordan' is pronounced with the
+first sound being the same as in the word `judge', in German
+the first sound is the same as in `yolk'.
 } (1902--1980) introduced Jordan algebras as a tool which was 
 supposed to illuminate the behaviour of observable particles 
 in quantum mechanics. 
@@ -73,8 +78,8 @@ and Eugene Wigner (1902--1995) introduced Jordan
 algebras and octonions into physics \cite{JordanNeumannWigner}. 
 Although their attempt to formulate a new quantum mechanics was
 unsuccessful, Jordan algebras turned out to have astonishing 
-connections with many areas of mathematics. The by-product of
-physical investigation was the discovery of $27$-dimensional
+connections with many areas of mathematics. A by-product of
+physical investigation was the discovery of the $27$-dimensional
 exceptional Jordan algebra also known as Albert algebra, named 
 after Abraham Adrian Albert (1905--1972).
 
@@ -86,47 +91,51 @@ over octonions, with the multiplication given by
 X\circ Y = \frac12 (XY + YX).	
 \end{equation}
 Hans Freudenthal (1905--1990) showed that the stabiliser
-of a certain cubic form on this $27$-dimensional space is the 
-group of type $\E_6$ \cite{Freudenthal}. Next, 
+of a certain cubic form on this $27$-dimensional space is a 
+group of type $\E_6$ \cite{Freudenthal}. 
 George Seligman (born 1927) proved that the 
 automorphism group of a split Albert algebra over any field
 $F$ is isomorphic to the Chevalley group $\F_4(F)$ 
 \cite{Seligman}. Nathan Jacobson (1910--1999), 
-inspired by the works of Dickson,
-Chevalley, and Seligman, studied the automorphism group of an
+inspired by the works of Dickson and
+Chevalley, studied the automorphism 
+group of an
 Albert algebra, and the stabiliser of the determinant over the
-fields of characteristic not two or three in a series of papers
+fields of characteristic not $2$ or $3$ in the series of papers
 \cite{JacobsonOne,JacobsonTwo,JacobsonThree}. For instance, he 
 proved that if an Albert algebra contains nilpotent elements, 
-then the group is simple. It must have been implicit that the
-determinant of the elements in an Albert algebra is essentially
+then the automorphism group is simple. It must have been 
+implicit that the
+determinant of the elements in the Albert algebra is essentially
 the same as Dickson's cubic form, although Jacobson does not refer
-to Dickson. Moreover, although cases of characteristic 2 and 3
+to Dickson. Moreover, although cases of characteristic $2$ and $3$
 were of no problem to Dickson, they were still problematic in
 Jacobson's construction.
 
 Michael Aschbacher (born 1944) also addresses the 
-construction of groups of type $\E_6$ without mentioning Albert
+construction of the 
+groups of type $\E_6$ without mentioning Albert
 algebra or octonions at all. Though of fundamental importance,
 Aschbacher's construction is of rather abstract nature and some
-of the aspects are not burdened with things like proofs. Thus,
-some of the structural questions require further research. 
+of the results need to be investigated in detail. 
+Thus, some of the structural questions require further research. 
 
-In his famous book, 'The Finite Simple Groups' \cite{WilsonBook},
+In his famous book, `The Finite Simple Groups' \cite{WilsonBook},
 and also in subsequent preprint \cite{WilsonPaper},
 Robert Arnott Wilson (born 1958) sketches the
-construction of finite simple groups $\F_4(q)$, 
+construction of the finite simple groups $\F_4(q)$, 
 $\E_6(q)$, and ${}^2\E_6(q)$. The purpose of this thesis is,
 having this sketch as a basis, to fill in the major gaps and 
-obtain a complete and self-contained construction of the groups 
-$\E_6(F)$ and ${}^2\E_6(F)$.
+provide a complete and self-contained construction of the groups 
+of type $\E_6$, and also investigate the possibility to adopt this
+approach to the groups of type ${}^2\E_6$ over an arbitrary field.
 
 In the late 1980s the problem of classifying maximal subgroups 
 came into prominence. One of the most notable examples is
 Kay Magaard's (1962--2018) unpublished thesis \cite{Magaard}, which deals
 with the maximal subgroups of finite simple groups $\F_4(q)$
 where the characteristic is not $2$ or $3$. The series of papers by 
-Aschbacher \cite{Asch1,Asch2,Asch3,Asch4} address the investigation
+Aschbacher \cite{Asch1,Asch2,Asch3,Asch4} addresses the investigation
 of the maximal subgroups of $\E_6$. It turns out that the $27$-dimensional
 representation of the generic cover reveals much more structure rather 
 than the standard $78$-dimensional representation on the Lie algebra.

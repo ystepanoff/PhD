@@ -15,6 +15,17 @@
 \label{chapter1}
 
 
+In this chapter we discuss some background 
+material on octonion algebras. The main 
+references here are \cite{SpringerVeldkamp}
+and \cite{Schafer}. Although the statement
+of Proposition \ref{prop:octonion_annihilator}
+is mentioned in the literature, it is often
+given without proper justification, so we
+prove it from the first principles to close 
+this gap.
+
+
 \section{Composition algebras}
 
 \subsection{Quadratic and Bilinear Forms}
@@ -399,7 +410,7 @@ generalised associativity for the trace.
 
 \begin{proof}
 	This is an $F$-linear map, so if it is not surjective, then it is a zero map. But if 
-	$\T(Cx) = \inner{C}{\ovx} = 0$ for all $x \in \O$, then $C = 0$ (a contradiction), since the
+	$\Tr(Cx) = \inner{C}{\ovx} = 0$ for all $x \in \O$, then $C = 0$ (a contradiction), since the
 	map $x \mapsto \ovx$ is surjective. 
 \end{proof}
 
@@ -582,13 +593,13 @@ then the norm of $x$ can be defined in the following way:
 			 (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega}
 			 + \mu_{0} \mu_{-0}) \\
 			 
-			& = & \NN(x) \cdot \NN(y).
-		\end{array} 
+			& = & \NN(x) \cdot \NN(y). \marginqed
+		\end{array}
 	\end{equation*}
+	\let\qed\relax
 \end{proof}
-It follows that $\O$ is indeed a composition algebra. Let $x$ and $y$ be the same as in Lemma
-\ref{lemma:norm_multiplicative}. We find
-\begin{equation}
+\noindent It follows that $\O$ is indeed a composition algebra. Let $x$ and $y$ be the same as in Lemma \ref{lemma:norm_multiplicative}. We find
+\begin{equation*}
 	\begin{array}{r@{\;}c@{\;}l}
 		\inner{x}{y} & = & \NN(x+y) - \NN(x) - \NN(y) \\
 		
@@ -606,8 +617,11 @@ It follows that $\O$ is indeed a composition algebra. Let $x$ and $y$ be the sam
 					+ \lambda_{\omega} \lambda_{-\omega} + \lambda_0 \lambda_{-0} ) \\
 			
 			& - & ( \mu_{-1} \mu_1 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}}
-					+ \mu_{\omega} \mu_{-\omega} + \mu_0 \mu_{-0} ) \\
-					
+					+ \mu_{\omega} \mu_{-\omega} + \mu_0 \mu_{-0} ) \tag{\stepcounter{equation}\theequation} \\
+	\end{array}
+\end{equation*}
+\begin{equation*}
+	\begin{array}{r@{\;}c@{\;}l}
 			& = & ( \lambda_{-1} \mu_{1} + \lambda_{1} \mu_{-1} )
 			
 			+ ( \lambda_{\bar{\omega}} \mu_{-\bar{\omega}} + 
@@ -617,7 +631,7 @@ It follows that $\O$ is indeed a composition algebra. Let $x$ and $y$ be the sam
 			
 			+ ( \lambda_{0} \mu_{-0} + \lambda_{-0} \mu_{0} ).
 	\end{array}
-\end{equation}
+\end{equation*}
 Thus, the trace of $x$ becomes
 \begin{equation}
 	\Tr(x) = \inner{x}{1_{\O}} = \lambda_0 + \lambda_{-0}.
