@@ -1,0 +1,43 @@
+\babel@toc {english}{}
+\contentsline {chapter}{Contents}{1}{chapter*.1}%
+\contentsline {chapter}{Introduction}{3}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Octonions}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Composition algebras}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Quadratic and Bilinear Forms}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Isometries and Witt's Lemma}{7}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Definition of a composition algebra}{9}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Conjugation and inverses}{11}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Alternative laws and Moufang identities}{12}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Octonion algebras}{13}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Split octonion algebras}{15}{section.1.5}%
+\contentsline {section}{\numberline {1.6}A basis for the split octonions}{16}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Centre of an octonion algebra}{18}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Groups of type $\mathord {\mathrm {E}}_6$}{20}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Albert vectors}{20}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Albert space $\mdmathbb {J}$}{20}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Dickson--Freudenthal determinant and $\mathrm {SE}_6(F)$}{21}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Some elements of $\mathrm {SE}_6(F)$}{22}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The white points}{25}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The mixed form and the white vectors}{25}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Action of $\mathrm {SE}_6(F)$ on white points}{28}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}The stabiliser of a white point}{33}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Some related geometry}{49}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}The stabiliser in $\mathrm {SE}_6(F)$ of $\mdmathbb {J}_{10}^{abC}$}{49}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Joint stabilisers of $\mdmathbb {J}_{10}^{abC}$ and a white point}{53}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Simplicity of $\mathord {\mathrm {E}}_6(F)$}{58}{section.2.5}%
+\contentsline {section}{\numberline {2.6}The case of a finite field}{60}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Arbitrary octonion algebras}{63}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Groups of type ${}^2\mathord {\mathrm {E}}_6$}{66}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Quadratic field extensions}{66}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Spaces with two forms}{67}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Hermitean form in $\mdmathbb {J}$ and the group ${}^2\mathrm {SE}_6^K(F)$}{68}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Some elements of ${}^2\mathrm {SE}_6^K(F)$}{69}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Action of ${}^2\mathrm {SE}_6^K(F)$ on white points}{75}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}The stabiliser of type 3 vector}{77}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}The stabiliser of type 1 vector}{80}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}The case of a finite field}{83}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}White vectors in $\mdmathbb {J}_8^C$}{83}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}White vectors in $\mdmathbb {J}_{16}^{BC}$}{87}{subsection.3.6.2}%
+\contentsline {chapter}{A: Some properties of $\Omega _{2m}(F,Q)$}{89}{appendix*.4}%
+\contentsline {chapter}{B: Magma code}{99}{appendix*.5}%
+\contentsline {chapter}{Bibliography}{107}{appendix*.6}%

@@ -6,14 +6,14 @@ Let $V$ be a vector space over a field $F$ of dimension $n$. We assume that ther
 non-singular quadratic form $Q$ defined on $V$. Denote by $\GO_n(F,Q)$ the group of 
 non-singular linear transformations that preserve the
 form $Q$. In case of characteristic $2$ we define the \textit{quasideterminant}
-$\mathrm{qdeat}:\GO_n(F,Q) \rightarrow \mathbb{F}_2$ to be the map
+$\mathrm{qdet}:\GO_n(F,Q) \rightarrow \mathbb{F}_2$ to be the map
 \begin{equation}
     \operatorname{qdet}: g \mapsto \dim_F ( \im(\II - g) )\ \operatorname{mod}\ 2.
 \end{equation}
 Further, the group $\SO_n(F,Q)$ is the kernel of the (quasi)determinant map. Define the 
 \textit{spinor norm} to be the homomorphism $\mathrm{sp} : \SO_n(F,Q) \rightarrow F^{\times} / 
 (F^{\times})^2$. This homomorphism is defined in the following way. Any element of 
-$\SO_n(F,Q)$ arising as a reflection in $v$ for some $v \in V$, is sent to the value
+$\SO_n(F,Q)$ arising as a reflexion in $v$ for some $v \in V$ is sent to the value
 $Q(v)$ modulo $(F^{\times})^2$. This extends to a well-defined homomorphism. The subgroup
 $\Omega_n(F, Q)$ of $\SO_n(F,Q)$ is defined as the kernel of spinor norm. If the characteristic 
 of the field is not $2$, then there exists a double cover of $\Omega_n(F,Q)$, denoted as
@@ -80,7 +80,7 @@ $Q$ and $f$ on $W$.
     \end{equation*}
     and since the bilinear form $f$ is preserved we get
     \begin{equation*}
-	1 = f(v_1,v_2) = f(v_1,\mu v_2) + 
+	1 = f(v_1,v_2) = f(v_1,\mu v_1) + 
 	f(v_1, (0 \mid u_1 \mid\ 0) ) + \lambda f(v_1,v_2) = \lambda,
     \end{equation*}
     
@@ -271,7 +271,7 @@ $Q$ and $f$ on $W$.
     if $\det(D(\II-C_{u_1}) [f]_{\mathcal{B}} D^\T)$ is a square in $F$. If $u_1 \neq 0$,
     then the complement of the nullspace of $I-C_{u_1}$ has the basis
     $\{ w_i, v_1 \}$, where the index $i$ is such that $[Bu_1^\T]_i \neq 0$. 
-    The matrix $D$ has the following form:
+    The matrix $D$ can be taken to have the following form:
     \begin{equation*}
 	D = \begin{bmatrix}
 	    0 & 0 & \cdots & 0 & 1 & 0 & \cdots & 0 & 0 \\
@@ -400,7 +400,7 @@ of $\EE_6(F)$ and ${}^2\EE_6^K(F)$.
 \begin{proof}
 	Recall that $v_2 \in V$ is mapped under the action of 
     $\mathcal{G} = W\cn\Omega_{2m}(F,Q_W)$ to a vector of the
-    form $(-Q_W(u) \mid u \mid 1)7$, where $u$ is an element of $W$. 
+    form $(-Q_W(u) \mid u \mid 1)$, where $u$ is an element of $W$. 
     Since the stabiliser of $v_2$ in $\mathcal{G}$ is $\Omega_{2m}(F,Q_W)$, 
     we conclude that 
     the orbit of $v_2$ under the action of $\mathcal{G}$ is the following set:
@@ -498,7 +498,7 @@ the $1$-space spanned by $v_1$.
 	\end{equation*}
 	where $u_2 = -u_1 BA^{\T}$. Now, $g$ maps $v$ to a vector of the form \mbox{$v^g = 
 	(\lambda + u u_2^{\T}) v_1 + uA$}. Since $u u_2^{\T} = 
-	-u A B u_1^{\T} = f_W(u, u_1)$, we get \mbox{$v^g = (\lambda - f_W(u, u_1))v_1 + uA$}.
+	-u A B u_1^{\T} = - f_W(u, u_1)$, we get \mbox{$v^g = (\lambda - f_W(u, u_1))v_1 + uA$}.
 	Setting $A = \II_{2m}$, we see that it is possible to send $v$ to a vector
 	of the form $\alpha v_1 + u$ for any $\alpha \in F$. On the other hand, taking $u_1 = 0$,
 	we obtain the action on \mbox{$W = \langle w_1, ..., w_{2m} \rangle$} 

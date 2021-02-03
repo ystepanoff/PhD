@@ -25,13 +25,13 @@ extension of $F$ by $K$ as $K : F$.
 
 A non-zero polynomial $f \in F[x]$ is called \textit{separable}, if each root of $f$ has 
 multiplicity $1$. If $\alpha \in F$ is algebraic, that is, $\alpha$ is a root of some polynomial
-$g \in F[x]$, then $\alpha$ is called \textit{separable}, if its minimal polynomial is separable. 
+$g \in F[x]$, then $\alpha$ is called \textit{separable} if its minimal polynomial is separable. 
 
 We have defined what it means for a field element and a polynomial to be separable. Suppose that
 $[K:F]$ is finite, then $K : F$ is a \textit{separable} extension, if every element of $K$ is 
 separable over $F$. We also say that $K : F$ is \textit{normal}, if every irreducible 
-polynomial $f \in F[x]$ that has a root in K, splits into linear factors in $K[x]$. An extension
-$K : F$ which is normal, separable, and of finite degree, is called a \textit{Galois extension}.
+polynomial $f \in F[x]$ that has a root in K splits into linear factors in $K[x]$. An extension
+$K : F$ which is normal, separable, and of finite degree is called a \textit{Galois extension}.
 We are not going into too much detail here, for there are various  well-known references on theory
 of field extensions, of very high quality, for instance, \cite{PeterCameron}, \cite{DummitFoote}, \cite{Lang}, or \cite{Stewart}. In this chapter
 we are interested in Galois extensions of degree $2$. 
@@ -76,7 +76,7 @@ $e_1, ..., e_m$, $f_1,...,f_m$, so that
 \begin{equation}
 	Q(e_i) = Q(f_i) = 0,\ f(e_i, f_i) = 1,
 \end{equation}
-and $f(e_i,e_j) = f(e_i,f_j) = 0$ for $i \neq j$. The above said means that $(V,Q)$ is a hyperbolic
+and $f(e_i,e_j) = f(f_i,f_j) = 0 = f(e_i,f_j)$ for $i \neq j$. The above said means that $(V,Q)$ is a hyperbolic
 orthogonal space. Denote by $G$ the maximal amongst all the subgroups of 
 $\GO(V, Q)$ which preserve $B$. If $U$ 
 is a subspace of $V$, then we denote the restrictions of $f$ and $B$ on $U$ as $f_U$ and $B_U$ 
@@ -96,10 +96,10 @@ respectively. We say that an element $v \in V$ is \textit{singular isotropic}, i
 
 \begin{proposition}
 	\label{prop:3_2forms_orbits}
-	Let $U$ be a $(Q,B)$-subspace of $V$ if Witt index at least $2$. Fix
+	Let $U$ be a $(Q,B)$-subspace of $V$ of Witt index at least $2$. Fix
 	\mbox{$\lambda \in K
 	\setminus F$}. The group $G$ has 
-	precisely two orbits on doubly singular points with representatives
+	precisely two orbits on singular isotropic points with representatives
 	$\langle u \rangle$ and \mbox{$\langle u + \lambda v \rangle$}, where $u,v \in U$ and 
 	\mbox{$\langle u, v \rangle$} 	is a singular line. 
 \end{proposition}
@@ -130,7 +130,7 @@ On the Albert space $\J = \J_K$ this induces the Hermitean form $\H$, where
 \end{equation}
 As usual, the sesquilinear form associated with $\H$ is obtained by polarising the Hermitean form:
 \begin{equation}
-	\inner{X}{Y}_{\H} = H(X+Y) - H(X) - H(Y).
+	\inner{X}{Y}_{\H} = \H(X+Y) - \H(X) - \H(Y).
 \end{equation}
 
 Using the construction from previous chapter, we obtain the group $\SE_6(K)$ in the usual 
@@ -141,7 +141,7 @@ the group ${}^2\E_6(F/K)$ is defined as the quotient of ${}^2\SE_6^K(F)$ by its 
 \section{Some elements of ${}^2\SE_6^K(F)$}
 
 Let $X = (a,b,c\mid A,B,C)$ be an arbitrary element of $\J = \J_K$. First of all we notice that 
-the matrices $\delta$ and $\tau$ preserve the Hermitean form, so they encode the elements of 
+the matrices $\delta$ and $\tau$ preserve Hermitean form, so they encode the elements of 
 ${}^2\SE_6^K(F)$.
 
 The elements $P_u$ with $u$ written over the small field and 
@@ -149,7 +149,7 @@ such that $\NN(u) = 1$ are also of interest.
 
 \begin{lemma}
 	\label{lemma:3_pu_hermitean}
-	The actions on $\J$ of the elements $P_u = \diag(u,\ovu,1)$ such that $u \in \O_F$ and $\NN(u) = 1$,
+	The actions on $\J$ of the elements $P_u = \diag(u,\ovu,1)$ such that $u \in \O_F$ and $\NN(u) = 1$
 	preserve $\H$.
 \end{lemma}
 
@@ -277,7 +277,7 @@ We need to prove an auxiliary lemma.
 	\begin{enumerate}[(i)]
 	
 	\item $x\Tr(yx) = x (yx + \ovx \ovy ) = x(yx) + x(\ovx \ovy )
-		 = x(yx) + (x\ovx )y = x(yx)$,
+		 = x(yx) + (x\ovx )\ovy = x(yx)$,
 		 
 	\item $\Tr( (xy)(z\ovx ) ) = \Tr( (z\ovx ) (xy) ) = \Tr( ((z\ovx )x) y ) = 
 		\Tr(z(x\ovx )y) = 0$. \qedhere
@@ -320,12 +320,12 @@ $N_x$ preserve the Hermitean form. Hence, we have shown the following.
 
 \begin{proposition}
 	The matrices $N_x$, $N_x'$, and $N_x''$ where $x\ovx^{\s} = 0 = \ovx^{\s}x$ and $x, \ovx^{\s}$
-	generate a sociable subalgebra, encode the elements of ${}^2\SE_6^K(F)$. 
+	generate a sociable subalgebra, encode elements of ${}^2\SE_6^K(F)$. 
 \end{proposition}
 
 \begin{lemma}
 	\label{lemma:sociable}
-	If $x \in \O$ is such that $x \ovx^{\s} = 0 = \ovx^{\s} x$, with $x,\ovx^{\s}$ generating
+	If $x \in \O_K$ is such that $x \ovx^{\s} = 0 = \ovx^{\s} x$, with $x,\ovx^{\s}$ generating
 	a sociable subalgebra, then $x^{\s} y x = x y x^{\s}$ for all $y \in \O_K$.  
 \end{lemma}
 
@@ -334,7 +334,7 @@ is devoted to proving the following result.
 
 \begin{theorem}
 	\label{theorem:3_nx_omega}
-	The actions of the elements $N_x$ on $\J_{10}^{abC}$, where $x \in \O$ is such that 
+	The actions of the elements $N_x$ on $\J_{10}^{abC}$, where $x \in \O_K$ is such that 
 	\mbox{$x \ovx^{\s} = 0 = \ovx^{\s} x$}, with $x,\ovx^{\s}$ generating a sociable subalgebra, 
 	generate a group of type $\Omega_{10}^{-,K}(F)$, as $x$ ranges through all suitable octonions
 	in $\O_K$.  
@@ -450,7 +450,7 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 	generate a group $\SL_2(K)$ by a well-known result.
 	Therefore, as $\PSL_2(K) \cong \Omega_4^{-,K}(F)$ (see, for example, \S 7 in \cite{Waerden}), 
 	we have the action of $\Omega_4^{-,K}(F)$. To show that the matrices $[N_{\lambda e_{-1}}]_{\mathcal{B}}$ and
-	$[N_{\lambda e_{1}}]_{\mathcal{B}}$ which generate $\PSL_2(K)$, also generate $\Omega_4^{-,K}(F)$, we first 
+	$[N_{\lambda e_{1}}]_{\mathcal{B}}$, which generate $\PSL_2(K)$, also generate $\Omega_4^{-,K}(F)$, we first 
 	show the transitivity of our copy of $\PSL_2(K)$ on $1$-spaces spanned by isotropic vectors in $V_4$.
 	
 	Let $A = [N_{\lambda e_{-1}}]_{\mathcal{B}}$, $B = [N_{\lambda e_{1}}]_{\mathcal{B}}$, and let
@@ -472,7 +472,7 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 	the matrix $A$ with a suitable $\lambda$ to obtain $\alpha \neq 0$. Having $\delta = 0$ and  $\alpha \neq 0$,
 	we can make $\beta = \gamma = 0$ as in the case $\delta \neq 0$ by using the matrix $B$, hence obtaining a point 
 	of the form $\langle (*,0,0,0) \rangle$. Finally, to map $\langle (*,0,0,0) \rangle$ to $\langle (0,0,0,*) \rangle$ we can use the element of
-	$\PSL_2(K)$, represented by the matrix
+	$\PSL_2(K)$ represented by the matrix
 	\begin{equation*}
 		\begin{bmatrix}[r]
 			0 & 0 & 0 & -1 \\
@@ -507,7 +507,7 @@ $v_5, v_3, v_2, v_1, v_4, v_6$, in that order, where
 		v_6 & = & (0,0,0\mid 0,0,e_{-\bar{\omega}}). \\
 	\end{array} 
 \end{equation}
-We are interested in the group, obtained by adjoining the action of $N_{\mu e_{\bar{\omega}}}$ to 
+We are interested in the group obtained by adjoining the action of $N_{\mu e_{\bar{\omega}}}$ to 
 $\Omega_4^{-,K}(F)$. With respect to the chosen basis, this new element has the following matrix form:
 \begin{equation}
 	\begin{bmatrix}[c]
@@ -541,8 +541,8 @@ $u$
 to $(-\lambda^{\s} \mu - \lambda\mu^{\s}, \mu, -\mu^{\s}, 0)$, while 
 $N_{\lambda e_1}$, represented by the upper triangular matrix, sends it to
 $(0,\mu, -\mu^{\s}, \lambda\mu + \lambda^{\s}\mu^{\s})$. Note that
-$\lambda^{s}\mu + \lambda\mu^{\s}$ and $\lambda\mu + \lambda^{\s}\mu^{\s}$ are
-the elements of $F$, and the pair $(\mu, -\mu^{\s})$ generates $K \cong F^{2}$ as
+$\lambda^{\s}\mu + \lambda\mu^{\s}$ and $\lambda\mu + \lambda^{\s}\mu^{\s}$ are
+the elements of $F$ and the pair $(\mu, -\mu^{\s})$ generates $K \cong F^{2}$ as
 $\mu$ ranges through $K$. Hence, we have the action of $\Omega_4^{-,K}(F)$ on
 $F^4$, so by adjoining the element $N_{\mu e_{\bar{\omega}}}$ to $\Omega_4^{-,K}(F)$
 we have obtained a group of shape $F^{4}\cn\Omega_4^{-,K}(F)$. Adding also the action
@@ -952,7 +952,7 @@ with $x \in \{e_{\bar{\omega}}, e_{\omega}, e_{-0}, e_1\}$ and
 $y \in \{ e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}} \}$.
 Denote by $G_1$ the stabiliser of $X_1$ and by $G_{13}$ the
 joint stabiliser of $X_1$ and $X_3$. Let $\mathcal{O}$ and
-$\hat{\mathcal{O}}$ to be
+$\hat{\mathcal{O}}$ be
 the following sets:
 \begin{equation}
 	\begin{array}{r@{\;}c@{\;}l}
@@ -1294,7 +1294,7 @@ We have $F = \Fq$ and $K = \Fqs$. First, we need the following auxiliary result.
 \begin{lemma}
 		\label{lemma:zn}
 		Let $V$ be a vector space over $\Fqs$ of dimension $2m$. 
-		Define the map \mbox{$Z_m: V \rightarrow \Fq$} 
+		Define the map \mbox{$Z_m: V \rightarrow \Fqs$} 
 		in the following way:
 		\begin{equation*}
 			Z_m(x) = (x_1^q - x_1) (x_2^q - x_2) + (x_3^q - x_3) (x_4^q - x_4) + \cdots +
@@ -1513,7 +1513,7 @@ To count the isotropic white vectors of the form $(0,0,0\mid 0,B,C)$ we distigui
 \end{equation}
 
 In the previous section we learned that the subgroup of $\SE_6(K)$, preserving $\QQ$ and $\H$
-on $\J_8^C$ has two orbits on isotropic white points. Proposition \ref{prop:3_2forms_orbits}
+on $\J_8^C$ has two orbits on isotropic white points. By Proposition \ref{prop:3_2forms_orbits}
 the first orbit consists of white points
 $\langle X \rangle$ where $X$ is written over $\Fq$. That is, its representatives are
 one-dimensional $\Fqs$-subspaces generated by the white vectors written over $\Fq$.

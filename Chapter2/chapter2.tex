@@ -70,12 +70,12 @@ Lacking the associativity in $\O$ we also need to be slightly careful when we ca
 the determinant of $X$. For these purposes we define the Dickson--Freudenthal determinant
 as
 \begin{equation}
-	\fdet(X) = abc - aA\ovA - bB\ovB - cC\ovC + \Tr(ABC).
+	\fdet(X) = abc \cdot 1_{\O} - aA\ovA - bB\ovB - cC\ovC + \Tr(ABC) \cdot 1_{\O}.
 \end{equation}
 This is a cubic form on $\J$ and it can be shown that it is equivalent to the 
 original Dickson's cubic form \cite{Dickson1} used to construct the group of type $\E_6$. 
 
-We define the group $\SE_6(F)$ or $\SE_6(F,\O)$ if we want to specify the octonion 
+We define the group $\SE_6(F)$, or $\SE_6(F,\O)$ if we want to specify the octonion 
 algebra, to be the group of all $F$-linear maps on $\J$ preserving
  the Dickson--Freudenthal determinant. If $F = \Fq$, then we denote this by $\SE_6(q)$.
   The group $\EE_6(F)$ is defined as the quotient
@@ -96,7 +96,7 @@ $X \mapsto \ovM^{\T} X M$ is obviously $F$-linear:
 Througout this section, let $X = (a,b,c\mid A,B,C)$ to be an arbitrary element of 
 $\J = \J_F$.\ We encode some of the elements of $\SE_6(F)$ by the $3\times 3$
  matrices written over
-social subalgebras of $\O=\O_{F}$. As we mentioned before, if such a matrix $M$ is written
+sociable subalgebras of $\O=\O_{F}$. As we mentioned before, if such a matrix $M$ is written
 over any sociable subalgebra of $\O$, then the expression $\ovM^{\T} X M$ makes sense.
 If two matrices $M$ and $N$ are written over the same sociable subalgebra, then we have 
 enough associativity to see that the action by the product $MN$ is the same as the product
@@ -153,7 +153,7 @@ the Dickson--Freudenthal determinant, we only need to consider one of them.
 \begin{lemma}
 	\label{lemma:Mx_det}
 	The elements $M_x$, where $x \in \O$ is any octonion, preserve the Dickson--Freudenthal
-	determinant, and hence they encode the elements of $\SE_6(F)$. 
+	determinant, and hence they encode elements of $\SE_6(F)$. 
 \end{lemma} 
 
 \begin{proof}
@@ -277,7 +277,7 @@ since $\langle x,y \rangle = \Tr(x\ovy )$, we get
 \end{equation}
 Now, the reflexion in the hyperplane orthogonal to an arbitrary element $u\in \O$ is the map
 \begin{equation}
-    r_v : x \mapsto     x - \frac{\Tr(x \ovu  )}{\NN(u)} \cdot u =
+    r_u : x \mapsto     x - \frac{\Tr(x \ovu  )}{\NN(u)} \cdot u =
 	 x - \frac{ x\ovu  + u\ovx  }{\NN(u)} \cdot u =
     x - \frac{(x\ovu  )u - u\ovx u}{\NN(u)} = - \frac{u\ovx u}{\NN(u)},
 \end{equation}
@@ -291,7 +291,7 @@ preserved, so we again get the action of $\Omega_8^+(F)$.
 
 \section{The white points}
 \subsection{The mixed form and the white vectors}
-Suppose $X = (a,b,c \mid A,B,C)$ and $Y = (d,e,f\mid D,E,F)$ are the arbitrary elements
+Suppose $X = (a,b,c \mid A,B,C)$ and $Y = (d,e,f\mid D,E,F)$ are arbitrary elements
 of $\J$. Define the mixed form
 $M(Y,X)$ as
 \begin{multline}
@@ -397,7 +397,7 @@ a system of conditions for an arbitrary vector $X \in \J$ to be white.
 	Let $Y = (d,e,f\mid D,E,F)$. We rewrite $M(Y,X)$ in the form
 	\begin{multline*}
 		M(Y,X) = (bc - A \ovA)d + (ac - B \ovB) e + (ab - C \ovC) f \\
-			+ \Tr(D(BC-a\ovA) + Q(CA - b\ovB) + R(AB - c\ovC)).
+			+ \Tr(D(BC-a\ovA) + E(CA - b\ovB) + F(AB - c\ovC)).
 	\end{multline*}
 It is visibly clear now that if all the conditions in the statement are satisfied,
 then $M(Y,X) = 0$. Now, taking $Y = (1,0,0\mid 0,0,0)$ forces
@@ -444,7 +444,7 @@ goals is to show that $\SE_6(F)$ acts transitively on white points.
 \end{lemma}
 
 \begin{proof}
-	These vectors are indeed in the different orbits, except possibly for the white 
+	These vectors are indeed in different orbits, except possibly for the white 
 	and grey vectors, since they have different values of $\fdet$. We have already
 	shown that these particular 
 	white and grey vectors are in different orbits in case of any field. 
@@ -462,7 +462,7 @@ goals is to show that $\SE_6(F)$ acts transitively on white points.
 	so we are allowed to choose orbit representatives with $(a,b,c) \neq (0,0,0)$. 
 	
 	As before, using a suitable power of $\tau$, we may assume $c \neq 0$. Now we apply 
-	the element $M_x$ with $x = -c^{-1}B$ to $X$, to obtain a vector of the form
+	the element $M_x''$ with $x = -c^{-1}B$ to $X$, to obtain a vector of the form
 	\mbox{$(a,b,c\mid A,0,C)$}, where the `co\"{o}rdinate' $c$ stays the same, while 
 	$a,b,A,C$ are possibly different. Next,
 	$(a,b,c\mid A,0,C)$ is being mapped
@@ -641,7 +641,7 @@ number of white points in case of a finite field.
 	$\langle X\rangle \sim \langle\hat{Y}\rangle$, we map 
 	$\langle X\rangle$ to $\langle \hat{X}\rangle$ with $\hat{X} = (0,0,0\mid e_0,0,0)$.
 	Note that both $X$ and $\hat{X}$ are not 
-	in $\J_{17}^{aBC}$ which is the $17$-space determined by $\hat{Y}$, But 
+	in $\J_{17}^{aBC}$ which is the $17$-space determined by $\hat{Y}$, but 
 	$\hat{X} \in \J_{17}^{cAB}$ and by transitivity we get $\langle X\rangle 
 	\sim \langle \hat{X} \rangle$. Again,
 	we act by the stabiliser of $\langle X\rangle $ to ensure $\langle X\rangle  \sim
@@ -665,7 +665,7 @@ We may assume that
 Consider an element $\lambda W + X \in \inner{W}{X}$. First, we calculate the 
 value of Dickson--Freudenthal determinant:
 \begin{multline}
-	\fdet( \lambda W + X ) = ab(\lambda + c) - a A \ovA - b B \ovB - (\lambda + c) C \ovC + 
+	\fdet( \lambda W + X ) = ab(\lambda + c) - a A \ovA - b B \ovB - (\lambda + c) C \ovC
 		+ \Tr(ABC) \\
 		= \lambda( ab - C\ovC ) + \fdet(X).
 \end{multline}
@@ -754,7 +754,7 @@ invertible $F$-linear maps on $\O$ can change the order of the octonion product.
 \end{proof}
 
 Second, we show that if two invertible linear maps commute with the octonion product, then
-these are mutually invertible scalar multiplication maps.
+these are mutually inverse scalar multiplication maps.
 
 \begin{lemma}
     \label{lemma:1_white_phipsi2}
@@ -834,9 +834,9 @@ where $x,y \in \O$.
     	\label{eq:1_q16_action}
         \begin{array}{r@{\;\;}c@{\;\;}l}
             L_x'': (a,b,c\mid A, B, C) & \mapsto &
-            (a,b,c+a x \ovx  + \Tr(Bx) \mid A+\ovC x, B+A \ovx , C), \\
+            (a,b,c+a x \ovx  + \Tr(Bx) \mid A+\ovC x, B+a \ovx , C), \\
             M_y': (a,b,c\mid A,B,C) & \mapsto &
-            (a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + By, B+\ovy \ovC , C).
+            (a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + by, B+\ovy \ovC , C).
         \end{array}
     \end{equation}
     We notice that the action is nontrivial whenever $x$ and $y$ are non-zero. 
@@ -846,7 +846,7 @@ where $x,y \in \O$.
         (a,b,c+ax\ovx +\Tr(Bx)+by\ovy  + \Tr(\ovy A) \mid
             A+\ovC x + by, B+a\ovx  + \ovy \ovC , C ),
     \end{equation*}
-    and the element $L_x''$ sends $(a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + By, B+\ovy 
+    and the element $L_x''$ sends $(a,b,c+b y \ovy  + \Tr(\ovy A) \mid A + by, B+\ovy 
     \ovC , C)$ to
     \begin{equation*}
         (a,b,c+by\ovy  + \Tr(\ovy A) +ax\ovx  +\Tr(Bx) \mid A+by+\ovC x, B+\ovy \ovC 
@@ -890,9 +890,9 @@ where $x,y \in \O$.
 \begin{lemma}
 	\label{lemma:1_pu_normalise_f8}
 	The actions on $\J$ of the elements $P_u$, $P_u'$, and $P_u''$ with $u$ being any invertible octonion, 
-	normalise the abelian groups isomorphic to $F^8$, 
+	normalise the abelian groups, isomorphic to $F^8$, 
 	generated by $L_x$ ($x$ ranges through $\O$), 
-	$L_x'$, $L_x''$, $M_x$, $M_x'$, $M_x''$ respectively
+	$L_x'$, $L_x''$, $M_x$, $M_x'$, $M_x''$ respectively.
 \end{lemma}
 
 \begin{proof}
@@ -908,7 +908,8 @@ where $x,y \in \O$.
 			(M_x')^{P_u'} & \text{ acts as } & M_{u^{-1} x u^{-1}}', \\
 			(M_x'')^{P_u'} & \text{ acts as } & M_{u x}''.
 		\end{array}
-	\end{equation} \qedhere
+	\end{equation}
+	\par \vspace{-1.6\baselineskip} \qedhere
 \end{proof}
 \noindent The next observation is that our white vector $v$ is also invariant under the action of the
 elements
@@ -1232,7 +1233,8 @@ First, we show that the action
 	we act on $(0,b,0 \mid 0,0,0)$ by $L_{-b^{-1} e_1}$, followed by the action of $M_{b e_{-1}}$ to obtain $(0,0,0 \mid 0,0,e_1)$ which again 
 	brings us back to the case $(a, b) = (0,0)$, and we are done proving transitivity of $G$ on the isotropic vectors in $V_4$.
 	
-	The rest is to show that the matrices $[M_{\lambda \pm 1}]_{\mathcal{B}}$ and $[L_{- \lambda  \pm 1}]_{\mathcal{B}}$ indeed generate 
+	The rest is to show that the matrices $[M_{\lambda e_{\pm 1}}]_{\mathcal{B}}$ and $[L_{- \lambda  
+	e_{\pm 1}}]_{\mathcal{B}}$ indeed generate 
 	the whole $\Omega_{4}^+(F)$. Let $g$ be an element of $\Omega_4^+(F)$. Since now we know that 
 \mbox{$\SL_2(F) \circ \SL_2(F)$} generated by
 	these matrices is transitive on isotropic vectors in $V_4$, we may choose an element $h_1 \in \SL_2(F) \circ \SL_2(F)$ such that 
@@ -1372,7 +1374,7 @@ First, we show that the action
 	$\SL_2(F) \circ \SL_2(F)$, and therefore so is $g$.
 \end{proof}
 
-In our construction we use the results of the Appendix A. Consider the \mbox{$6$-space} $V_6$ spanned by the Albert vectors
+In our construction we use the results of Appendix A. Consider the \mbox{$6$-space} $V_6$ spanned by the Albert vectors
 $(a,b,0\mid 0,0,C)$, where $C \in \langle e_{-1}, e_{\bar{\omega}}, e_{-\bar{\omega}}, 
 e_1 \rangle$. Our copy of $\Omega_4^+(F)$ preserves two isotropic Albert vectors in
  $V_6$:
@@ -1439,9 +1441,9 @@ $27$-space $\J$.
 
 \begin{lemma}
 	\label{lemma:1_2_actions}
-	Suppose an element of the stabiliser in $\SE_6(F)$ of $v$ preserves 
+	Suppose an element of the stabiliser in $\SE_6(F)$ of $(0,0,1 \mid 0,0,0)$ preserves 
 	the decomposition of the Albert space into
-	the direct sum of the form $\J = \J_{1}^c \oplus \J_{16}^{AB} \oplus \J_{10}^{abC}$.
+	the direct sum \mbox{$\J = \J_{1}^c \oplus \J_{16}^{AB} \oplus \J_{10}^{abC}$}.
 	
 	\begin{enumerate}[(a)]
 	\item If the action of this element on the $10$-space $\J_{10}^{abC}$ 
@@ -1477,7 +1479,7 @@ $27$-space $\J$.
     and either fix or swap the $1$-dimensional spaces $\J_1^a$ and $\J_1^b$. 
     So we may assume that these elements respectively fix or swap the corresponding
     $17$-spaces $\J_{17}^{aBC}$ and $\J_{17}^{bAC}$.
-    In particular, their intersection, i.e. the space $\J_{8}^C$ is fixed. If the action of the
+    If the action of the
      stabiliser
     swaps $\J_1^a$ and $\J_1^b$ while leaving the $1$-space $\J_1^c$ in its
     place, then it also swaps the $8$-spaces $\J_8^A$ and
@@ -1558,7 +1560,8 @@ Albert vectors. An isometry which maps $X$ to
             \begin{array}{r@{\;}c@{\;}l}
                 bc & = & A\ovA , \\
                 B\ovB  & = & 0, \\
-                b\ovB  & = & 0,
+                b\ovB  & = & 0, \\
+                AB & = & 0. \\
             \end{array}
         \right\}
     \end{equation*}
@@ -1660,7 +1663,7 @@ of $M_x,M_x',M_x''$ and $L_x,L_x',L_x''$ on $\J$ as $x$ ranges through $\O$.
 \section{Some related geometry}
 \label{section:1_geometry}
 
-In this section we are interested in some of the underlying geometry related to white 
+In this section we are interested in some of the underlying incidence geometry related to white 
 points. Consider first a $10$-dimensional
 space $\J_{10}^{abC}$ and note that it 
 contains only white and grey vectors. In this section we are interested in finding the 
@@ -1707,7 +1710,7 @@ we are looking for can be.
 				(a, b, 0 \mid 0,0,C), \\
 				
 			L_x'': (a,b,0 \mid 0,0,C) & \mapsto & 
-				(a, b, a\NN(x) + \Tr(B x) \mid
+				(a, b, a\NN(x) \mid
 					\ovC x, a\ovx, C).
 		\end{array}
 	\end{equation*}
@@ -1765,13 +1768,13 @@ precisely a group of shape $F^{16}\cn\Spin_{10}^+(F).F^{\times}$.
 
 \begin{proof}
 	Consider the white point $W$ spanned by $(0,0,1 \mid 0,0,0)$. We are interested in the joint stabiliser of 
-	$\J_{10}^{abC}$ and $W$. Theorem \ref{theorem:1_white_stab} tell us that the stabiliser in $\SE_6(F)$ of 
+	$\J_{10}^{abC}$ and $W$. Theorem \ref{theorem:1_white_stab} tells us that the stabiliser in $\SE_6(F)$ of 
 	$W$ has the shape $G_W = F^{16}\cn\Spin_{10}^+(F).F^{\times}$, and 
 	$H \cong  \Spin_{10}^+(F).F^{\times}$, generated by the actions of $M_x$, $L_x$, $P_u'$, stabilises
 	$\J_{10}^{abC}$. Note that the stabiliser of $\J_{10}^{abC}$ acts as  
 	$\Omega_{10}^+(F).F^{\times}$ on $\J_{10}^{abC}$ since the normal subgroup $F^{16}$ and the 
 	central involution (if any) of the standard complement $\Spin_{10}^+(F).F^{\times}$, generated
-	by $L_x$, $M_x$, and $P_u'$, acts trivially thereon. 
+	by $L_x$, $M_x$, and $P_u'$, act trivially thereon. 
 	
 	The normal subgroup $T_1 \cong F^{16}$ of $G_W$ is a left (or right) transversal 
 	of $H$ in $G_W$. It is easy to see that no non-trivial element of $T_1$ stabilises $\J_{10}^{abC}$. Indeed, a general
@@ -1827,7 +1830,7 @@ Second, we consider the case $c = 0$, so we start with $(a,b,0\mid A,B,C)$ where
 	\end{array}
 	\right\}
 \end{equation}
-If $(a,b) = 0$, then we choose a suitable $M_x$, $M_x''$, $L_x$, or $L_x'$ to map our vector to a vector of the form
+If $(a,b) = (0, 0)$, then we choose a suitable $M_x$, $M_x''$, $L_x$, or $L_x'$ to map our vector to a vector of the form
 $(a',b',0\mid A',B',C')$ with $(a',b') \neq (0,0)$. Thus, we may assume $(a,b) \neq (0,0)$. 
 
 We again distinguish two cases. 
@@ -1836,7 +1839,7 @@ $M_y''$ to get \mbox{$(a + \Tr(\ovy B), 0, 0 \mid 0,B,0)$}, and choosing a suita
 
 If $b \neq 0$, the action by $L_{-b^{-1} \ovC}$ maps $(a,b,0\mid A,B,C)$ to \mbox{$(0,b,0\mid A,0,0)$} and 
 similarly acting by a suitable $L_y'$, we obtain $(0,0,0\mid A,0,0)$. Recall that the duality element $\delta$ preserves 
-$\J_{10}^{abC}$, so it is enough to consider vectors $(0,0,0\mid 0,0,0)$ with $A \in \O$. By choosing a copy of $\Omega_8^+(F)$ 
+$\J_{10}^{abC}$, so it is enough to consider vectors $(0,0,0\mid A,0,0)$ with $A \in \O$. By choosing a copy of $\Omega_8^+(F)$ 
 generated by the elements $P_u'$ with $u$ being an octonion of norm one, we can map $(0,0,0\mid A,0,0)$ to 
 $(0,0,0\mid e_0, 0,0)$.
 
@@ -1870,7 +1873,7 @@ its action on white points, it is possible to figure out the joint stabilisers. 
 
 \begin{proof}
 	The orbit of $\langle (1,0,0 \mid 0,0,0) \rangle$ under the action of the stabiliser of $\J_{10}^{abC}$ is the set of all white points
-	spanned by the vectors in this $10$-space. Any white point $\langle (a,b,0 \mid 0,0,C) \rangle$ int this $10$-space satisfies $ab - C\ovC = 0$. The
+	spanned by the vectors in this $10$-space. Any white point $\langle (a,b,0 \mid 0,0,C) \rangle$ in this $10$-space satisfies $ab - C\ovC = 0$. The
 	normal subgroup 
 \mbox{$F^{16} \trianglelefteqslant F^{16}\cn\Spin_{10}^+(F).F^{\times}$} acts trivially on $\J_{10}^{abC}$. Preserving a white point
 	is equivalent to preserving an isotropic point in $\Spin_{10}^+(F).F^{\times}$ and thus we obtain the action of a group of shape $F^{16}\cn F^8\cn\Spin_8^+(F).F^{\times}.F^{\times}$.
@@ -1936,7 +1939,7 @@ We choose the following basis in $\J_{10}^{abC}$:
 we obtain all the elementary transvections with non-zero 
 off-diagonal entry in the first row or the first column by
 taking $M_{\lambda e_i}$ for 
-$i \in \{\bar{\omega}, \omega, 0, 1\}$ and $L_i$ where
+$i \in \{\bar{\omega}, \omega, 0, 1\}$ and $L_{\lambda e_i}$ where
 $i \in \{-1, -0, -\omega, -\bar{\omega}\}$, which generate
 $\SL_5(F)$.	
 	
@@ -1944,7 +1947,7 @@ Now we are going back to the action on the $10$-space.
 With respect to the chosen basis the elements 
 	$M_x$ with $x \in \langle e_{\bar{\omega}}, e_{\omega}, e_0, e_1 \rangle$ and 
 	$L_x$ with $x \in \langle e_{-1}, e_0, e_{-\omega}, e_{-\bar{\omega}} \rangle$ act as 
-	the matrices of the form 
+ matrices of the form 
 	\begin{equation*}
 		\left[
 			\begin{array}{@{\;\;\;\;\;}c@{\;\;\;\;\;}|c}
@@ -1975,7 +1978,7 @@ $\SL_5(F)$ of duality type. Recall that the action
 generated by the
  elements $M_x$ and $L_x$, where $x$ ranges through $\O$, 
  on the whole $27$-space $\J$ has a non-trivial kernel,
- generated by the element $P_{-1}$, when characteristic of 
+ generated by the element $P_{-1}$, when the characteristic of 
  the field is not $2$. In the current situation we do not
  get this central involution as those $M_x$ and $L_x$ which 
  generate $\SL_5(F)$ fix the vector $(0,0,0 \mid e_0,0,0)$
@@ -2092,7 +2095,7 @@ M_{e_{-\bar{\omega}}},&
 
 (L_{e_{0}})^{-1}\cdot M_{e_{-1}}\cdot L_{e_{0}}, &
 
-(L_{e_{-\bar{\omega}}})^{-1}\cdot M_{e_{-\bar{\omega}}}\cdot L_{e_{-\bar{\omega}}}.
+(L_{e_{-\omega}})^{-1}\cdot M_{e_{-\bar{\omega}}}\cdot L_{e_{-\omega}}.
 	\end{array}
 \end{equation*}
 
@@ -2467,7 +2470,7 @@ prove the following proposition.
 
 Next, suppose that $V$ is a vector space over $F$ with a quadratic form $Q$, 
 such that $V = \langle e,f \rangle  \oplus W$, where $(e, f)$ is a hyperbolic pair and 
-$W = \langle e, f \rangle^{\perp}$. Consider an element $g$ in $\CGO(V,Q)$ which scales of $Q$ 
+$W = \langle e, f \rangle^{\perp}$. Consider an element $g$ in $\CGO(V,Q)$ which scales $Q$ 
 by some $\lambda \neq 0$. Then
 $V = \langle e^g, f^g \rangle \oplus W^g$ and $\langle e^g, f^g \rangle$ is
 isometric to $\langle e, f \rangle$. Therefore, $W^g$ is isometric to 

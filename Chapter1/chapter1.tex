@@ -87,7 +87,7 @@ on $U^{\perp}$ is also non-degenerate. A subspace $U$ of $V$ consisting entirely
 \subsection{Isometries and Witt's Lemma}
 
 Let $V_1,\ V_2$ be vector spaces over fields $F_1$ and $F_2$ respectively, with non-singular
-quardatic forms $Q_1$ and $Q_2$. Denote by $\inner{\cdot}{\cdot}_i$ the polar form of 
+quadratic forms $Q_1$ and $Q_2$. Denote by $\inner{\cdot}{\cdot}_i$ the polar form of 
 $Q_i$ ($i = 1,2$). Suppose $\s : F_1 \rightarrow F_2$ is a field isomorphism. A map
 $s : V_1 \rightarrow V_2$, satisfying
 \begin{equation}
@@ -96,7 +96,7 @@ $s : V_1 \rightarrow V_2$, satisfying
 \end{equation}
 where $\lambda_s \in F_2^{\times}$, is called a \textit{$\s$-similarity}. The scalar
 $\lambda_s$ is known as the \textit{multiplier} of $s$. Using the definition of polar form, 
-we obtain $\inner{u^s}{v^s}_2 = \lambda_s \inner{u}{v}_1^{\s}$, so $s$ is a bijection. 
+we obtain $\inner{u^s}{v^s}_2 = \lambda_s \inner{u}{v}_1^{\s}$. 
 If $\lambda_s = 1$, then
 $s$ is called a \textit{$\s$-isometry}. In the case
 when a $\s$-similarity (or $\s$-isometry) between two spaces $V_1$ and $V_2$ exists, 
@@ -177,7 +177,7 @@ is referred to as the \textit{inner product}. We also denote the identity elemen
 
 Let $D$ be a linear subspace of $C$ such that the restriction of $\inner{\cdot}{\cdot}$ on $D$ 
 is non-degenerate. If $D$ is closed under multiplication and contains $1_C$, then it is called
-the \textit{subalgebra} of $C$. 
+a \textit{subalgebra} of $C$. 
 
 Let $C_1,\ C_2$ be two composition algebras over fields $F_1,\ F_2$ respectively and 
 suppose $\s: F_1 \rightarrow F_2$ is a field isomorphism. A bijective $\s$-linear transformation
@@ -313,9 +313,9 @@ can help us with the bracketing.
 	For all $x,y,z\in C$, the following identities hold:
 	\begin{equation}
 		\begin{array}{r@{\;}c@{\;}l}
-			x(yz)x & = & (xy)(zx), \\
-			x(yzy) & = & ((xy)z)y, \\
-			(xyx)z & = & x(y(xz)).
+			x((yz)x) & = & (xy)(zx), \\
+			x(y(zy)) & = & ((xy)z)y, \\
+			(x(yx))z & = & x(y(xz)).
 		\end{array}
 	\end{equation}
 \end{lemma}
@@ -345,9 +345,9 @@ The most important structural result about composition algebras is the following
 
 \begin{theorem}
 	The possible dimensions of a composition algebra are $1$, $2$, $4$, and $8$. Composition 
-	algebras of dimension $1$ only occur if the characreristic of the field is not $2$. 
+	algebras of dimension $1$ only occur if the characteristic	 of the field is not $2$. 
 	Composition algebras of dimension $1$ and $2$ are associative and commutative. Those
-	of dimension $4$ are associtaive but not commutative, and those of dimension $8$ are
+	of dimension $4$ are associative but not commutative, and those of dimension $8$ are
 	neither associative nor commutative. 
 \end{theorem}
 
@@ -384,12 +384,12 @@ derive the following important relation.
 	Polarising $\NN$ as usual, we obtain
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
-			\inner{x}{y}\cdot 1_{\O} & = & \NN(x+y)\cdot 1_{\O} - \NN(x)\cdot 1_{\O} - 
-												\NN(y)\cdot 1_{\O} \\
-												
-					& = & (x + y)(\ovx + \ovy) - x\ovx - y\ovy = x\ovy + y\ovx = \Tr(x\ovy). 
+			\inner{x}{y}\cdot 1_{\O} & = &  \NN(x+y)\cdot 1_{\O} - \NN(x)\cdot 1_{\O} - 
+												\NN(y)\cdot 1_{\O} \\							
+			& = &  (x + y)(\ovx + \ovy) - x\ovx - y\ovy = x\ovy + y\ovx = \Tr(x\ovy) \cdot 1_{\O} .\ \ \  
 		\end{array}
 	\end{equation*}
+	\par \vspace{-1.7\baselineskip} \qedhere
 \end{proof}
 Proposition \ref{prop:comp_algebra_quadratic} tells us that an arbitrary element $x \in \O$
 satisfies the equation
@@ -496,7 +496,7 @@ Otherwise speaking, we can `redefine' split octonion algebras in the following w
 In other words, we get
     \begin{enumerate}[(i)]
     	\item $e_1 e_{\omega} = -e_{\omega} e_1 = e_{-\omega}$;
-    	\item $e_1 e_0 = -e_0 e_1 = e_1$; 
+    	\item $e_1 e_0 = e_{-0} e_1 = e_1$; 
     	\item $e_{-1} e_1 = - e_0$ and $e_0 e_0 = e_0$;
     \end{enumerate}
 and images under negating all subscripts (including $0$), and multiplying all subscripts
@@ -528,10 +528,10 @@ then the norm of $x$ can be defined in the following way:
 				+ \lambda_{\omega} \mu_{\bar{\omega}} + \lambda_0 \mu_{-1}) \cdot e_{-1} \\
 							
 				&+ &   (\lambda_{-1} \mu_{-\omega} + \lambda_{\bar{\omega}} \mu_0 + 
-			\lambda_{-0} \mu_{\omega} - \lambda_{-\omega} \mu_{-1}) \cdot e_{\bar{\omega}}  \\
+			\lambda_{-0} \mu_{\bar{\omega}} - \lambda_{-\omega} \mu_{-1}) \cdot e_{\bar{\omega}}  \\
 					
 				&+ &   (\lambda_{-\bar{\omega}} \mu_{-1} + \lambda_{-1} \mu_{\omega} - 
-						\lambda_{-1} \mu_{-\bar{\omega}} + \lambda_{\omega} \mu_0) \cdot e_{\omega} \\
+						\lambda_{-0} \mu_{-\bar{\omega}} + \lambda_{\omega} \mu_0) \cdot e_{\omega} \\
 					
 				&+ &   (\lambda_0 \mu_0 - \lambda_{-\omega} \mu_{\omega} - 
 				\lambda_{-\bar{\omega}} \mu_{\bar{\omega}} - \lambda_{-1} \mu_1) \cdot e_0 \\
@@ -560,12 +560,12 @@ then the norm of $x$ can be defined in the following way:
 			\lambda_{-\bar{\omega}} \mu_{-\omega} + \lambda_1 \mu_0) \\
 			
 			&+& \  (\lambda_{-1} \mu_{-\omega} + \lambda_{\bar{\omega}} \mu_0 + 
-			\lambda_{-0} \mu_{\omega} - \lambda_{-\omega} \mu_{-1}) \cdot
+			\lambda_{-0} \mu_{\bar{\omega}} - \lambda_{-\omega} \mu_{-1}) \cdot
 			(\lambda_{-\bar{\omega}} \mu_{-0} + \lambda_1 \mu_{\omega} - 
 				\lambda_{\omega} \mu_1 + 
 				\lambda_0 \mu_{-\bar{\omega}})  \\
 				
-			&+  &  (\lambda_{-\bar{\omega}} \mu_{-1} + \lambda_{-1} \mu_{\omega} - 
+			&+  &  (\lambda_{-\bar{\omega}} \mu_{-1} + \lambda_{-0} \mu_{\omega} - 
 						\lambda_{-1} \mu_{-\bar{\omega}} + \lambda_{\omega} \mu_0)\cdot
 					(\lambda_0 \mu_{-\omega} - \lambda_1 \mu_{\bar{\omega}} + \lambda_{-\omega}
 			\mu_{-0} + \lambda_{\bar{\omega}} \mu_1) \\
@@ -588,9 +588,9 @@ then the norm of $x$ can be defined in the following way:
 			& + &  \lambda_{0} \lambda_{-0} \cdot (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} 
 			\mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega} + \mu_{0} \mu_{-0}) \\
 			
-			& = & (\lambda_{-0} \lambda_0 + \lambda_{\bar{\omega}} \lambda_{-\bar{\omega}} +
+			& = & (\lambda_{-1} \lambda_1+ \lambda_{\bar{\omega}} \lambda_{-\bar{\omega}} +
 			 \lambda_{\omega} \lambda_{-\omega} + \lambda_{0} \lambda_{-0})\cdot
-			 (\mu_{-0} \mu_0 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega}
+			 (\mu_{-1} \mu_1 + \mu_{\bar{\omega}} \mu_{-\bar{\omega}} + \mu_{\omega} \mu_{-\omega}
 			 + \mu_{0} \mu_{-0}) \\
 			 
 			& = & \NN(x) \cdot \NN(y). \marginqed
@@ -669,8 +669,8 @@ that in the proof of this proposition the following result is used without menti
 
 \begin{proof}
 	The proof is straightforward. Pick an arbitrary element $z = \sum_i (a_i \otimes e_i)$ in
-	$\ZZ(A\otimes_F K)$. Here we may assume that the elements $e_i \in K$ are linearly 
-	independent, i.e. they form a (part of) basis for $K$. Since $z$ is central, in particular it 
+	\mbox{$\ZZ(A\otimes_F K)$}. Here we may assume that the elements $e_i \in K$ are linearly 
+	independent, i.e. they form (part of) a basis for $K$. Since $z$ is central, in particular it 
 	must commute with the elements of the form $a \otimes 1$. This means
 	\begin{align*}
 		0 = z (a \otimes 1) - (a\otimes 1) z = \sum_i ( (a_i a) \otimes e_i )
@@ -707,7 +707,7 @@ Therefore, any octonion algebra is central, and it follows from Proposition
 
 \begin{proof}
 	Proposition \ref{prop:associating_elements} tells us that if $(xu) y = x(uy)$ for all
-	$x,y \in \O$, then $u \in \O$. Now put $x = A\ovu$ and $y = B$; using this together with
+	$x,y \in \O$, then $u \in F \cdot 1_{\O}$. Now put $x = A\ovu$ and $y = B$; using this together with
 	the alternative laws, we get the result. 
 	
 	Conversely, if $u \in F\cdot 1_{\O}$, then obviously the statement holds. 
