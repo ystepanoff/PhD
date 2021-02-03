@@ -340,7 +340,8 @@ so we may take $Y = (1,1,0\mid 0,0,0)$ to get $M(Y,X) = 1 \neq 0$.
 The terms white, grey and black were introduced by Cohen and Cooperstein 
 \cite{CC}. In the paper by Aschbacher \cite{Asch1} they are called
 'singular', 'brilliant non-singular' and 'dark' respectively. 
-Jacobson \cite{JacobsonTwo} uses the terms 'rank $1$', 'rank $2$' and 'rank $3$'. 
+Jacobson \cite{JacobsonTwo} uses the terms 'rank $1$', 'rank $2$' and 'rank $3$'. We also note that 
+$\Delta(X) = 0$ for any white vector $X$. 
 
 It is clear that the action of $\SE_6(F)$ preserves the colour, except possibly in case
 $F = \mathbb{F}_2$, when white and grey vectors may be intermixed. 
@@ -1935,7 +1936,7 @@ We choose the following basis in $\J_{10}^{abC}$:
 			w_5 & = & (0,0,0 \mid 0,0,e_{\bar{\omega}}). 
 		\end{array}
 	\end{equation*}
-	The first five vectors form a basis of $U \cap \J_{10}^{abC}$. Those $M_x$ with $x \in \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}}\rangle$ act trivially on $U \cap \J_{10}^{abC}$. With respect to the basis $(v_1, ..., v_5)$
+	The first five vectors form a basis of $U \cap \J_{10}^{abC}$. Those $M_x$ with $x \in \langle e_{-1}, e_{-0}, e_{-\omega}, e_{-\bar{\omega}}\rangle$ act trivially on $U \cap \J_{10}^{abC}$. With respect to the basis $(v_1, \ldots, v_5)$
 we obtain all the elementary transvections with non-zero 
 off-diagonal entry in the first row or the first column by
 taking $M_{\lambda e_i}$ for 
@@ -2062,12 +2063,12 @@ stabiliser represented by the matrix
 			\end{array}
 		\right],
 	\end{equation*}
-	with respect to the basis $v_1,...,v_5, w_1,...,w_5$. We have $v_i^g = v_i$ and $w_i^g = w_i + \sum_j A_{i j} v_j$ for all $i$ such that
+	with respect to the basis $v_1,\ldots,v_5, w_1,\ldots,w_5$. We have $v_i^g = v_i$ and $w_i^g = w_i + \sum_j A_{i j} v_j$ for all $i$ such that
 	$1 \leqslant i \leqslant 5$. It follows that 
 	\begin{multline*}
-		\QQ_{10}(w_i^g) = \QQ_{10}(w_i + A_{i 1} v_1 + ... + A_{i 5} v_5) \\
-		    =\QQ_{10}(w_i) + \inner{w_i}{A_{i 1} v_1 + ... + A_{i 5} v_5} + \QQ_{10}(A_{i 1} v_1 + ... + A_{i 5} v_5) \\
-		    = \inner{w_i}{A_{i 1} v_1 + ... + A_{i 5} v_5}  = -A_{ii},
+		\QQ_{10}(w_i^g) = \QQ_{10}(w_i + A_{i 1} v_1 + \ldots + A_{i 5} v_5) \\
+		    =\QQ_{10}(w_i) + \inner{w_i}{A_{i 1} v_1 + \ldots + A_{i 5} v_5} + \QQ_{10}(A_{i 1} v_1 + \ldots + A_{i 5} v_5) \\
+		    = \inner{w_i}{A_{i 1} v_1 + \ldots + A_{i 5} v_5}  = -A_{ii},
 	\end{multline*}
 	so we indeed have $A_{i i} = 0$ for $1 \leqslant i \leqslant 5$. 
 	
@@ -2099,7 +2100,7 @@ M_{e_{-\bar{\omega}}},&
 	\end{array}
 \end{equation*}
 
-Now, $V$, spanned by $v_1, ..., v_5$, 
+Now, $V$, spanned by $v_1, \ldots, v_5$, 
 is a $FG$-module with $G = \SL_5(F)$. We identify the 
 $25$-space spanned by the $5 \times 5$ matrices
 $E_{i j}$ (having $1$ as the $(i,j)$-entry and zeroes in all
@@ -2200,9 +2201,9 @@ this stabiliser on $\J_{10}^{abC}$ and pick the basis
 	\end{array}
 \end{equation} 
 where $1 \leqslant i \leqslant 8$ and $C_i \ovC_i = a_i b_i$. Since in particular we stabilise
-$\langle v_1 \rangle,...,\langle v_{10}\rangle$, the action on $\J_{10}^{cAB}$ is that of a 
-$10 \times 10$ diagonal matrix $\diag(\lambda_1, ..., \lambda_{10})$ 
-with respect to the basis $\{v_1, ..., v_{10}\}$. Consider 
+$\langle v_1 \rangle,\ldots,\langle v_{10}\rangle$, the action on $\J_{10}^{cAB}$ is that of a 
+$10 \times 10$ diagonal matrix $\diag(\lambda_1, \ldots, \lambda_{10})$ 
+with respect to the basis $\{v_1, \ldots, v_{10}\}$. Consider 
 a vector $v = (a,b,0\mid 0,0,C)$, where \mbox{$C = C_1 + \cdots + C_8$} and 
 $a,b$ are such that $v$ is white, i.e. $C\ovC = ab$. Now, if $F\neq \mathbb{F}_2$, we can choose
 $a,b \in F$ in such a way that $v$ can be written as a linear combination 
@@ -2225,7 +2226,7 @@ $10$-space $\J_{10}^{abC}$ we choose the basis
 \end{equation} 
 and then proceed in the same manner. The vector $v = v_1 + \cdots + v_{10}$ is white and since 
 there is a single choice for a non-zero scalar in $\mathbb{F}_2$, it is being fixed and 
-the action on the whole $10$-space in this case is that of $\diag(1,..., 1)$. 
+the action on the whole $10$-space in this case is that of $\diag(1,\ldots, 1)$. 
 
 Now, by using the triality element, we map $\J_{10}^{abC}$ to $\J_{10}^{bcA}$ and further
 to $\J_{10}^{caB}$ and so we obtain that the stabiliser of all white points

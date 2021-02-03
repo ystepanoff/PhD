@@ -25,11 +25,11 @@ totally isotropic subspace of $V$ has dimension
 $m-1$, so that $V$ can be written as a direct
 sum
 \begin{equation}
-V = \langle e_1, f_1 \rangle \oplus ...
+V = \langle e_1, f_1 \rangle \oplus \ldots \oplus
 \langle e_{m-1}, f_{m-1} \rangle \oplus 
 W_2,	
 \end{equation}
-where $(e_1,f_1),...,(e_{m-1},f_{m-1})$ are
+where $(e_1,f_1),\ldots,(e_{m-1},f_{m-1})$ are
 hyperbolic pairs and $W_2 \cong K$ with 
 $Q_{W_2}(\lambda) = \lambda \lambda^{\s}$,
 then we denote the group $\Omega_{2m}(F,Q)$
@@ -43,10 +43,10 @@ Consider the vector space $V$ of dimension
 $2m+2$ over $F$ with a non-singular quadratic form $Q$ defined on it. 
 Let $f$ be a polar form of $Q$. 
 Assuming that the Witt index of $Q$ is at least $1$, we can pick 
-the basis $\mathcal{B} = \{v_1, w_1,...,w_{2m}, v_2\}$ in $V$ such that $(v_1,v_2)$ 
+the basis $\mathcal{B} = \{v_1, w_1,\ldots,w_{2m}, v_2\}$ in $V$ such that $(v_1,v_2)$ 
 is a hyperbolic pair. Consider the decomposition $V = \langle v_1 \rangle \oplus
-\langle w_1, ..., w_{2m} \rangle \oplus \langle v_2 \rangle$ and denote 
-$W = \langle w_1, ..., w_{2m} \rangle$. Further, denote by $Q_W$ and $f_W$ the restrictions of 
+\langle w_1, \ldots, w_{2m} \rangle \oplus \langle v_2 \rangle$ and denote 
+$W = \langle w_1, \ldots, w_{2m} \rangle$. Further, denote by $Q_W$ and $f_W$ the restrictions of 
 $Q$ and $f$ on $W$.
 
 \begin{lemma}
@@ -72,7 +72,7 @@ $Q$ and $f$ on $W$.
 	\right],
     \end{equation*}
     where the matrix $A$ acts on the $2m$-dimensional subspace, 
-    spanned by $\{w_1, ..., w_{2m}\}$. Such an element $g$ acts on $v_2$ as
+    spanned by $\{w_1, \ldots, w_{2m}\}$. Such an element $g$ acts on $v_2$ as
     \begin{equation*}
 	\begin{array}{r@{\;}c@{\;}l}
 		v_2 & \mapsto & (\mu \mid u_1 \mid\ \lambda),
@@ -98,7 +98,7 @@ $Q$ and $f$ on $W$.
 	\right],
     \end{equation*}
     where $B$ is the matrix of $f_W$ with respect to the basis 
-    $\{ w_1 , ..., w_{2m} \}$. 
+    $\{ w_1 , \ldots, w_{2m} \}$. 
     We explore the fact that an element in the stabiliser of $v_1$ preserves the 
     form $f$:
     \begin{multline*}
@@ -342,9 +342,9 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
     Suppose $u, v \in O_{\lambda}$. Since by Witt's lemma $\GO_{2m+2}(F,Q)$
     acts transitively on $O_{\lambda}$, there is an element 
     $g \in \GO_{2m+2}(F,Q)$ which sends $u$ to $v$. Consider the basis 
-    for $V$, $\mathcal{B} = \{v_1, w_1, ..., w_{2m-2}, v_1\}$ such that as before
+    for $V$, $\mathcal{B} = \{v_1, w_1, \ldots, w_{2m-2}, v_1\}$ such that as before
     $(v_1,v_2)$ is a hyperbolic pair and $u \in \langle v_1, v_2 \rangle$, and so
-    $V = \langle v_1 \rangle \oplus \langle w_1, ..., w_{2m-2} \rangle
+    $V = \langle v_1 \rangle \oplus \langle w_1, \ldots, w_{2m-2} \rangle
     \oplus \langle v_2 \rangle$. Suppose $h$ is an element in the stabiliser of $(v_1,v_2)$.
     As a consequence, $h$ stabilises $u$ and with respect to $\mathcal{B}$ it has 
     the form
@@ -359,7 +359,7 @@ that the same is true for $\Omega_{2m}(F,Q)$ in case when Q is of Witt index at 
 	    \end{array}
 	\right],
     \end{equation*}
-    where the matrix $A$ acts on \mbox{$W=\langle w_1, ..., w_{2m-2} \rangle$} as an
+    where the matrix $A$ acts on \mbox{$W=\langle w_1, \ldots, w_{2m-2} \rangle$} as an
      element of $\GO_{2m}(W,Q_W)$. If the determinant of $g$ is $1$,
     then we may take
     \begin{equation*}
@@ -483,7 +483,7 @@ the $1$-space spanned by $v_1$.
 	First, if $\mu = 0$, then $v_1 \sim v$, where $v = \lambda v_1 + u$ with $0\neq u \in W$.
 	We have $0 = Q(v) = Q_W(u)$. 
 	Recall that $W\cn \Omega_{2m}(F,Q_W)$ is the stabiliser in $\Omega_{2m+2}(F, Q)$ of $v_1$,
-	so with respect to the familiar basis $\mathcal{B} = \{v_1, w_1 ,..., w_{2m}, v_2\}$,
+	so with respect to the familiar basis $\mathcal{B} = \{v_1, w_1 ,\ldots, w_{2m}, v_2\}$,
 	its general element has the form 
 	\begin{equation*}
 	[g]_{\mathcal{B}}=\left[
@@ -501,7 +501,7 @@ the $1$-space spanned by $v_1$.
 	-u A B u_1^{\T} = - f_W(u, u_1)$, we get \mbox{$v^g = (\lambda - f_W(u, u_1))v_1 + uA$}.
 	Setting $A = \II_{2m}$, we see that it is possible to send $v$ to a vector
 	of the form $\alpha v_1 + u$ for any $\alpha \in F$. On the other hand, taking $u_1 = 0$,
-	we obtain the action on \mbox{$W = \langle w_1, ..., w_{2m} \rangle$} 
+	we obtain the action on \mbox{$W = \langle w_1, \ldots, w_{2m} \rangle$} 
 	of $\Omega_{2m}(F,Q_W)$, which is 
 	transitive on the isotropic vectors in $W$. We have shown that $v_1 \sim v$ for any $v$ of
 	the form $\alpha v_1 + u$ for arbitrary $\alpha \in F$ and $0\neq u \in W$. 
