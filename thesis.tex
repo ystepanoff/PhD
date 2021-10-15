@@ -1,4 +1,3 @@
-%input macros (i.e. write your own macros file called MacroFile1.tex)
 \documentclass[oneside,12pt]{Classes/CUEDthesisPSnPDF}
 \include{Macros/MacroFile1}
 
@@ -10,11 +9,10 @@
 
 %\vspace{1cm}
 
-% insert below the file name that contains the crest in-place of 'UnivShield'
+
 \crest{
 	\includegraphics[scale=0.25]{QMULBig.png}
 }
-%
 
 \degree{Doctor of Philosophy}
 \degreedate{2020}
@@ -62,24 +60,19 @@
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
-%\include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
-%\include{Chapter6/chapter6}
-%\include{Chapter7/chapter7}
-%\include{Conclusions/conclusions}
+
 
 \backmatter % book mode only
 \newcounter{appendixsection}
 \appendix
 \include{Appendix1/appendix1}
-%\include{Appendix2/appendix2}
-%\include{Appendix3/appendix3}
+\include{Appendix2/appendix2}
+\include{Appendix3/appendix3}
 \include{Appendix4/appendix4}
 
 \nocite{*}
 \bibliographystyle{Classes/hep}
-%\bibliographystyle{Classes/hieeetr}
-%\renewcommand{\bibname}{References} % changes default name Bibliography to References
-\bibliography{References/references} % References file
+
+\bibliography{References/references} 
 
 \end{document}

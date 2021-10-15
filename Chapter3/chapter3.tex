@@ -1,19 +1,10 @@
 \chapter{Groups of type ${}^2\EE_6$}
-\ifpdf
-    \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
-\else
-    \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
-\fi
-%leave these commands here
+\label{chapter3}
 
-In this chapter we are looking at the 
-possibility to adopt our technique to the
-construction of the groups of type
-${}^2\E_6$. Although this ``twisted'' case
-proves to be more difficult, especially
-with the arbitrary quadratic field extensions,
-we were still able to investigate some of the
-structure and establish several important 
+In this chapter consider the possibility to adopting our technique to the
+construction of the groups of type ${}^2\E_6$. Although this ``twisted'' case
+proves to be more difficult, especially with the arbitrary quadratic field extensions,
+we were still able to investigate some of the structure and establish several important 
 results. 
 
 \section{Quadratic field extensions}
@@ -88,13 +79,13 @@ respectively. We say that an element $v \in V$ is \textit{singular isotropic}, i
 	Witt index at least $2$. 
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[(10.3) in \cite{Asch1}]
 	\label{prop:3_2forms}
 	If $U$ is a $(Q,B)$-subspace of $V$, then it is the unique $(Q,B)$-subspace of $V$, and
 	$G = \GO(U,Q)$. 
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}[(10.5) in \cite{Asch1}]
 	\label{prop:3_2forms_orbits}
 	Let $U$ be a $(Q,B)$-subspace of $V$ of Witt index at least $2$. Fix
 	\mbox{$\lambda \in K
@@ -136,7 +127,7 @@ As usual, the sesquilinear form associated with $\H$ is obtained by polarising t
 Using the construction from previous chapter, we obtain the group $\SE_6(K)$ in the usual 
 way. Now define the group ${}^2\SE_6^K(F)$ as the subgroup of $\SE_6(K)$ which preserves 
 $\H$. In case $F = \Fq$ and $K = \Fqs$, we denote this by ${}^2\SE_6(q)$. As before,
-the group ${}^2\E_6(F/K)$ is defined as the quotient of ${}^2\SE_6^K(F)$ by its centre. 
+the group ${}^2\E_6^K(F)$ is defined as the quotient of ${}^2\SE_6^K(F)$ by its centre. 
 
 \section{Some elements of ${}^2\SE_6^K(F)$}
 
@@ -351,16 +342,15 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 \end{lemma}
 
 \begin{proof}
-	Consider the basis $\mathcal{B}$ of $V_4$, consisting of the vectors $v_3$, $v_2$, $v_1$, and $v_4$, in that order, where
+	Consider the basis $\mathcal{B}$ of $V_4$, consisting of the vectors $v_1$, $v_2$, $v_3$, and $v_4$, where
 	\begin{equation*}
 		\begin{array}{r@{\;}c@{\;}l}
-			v_1 & = & (1,0,0\mid 0,0,0), \\
+			v_1 & = & (0,0,0\mid 0,0,e_{-1}), \\
 			v_2 & = & (0,1,0\mid 0,0,0), \\
-			v_3 & = & (0,0,0\mid 0,0,e_{-1}), \\
+			v_3 & = & (1,0,0\mid 0,0,0), \\
 			v_4 & = & (0,0,0\mid 0,0,e_1).
 		\end{array}
 	\end{equation*}
-	
 	With respect to $\mathcal{B}$ the $4 \times 4$ matrices
 	$[N_{\lambda e_{-1}}]_{\mathcal{B}}$ and  $[N_{\lambda e_1}]_{\mathcal{B}}$ take the form
 	\begin{equation*}
@@ -377,126 +367,7 @@ $C \in \langle e_{-1}, e_{1} \rangle$.
 			0 & \phantom{-}0 & 0 & 1
 		\end{bmatrix}.
 	\end{equation*}
-	We notice that 
-	\begin{equation*}
-		[N_{\lambda e_{-1}}]_{\mathcal{B}} = \begin{bmatrix}
-			1 & 0 \\
-			\lambda & 1 
-		\end{bmatrix} \otimes
-		\begin{bmatrix}
-			1 & 0 \\
-			-\lambda^{\s} & 1
-		\end{bmatrix},\quad
-		[N_{\lambda e_1}]_{\mathcal{B}} = \begin{bmatrix}
-			1 & -\lambda^{\s} \\
-			0 & 1
-		\end{bmatrix} \otimes
-		\begin{bmatrix}
-			1 & \lambda \\
-			0 & 1
-		\end{bmatrix},
-	\end{equation*}
-	where $\otimes$ is the Kronecker product of two matrices. The mapping
-	\begin{equation*}
-		\begin{bmatrix}
-			1 & 0 \\
-			\lambda & 1 
-		\end{bmatrix} \mapsto
-		\begin{bmatrix}
-			1 & 0 \\
-			\lambda & 1
-		\end{bmatrix} \otimes
-		\begin{bmatrix}
-			1 & 0 \\
-			-\lambda^{\s} & 1
-		\end{bmatrix},\quad 
-		\begin{bmatrix}
-			1 & \lambda \\
-			0 & 1
-		\end{bmatrix} \mapsto
-		\begin{bmatrix}
-			1 & -\lambda^{\s} \\
-			0 & 1
-		\end{bmatrix} \otimes
-		\begin{bmatrix}
-			1 & \lambda \\
-			0 & 1
-		\end{bmatrix}
-	\end{equation*}
-	can be extended to a homomorphism $\phi$ which is obviously surjective as $\lambda$
-	 ranges
-	through the whole field $K$. Its kernel is a subgroup
-	\begin{equation*}
-		\ker(\phi) = 
-		\left\langle
-			\begin{bmatrix}
-				-1 & 0 \\
-				0 & -1
-			\end{bmatrix}
-		\right\rangle,
-	\end{equation*}
-	which has order $2$, so we get the action of the group $\PSL_2(K)$ on $V_4$ since
-	the matrices
-	\begin{equation*}
-		\begin{bmatrix}
-			1 & 0 \\
-			\lambda & 1
-		\end{bmatrix},\quad
-		\begin{bmatrix}
-			1 & \lambda \\
-			0 & 1 
-		\end{bmatrix}
-	\end{equation*}
-	generate a group $\SL_2(K)$ by a well-known result.
-	Therefore, as $\PSL_2(K) \cong \Omega_4^{-,K}(F)$ (see, for example, \S 7 in \cite{Waerden}), 
-	we have the action of $\Omega_4^{-,K}(F)$. To show that the matrices $[N_{\lambda e_{-1}}]_{\mathcal{B}}$ and
-	$[N_{\lambda e_{1}}]_{\mathcal{B}}$, which generate $\PSL_2(K)$, also generate $\Omega_4^{-,K}(F)$, we first 
-	show the transitivity of our copy of $\PSL_2(K)$ on $1$-spaces spanned by isotropic vectors in $V_4$.
-	
-	Let $A = [N_{\lambda e_{-1}}]_{\mathcal{B}}$, $B = [N_{\lambda e_{1}}]_{\mathcal{B}}$, and let
-	$\langle v \rangle = \langle (\alpha,\beta,\gamma,\delta) \rangle$ be an isotropic point in $V_4$, i.e. with 
-	$\alpha \delta - \beta \gamma = 0$. 
-	We have
-	\begin{equation*}
-		\begin{array}{r@{\;}c@{\;}l}
-			v A & = & (\alpha - \lambda^{\s} \beta + \lambda \gamma - \lambda \lambda^{\s} \delta,\  \beta+\lambda\delta,\  
-					\gamma-\lambda^{\s}\delta,\  \delta), \\
-			
-			v B & = & (\alpha,\  \beta+\lambda\alpha,\  \gamma-\lambda^{\s}\alpha,\  
-						\delta - \lambda\lambda^{\s} \alpha - \lambda^{\s}\beta + \lambda\gamma + \delta),
-		\end{array}
-	\end{equation*}
-	so if $\delta \neq 0$ we can make $\beta = \gamma = 0$ by choosing suitable values of $\lambda$ in the matrix
-	$A$, and since the point remains isotropic, we automatically have $\alpha = 0$, so we end up with a point
-	of the form $\langle (0,0,0,*) \rangle$. If, on the other hand, $\delta = 0$, then if $\alpha = 0$, we can right-multiply by
-	the matrix $A$ with a suitable $\lambda$ to obtain $\alpha \neq 0$. Having $\delta = 0$ and  $\alpha \neq 0$,
-	we can make $\beta = \gamma = 0$ as in the case $\delta \neq 0$ by using the matrix $B$, hence obtaining a point 
-	of the form $\langle (*,0,0,0) \rangle$. Finally, to map $\langle (*,0,0,0) \rangle$ to $\langle (0,0,0,*) \rangle$ we can use the element of
-	$\PSL_2(K)$ represented by the matrix
-	\begin{equation*}
-		\begin{bmatrix}[r]
-			0 & 0 & 0 & -1 \\
-			0 & 0 & 1 & 0 \\
-			0 & -1 & 0 & 0 \\
-			1 & 0 & 0 & 0
-		\end{bmatrix}.
-	\end{equation*}
-	
-	Finally, suppose $g \in \Omega_4^{-,K}(F)$, and since we now have transitivity of $\PSL_2(K)$ on isotropic points,
-	we pick an element $h \in \PSL_2(K)$ such that $\langle v_5 \rangle^{g h^{-1}} = \langle v_5 \rangle$, so with respect
-	to the chosen basis the element $g h^{-1}$ has the form
-	\begin{equation*}
-			[g h^{-1}]_{\mathcal{B}} = 
-		\left[
-	    \begin{array}{c|c|c}
-		\lambda & 0 & 0\  \\ \hline 
-		* &\  A\   & 0\  \\ \hline
-		* & * & \lambda^{-1}\ 
-	    \end{array}
-	\right],
-	\end{equation*}
-	where $A$ is chosen so that $g h^{-1}$ has spinor norm $1$. The rest of the proof is rather the same as 
-	in Lemma \ref{lemma:1_omega4}. 
+	To finish the proof we invoke Lemma \ref{lemma:C_omega4minus}.
 \end{proof}
 
 Consider now a $6$-dimensional $F$-space $F_6$ with the basis $\mathcal{B}$ consisting of the vectors
@@ -1484,7 +1355,7 @@ Of these, the first two are isotropic, while the last one is non-isotropic.
 
 We can also count the isotropic white vectors in $\J_{16}^{BC}$, $K = \Fqs$. Suppose an Albert vector
 \mbox{$X = (0,0,0\mid 0,B,C)$} is white and note that the whiteness conditions 
-take form $B\ovB = C\ovC = 0 = BC$. 
+take the form $B\ovB = C\ovC = 0 = BC$. 
 
 First, we count the white vectors $(0,0,0\mid 0,B,C)$ such that $B \neq 0$ and $C \neq 0$.
 We notice that given $B \neq 0$ and $B\ovB = 0 = BC$, we automatically have $C\ovC = 0$. 

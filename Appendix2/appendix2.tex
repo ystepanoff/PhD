@@ -1,8 +1,394 @@
+\chapter{B: $\Omega_4^+(F)$}
+\label{AppB}
+\stepcounter{appendixsection}
 
-% ------------------------------------------------------------------------
 
-\chapter{B: $\Omega_4^+(F) \cong \SL_2(F) \circ \SL_2(F)$}
+In this appendix we prove a basic result related to the group
+$\Omega_4^+(F)$. Let $V_4$ be a $4$-dimensional vector space over $F$ and 
+let $\mathcal{B} = (v_1, v_2, v_3, v_4)$ be its basis:
+\begin{equation}
+	\begin{array}{r@{\;}c@{\;}l}
+		v_1 & = & [1,0,0,0], \\
+		v_2 & = & [0,1,0,0], \\
+		v_3 & = & [0,0,1,0], \\
+		v_4 & = & [0,0,0,1].
+	\end{array}
+\end{equation}
+Define the quadratic 
+form $\QQ_4$ of plus type via
+\begin{equation}
+	\QQ_4([a, b, c, d]) = ad - bc.
+\end{equation} 
 
+\begin{lemma}
+	\label{lemma:B_omega4plus}
+	The matrices
+	\begin{multline}
+		A_{\lambda}=\begin{bmatrix}
+			1 & 0 & \lambda & 0 \\
+			0 & 1 & 0 & \lambda \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix},\ 
+		B_{\lambda}=\begin{bmatrix}
+			1 & \lambda & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & \lambda \\
+			0 & 0 & 0 & 1
+		\end{bmatrix}, \\
+		C_{\lambda}=\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\lambda & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & \lambda & 1
+		\end{bmatrix},\  
+		D_{\lambda}=\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			\lambda & 0 & 1 & 0 \\
+			0 & \lambda & 0 & 1
+		\end{bmatrix}
+	\end{multline}
+	generate the group $\Omega_4^+(F)$ as $\lambda$ ranges through $F$.
+\end{lemma}
+
+\begin{proof}
+	We notice
+	\begin{multline*}
+		A_{\lambda} = 
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix},\ \ 
+		B_{\lambda} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & \lambda \\
+			0 & 1 
+		\end{bmatrix}, \\
+		C_{\lambda}=\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix},\ \ 
+		D_{\lambda}=  
+		\begin{bmatrix}
+			1 & 0 \\
+			\lambda & 1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix},
+	\end{multline*}	
+	where $\otimes$ is the Kronecker product. As we know, 
+	\begin{equation*}
+		\left\langle
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F).
+	\end{equation*}
+	It follows that
+	\begin{multline*}
+		\left\langle
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \\
+		\cong 
+		\left\langle
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F).
+	\end{multline*}
+	These two copies of $\SL_2(F)$ clearly commute, thus
+	their intersection is contained in the centre of each copy, 
+	which means that it can only contain $\pm \II_2$.
+	Since
+	\begin{equation*}
+		\begin{bmatrix}[r]
+				-1 & 0 \\
+				0 & -1
+		\end{bmatrix} \otimes
+		\begin{bmatrix}[r]
+				-1 & 0 \\
+				0 & -1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix},
+	\end{equation*}
+	we finally get
+	\begin{multline*}
+		\left\langle
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes 
+			\begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix}, \right. \\
+			\left. \begin{bmatrix}
+				1 & \lambda \\
+				0 & 1
+			\end{bmatrix} \otimes 
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix},\ 
+			\begin{bmatrix}
+				1 & 0 \\
+				\lambda & 1
+			\end{bmatrix} \otimes
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix}\ 
+			\bigg|
+			\ 
+			\lambda \in F
+		\right\rangle \cong \SL_2(F) \circ \SL_2(F).
+	\end{multline*}
+	Now, $\SL_2(F) \circ \SL_2(F) \cong \Omega_4^+(F)$, and what left is to show that those matrices which generate 
+	$\SL_2(F) \circ \SL_2(F)$ also generate the whole of $\Omega_4^+(F)$. Indeed, if $F$ is infinite, having just an isomorphism
+	is not sufficient, since in this case the group can easily be isomorphic to a proper subgroup of itself. 
+	Indeed, for example, $(\mathbb{Z}, +) \cong (2\mathbb{Z}, +)$.
+First, we show that the action
+	of the group $G = \SL_2(F) \circ \SL_2(F) \leqslant \Omega_4^+(F)$ on the isotropic vectors in $V_4$ is transitive. 
+	
+	Let $v = [a,\alpha,\beta,b]$ be an arbitrary isotropic vector in $V_4$.
+	We find $Q(v) = ab - \alpha \beta$, so $v$ is isotropic if and only if $(a,b,\alpha,\beta) \neq
+	(0,0,0,0)$ and $ab = \alpha \beta$. 
+	
+	First, consider the case $(a, b) = (0,0)$. For $v$ to be isotropic, it has to be either 
+	\mbox{$\alpha = 0, \beta \neq 0$} or 
+	$\alpha \neq 0, \beta = 0$. Acting on $[0,0,\beta,0]$ by $C_{\beta^{-1}}$, 
+	we obtain the vector
+	$[1,0,\beta,0]$. Next, we act by $A_{-\beta}$ to obtain $[1,0,0,0]$. Similarly,
+	acting on $[0,\alpha,0,0]$ with $\alpha \neq 0$ by $D_{\alpha^{-1}}$, and then by $B_{-\alpha}$, 
+	we get the vector $[1,0,0,0]$ as well.
+	
+	If $a \neq 0$ and $b \neq 0$, we are forced to have $\alpha \neq 0$ and $\beta \neq 0$. Acting by 
+	$A_{b\alpha^{-1}}$, 
+	we obtain the vector $[a,\alpha,\beta+b\alpha^{-1},0]$. 
+	Next, we consider the vector \mbox{$[a,\alpha,\beta,0]$}
+	with $a \neq 0$. If $\alpha \neq 0$, then we may act by $D_{-a\alpha^{-1}}$ to obtain 
+	$[0,\alpha,\beta,0]$; on the other hand,
+	if $\beta \neq 0$, we may act by $C_{-a\beta^{-1}}$ to obtain the same vector. If $(\alpha, \beta) = (0,0)$, then we map 
+	$[a,0,0,0]$ to $[a,0,1,0]$ by the action of $B_{a^{-1}}$, and further to $[0,0,1,0]$ by the action of 
+	$C_{-a}$. 
+	In other words, we have reduced to the case $(a, b) = (0, 0)$. 
+	
+	Similarly, if $a = 0$ and $b \neq 0$, we consider $[0,\alpha,\beta,b]$, and act on it by 
+	$C_{-b\alpha^{-1}}$ if $\alpha \neq 0$
+	or by $D_{-b\beta^{-1}}$ if $\beta \neq 0$ to obtain $[0,\alpha,\beta,0]$. 
+	Finally, if $(\alpha, \beta) = (0, 0)$, then
+	we act on $[0,0,0,b]$ by $D_{b^{-1}}$, followed by the action of $A_b$ to obtain $(0,0,0 \mid 0,0,e_1)$ which again 
+	brings us back to the case $(a, b) = (0,0)$, and we are done proving transitivity of $G$ on the isotropic vectors in $V_4$.
+	
+	The rest is to show that the matrices $A_{\lambda}$,$B_{\lambda}$,$C_{\lambda}$, and $D_{\lambda}$ indeed generate 
+	the whole $\Omega_{4}^+(F)$. Let $g$ be an element of $\Omega_4^+(F)$. Since now we know that 
+\mbox{$\SL_2(F) \circ \SL_2(F)$} generated by
+	these matrices is transitive on isotropic vectors in $V_4$, we may choose an element $h_1 \in \SL_2(F) \circ \SL_2(F)$ such that 
+	$g h_1^{-1}$ stabilises $v_1$. We let $w = v_2^{g h_1^{-1}}$ and write down the conditions on $w$:
+	\begin{equation*}
+		\left.
+		\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}l}
+			\inner{v_1}{w} & = & \inner{v_1}{v_2} & = & 0, \\
+			\QQ_4(w) & = & \QQ_4(v_2) & = & 0, \\
+			\dim_F \inner{v_1}{w}_F & = & \dim_F \inner{v_1}{v_2}_F & = & 2.
+		\end{array}
+		\right\}
+	\end{equation*}
+	Note that we use $\QQ_4$ to 
+	denote the restriction of $\QQ_{10}$ on $V_4$. With respect to $\mathcal{B}$, $w$ has the 
+	form $[\alpha, \beta, \gamma, \delta]$ for some $\alpha,\beta,\gamma,\delta \in F$.
+	By polarising the quadratic form, we find that in this basis the inner product is 
+	represented by the matrix
+	\begin{equation*}
+		B = \begin{bmatrix}[r]
+			0 & 0 & 0 & 1 \\
+			0 & 0 & -1 & 0 \\
+			0 & -1 & 0 & 0 \\
+			1 & 0 & 0 & 0
+		\end{bmatrix},
+	\end{equation*}
+	so we find $\inner{v_1}{w} = v_1 B w^{\T} = \delta$, so $\delta = 0$. Next, 
+	\mbox{$\QQ_4(w) = -\beta \gamma$}, so either $\beta = 0,\ \gamma \neq 0$ or $\beta \neq 0,\ \gamma = 0$. The 
+	case $(\beta, \gamma) = (0,0)$ does not satisfy the condition on dimension, so we do not consider it. 
+	
+	It follows that either $w = \alpha v_1 + \beta v_2$, $\beta \neq 0$ or $w = \alpha v_1 + \gamma v_3$, $\gamma \neq 0$. 
+	Consider an element $h_2 \in \SL_2(F) \circ \SL_2(F)$, which has the following matrix form:
+	\begin{equation*}
+		[h_2]_{\mathcal{B}} = 
+		\begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\lambda & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & \lambda & 1
+		\end{bmatrix}.
+	\end{equation*}
+	We have $(v_2^{h_2})^{g h_1^{-1}} = (\lambda v_1 + v_2)^{g h_1^{-1}}$, which is either $(\alpha + \lambda) v_1 + \beta v_2$, or 
+	$(\alpha + \lambda) v_1 + \gamma v_3$. Take $\lambda = -\alpha$ to get $v_2^{h_2 g h_1^{-1}}$ to be either 
+	$\beta v_2$ for some $\beta \neq 0$, or $\gamma v_3$ for some $\gamma \neq 0$. 
+	
+	In $\Omega_4^+(F)$ our element $h_2 g h_1^{-1}$ has the following matrix form with respect to the basis $\mathcal{B}$:
+	\begin{equation*}
+		[h_2 g h_1^{-1}]_{\mathcal{B}} = 
+		\left[
+	    \begin{array}{c|c|c}
+		1 & 0 & 0\  \\ \hline 
+		* &\  A\   & 0\  \\ \hline
+		* & * & 1\ 
+	    \end{array}
+	\right],
+	\end{equation*}
+	where $A$ represents an element of $\Omega_2^+(F)$. Now, $h_2 g h_1^{-1}$ has spinor norm $1$, as well as the element 
+	represented by $A$. In the case when $h_2 g h_1^{-1}$ maps $v_2$ to $\beta v_2$, $A$ takes the form
+	\begin{equation*}
+		A = \begin{bmatrix}
+			\beta & 0 \\
+			0 & \beta^{-1}
+		\end{bmatrix}.
+	\end{equation*}
+	On the other hand, if $v_2$ is mapped to $\gamma v_3$, then 
+	\begin{equation*}
+		A = \begin{bmatrix}
+			0 & \gamma \\
+			\gamma^{-1} & 0
+		\end{bmatrix}.
+	\end{equation*}
+	The latter is of no interest to us, because its determinant is $-1$, and in characteristic $2$ it has the wrong quasideterminant.
+	Since also the spinor norm of the element represented by $A$ is $1$, $\beta$ is a square in $F$. Take $\lambda \in F$ such
+	that $\lambda^2 = \beta$, and consider the $4\times 4$ matrix $C$:
+	\begin{equation*}
+		C = \begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & \lambda^2 & 0 & 0 \\
+			0 & 0 & \lambda^{-2} & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix}.
+	\end{equation*}
+	It is easy to see that $C$ represents an element of $\SL_2(F) \circ \SL_2(F)$. Indeed,
+	\begin{equation*}
+		C = \left( \begin{bmatrix}
+			\lambda & 0 \\
+			0 & \lambda^{-1}
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} \right) \cdot
+		\left( 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}	\otimes
+		\begin{bmatrix}
+			\lambda^{-1} & 0 \\
+			0 & \lambda
+		\end{bmatrix}
+		 \right)
+	\end{equation*}
+	Denote by $h_3$ the element of $\SL_2(F) \circ \SL_2(F)$, represented by $C$.
+	Now, the matrix representing $h_2 g h_1^{-1} h_3^{-1}$ with respect to the basis $\mathcal{B}$ has ones on the diagonal:
+	\begin{equation*}
+		[h_2 g h_1^{-1} h_3^{-1}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\varepsilon & 1 & 0 & 0 \\
+			\zeta & 0 & 1 & 0 \\
+			\eta & \iota & \kappa & 1
+		\end{bmatrix},
+	\end{equation*}	
+	where $\varepsilon,\zeta,\eta,\iota,\kappa \in F$. Denote	 by $w_1$, $w_2$, $w_4$ the images of 
+	$v_1$, $v_2$, and $v_4$ respectively, under the action of $h_2 g h_1^{-1} h_3^{-1}$. Since
+	$\QQ_4(v_2) = 0$ and $\QQ_4(w_4) = \eta - \iota\kappa$, we get $\eta = \iota \kappa$. 
+	Next, $\inner{v_2}{v_4} = 0$ and $\inner{v_2}{w_4} = \varepsilon - \kappa$, so $\varepsilon = \kappa$.
+	Finally, $\inner{v_1}{v_4} = 0$ and $\inner{v_1}{w_4} = \zeta - \iota$, so $\zeta = \iota$.
+	It turns out that
+	\begin{equation*}
+		[h_2 g h_1^{-1} h_3^{-1}]_{\mathcal{B}} = \begin{bmatrix}
+			1 & 0 & 0 & 0 \\
+			\varepsilon & 1 & 0 & 0 \\
+			\zeta & 0 & 1 & 0 \\
+			\varepsilon \zeta & \zeta & \varepsilon & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			\zeta & 1 
+		\end{bmatrix} \otimes
+		\begin{bmatrix}
+			1 & 0 \\
+			\varepsilon & 1
+		\end{bmatrix}.
+	\end{equation*}
+	Thus, $h_2 g h_1^{-1} h_3^{-1}$ is an element of 
+	$\SL_2(F) \circ \SL_2(F)$, and therefore so is $g$.
+\end{proof}
 
 
 % ------------------------------------------------------------------------
